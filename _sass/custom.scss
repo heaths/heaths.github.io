@@ -2,3 +2,24 @@ img.align-right {
     float: right;
     margin: 0px 0px 10px 10px;
 }
+
+svg#keybase path {
+    stroke: $grey-color-dark !important;
+}
+
+.grey {
+    color: $grey-color;
+    fill: $grey-color;
+}
+
+.site-header {
+    background-color: $blue-color-dark;
+
+    .page-link {
+        color: $grey-color;
+    }
+
+    .site-title {
+        color: $grey-color;
+    }
+}

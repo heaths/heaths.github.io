@@ -13,10 +13,13 @@ description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://heaths.github.io
 
-github_username:  heaths
-linkedin_username: heaths
-twitter_username: mrhestew
-instagram_username: mrhestew
+minima:
+  social_links:
+    github: heaths
+    keybase: heaths
+    linkedin: heaths
+    twitter: mrhestew
+    instagram: mrhestew
 
 twitter:
   username: mrhestew
