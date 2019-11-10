@@ -1,0 +1,57 @@
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Heath Stewart's Blog
+author: Heath Stewart
+email: heaths@outlook.com
+description: >-
+  Technical posts about my decades-long experience with installation, current news
+  and information about my current role in Azure, and tips and tricks I've
+  picked up along the way. Occasionally about my backpacking and mountaineering
+  adventures with friends and family.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: https://heaths.github.io
+
+github_username:  heaths
+linkedin_username: heaths
+twitter_username: mrhestew
+instagram_username: mrhestew
+
+twitter:
+  username: mrhestew
+  card: summary
+
+social:
+  name: Heath Stewart
+  links:
+  - https://github.com/heaths
+  - https://keybase.io/heaths
+  - https://linkedin.com/heaths
+  - https://twitter.com/mrhestew
+  - https://instagram.com/mrhestew
+
+webmaster_verifications:
+  # google: ID
+  # bing: ID
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-relative-links
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Test settings
+port: 8080
+
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
