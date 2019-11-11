@@ -34,8 +34,9 @@ social:
   - https://twitter.com/mrhestew
   - https://instagram.com/mrhestew
 
+google_analytics: UA-151993669-1
 webmaster_verifications:
-  # google: ID
+  google: UA-151993669-1
   bing: DABE2342040BC3F3EDFC08253262FA39
 
 # Build settings
