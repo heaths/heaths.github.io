@@ -36,7 +36,7 @@ social:
 
 webmaster_verifications:
   # google: ID
-  # bing: ID
+  bing: DABE2342040BC3F3EDFC08253262FA39
 
 # Build settings
 markdown: kramdown
