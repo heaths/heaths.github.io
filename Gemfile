@@ -8,6 +8,7 @@ gem "github-pages", "~>202", group: :jekyll_plugins
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.11"
   gem "jekyll-paginate", "~> 1.1.0"
+  gem "jekyll-redirect-from", "~> 0.14.0"
   gem "jekyll-relative-links", "~> 0.6.0"
   gem "jekyll-seo-tag", "~> 2.5.0"
   gem "jekyll-sitemap", "~> 1.2.0"

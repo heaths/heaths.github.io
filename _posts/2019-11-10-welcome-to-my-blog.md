@@ -8,7 +8,8 @@ tags:
 - about
 ---
 
-Welcome to my new blog.
+After many years of being <https://blogs.msdn.com/heaths> and changing positions,
+it was time to set up a new blog for technical tips and trips, as well as personal adventures.
 
 Shortly after I joined Microsoft over 15 years ago, I started blogging as a means of
 helping customers find workarounds for many of the problems we had with Visual Studio

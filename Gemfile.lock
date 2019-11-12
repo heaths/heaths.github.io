@@ -247,6 +247,7 @@ DEPENDENCIES
   jekyll (~> 3.8.5)
   jekyll-feed (~> 0.11)
   jekyll-paginate (~> 1.1.0)
+  jekyll-redirect-from (~> 0.14.0)
   jekyll-relative-links (~> 0.6.0)
   jekyll-seo-tag (~> 2.5.0)
   jekyll-sitemap (~> 1.2.0)

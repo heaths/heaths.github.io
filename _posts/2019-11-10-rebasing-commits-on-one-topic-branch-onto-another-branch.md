@@ -10,7 +10,9 @@ tags:
 - tip
 ---
 
-When you're working in a team and everyone is busy, it's not uncommon to wait for pull requests
+Rebasing commits on one topic branch onto another topic branch is a great way to stay productive while waiting for pull requests to be reviewed. Even if subsequent commits are made to the original topic branch, you can still create a subsequent PR with only intended changes.
+
+When you're working in a team and everyone is busy, it's not uncommon to wait for PRs
 to be reviewed. You want to continue working, but really need those changes in the topic branch
 you're requesting to merge. You create a topic branch from that branch, do some work, and are
 ready to submit another code review. Hopefully, by that time, your other PR has been reviewed.

@@ -10,6 +10,7 @@ description: >-
   and information about my current role in Azure, and tips and tricks I've
   picked up along the way. Occasionally about my backpacking and mountaineering
   adventures with friends and family.
+show_excerpts: true
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://heaths.github.io
 
@@ -45,6 +46,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-redirect-from
   - jekyll-relative-links
   - jekyll-seo-tag
   - jekyll-sitemap
