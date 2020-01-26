@@ -4,7 +4,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Heath Stewart's Blog
 author: Heath Stewart
-email: heaths@outlook.com
+email: heaths@heaths.dev
 description: >-
   Technical posts about my decades-long experience with installation, current news
   and information about my current role in Azure, and tips and tricks I've
@@ -12,7 +12,7 @@ description: >-
   adventures with friends and family.
 show_excerpts: true
 baseurl: "" # the subpath of your site, e.g. /blog
-url: https://heaths.github.io
+url: https://heaths.dev
 
 minima:
   social_links:
