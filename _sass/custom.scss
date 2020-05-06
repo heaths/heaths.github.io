@@ -10,6 +10,10 @@ svg#keybase path {
 .footer-col-1 {
     width: -webkit-calc(20% - (#{$spacing-unit} / 2));
     width:         calc(20% - (#{$spacing-unit} / 2));
+
+    .social-media-list {
+        inline-size: max-content;
+    }
 }
 
 .footer-col-2 {
