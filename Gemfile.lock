@@ -1,3 +1,9 @@
+PATH
+  remote: ../jekyll-theme-heaths
+  specs:
+    jekyll-theme-heaths (0.1.0)
+      jekyll (~> 3.8.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -251,7 +257,7 @@ DEPENDENCIES
   jekyll-relative-links (~> 0.6.0)
   jekyll-seo-tag (~> 2.5.0)
   jekyll-sitemap (~> 1.2.0)
-  minima (~> 2.0)
+  jekyll-theme-heaths!
   tzinfo-data
 
 BUNDLED WITH
