@@ -45,8 +45,8 @@ Now you need to create a simple console project:
    ```shell
    dotnet new console -o sample
    cd sample
-   dotnet add Azure.Security.KeyVault.Secrets
-   dotnet add Azure.Identity
+   dotnet add package Azure.Security.KeyVault.Secrets
+   dotnet add package Azure.Identity
    ```
 2. Replace the contents of *Program.cs* with the following:
    ```csharp
