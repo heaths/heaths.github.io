@@ -1,6 +1,6 @@
 ---
 layout: post
-title: git sync
+title: Batch operations with Azure CLI in bash
 author: Heath Stewart
 date: 2020-07-29 18:00:00 -07:00
 categories: tips
