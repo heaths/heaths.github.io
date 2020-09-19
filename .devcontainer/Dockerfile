@@ -75,6 +75,3 @@ RUN echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
 # Change the volume and working directory since Codespaces doesn't support workspaceMount.
 WORKDIR /workspaces/heaths.github.io
 VOLUME /workspaces/heaths.github.io
-
-# Have Jekyll serve the website by default.
-CMD "bundle exec jekyll serve -P ${PORT}"
