@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Welcome to my blog
 author: Heath Stewart
 date: 2019-11-10 08:23:56 -08:00

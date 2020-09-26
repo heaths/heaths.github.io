@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Get Azure Search Keys in ARM Templates
 author: Heath Stewart
 date: 2020-05-07 21:00:00 -07:00

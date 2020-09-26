@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Fixing Time Drift in Docker on WSL2
 author: Heath Stewart
 date: 2020-05-23 10:00:00 -07:00

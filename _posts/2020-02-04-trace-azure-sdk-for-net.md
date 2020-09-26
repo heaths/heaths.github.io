@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Tracing Azure SDK for .NET
 author: Heath Stewart
 date: 2020-02-04 03:18:00 -08:00
