@@ -112,7 +112,7 @@ You may have to resolve some merge commits, but follow the instructions with eac
 
 ## Option 2: Rebase your commits on your target branch
 
-If you do have commits after your merge, you can use `git rebase --onto`. This is a great way to [transpose a series of commits from one commit to another](https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_more_interesting_rebases:~:text=You%20can%20also%20have%20your%20rebase%20replay%20on%20something%20other%20than%20the%20rebase%20target%20branch).
+If you do have commits after your merge, you can use `git rebase --onto`. This is a great way to [transpose a series of commits from one commit to another](2019-11-10-rebasing-commits-on-one-topic-branch-onto-another-branch.md).
 
 1. Check out the `option2` branch we created earlier that is in the bad state:
 

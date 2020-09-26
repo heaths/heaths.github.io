@@ -15,6 +15,9 @@ show_excerpts: true
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://heaths.dev
 
+relative_links:
+  collections: true
+
 minima:
   social_links:
     github: heaths
