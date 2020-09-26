@@ -1,3 +1,16 @@
+a {
+    color: $link-base-color;
+    text-decoration: underline;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+
+    .social-media-list & {
+        text-decoration: none;
+    }
+}
+
 img.align-right {
     float: right;
     margin: 0px 0px 10px 10px;
@@ -37,6 +50,10 @@ svg#keybase path {
 
 .site-header {
     background-color: $blue-color-dark;
+
+    a {
+        text-decoration: none;
+    }
 
     .page-link {
         color: $grey-color;
