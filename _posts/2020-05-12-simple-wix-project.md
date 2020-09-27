@@ -1,6 +1,5 @@
 ---
 title: Simple WiX Project
-author: Heath Stewart
 date: 2020-05-12 22:45:00 -07:00
 categories: setup
 tags:

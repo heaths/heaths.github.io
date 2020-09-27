@@ -35,6 +35,7 @@ defaults:
       path: ''
       type: posts
     values:
+      author: Heath Stewart
       layout: post
 
 relative_links:

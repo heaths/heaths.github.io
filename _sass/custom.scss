@@ -16,6 +16,33 @@ img.align-right {
     margin: 0px 0px 10px 10px;
 }
 
+.grey {
+    color: $grey-color;
+    fill: $grey-color;
+}
+
+.site-header {
+    background-color: $blue-color-dark;
+
+    a {
+        text-decoration: none;
+    }
+
+    .page-link {
+        color: $grey-color;
+    }
+
+    .site-title {
+        color: $grey-color;
+    }
+}
+
+.post-list {
+    a.post-link {
+        text-decoration: none;
+    }
+}
+
 svg#keybase path {
     stroke: $grey-color-dark !important;
 }
@@ -41,25 +68,4 @@ svg#keybase path {
 
 .footer-col-3 {
     display: none;
-}
-
-.grey {
-    color: $grey-color;
-    fill: $grey-color;
-}
-
-.site-header {
-    background-color: $blue-color-dark;
-
-    a {
-        text-decoration: none;
-    }
-
-    .page-link {
-        color: $grey-color;
-    }
-
-    .site-title {
-        color: $grey-color;
-    }
 }

@@ -1,6 +1,5 @@
 ---
 title: Powerline in Vim
-author: Heath Stewart
 date: 2020-05-06 00:30:00 -07:00
 categories: tips
 tags:

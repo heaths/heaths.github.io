@@ -1,6 +1,5 @@
 ---
 title: Rebasing commits on one topic branch onto another branch
-author: Heath Stewart
 date: 2019-11-10 16:33:00 -08:00
 categories: tips
 tags:

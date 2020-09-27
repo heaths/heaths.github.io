@@ -1,6 +1,5 @@
 ---
 title: Getting back to a good state in Git
-author: Heath Stewart
 date: 2020-09-24 08:00:00 -07:00
 categories: tips
 tags:
