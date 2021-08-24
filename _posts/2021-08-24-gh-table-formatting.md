@@ -1,6 +1,7 @@
 ---
 title: Table formatting in GitHub CLI 2.0
 date: 2021-08-24 11:00:00 -07:00
+excerpt: Use table formatting functions in template to get the same great table output as with built-in GitHub CLI commands.
 categories: tips
 tags:
 - github
@@ -46,10 +47,12 @@ EOF
 
 Table formatting is exposed in template using the following functions:
 
+{% raw %}
 * `{{tablerow <fields>}}`: aligns fields in output vertically as a table
 * `{{tablerender}}`: renders fields added by tablerow in place
 
 `{{tablerender}}` is optional and allows you to render the table immediately, which may be necessary if you output multiple tables like in the following example:
+{% endraw %}
 
 {% raw %}
 ```bash
