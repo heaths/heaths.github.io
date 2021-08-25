@@ -43,6 +43,14 @@ EOF
 ```
 {% endraw %}
 
+**Updated**: You can now install a simple script extension with GitHub CLI version 2.0 or newer:
+
+```bash
+gh extension install heaths/gh-users
+```
+
+See <https://github.com/heaths/gh-users> for details.
+
 ## Template functions
 
 Table formatting is exposed in template using the following functions:
