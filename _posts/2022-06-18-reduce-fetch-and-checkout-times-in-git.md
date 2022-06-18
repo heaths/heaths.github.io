@@ -28,7 +28,7 @@ This means that any remote branches from `upstream` will be fetched if not speci
 [remote "upstream"]
     url = https://github.com/Azure/azure-sdk-for-net.git
     fetch = +refs/heads/main:refs/remotes/upstream/main
-    fetch = +refs/heads/release/*:refs/remotes/upstream/release*
+    fetch = +refs/heads/release/*:refs/remotes/upstream/release/*
 ```
 
 This will fetch only `main` and any branch starting with `release/` from the `upstream` remote if no branch is specified explicitly.
