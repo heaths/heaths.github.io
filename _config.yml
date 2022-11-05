@@ -48,6 +48,9 @@ minima:
     linkedin: heaths
     twitter: mrhestew
     instagram: mrhestew
+    mastodon:
+    - username: heaths
+      instance: mas.to
 
 twitter:
   username: mrhestew
