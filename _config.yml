@@ -51,6 +51,8 @@ minima:
     mastodon:
     - username: heaths
       instance: mas.to
+    - username: heaths
+      instance: fosstodon.org
 
 twitter:
   username: mrhestew
