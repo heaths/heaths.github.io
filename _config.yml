@@ -50,8 +50,6 @@ minima:
     instagram: mrhestew
     mastodon:
     - username: heaths
-      instance: mas.to
-    - username: heaths
       instance: fosstodon.org
 
 twitter:
