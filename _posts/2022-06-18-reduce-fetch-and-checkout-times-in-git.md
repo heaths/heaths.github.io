@@ -70,7 +70,7 @@ By default, this creates a _.git/info/sparse-checkout_ file with the default con
 !/*/
 ```
 
-The file format is the same as _.gitignore_. This default value checks out any files - including dotfiles - directly under the repo root directory, but no subdirectories. You can use the `git sparse-checkout add` command to add patterns, but these will be merely appended to the end of the file. If you add a pattern that already exists, it will be added to the end while the old entry/entries remain resulting in duplicates.
+The file format is similar to _.gitignore_ but with the default [`cone` mode](https://github.com/git/git/blob/v2.37.0/Documentation/git-sparse-checkout.txt#L193-L282) you can only specify directories. This default value checks out any files - including dotfiles - directly under the repo root directory, but no subdirectories. You can use the `git sparse-checkout add` command to add patterns, but these will be merely appended to the end of the file. If you add a directory that already exists, it will be added to the end while the old entry/entries remain resulting in duplicates. `git sparse-checkout add` also checks out files immediately, so if you want to negate any paths beneath it may waste a bit of time.
 
 Instead, I find it easier to just open _.git/info/sparse-checkout_ and modify it by hand. For example, in the repo I've been using as an example, I might want to only check out engineering system files and services I'm working on:
 
@@ -81,14 +81,20 @@ Instead, I find it easier to just open _.git/info/sparse-checkout_ and modify it
 /.vscode/
 /common/
 /eng/
-/sdk/*
-!/sdk/*/
 /sdk/cognitivelanguage/
 /sdk/keyvault/
-/sdk/search/
 ```
 
 After you make modifications, run `git sparse-checkout reapply` to affect changes.
+
+#### Non-cone mode
+
+Though the default content checks out all files under the root, it seems no other path can specify files when using `cone` mode. If you have files under a directory e.g., `sdk/*` that you need and want to negate the rest e.g., `!sdk/*/` you'll need to pass `--no-cone` to `git sparse-checkout set` along with all the patterns you want to enable; though, `git sparse-checkout set --no-cone` enables options to disable `cone` mode so you could still edit _.git/info/sparse-checkout_ by hand afterward.
+
+```bash
+git sparse-checkout set --no-cone '/*' '!/*/' '/.config' '/.vscode' '/common' '/eng' '/sdk/*' '!/sdk/*/' '/sdk/cognitivelanguage' '/sdk/keyvault'
+git sparse-checkout reapply
+```
 
 ### Converting an existing repo to sparse checkouts
 
@@ -111,3 +117,7 @@ You can even do this with the [GitHub CLI](https://github.com/cli/cli), which co
 ```bash
 gh repo clone azure-sdk-for-net -- --depth=1 --sparse
 ```
+
+## History
+
+* 2022-11-09 - Updated now that [non-`cone` mode is deprecated](https://github.blog/2022-06-27-highlights-from-git-2-37/#tidbits).
