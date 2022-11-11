@@ -1,10 +1,12 @@
 ---
 title: On Mastodon
 date: 2022-11-07T19:52:24. -08:00
-categories: tips
+categories: general
 tags:
 - mastodon
 - social
+redirect_from:
+- /tips/2022/11/08/on-mastodon.html
 ---
 
 While I haven't yet left [Twitter](https://twitter.com/mrhestew), I've joined many in the
