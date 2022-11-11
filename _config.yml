@@ -19,24 +19,24 @@ url: https://heaths.dev
 markdown: kramdown
 theme: minima
 plugins:
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-redirect-from
-  - jekyll-relative-links
-  - jekyll-seo-tag
-  - jekyll-sitemap
+- jekyll-feed
+- jekyll-paginate
+- jekyll-redirect-from
+- jekyll-relative-links
+- jekyll-seo-tag
+- jekyll-sitemap
 
 # Test settings
 port: 4000
 
 # Content settings
 defaults:
-  - scope:
-      path: ''
-      type: posts
-    values:
-      author: Heath Stewart
-      layout: post
+- scope:
+    path: ''
+    type: posts
+  values:
+    author: Heath Stewart
+    layout: post
 
 relative_links:
   collections: true
@@ -44,37 +44,26 @@ relative_links:
 minima:
   social_links:
     github: heaths
-    keybase: heaths
-    linkedin: heaths
-    twitter: mrhestew
-    instagram: mrhestew
     mastodon:
     - username: heaths
       instance: fosstodon.org
+    twitter: mrhestew
+    linkedin: heaths
+    instagram: mrhestew
+    keybase: heaths
 
 twitter:
   username: mrhestew
   card: summary
-
-social:
-  name: Heath Stewart
-  links:
-  - https://github.com/heaths
-  - https://keybase.io/heaths
-  - https://linkedin.com/heaths
-  - https://twitter.com/mrhestew
-  - https://instagram.com/mrhestew
 
 google_analytics: UA-151993669-1
 webmaster_verifications:
   google: UA-151993669-1
   bing: DABE2342040BC3F3EDFC08253262FA39
 
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+- CNAME
+- Gemfile
+- Gemfile.lock
+- LICENSE.txt
+- README.md
