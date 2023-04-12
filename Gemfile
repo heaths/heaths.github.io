@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # See https://pages.github.com/versions/
-gem "commonmarker", "~> 0.23.4"
+gem "commonmarker", "~> 0.23.9"
 gem "jekyll", "~> 3.9.2"
 gem "minima", "~> 2.5.1"
 gem "github-pages", group: :jekyll_plugins
