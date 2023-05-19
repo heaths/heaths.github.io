@@ -1,9 +1,7 @@
 source "https://rubygems.org"
 
 # See https://pages.github.com/versions/
-gem "commonmarker", "~> 0.23.4"
-gem "jekyll", "~> 3.9.2"
-gem "minima", "~> 2.5.1"
+gem "webrick", "~> 1.8"
 gem "github-pages", group: :jekyll_plugins
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
