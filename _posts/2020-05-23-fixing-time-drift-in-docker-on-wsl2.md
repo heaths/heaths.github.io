@@ -9,6 +9,8 @@ tags:
 
 WSL2 has been amazing! It's so much faster than WSL, and Git commands and Python scripts just run faster. But what really gets me giddy is [Docker on WSL2](https://docs.docker.com/docker-for-windows/wsl). No Hyper-V VM - in fact, Hyper-V doesn't even need to be installed. I loved Hyper-V, but with Docker and WSL2 I haven't had much reason to run it. It's just works...well, usually.
 
+<!--more-->
+
 I fired up [VSCode](https://code.visualstudio.com) in my [PowerShell](https://github.com/PowerShell/PowerShell) repo and Code prompted me to restart in a devcontainer, but the `apt-get` statement failed with errno 100:
 
 ```

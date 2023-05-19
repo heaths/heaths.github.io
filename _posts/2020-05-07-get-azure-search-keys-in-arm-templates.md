@@ -12,6 +12,8 @@ tags:
 
 Late in 2019 I start working with a colleague on a common pattern of creating test resources using ARM templates. A [script deploys](https://github.com/Azure/azure-sdk-tools/blob/168ad3040e8df16377eb66e5a80d277494b30069/eng/common/TestResources/New-TestResources.ps1#L280-L282) the template using a common set of variables and outputs both common variables and any custom variables that tests for a service needs. The Azure Cognitive Search service, for example, needs both admin keys for read-write operations, and query keys for read-only operations.
 
+<!--more-->
+
 Azure Resource Manager (ARM) templates support a lot of [different functions](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-functions), including functions for various service to [list keys](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-functions-resource#list). You can use these to get the primary or secondary admin keys, or get any query keys that were created (one by default).
 
 ```json

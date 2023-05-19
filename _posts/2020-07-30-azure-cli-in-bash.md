@@ -11,6 +11,8 @@ tags:
 
 While I use [PowerShell](https://github.com/powershell/powershell) on a daily basis, the [Azure CLI](https://aka.ms/azure-cli) has better support for Azure management and some data operations. It also runs faster on WSL2, since python.exe startup on Windows could use some performance work.
 
+<!--more-->
+
 Since the Azure CLI returns valid JSON, you can simply pipe it to `ConvertFrom-Json`:
 
 ```powershell

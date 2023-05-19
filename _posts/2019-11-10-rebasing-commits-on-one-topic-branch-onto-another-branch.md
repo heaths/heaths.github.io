@@ -10,6 +10,8 @@ tags:
 
 [Rebasing commits](https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_more_interesting_rebases:~:text=You%20can%20also%20have%20your%20rebase%20replay%20on%20something%20other%20than%20the%20rebase%20target%20branch) on one topic branch onto another topic branch is a great way to stay productive while waiting for pull requests to be reviewed. Even if subsequent commits are made to the original topic branch, you can still create a subsequent PR with only intended changes.
 
+<!--more-->
+
 When you're working in a team and everyone is busy, it's not uncommon to wait for PRs
 to be reviewed. You want to continue working, but really need those changes in the topic branch
 you're requesting to merge. You create a topic branch from that branch, do some work, and are

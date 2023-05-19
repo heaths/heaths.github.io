@@ -8,6 +8,8 @@ tags:
 
 Sometime ago I [blogged about `git sync`](2020-05-29-git-sync.md), an alias I created to concisely pull the upstream repo's main branch, push that branch to my origin fork, and fetch origin branches to determine which branches have been deleted - likely from merged pull requests. As many repos I work in have changed from `master` to `main`, not all of them have yet. Some also use `trunk` which, personally, I like better but is less common than `main`.
 
+<!--more-->
+
 Rather than separate aliases for each common main branch and given that shell aliases are processed by a linux shell - most often bash - we can use default argument values to run either of the following:
 
 ```bash

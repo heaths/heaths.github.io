@@ -9,6 +9,8 @@ tags:
 
 Globally-unique identifiers (GUIDs) are often the brunt of jokes. Windows Installer packages (.msi files) are full of them, from the required ProductCode, to highly-recommended UpgradeCode, package codes, and required component GUIDs. Authoring an MSI doesn't require you create and manage so many GUIDs, however. In fact, [Windows Installer XML](https://wixtoolset.org) (WiX) has in the last few years made great strides in making sure you don't have to, and recommends you don't.
 
+<!--more-->
+
 Component GUIDs can be especially tricky. They should be unique for unique key paths and based on composition. I [wrote a blog post](https://devblogs.microsoft.com/setup/about-shared-components/) over a decade ago about what happens when components have the same GUID - shared components - whether you intended it or not. Whether it was authoring mistakes, or a user was allowed to change the installation directory to overwrite existing components even for a different product, they can cause all sorts of problems.
 
 The best thing you can do as a package author is not to author them. WiX will create durable GUIDs based on the key path; though, only adding to the component composition is up to you. The best thing is most often to keep one resource per component - especially for files.

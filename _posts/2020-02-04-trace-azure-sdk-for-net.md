@@ -15,6 +15,8 @@ Logging is greatly improved and is consistent across client libraries. All
 clients will log request and response information automatically when
 AppInsights or OpenTelemetry is configured.
 
+<!--more-->
+
 You can also enable logging manually using either ETW applications like
 *logman.exe*, or standard tracing tools like `dotnet trace` as shown in the
 example below.

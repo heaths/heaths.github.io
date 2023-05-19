@@ -8,6 +8,8 @@ tags:
 
 Some repos can be huge, like [Azure/azure-sdk-for-net](https://github.com/Azure/azure-sdk-for-net) (at the time this was written) due to a number of factors, like history, old binaries, or other large files. A repo could also have a relatively small history but a huge amount of files that take a very long time to check out. You can both reduce the time it takes to fetch such a repo and how long it takes to check out files.
 
+<!--more-->
+
 ## Reduce how much you fetch
 
 One way to reduce how much much you fetch is to fetch a single branch. For example, assuming your `upstream` and `origin` remotes are set to the primary repository and your fork respectively, it's rarely necessary to fetch more than the main branch e.g., `git fetch upstream main` to fetch just the `upstream` remote's `main` branch. This will avoid fetching any other branches and all the objects referenced by those branches, tags, etc. I take advantage of this in my [`git sync`](2021-08-30-git-sync-any-branch.md) alias, for example.

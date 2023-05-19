@@ -9,6 +9,8 @@ tags:
 
 I was helping a colleague the other day after they merged the `master` branch into their older topic branch, which brought along a lot of other commits and made the pull request on [GitHub](https://github.com) huge - too many files to even review in full on GitHub or in [Visual Studio Code](https://code.visualstudio.com). I commented that instead, rebasing onto `master` (or whatever branch you want to merge) is cleaner. First, however, you have to get back to a good state.
 
+<!--more-->
+
 *Note: if multiple people are working against a feature branch, you should simply merge master into the feature branch while your feature team works on topic branches targeting the feature branch. Rebasing the feature branch on your trunk e.g. `master` will make it difficult for anyone else to merge into the feature branch. You can rebase or squash the feature branch when ready to merge to your trunk.*
 
 After over a decade using Git, it seems half of knowing Git is how to get back to a good state!
