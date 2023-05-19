@@ -39,6 +39,5 @@ SHELL ["/bin/bash", "-c"]
 # Speed up subsequent `bundle install`.
 RUN echo 'gem: --no-ri --no-rdoc' > /home/${USERNAME}/.gemrc
 
-# Change the volume and working directory since Codespaces doesn't support workspaceMount.
+# Change the working directory.
 WORKDIR /workspaces/heaths.github.io
-VOLUME /workspaces/heaths.github.io
