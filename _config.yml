@@ -12,6 +12,7 @@ description: >-
   picked up along the way. Occasionally about my backpacking and mountaineering
   adventures with friends and family.
 show_excerpts: true
+excerpt_separator: <!--more-->
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://heaths.dev
 
