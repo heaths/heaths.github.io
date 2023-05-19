@@ -9,6 +9,30 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "post",
+            "type": "shell",
+            "command": "bundle exec jekyll post -- ${input:title}",
+            "problemMatcher": {
+                "source": "jekyll-compose",
+                "pattern": {
+                    "regexp": "(Error|Warning):\\s+(.*)",
+                    "severity": 1,
+                    "message": 2
+                }
+            },
+            "presentation": {
+                "clear": true,
+                "revealProblems": "onProblem"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "title",
+            "type": "promptString",
+            "description": "Title for the page"
         }
     ]
 }
