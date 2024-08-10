@@ -13,6 +13,10 @@ You can add [TypeSpec](https://typespec.io) language support to [Helix](https://
 
 <!--more-->
 
+## Update
+
+🎉 My [pull request](https://github.com/helix-editor/helix/pull/11412) was merged: TypeSpec is now supported out of the box in Helix! You still need to install the LSP as with any other supported language, but that's a single, simple command. See below, or in [their wiki](https://github.com/helix-editor/helix/wiki/Language-Server-Configurations#typespec).
+
 ## Background
 
 I've been using [`vim`](https://www.vim.org) and before it `vi` for close to 30 years. I started my programming career in a terminal and, while I often enjoy GUI apps like [Visual Studio Code](https://code.visualstudio.com) and am more productive when touching lots of files, I still like the efficiency of a good terminal editor.
