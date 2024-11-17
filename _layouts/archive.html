@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.archive.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Articles" }}</h2>
+    <ul class="post-list">
+      {%- assign archive = site.archive | reverse -%}
+      {%- for article in archive -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ article.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ article.url | relative_url }}">
+            {{ article.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ article.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+</div>

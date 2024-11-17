@@ -30,6 +30,14 @@ plugins:
 # Test settings
 port: 4000
 
+# Collections
+collections:
+  archive:
+    output: true
+header_pages:
+- archive.md
+- about.md
+
 # Content settings
 defaults:
 - scope:
@@ -38,6 +46,12 @@ defaults:
   values:
     author: Heath Stewart
     layout: post
+- scope:
+    path: ''
+    type: archive
+  values:
+    layout: article
+    permalink: /archive/:categories/:title:output_ext
 
 relative_links:
   collections: true
@@ -48,7 +62,6 @@ minima:
     mastodon:
     - username: heaths
       instance: fosstodon.org
-    twitter: mrhestew
     linkedin: heaths
     instagram: mrhestew
     keybase: heaths
