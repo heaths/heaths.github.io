@@ -59,6 +59,7 @@ relative_links:
 minima:
   social_links:
     github: heaths
+    bluesky: heaths.dev
     mastodon:
     - username: heaths
       instance: fosstodon.org
