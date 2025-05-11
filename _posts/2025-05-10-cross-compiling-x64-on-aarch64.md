@@ -9,7 +9,7 @@ tags:
 - tips
 - wsl
 excerpt: >
-  How to support cross-compiling -sys crates for x64 (x86_64) on Ubuntu 22.04 aarch64 (arm64) in WSL2.
+  How to support cross-compiling -sys crates for x64 (x86_64) on Ubuntu 24.04 aarch64 (arm64) in WSL2.
 ---
 Cross-compiling in Rust is generally pretty easy:
 
