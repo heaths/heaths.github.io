@@ -26,8 +26,6 @@ plugins:
 - jekyll-relative-links
 - jekyll-seo-tag
 - jekyll-sitemap
-exclude:
-- vendor
 
 # Test settings
 port: 4000
@@ -84,3 +82,4 @@ exclude:
 - Gemfile.lock
 - LICENSE.txt
 - README.md
+- vendor
