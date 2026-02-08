@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-# See https://pages.github.com/versions/
+# See https://pages.github.com/versions.json
 gem "webrick", "~> 1.8"
 gem "jekyll-compose", group: [:jekyll_plugins]
 gem "github-pages", group: [:jekyll_plugins]
