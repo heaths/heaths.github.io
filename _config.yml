@@ -13,7 +13,7 @@ description: >-
   adventures with friends and family.
 show_excerpts: true
 excerpt_separator: <!--more-->
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: '' # the subpath of your site, e.g. /blog
 url: https://heaths.dev
 
 # Build settings
@@ -21,6 +21,7 @@ markdown: kramdown
 theme: minima
 plugins:
 - jekyll-feed
+- jekyll-minifier
 - jekyll-paginate
 - jekyll-redirect-from
 - jekyll-relative-links
@@ -34,6 +35,7 @@ port: 4000
 collections:
   archive:
     output: true
+
 header_pages:
 - archive.md
 - about.md
@@ -67,14 +69,13 @@ minima:
     instagram: mrhestew
     keybase: heaths
 
-twitter:
-  username: mrhestew
-  card: summary
-
 google_analytics: UA-151993669-1
 webmaster_verifications:
   google: UA-151993669-1
   bing: DABE2342040BC3F3EDFC08253262FA39
+
+include:
+- .well-known
 
 exclude:
 - CNAME
@@ -83,3 +84,11 @@ exclude:
 - LICENSE.txt
 - README.md
 - vendor
+
+jekyll-minifier:
+  exclude: ['*.min.js']
+  compress_css: true
+  compress_javascript: false # Fails to process sequoia-comments: https://github.com/digitalsparky/jekyll-minifier/issues/22
+  compress_json: true
+  uglifier_args:
+    harmony: true

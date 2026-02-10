@@ -1,7 +1,3 @@
----
-layout: null
-permalink: /.well-known/webfinger
----
 {
     "subject": "acct:heaths@fosstodon.org",
     "aliases": [

@@ -1,6 +1,6 @@
 ---
 title: Table formatting in GitHub CLI 2.0
-date: 2021-08-24 11:00:00 -07:00
+date: 2021-08-24T11:00:00-07:00
 excerpt: Use table formatting functions in template to get the same great table output as with built-in GitHub CLI commands.
 categories: tips
 tags:

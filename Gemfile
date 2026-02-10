@@ -1,9 +1,12 @@
 source "https://rubygems.org"
 
 # See https://pages.github.com/versions.json
+group :jekyll_plugins do
+    gem "github-pages"
+    gem "jekyll-compose"
+    gem "jekyll-minifier"
+end
 gem "webrick", "~> 1.8"
-gem "jekyll-compose", group: [:jekyll_plugins]
-gem "github-pages", group: [:jekyll_plugins]
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
