@@ -52,13 +52,17 @@ img.align-right {
     }
 }
 
+sequoia-comments::part(container) {
+    margin-top: 30px;
+}
+
 svg#keybase path {
     stroke: $grey-color-dark !important;
 }
 
 .footer-col-1 {
     width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
+    width: calc(20% - (#{$spacing-unit} / 2));
 
     .social-media-list {
         inline-size: max-content;
@@ -72,7 +76,7 @@ svg#keybase path {
 
 .footer-col-2 {
     width: -webkit-calc(80% - (#{$spacing-unit} / 2));
-    width:         calc(80% - (#{$spacing-unit} / 2));
+    width: calc(80% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {

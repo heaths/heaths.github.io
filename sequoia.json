@@ -1,0 +1,20 @@
+{
+    "siteUrl": "https://heaths.dev",
+    "contentDir": "./_posts/",
+    "imagesDir": "./assets/images/",
+    "publicDir": "./",
+    "outputDir": "./_site/",
+    "pathTemplate": "/{categories}/{yearUTC}/{monthUTC}/{dayUTC}/{title}.html",
+    "publicationUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.publication/3meddhkrg5z2p",
+    "pdsUrl": "https://ganoderma.us-west.host.bsky.network",
+    "frontmatter": {
+        "description": "excerpt",
+        "publishDate": "date"
+    },
+    "bluesky": {
+        "enabled": true
+    },
+    "ui": {
+        "components": "scripts/"
+    }
+}

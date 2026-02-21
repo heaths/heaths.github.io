@@ -1,6 +1,6 @@
 ---
 title: Table formatting in GitHub CLI 2.0
-date: 2021-08-24 11:00:00 -07:00
+date: 2021-08-24T11:00:00-07:00
 excerpt: Use table formatting functions in template to get the same great table output as with built-in GitHub CLI commands.
 categories: tips
 tags:
@@ -8,6 +8,7 @@ tags:
 - git
 - productivity
 - tips
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2axkhw2x"
 ---
 New in the [GitHub CLI 2.0](https://github.com/cli/cli/releases/tag/v2.0.0) is the ability to format results from built-in commands or custom API calls. The [pull request](https://github.com/cli/cli/pull/3519) was born from the desire to improve the output of my [`git user`](2021-04-21-gh-user.md) command - to use the same table formatting as built-in commands.
 

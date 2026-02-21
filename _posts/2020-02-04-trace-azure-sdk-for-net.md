@@ -7,6 +7,7 @@ tags:
 - azuresdk
 - csharp
 - tip
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bdfew2x"
 ---
 
 The new Azure SDK [has a lot of new features](https://aka.ms/azsdkvalueprop)

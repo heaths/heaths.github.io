@@ -4,6 +4,7 @@ date: 2021-08-30 19:40:00 -07:00
 categories: tips
 tags:
 - git
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2awkp527"
 ---
 
 Sometime ago I [blogged about `git sync`](2020-05-29-git-sync.md), an alias I created to concisely pull the upstream repo's main branch, push that branch to my origin fork, and fetch origin branches to determine which branches have been deleted - likely from merged pull requests. As many repos I work in have changed from `master` to `main`, not all of them have yet. Some also use `trunk` which, personally, I like better but is less common than `main`.

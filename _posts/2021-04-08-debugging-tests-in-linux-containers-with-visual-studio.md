@@ -5,6 +5,7 @@ categories: tips
 tags:
 - debugging
 - visualstudio
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b3oe62t"
 ---
 
 Some recent [tests failures](https://github.com/Azure/azure-sdk-for-net/issues/20204) for the [Azure Key Vault Certificates client libraries for .NET](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/keyvault/Azure.Security.KeyVault.Certificates/README.md) required debugging on Linux, and while I frequently use WSL2 (even to write this post), I needed a fresh Ubuntu 18.04 image similar to our live testing agents. Fortunately, recent versions of Visual Studio 2019 have included the component ".NET Core Debugging with WSL 2".

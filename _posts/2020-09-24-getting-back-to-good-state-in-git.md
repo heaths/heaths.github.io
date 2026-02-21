@@ -5,6 +5,7 @@ categories: tips
 tags:
 - git
 - tip
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b4qig2x"
 ---
 
 I was helping a colleague the other day after they merged the `master` branch into their older topic branch, which brought along a lot of other commits and made the pull request on [GitHub](https://github.com) huge - too many files to even review in full on GitHub or in [Visual Studio Code](https://code.visualstudio.com). I commented that instead, rebasing onto `master` (or whatever branch you want to merge) is cleaner. First, however, you have to get back to a good state.

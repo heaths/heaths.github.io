@@ -8,6 +8,7 @@ tags:
 - git
 - productivity
 - tips
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2ayput2b"
 ---
 With the [GitHub CLI](https://github.com/cli/cli) before 1.10 as described originally in [gh user](2021-04-21-gh-user.md), adding aliases with multiple lines or mixed quotes could be difficult. After some time I found it easier and faster just to open *~/.config/gh/config.yml* and write the YAML string literal manually. Starting with `gh` version 1.10, my [PR](https://github.com/cli/cli/pull/3490) makes that even easier in bash using a herestring as an example:
 
