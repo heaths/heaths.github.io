@@ -7,6 +7,7 @@ categories: atproto
 tags:
 - atproto
 - jekyll
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2akmjf2n"
 ---
 I've been reading a lot about [ATProto](https://atproto.com) and following many accounts on [Bluesky](https://bsky.app) like [@threddyrex.org](https://threddyrex.org) with interest. I had been following [standard.site](https://standard.site) as well and started thinking about how I might publish records using its lexicon to my hosted PDS. Then I discovered [Sequoia](https://sequoia.pub)!
 

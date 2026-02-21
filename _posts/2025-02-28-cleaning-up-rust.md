@@ -10,6 +10,7 @@ tags:
 excerpt: >
   Tips for cleaning up after Rust, which can consume a lot of disk space.
 # cspell:ignore diskpart hkcu vdisk vhdx
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aqe4f2n"
 ---
 I'm the lead developer on the [Azure SDK for Rust] and have been working on it for a few years now.
 I also started or contribute to a number of other [Rust] projects.

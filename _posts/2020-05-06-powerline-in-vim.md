@@ -6,6 +6,7 @@ tags:
 - powerline
 - tip
 - vim
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bchkn27"
 ---
 
 As a long-time [vim](https://www.vim.org) user (though I more commonly use [Code](https://code.visualstudio.com) these days), I relish the opportunity to improve my experience. I've been using [Powerline](https://github.com/powerline/powerline) for my bash prompt for a while and even developed a [pure PowerShell variant](https://github.com/heaths/profile/blob/master/Microsoft.PowerShell_profile.ps1). I wanted to integrate it into my vim profile which I maintain as a [Git repo](https://github.com/heaths/vimfiles) across many different machines, physical or virtual.

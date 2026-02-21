@@ -5,6 +5,7 @@ categories: tips
 tags:
 - productivity
 - tips
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b2q3z2r"
 ---
 One of the great aspects of working for a large global company like Microsoft is working with a lot of diverse people. Working across time zones has its difficulties, though. I know that India is about 12 hours ahead of us, but with different observed timezone offsets it's difficult to remember exactly. For a recent project I started working on, I also work with a lot of people in or around Cairo, Egypt.
 

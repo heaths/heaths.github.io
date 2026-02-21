@@ -1,9 +1,10 @@
 ---
 title: Reduce fetch and checkout times in git
-date: 2022-06-18T00:20:31 -07:00
+date: 2022-06-18T00:20:31-07:00
 categories: tips
 tags:
 - git
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr3dkfi322"
 ---
 
 Some repos can be huge, like [Azure/azure-sdk-for-net](https://github.com/Azure/azure-sdk-for-net) (at the time this was written) due to a number of factors, like history, old binaries, or other large files. A repo could also have a relatively small history but a huge amount of files that take a very long time to check out. You can both reduce the time it takes to fetch such a repo and how long it takes to check out files.

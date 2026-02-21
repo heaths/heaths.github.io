@@ -7,6 +7,7 @@ tags:
 - azurecli
 - tip
 - wsl2
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b5q6v27"
 ---
 
 While I use [PowerShell](https://github.com/powershell/powershell) on a daily basis, the [Azure CLI](https://aka.ms/azure-cli) has better support for Azure management and some data operations. It also runs faster on WSL2, since python.exe startup on Windows could use some performance work.

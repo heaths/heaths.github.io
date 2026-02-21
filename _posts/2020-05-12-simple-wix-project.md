@@ -5,6 +5,7 @@ categories: setup
 tags:
 - setup
 - wix
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2banlt2y"
 ---
 
 Globally-unique identifiers (GUIDs) are often the brunt of jokes. Windows Installer packages (.msi files) are full of them, from the required ProductCode, to highly-recommended UpgradeCode, package codes, and required component GUIDs. Authoring an MSI doesn't require you create and manage so many GUIDs, however. In fact, [Windows Installer XML](https://wixtoolset.org) (WiX) has in the last few years made great strides in making sure you don't have to, and recommends you don't.

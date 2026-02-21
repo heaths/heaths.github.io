@@ -7,6 +7,7 @@ tags:
 - git
 - ssh
 - wsl
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2atatr2r"
 ---
 
 1Password allows developers to sign [git commits using SSH](https://developer.1password.com/docs/ssh/git-commit-signing)

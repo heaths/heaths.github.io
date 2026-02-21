@@ -7,6 +7,7 @@ tags:
 - azure
 - typespec
 - helix
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2as5lp2u"
 ---
 
 You can add [TypeSpec](https://typespec.io) language support to [Helix](https://helix-editor.com) fairly easily. I've done this in my profile repo and you can copy the code. I hope to get this [added to Helix](https://github.com/helix-editor/helix) if they'll accept an up-and-comer.

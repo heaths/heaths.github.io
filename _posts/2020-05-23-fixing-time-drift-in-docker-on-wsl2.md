@@ -5,6 +5,7 @@ categories: troubleshooting
 tags:
 - docker
 - wsl2
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b7mdt22"
 ---
 
 WSL2 has been amazing! It's so much faster than WSL, and Git commands and Python scripts just run faster. But what really gets me giddy is [Docker on WSL2](https://docs.docker.com/docker-for-windows/wsl). No Hyper-V VM - in fact, Hyper-V doesn't even need to be installed. I loved Hyper-V, but with Docker and WSL2 I haven't had much reason to run it. It's just works...well, usually.

@@ -4,6 +4,7 @@ date: 2019-11-10 08:23:56 -08:00
 categories: general
 tags:
 - about
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bfbyd22"
 ---
 
 After many years of being <https://blogs.msdn.com/heaths> and changing positions,

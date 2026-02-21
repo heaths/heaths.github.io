@@ -8,6 +8,7 @@ tags:
 - arm
 - search
 - tip
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bbhw322"
 ---
 
 Late in 2019 I start working with a colleague on a common pattern of creating test resources using ARM templates. A [script deploys](https://github.com/Azure/azure-sdk-tools/blob/168ad3040e8df16377eb66e5a80d277494b30069/eng/common/TestResources/New-TestResources.ps1#L280-L282) the template using a common set of variables and outputs both common variables and any custom variables that tests for a service needs. The Azure Cognitive Search service, for example, needs both admin keys for read-write operations, and query keys for read-only operations.
