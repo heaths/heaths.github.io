@@ -2,7 +2,7 @@
 title: Embedding .NET Controls in Java
 date: 2003-12-27
 origin: https://www.codeproject.com/articles/2909/embedding-net-controls-in-java
-excerpt: >-
+summary: >-
     Learn to embed .NET user controls in Java applications, applets,
     and beans using COM to bridge the gap between the two frameworks.
 categories: CodeProject

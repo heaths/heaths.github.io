@@ -2,7 +2,7 @@
 title: Custom String formatting in .NET
 date: 2004-04-28
 origin: https://www.codeproject.com/Articles/6533/Custom-String-Formatting-in-NET
-excerpt: >-
+summary: >-
     Discusses the implementation of custom format providers for existing types
     and custom formatting for user-defined types.
 categories: CodeProject
