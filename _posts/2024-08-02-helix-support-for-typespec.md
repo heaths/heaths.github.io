@@ -2,6 +2,7 @@
 layout: post
 title: Helix support for TypeSpec
 date: 2024-08-02T16:19:04-07:00
+excerpt_separator: <!--more-->
 categories: tips
 tags:
 - azure

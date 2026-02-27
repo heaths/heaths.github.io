@@ -1,10 +1,12 @@
+@use "sass:color";
+
 $grey-color: #b2b7bb;
 $blue-color: #2d5980;
 $blue-color-dark: #002a5c;
 $green-color: #7ac142;
 
 $brand-color: $blue-color;
-$link-base-color: lighten($brand-color, 15%);
-$link-hover-color: darken($brand-color, 15%);
+$link-base-color: color.adjust($brand-color, $lightness: 15%);
+$link-hover-color: color.adjust($brand-color, $lightness: -15%);
 
 $content-width: 80vw;

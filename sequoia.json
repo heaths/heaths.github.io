@@ -8,7 +8,7 @@
     "publicationUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.publication/3meddhkrg5z2p",
     "pdsUrl": "https://ganoderma.us-west.host.bsky.network",
     "frontmatter": {
-        "description": "excerpt",
+        "description": "summary",
         "publishDate": "date"
     },
     "bluesky": {

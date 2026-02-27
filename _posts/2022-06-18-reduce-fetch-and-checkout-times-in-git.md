@@ -1,6 +1,7 @@
 ---
 title: Reduce fetch and checkout times in git
 date: 2022-06-18T00:20:31-07:00
+excerpt_separator: <!--more-->
 categories: tips
 tags:
 - git

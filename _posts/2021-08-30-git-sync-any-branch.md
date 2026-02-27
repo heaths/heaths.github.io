@@ -1,6 +1,7 @@
 ---
 title: git sync any branch
 date: 2021-08-30 19:40:00 -07:00
+excerpt_separator: <!--more-->
 categories: tips
 tags:
 - git

@@ -1,6 +1,5 @@
 .DS_Store
 .jekyll-metadata
-.ruby-version
 .sass-cache
 .sequoia-state.json
 _site

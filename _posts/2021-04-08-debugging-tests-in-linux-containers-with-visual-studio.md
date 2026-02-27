@@ -1,6 +1,7 @@
 ---
 title: Debugging tests in Linux containers with Visual Studio
 date: 2021-04-08 19:00:00 -07:00
+excerpt_separator: <!--more-->
 categories: tips
 tags:
 - debugging

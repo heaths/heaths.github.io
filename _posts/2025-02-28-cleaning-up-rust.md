@@ -7,7 +7,7 @@ tags:
 - rustlang
 - tips
 - wsl
-excerpt: >
+summary: >
   Tips for cleaning up after Rust, which can consume a lot of disk space.
 # cspell:ignore diskpart hkcu vdisk vhdx
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aqe4f2n"

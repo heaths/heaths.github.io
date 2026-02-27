@@ -1,6 +1,7 @@
 ---
 title: Batch operations with Azure CLI in bash
 date: 2020-07-29 18:00:00 -07:00
+excerpt_separator: <!--more-->
 categories: tips
 tags:
 - azure
