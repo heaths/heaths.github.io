@@ -2,7 +2,7 @@
 title: Simple WiX Project
 date: 2020-05-12 22:45:00 -07:00
 excerpt_separator: <!--more-->
-categories: setup
+category: setup
 tags:
 - setup
 - wix

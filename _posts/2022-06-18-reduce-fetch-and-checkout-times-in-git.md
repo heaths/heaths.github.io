@@ -2,7 +2,7 @@
 title: Reduce fetch and checkout times in git
 date: 2022-06-18T00:20:31-07:00
 excerpt_separator: <!--more-->
-categories: tips
+category: tips
 tags:
 - git
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr3dkfi322"

@@ -3,7 +3,7 @@ title: Publishing to the ATmosphere
 date: 2026-02-20T20:00:00-08:00
 summary: >
   Using standard.site and sequoia.pub, my blob should now start publishing documents to ATProto.
-categories: atproto
+category: atproto
 tags:
 - atproto
 - jekyll

@@ -2,7 +2,7 @@
 title: Powerline in Vim
 date: 2020-05-06 00:30:00 -07:00
 excerpt_separator: <!--more-->
-categories: tips
+category: tips
 tags:
 - powerline
 - tip

@@ -3,7 +3,7 @@ layout: post
 title: Using 1Password for git SSH signatures in WSL
 date: 2023-05-19 17:02 +0000
 excerpt_separator: <!--more-->
-categories: tips
+category: tips
 tags:
 - git
 - ssh

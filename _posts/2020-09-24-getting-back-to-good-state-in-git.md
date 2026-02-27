@@ -2,7 +2,7 @@
 title: Getting back to a good state in Git
 date: 2020-09-24 08:00:00 -07:00
 excerpt_separator: <!--more-->
-categories: tips
+category: tips
 tags:
 - git
 - tip

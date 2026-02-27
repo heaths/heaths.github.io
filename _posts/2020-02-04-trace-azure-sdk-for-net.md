@@ -2,7 +2,7 @@
 title: Tracing Azure SDK for .NET
 date: 2020-02-04 03:18:00 -08:00
 excerpt_separator: <!--more-->
-categories: azure
+category: azure
 tags:
 - azure
 - azuresdk

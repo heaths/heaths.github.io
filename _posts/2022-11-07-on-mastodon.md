@@ -1,7 +1,7 @@
 ---
 title: On Mastodon
 date: 2022-11-07T19:52:24-08:00
-categories: general
+category: general
 tags:
 - mastodon
 - social
