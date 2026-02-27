@@ -2,7 +2,7 @@
 title: Configure Multiple Clocks
 date: 2021-04-16 09:35:25 -07:00
 excerpt_separator: <!--more-->
-categories: tips
+category: tips
 tags:
 - productivity
 - tips

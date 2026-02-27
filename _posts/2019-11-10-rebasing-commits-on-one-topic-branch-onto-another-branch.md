@@ -2,7 +2,7 @@
 title: Rebasing commits on one topic branch onto another branch
 date: 2019-11-10 16:33:00 -08:00
 excerpt_separator: <!--more-->
-categories: tips
+category: tips
 tags:
 - git
 - github

@@ -2,7 +2,7 @@
 title: Add aliases to GitHub CLI from stdin
 date: 2021-05-19 16:15:30 -07:00
 summary: Add multiline aliases or aliases with mixed quotes easily with gh version 1.10.
-categories: tips
+category: tips
 tags:
 - github
 - git

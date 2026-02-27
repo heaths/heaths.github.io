@@ -2,7 +2,7 @@
 layout: post
 title: Cross-compiling x64 on Aarch64
 date: 2025-05-11T01:39:18+00:00
-categories: rust
+category: rust
 tags:
 - gcc
 - rustlang

@@ -2,7 +2,7 @@
 layout: post
 title: "Cleaning up Rust"
 date: 2025-02-28T21:10:00-08:00
-categories: rust
+category: rust
 tags:
 - rustlang
 - tips
