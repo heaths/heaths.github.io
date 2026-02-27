@@ -1,13 +1,18 @@
+:root {
+    --sequoia-accent-color: #{$link-base-color};
+    --sequoia-secondary-color: #{$grey-color};
+}
+
 a {
     color: $link-base-color;
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover {
-        color: $link-hover-color;
+        text-decoration: underline;
     }
 
-    .social-media-list & {
-        text-decoration: none;
+    &:visited {
+        color: $link-base-color;
     }
 }
 

@@ -88,7 +88,5 @@ exclude:
 jekyll-minifier:
   exclude: ['*.min.js']
   compress_css: true
-  compress_javascript: false # Fails to process sequoia-comments: https://github.com/digitalsparky/jekyll-minifier/issues/22
+  compress_javascript: false
   compress_json: true
-  uglifier_args:
-    harmony: true
