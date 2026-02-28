@@ -14,6 +14,7 @@ description: >-
 show_excerpts: true
 baseurl: '' # the subpath of your site, e.g. /blog
 url: https://heaths.dev
+publication_url: at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.publication/3meddhkrg5z2p
 
 # Build settings
 markdown: kramdown

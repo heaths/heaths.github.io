@@ -1,6 +1,50 @@
 :root {
-    --sequoia-accent-color: #{$link-base-color};
-    --sequoia-secondary-color: #{$grey-color};
+    --accent-color: #{$link-base-color};
+    --secondary-color: #{$grey-color};
+    --border-radius: 8px;
+    --button-gap: 0.5rem;
+
+    --sequoia-accent-color: var(--accent-color);
+    --sequoia-secondary-color: var(--secondary-color);
+    --sequoia-border-radius: var(--border-radius);
+}
+
+.subscribe-buttons {
+    display: flex;
+    gap: var(--button-gap);
+    align-items: center;
+    margin-left: var(--button-gap);
+
+    @media screen and (max-width: 600px) {
+        flex-wrap: wrap;
+    }
+}
+
+.accent-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    min-height: 20px;
+    padding: 0.5rem;
+    aspect-ratio: 1;
+    background: var(--accent-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+        background: color-mix(in srgb, var(--accent-color) 85%, black);
+        text-decoration: none;
+    }
+
+    img {
+        width: 1.25rem;
+        height: 1.25rem;
+        display: block;
+    }
 }
 
 a {
@@ -49,6 +93,10 @@ img.align-right {
     .site-title {
         color: $grey-color;
     }
+}
+
+.post-header {
+    margin-bottom: 15px !important;
 }
 
 .post-list {
