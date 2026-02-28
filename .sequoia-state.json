@@ -1,0 +1,129 @@
+{
+  "posts": {
+    "_posts/2026-02-20-publishing-to-the-atmosphere.md": {
+      "contentHash": "f91da984ceb885866c93658db2daff237213cb13787c88afe06d644266710f9e",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2akmjf2n",
+      "lastPublished": "2026-02-21T04:00:00.000Z"
+    },
+    "_posts/2025-05-10-cross-compiling-x64-on-aarch64.md": {
+      "contentHash": "6f2fbc5cde32fc10e972313808396615d994201b3200c1051905ba27557282e0",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2apavz2r",
+      "lastPublished": "2025-05-11T01:39:18.000Z"
+    },
+    "_posts/2025-02-28-cleaning-up-rust.md": {
+      "contentHash": "72a9846b990ce1c29011ced040e920d07eca8098b4c522ab0775e42bfde9582d",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aqe4f2n",
+      "lastPublished": "2025-03-01T05:10:00.000Z"
+    },
+    "_posts/2024-12-19-12-months-over-7000m.md": {
+      "contentHash": "a29d6a0fcc0765478c6c6f461037c97b4990d3eff9d2df50e865b75c186e879d",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2argi32b",
+      "lastPublished": "2024-12-20T01:00:00.000Z"
+    },
+    "_posts/2024-08-02-helix-support-for-typespec.md": {
+      "contentHash": "c3b9419025b5c91e24516af81dbdf1ff54959cadbd0c0d2291e9875311bd962e",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2as5lp2u",
+      "lastPublished": "2024-08-02T23:19:04.000Z"
+    },
+    "_posts/2023-05-19-using-1password-for-git-ssh-signatures-in-wsl.md": {
+      "contentHash": "029982bb3a1f9cbff6282eb6efb621368effaa98b72a291a958d1731ccd761e6",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2atatr2r",
+      "lastPublished": "2023-05-19T17:02:00.000Z"
+    },
+    "_posts/2023-01-01-oh-my-posh.md": {
+      "contentHash": "49805c57d05d7b127d3a9bb3fa1954ca03fc58589e7fa7ae3b9870fbce49d251",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aucxg2x",
+      "lastPublished": "2023-01-02T03:14:00.000Z"
+    },
+    "_posts/2022-11-07-on-mastodon.md": {
+      "contentHash": "d8e7a61220b12c908456cb3fe8f680cd3658abd9fc252f8bafb418897e87448d",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2ave2z2b",
+      "lastPublished": "2022-11-08T03:52:24.000Z"
+    },
+    "_posts/2021-08-30-git-sync-any-branch.md": {
+      "contentHash": "c54d74934265caf3ac8433b93abafaf61166d0aba3b9f7c9d417f4881a8cce7f",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2awkp527",
+      "lastPublished": "2021-08-31T02:40:00.000Z"
+    },
+    "_posts/2021-08-24-gh-table-formatting.md": {
+      "contentHash": "a878b71ac6fc300a78b7a57e767817a51cf94335c856aa8d9d79532717114a91",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2axkhw2x",
+      "lastPublished": "2021-08-24T18:00:00.000Z"
+    },
+    "_posts/2021-05-19-gh-alias-set-from-stdin.md": {
+      "contentHash": "7c4a8786e6ae555f3a89cfde9909424f6244d611dd679f1ca369636e6dfea369",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2ayput2b",
+      "lastPublished": "2021-05-19T23:15:30.000Z"
+    },
+    "_posts/2021-04-21-gh-user.md": {
+      "contentHash": "74283f0a6de7627098937de12b602d34fc7d56275a1a34966301ea9f153d1bb1",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2azh4x2w",
+      "lastPublished": "2021-04-22T01:57:43.000Z"
+    },
+    "_posts/2021-04-16-configure-multiple-clocks.md": {
+      "contentHash": "a119887b00b5cabf6d160747251ea16963d18c267f27c7fc4425c234cb365c9c",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b2q3z2r",
+      "lastPublished": "2021-04-16T16:35:25.000Z"
+    },
+    "_posts/2021-04-08-debugging-tests-in-linux-containers-with-visual-studio.md": {
+      "contentHash": "f80d1a25146fa2399915814249b7203f0310bfec8fda077f2e346dee139f3f7d",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b3oe62t",
+      "lastPublished": "2021-04-09T02:00:00.000Z"
+    },
+    "_posts/2020-09-24-getting-back-to-good-state-in-git.md": {
+      "contentHash": "42e5d2ce72d38e0a0cd3bff2c52e5422935ff4d4382bda95bfbd9c937dc52641",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b4qig2x",
+      "lastPublished": "2020-09-24T15:00:00.000Z"
+    },
+    "_posts/2020-07-30-azure-cli-in-bash.md": {
+      "contentHash": "4cf420f4bca8d2cd02876e441137b686f30e6403f5f4e24d5b3ed4d4608c0fa6",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b5q6v27",
+      "lastPublished": "2020-07-30T01:00:00.000Z"
+    },
+    "_posts/2020-05-29-git-sync.md": {
+      "contentHash": "cbde169b825885b031ba74b27e79fe67762c48524cd6ea79cacadfc3104c8722",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b6ntt2p",
+      "lastPublished": "2020-05-29T23:30:00.000Z"
+    },
+    "_posts/2020-05-23-fixing-time-drift-in-docker-on-wsl2.md": {
+      "contentHash": "1899a5623fba2f0a0531f6e0a647a888ec2ec28a8fc8dd1696337492c2d379cd",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b7mdt22",
+      "lastPublished": "2020-05-23T17:00:00.000Z"
+    },
+    "_posts/2020-05-12-simple-wix-project.md": {
+      "contentHash": "d2f09e56ee7bb965a5d62dc990690c398906fe4e31fabd53532e73a9eaf8ff1d",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2banlt2y",
+      "lastPublished": "2020-05-13T05:45:00.000Z"
+    },
+    "_posts/2020-05-07-get-azure-search-keys-in-arm-templates.md": {
+      "contentHash": "d246e035b0b5e230bdc7a1faddb9740d25e91aea32f9429646e460465bbc8faa",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bbhw322",
+      "lastPublished": "2020-05-08T04:00:00.000Z"
+    },
+    "_posts/2020-05-06-powerline-in-vim.md": {
+      "contentHash": "d897cb0010a4e660d6dacf436f66d701420b2ba46bcfa8b60f2dc1e3faa2e393",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bchkn27",
+      "lastPublished": "2020-05-06T07:30:00.000Z"
+    },
+    "_posts/2020-02-04-trace-azure-sdk-for-net.md": {
+      "contentHash": "d7031b270fc4120bd56a56b1dd38ce0fd295a2d0f0df7f5ab38a8abbc21dd179",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bdfew2x",
+      "lastPublished": "2020-02-04T11:18:00.000Z"
+    },
+    "_posts/2019-11-10-rebasing-commits-on-one-topic-branch-onto-another-branch.md": {
+      "contentHash": "225bd2675a8b6d2674edbaee964556100f79f771cd20e58b7035d365625be773",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bef3f27",
+      "lastPublished": "2019-11-11T00:33:00.000Z"
+    },
+    "_posts/2019-11-10-welcome-to-my-blog.md": {
+      "contentHash": "0bc3a9b6bbd18b392755c7896a29680884d12122f06942b7fcc71d2dc21f740a",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bfbyd22",
+      "lastPublished": "2019-11-10T16:23:56.000Z"
+    },
+    "_posts/2022-06-18-reduce-fetch-and-checkout-times-in-git.md": {
+      "contentHash": "1f1afdb560f083d7603edd7e92fee1dd2d81e625e5153ced9fbb9678c76caea9",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr3dkfi322",
+      "lastPublished": "2022-06-18T07:20:31.000Z"
+    }
+  }
+}
