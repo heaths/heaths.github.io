@@ -13,8 +13,7 @@ layout: default
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <div class="subscribe-buttons">
-      <sequoia-subscribe publication-uri="{{ site.publication_url }}"></sequoia-subscribe>
-      <script type="module" src="{{ '/assets/scripts/sequoia-subscribe.js' | relative_url }}"></script>
+      {% include sequoia_subscribe.html %}
       <a class="accent-button" href="{{ '/feed.xml' | relative_url }}" aria-label="RSS Feed">
         <img src="{{ '/assets/images/rss.svg' | relative_url }}" alt="RSS">
       </a>

@@ -27,8 +27,7 @@ layout: default
         {%- endif -%}
       </p>
       <div class="subscribe-buttons">
-        <sequoia-subscribe publication-uri="{{ site.publication_url }}"></sequoia-subscribe>
-        <script type="module" src="{{ '/assets/scripts/sequoia-subscribe.js' | relative_url }}"></script>
+        {% include sequoia_subscribe.html %}
         <a class="accent-button" href="{{ '/feed.xml' | relative_url }}" aria-label="RSS Feed">
           <img src="{{ '/assets/images/rss.svg' | relative_url }}" alt="RSS">
         </a>
