@@ -1,0 +1,3 @@
+<sequoia-subscribe {% if site.sequoia.callback_url -%} callback-uri="{{ site.sequoia.callback_url }}" {%- endif %}
+  publication-uri="{{ site.sequoia.publication_url }}"></sequoia-subscribe>
+<script type="module" src="{{ '/assets/scripts/sequoia-subscribe.js' | relative_url }}"></script>
