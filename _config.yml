@@ -57,6 +57,10 @@ defaults:
 relative_links:
   collections: true
 
+kramdown:
+  auto_ids: true
+  header_links: true
+
 minima:
   social_links:
     github: heaths

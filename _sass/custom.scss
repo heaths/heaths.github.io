@@ -95,6 +95,30 @@ img.align-right {
     }
 }
 
+h1, h2, h3, h4, h5, h6 {
+    &[id] {
+        display: flex;
+        align-items: baseline;
+
+        >a[href^="#"] {
+            order: 1;
+
+            &::after {
+                content: "#";
+                visibility: hidden;
+                margin-left: 0.25em;
+                color: $link-base-color;
+                cursor: pointer;
+            }
+        }
+
+        &:hover>a[href^="#"]::after {
+            visibility: visible;
+            text-decoration-color: $link-base-color;
+        }
+    }
+}
+
 .post-header {
     margin-bottom: 15px !important;
 }
