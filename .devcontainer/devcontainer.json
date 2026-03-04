@@ -1,22 +1,22 @@
 {
-    "name": "Jekyll",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "forwardPorts": [4000],
-    "remoteUser": "jekyll",
-    "workspaceFolder": "/workspaces/heaths.github.io",
-    "postCreateCommand": "bundle install",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "docsmsft.docs-authoring-pack",
-                "editorconfig.editorconfig",
-                "github.vscode-pull-request-github"
-            ],
-            "settings": {
-                "terminal.integrated.defaultProfile.linux": "bash"
-            }
-        }
+  "name": "Jekyll",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [4000],
+  "remoteUser": "jekyll",
+  "workspaceFolder": "/workspaces/heaths.github.io",
+  "postCreateCommand": "bundle install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "docsmsft.docs-authoring-pack",
+        "editorconfig.editorconfig",
+        "github.vscode-pull-request-github"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
     }
+  }
 }

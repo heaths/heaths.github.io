@@ -4,15 +4,15 @@ date: 2020-02-04 03:18:00 -08:00
 excerpt_separator: <!--more-->
 category: azure
 tags:
-- azure
-- azuresdk
-- csharp
-- tip
+  - azure
+  - azuresdk
+  - csharp
+  - tip
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bdfew2x"
 ---
 
 The new Azure SDK [has a lot of new features](https://aka.ms/azsdkvalueprop)
-that make it worth migrating from Microsoft.Azure.* to Azure.* packages.
+that make it worth migrating from Microsoft.Azure._ to Azure._ packages.
 Logging is greatly improved and is consistent across client libraries. All
 clients will log request and response information automatically when
 AppInsights or OpenTelemetry is configured.
@@ -20,7 +20,7 @@ AppInsights or OpenTelemetry is configured.
 <!--more-->
 
 You can also enable logging manually using either ETW applications like
-*logman.exe*, or standard tracing tools like `dotnet trace` as shown in the
+_logman.exe_, or standard tracing tools like `dotnet trace` as shown in the
 example below.
 
 ## Setting up
@@ -50,7 +50,8 @@ Now you need to create a simple console project:
    dotnet add package Azure.Security.KeyVault.Secrets
    dotnet add package Azure.Identity
    ```
-2. Replace the contents of *Program.cs* with the following:
+2. Replace the contents of _Program.cs_ with the following:
+
    ```csharp
    using System;
    using System.Diagnostics;
@@ -92,6 +93,7 @@ Now you need to create a simple console project:
        }
    }
    ```
+
 3. Make sure it builds by running:
    ```shell
    dotnet build
@@ -113,7 +115,7 @@ Because we've now built a console application you'll need two terminals.
    ```
 3. Back in the first terminal, press **Enter**.
 
-This will, by default, write to *trace.nettrace* in the current directory.
+This will, by default, write to _trace.nettrace_ in the current directory.
 You can use tools like [PerfView](https://github.com/microsoft/perfview/releases/latest)
 to view trace information, including content if you set `IsLoggingContentEnabled`
 to `true` as shown in the example above.
@@ -123,4 +125,4 @@ to `true` as shown in the example above.
 Some other clients may trace additional details. While Azure SDK is working
 on improving documentation, you can browse source code for interesting client
 libraries in [GitHub](https://github.com/Azure/azure-sdk-for-net). Newer
-client libraries (a.k.a. "track 2") can be found in _sdk/**/Azure.*_ directories.
+client libraries (a.k.a. "track 2") can be found in _sdk/\**/Azure.*_ directories.

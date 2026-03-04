@@ -6,20 +6,20 @@ This repository is a personal blog and technical website built with [Jekyll](htt
 
 This is a [Jekyll](https://jekyllrb.com) site using the [minima](https://github.com/jekyll/minima) theme.
 
-| Path | Description |
-|---|---|
-| `_posts/` | Blog posts in Markdown. This is where most content is authored. |
-| `_archive/` | Archived articles (custom collection, output enabled). |
-| `_layouts/` | HTML layouts that wrap page content (`post.html`, `article.html`, etc.). |
-| `_includes/` | Reusable HTML partials (header, footer, social icons). |
-| `_sass/` | Sass partials for site styling (`palette.scss`, `custom.scss`). |
-| `_data/` | Data files (e.g., `authors.yml`) accessible via `site.data`. |
-| `assets/` | Static assets: stylesheets, images, and scripts. |
-| `_config.yml` | Site-wide Jekyll configuration. |
-| `Gemfile` | Ruby dependencies (Jekyll, plugins, theme). |
-| `index.md` | Home page content rendered with the `home` layout. |
-| `about.md` | About page. |
-| `archive.md` | Archive listing page. |
+| Path          | Description                                                              |
+| ------------- | ------------------------------------------------------------------------ |
+| `_posts/`     | Blog posts in Markdown. This is where most content is authored.          |
+| `_archive/`   | Archived articles (custom collection, output enabled).                   |
+| `_layouts/`   | HTML layouts that wrap page content (`post.html`, `article.html`, etc.). |
+| `_includes/`  | Reusable HTML partials (header, footer, social icons).                   |
+| `_sass/`      | Sass partials for site styling (`palette.scss`, `custom.scss`).          |
+| `_data/`      | Data files (e.g., `authors.yml`) accessible via `site.data`.             |
+| `assets/`     | Static assets: stylesheets, images, and scripts.                         |
+| `_config.yml` | Site-wide Jekyll configuration.                                          |
+| `Gemfile`     | Ruby dependencies (Jekyll, plugins, theme).                              |
+| `index.md`    | Home page content rendered with the `home` layout.                       |
+| `about.md`    | About page.                                                              |
+| `archive.md`  | Archive listing page.                                                    |
 
 ## Writing posts
 
@@ -40,8 +40,8 @@ summary: >
   and in feeds.
 category: tips
 tags:
-- git
-- tip
+  - git
+  - tip
 ---
 ```
 

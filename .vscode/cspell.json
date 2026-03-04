@@ -1,9 +1,3 @@
 {
-    "words": [
-        "autorun",
-        "distro",
-        "rustlang",
-        "strava",
-        "toolset"
-    ]
+  "words": ["autorun", "distro", "rustlang", "strava", "toolset"]
 }

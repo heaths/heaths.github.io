@@ -4,10 +4,10 @@ date: 2020-07-29 18:00:00 -07:00
 excerpt_separator: <!--more-->
 category: tips
 tags:
-- azure
-- azurecli
-- tip
-- wsl2
+  - azure
+  - azurecli
+  - tip
+  - wsl2
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b5q6v27"
 ---
 
