@@ -13,4 +13,4 @@ are a few highlights I feel worth preserving with most formatting intact: typos 
 
 To see more articles / posts I've written over the years on sites that do not have plans, that I know of, to shut down, visit:
 
-* <https://devblogs.microsoft.com/setup> (originally `https://blogs.msdn.com/heaths`).
+- <https://devblogs.microsoft.com/setup> (originally `https://blogs.msdn.com/heaths`).

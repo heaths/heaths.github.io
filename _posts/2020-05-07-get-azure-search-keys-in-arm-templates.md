@@ -4,11 +4,11 @@ date: 2020-05-07 21:00:00 -07:00
 excerpt_separator: <!--more-->
 category: azure
 tags:
-- azure
-- azuresdk
-- arm
-- search
-- tip
+  - azure
+  - azuresdk
+  - arm
+  - search
+  - tip
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bbhw322"
 ---
 
@@ -74,14 +74,14 @@ These functions take parameters like so:
 list(resourceIdOrName, apiVersion, functionValues);
 ```
 
-* `resourceIdOrName` is a required string that is either the name of a resource created in the current ARM template, or an existing resource ID created with the [`resourceId`](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-functions-resource#resourceid) function.
-* `apiVersion` is a required string that is the version of the resource provider to use to look up the resource ID.
-* `functionValues` is an optional object that provides named properties to whatever `list` function you call.
+- `resourceIdOrName` is a required string that is either the name of a resource created in the current ARM template, or an existing resource ID created with the [`resourceId`](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-functions-resource#resourceid) function.
+- `apiVersion` is a required string that is the version of the resource provider to use to look up the resource ID.
+- `functionValues` is an optional object that provides named properties to whatever `list` function you call.
 
 In the example above, we use the `serviceName` parameter in the same ARM template. To refer to existing resources, you can use the `resourceId` function:
 
 ```javascript
-resourceId('Microsoft.Search/searchServices', 'my-search-service');
+resourceId("Microsoft.Search/searchServices", "my-search-service");
 ```
 
 Using functions like these can output a lot of useful information from deployed resources.

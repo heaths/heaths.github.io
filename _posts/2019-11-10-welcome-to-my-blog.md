@@ -3,7 +3,7 @@ title: Welcome to my blog
 date: 2019-11-10 08:23:56 -08:00
 category: general
 tags:
-- about
+  - about
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bfbyd22"
 ---
 

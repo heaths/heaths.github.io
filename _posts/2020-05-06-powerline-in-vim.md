@@ -4,9 +4,9 @@ date: 2020-05-06 00:30:00 -07:00
 excerpt_separator: <!--more-->
 category: tips
 tags:
-- powerline
-- tip
-- vim
+  - powerline
+  - tip
+  - vim
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bchkn27"
 ---
 
