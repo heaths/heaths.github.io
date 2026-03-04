@@ -4,7 +4,7 @@ date: 2022-06-18T00:20:31-07:00
 excerpt_separator: <!--more-->
 category: tips
 tags:
-- git
+  - git
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr3dkfi322"
 ---
 
@@ -124,4 +124,4 @@ gh repo clone azure-sdk-for-net -- --depth=1 --sparse
 
 ## History
 
-* 2022-11-09 - Updated now that [non-`cone` mode is deprecated](https://github.blog/2022-06-27-highlights-from-git-2-37/#tidbits).
+- 2022-11-09 - Updated now that [non-`cone` mode is deprecated](https://github.blog/2022-06-27-highlights-from-git-2-37/#tidbits).

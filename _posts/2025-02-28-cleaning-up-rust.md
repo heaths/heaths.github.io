@@ -4,14 +4,15 @@ title: "Cleaning up Rust"
 date: 2025-02-28T21:10:00-08:00
 category: rust
 tags:
-- rustlang
-- tips
-- wsl
+  - rustlang
+  - tips
+  - wsl
 summary: >
   Tips for cleaning up after Rust, which can consume a lot of disk space.
 # cspell:ignore diskpart hkcu vdisk vhdx
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aqe4f2n"
 ---
+
 I'm the lead developer on the [Azure SDK for Rust] and have been working on it for a few years now.
 I also started or contribute to a number of other [Rust] projects.
 With all the different crates and numerous versions of the same crate names, a lot of drive space is lost to downloaded crates and cloned - but shallow - repos.
@@ -28,6 +29,7 @@ Fortunately, cleaning up all that Rust doesn't require WD-40 and a little elbow 
    ```
 
    It hasn't been updated in a while, but seems to work quite well.
+
 2. Delete your `target/` directory. Generally, most of the time building is spent acquiring crates anyway,
    but this can typically save you a lot of space, especially if you've been working in a repo for a while
    and dependencies have changed frequently.

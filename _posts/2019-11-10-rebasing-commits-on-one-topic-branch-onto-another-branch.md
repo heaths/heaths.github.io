@@ -4,9 +4,9 @@ date: 2019-11-10 16:33:00 -08:00
 excerpt_separator: <!--more-->
 category: tips
 tags:
-- git
-- github
-- tip
+  - git
+  - github
+  - tip
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bef3f27"
 ---
 

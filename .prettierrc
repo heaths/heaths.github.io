@@ -1,0 +1,32 @@
+{
+  "plugins": ["@shopify/prettier-plugin-liquid"],
+  "useTabs": false,
+  "tabWidth": 4,
+  "overrides": [
+    {
+      "files": [
+        "*.html",
+        ".prettierrc",
+        "*.js",
+        "*.json",
+        "*.yml",
+        "*.md",
+        "Dockerfile"
+      ],
+      "options": { "tabWidth": 2 }
+    },
+    { "files": ".prettierrc", "options": { "parser": "json" } },
+    {
+      "files": ["*.html"],
+      "options": {
+        "singleAttributePerLine": false,
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": ["*.md"],
+      "options": { "singleLineLinkTags": true, "printWidth": 240 }
+    },
+    { "files": ["sequoia*.js"], "options": { "useTabs": true } }
+  ]
+}

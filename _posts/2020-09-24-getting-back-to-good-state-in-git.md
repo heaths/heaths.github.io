@@ -4,8 +4,8 @@ date: 2020-09-24 08:00:00 -07:00
 excerpt_separator: <!--more-->
 category: tips
 tags:
-- git
-- tip
+  - git
+  - tip
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b4qig2x"
 ---
 
@@ -13,7 +13,7 @@ I was helping a colleague the other day after they merged the `master` branch in
 
 <!--more-->
 
-*Note: if multiple people are working against a feature branch, you should simply merge master into the feature branch while your feature team works on topic branches targeting the feature branch. Rebasing the feature branch on your trunk e.g. `master` will make it difficult for anyone else to merge into the feature branch. You can rebase or squash the feature branch when ready to merge to your trunk.*
+_Note: if multiple people are working against a feature branch, you should simply merge master into the feature branch while your feature team works on topic branches targeting the feature branch. Rebasing the feature branch on your trunk e.g. `master` will make it difficult for anyone else to merge into the feature branch. You can rebase or squash the feature branch when ready to merge to your trunk._
 
 After over a decade using Git, it seems half of knowing Git is how to get back to a good state!
 

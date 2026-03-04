@@ -3,13 +3,14 @@ title: Embedding .NET Controls in Java
 date: 2003-12-27
 origin: https://www.codeproject.com/articles/2909/embedding-net-controls-in-java
 summary: >-
-    Learn to embed .NET user controls in Java applications, applets,
-    and beans using COM to bridge the gap between the two frameworks.
+  Learn to embed .NET user controls in Java applications, applets,
+  and beans using COM to bridge the gap between the two frameworks.
 categories: CodeProject
 tags:
-- csharp
-- java
+  - csharp
+  - java
 ---
+
 ## Introduction
 
 Microsoft .NET controls give developers the leverage they need to build modular solutions. A developer can design custom controls from a myriad of existing controls and embed the custom control into a Windows Form or another control. With some additional code, one can also embed those controls in a Web Form. Writing an extra, simple library beyond those changes will allow you to run that control in a Java application or applet.
@@ -45,7 +46,7 @@ But how do you embed COM objects in Java? Java Native Interface, or JNI, are a m
 
 To begin, lets start with a simple .NET User Control. Since the scope of this tutorial does not necessarily include hosting such controls on the Web, I will not discuss certain things that are necessary for Web hosting of User Controls. A tutorial covering specific constraints of such an effort will be ported later.
 
-Create a new Windows Control Library (C# will be used in this example, although it could easily be ported to VB.NET) and call it "COMTest". After the project is created, rename *UserControl1.cs* to *MyCOMObject.cs*. Do this both for the filename (select the file itself and check the PropertyGrid) and for the control (select the control itself and check the PropertyGrid). Go ahead and throw some controls on there. It doesn't matter much what you put on the control for this tutorial and I only have you name it as I mentioned above because the name will be coming up quite a bit and I don't want to get too vague.
+Create a new Windows Control Library (C# will be used in this example, although it could easily be ported to VB.NET) and call it "COMTest". After the project is created, rename _UserControl1.cs_ to _MyCOMObject.cs_. Do this both for the filename (select the file itself and check the PropertyGrid) and for the control (select the control itself and check the PropertyGrid). Go ahead and throw some controls on there. It doesn't matter much what you put on the control for this tutorial and I only have you name it as I mentioned above because the name will be coming up quite a bit and I don't want to get too vague.
 
 ~~See the demo project for a sample .NET control.~~ It's a basic user control that takes an input value and display a "Hello" message back to the user. This is a simple enough example. I would like to add an event, however, so that the containing control knows when the inner button is clicked and can get the value from the text box. I will implement a simple event (not even resembling the `EventHandler` delegate) and expose the text of the box.
 
@@ -99,7 +100,7 @@ First, we don't want to let the .NET compiler to generate a class interface - th
 
 Second, we need to make our COM object strongly named, which means we must generate a public key for the assembly and give the assembly some assembly-level attributes. This allows us to insert the .NET control in the Global Assembly Cache (GAC), which means faster load times, especially if we add it as a native assembly (`ngen -i <Assembly>`).
 
-Let's take the easy part first: strongly naming the assembly. First, run "sn -k KeyFile.snk" in the project directory. Second, open the *AssemblyInfo.cs* file and make sure that the `AssemblyTitle`, `AssemblyVersion`, and `AssemblyKeyFile` attributes are filled in. We can also define a GUID here, which will be the GUID identifying the type library, which I'll talk more about later. My *AssemblyInfo.cs* file ended up looking like this:
+Let's take the easy part first: strongly naming the assembly. First, run "sn -k KeyFile.snk" in the project directory. Second, open the _AssemblyInfo.cs_ file and make sure that the `AssemblyTitle`, `AssemblyVersion`, and `AssemblyKeyFile` attributes are filled in. We can also define a GUID here, which will be the GUID identifying the type library, which I'll talk more about later. My _AssemblyInfo.cs_ file ended up looking like this:
 
 ```csharp
 using System.Reflection;
@@ -113,7 +114,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("COMTest")]
 [assembly: AssemblyCopyright("Copyright 2002")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]        
+[assembly: AssemblyCulture("")]
 [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyFile(@"..\..\KeyFile.snk")]
@@ -138,7 +139,7 @@ The client calls a method on the interface, but the runtime is marshalling that 
 
 So, when we generate our class interface, we'll want to expose any methods, properties, or events that the COM client may use. First, we'll define our event interface, which contains only events we want to expose. In this case, that's only the `Click` event. Attributes are also attached and will be explained after the code fragment.
 
-So, open the code for *MyCOMObject.cs* and put the following at the top after the namespace declaration:
+So, open the code for _MyCOMObject.cs_ and put the following at the top after the namespace declaration:
 
 ```csharp
 [Guid("70B9F4F4-0285-4aae-B64E-DE57BDBF49C5")]
@@ -252,7 +253,7 @@ You'll end up with three class files (two from or nested declarations). We will 
 javah -jni -classpath "%CLASSPATH%;." -o JNITest.h JavaTest
 ```
 
-This makes sure that the current directory is included in our CLASSPATH and that we generate a JNI-style header named *JNITest.h* from the JavaTest class we previously compiled. For brevity, I'll not list that header file here since it contains a lot of information. Essentially, though, you should see a bunch of method signatures that match the following pattern:
+This makes sure that the current directory is included in our CLASSPATH and that we generate a JNI-style header named _JNITest.h_ from the JavaTest class we previously compiled. For brevity, I'll not list that header file here since it contains a lot of information. Essentially, though, you should see a bunch of method signatures that match the following pattern:
 
 ```cpp
 JNIEXPORT void JNICALL Java_JavaTest_<METHODNAME>
@@ -269,7 +270,7 @@ So, since VS.NET was nice enough to generate a typelib for us, we can now add a 
 
 Right-click on the solution and add a new C++ Project, specifically a Win32 project. In the wizard, click on "Application Settings" and select "DLL" to create a dynamic link library. Click "Finish" and you should see the new project added to your solution.
 
-Double-click on *stdafx.h* and add the following `#includes` at the bottom: atlbase.h and atlwin.h (in that order). You may also right-click on the project and add an existing file, that file being the header file we generated with "javah" from our Java class file above. This just keeps the file reference in your project for easy reference while maintaining its location.
+Double-click on _stdafx.h_ and add the following `#includes` at the bottom: atlbase.h and atlwin.h (in that order). You may also right-click on the project and add an existing file, that file being the header file we generated with "javah" from our Java class file above. This just keeps the file reference in your project for easy reference while maintaining its location.
 
 You'll also want to modify VS.NET's configuration and change your VC++ project settings:
 
@@ -281,7 +282,7 @@ You'll also want to modify VS.NET's configuration and change your VC++ project s
 6. Click on "Linker/Input" and add "jawt.lib" to the "Additional Dependencies" setting.
 7. Click OK to close the dialog.
 
-Now, open your *JNITest.cpp* file and add the following `#includes` to the top after "stdafx.h":
+Now, open your _JNITest.cpp_ file and add the following `#includes` to the top after "stdafx.h":
 
 ```cpp
 #include "..\COMTest\JNITest.h" // or wherever it was
@@ -295,7 +296,7 @@ You'll also want to add a `#import`, a MS VC++ extension that allows you to impo
 using namespace COMTest;
 ```
 
-You'll also notice that C++ uses namespaces. This is actually somewhat standard. You find this a lot when using the Active Template Library, or ATL. The namespace used above is the namespace you defined in your .NET class, replacing periods (.) with underscores (_). You can rename this using additional `#import` options if you like (see MSDN for more details).
+You'll also notice that C++ uses namespaces. This is actually somewhat standard. You find this a lot when using the Active Template Library, or ATL. The namespace used above is the namespace you defined in your .NET class, replacing periods (.) with underscores (\_). You can rename this using additional `#import` options if you like (see MSDN for more details).
 
 Now go ahead and compile your C++ project so that the preprocessor can generate a .tlh file, which is a header file generated from the typelib using the options you specified in the `#import` statement (see MSDN for more details). You can go ahead and take a look at what this header file contains in the "Release" directory of the C++ project directory. It's just a header file like any other, but you may find it interesting. It contains all the interfaces, methods and GUIDs of every COM object exposed in your .NET user control project. Since you now have interface declarations for your COM object, lets add a few global variables we'll need for following code. After your `using namespace COMTest;` statement, add the following lines:
 
@@ -318,7 +319,7 @@ JNIEXPORT void JNICALL Java_JavaTest_initialize(JNIEnv *env, jobject canvas)
     JAWT_Win32DrawingSurfaceInfo *dsi_win;
     jboolean result;
     jint lock;
-    
+
     awt.version = JAWT_VERSION_1_3;
     result = JAWT_GetAWT(env, &awt);
     assert(result != JNI_FALSE);
@@ -415,9 +416,9 @@ The method makes sure that the `CAxWindow` is properly destroyed and unloads the
 
 Now that you've completed a .NET component exposing a COM object, a Java application, and a JNI wrapper, you're ready to run your example. If you have a background in Java, you're in luck. If not, there's some simple things to learn about Java that make its class loader interesting.
 
-If you've specified a package (similar to a namespace in .NET), you should've created a directory structure to match it, such that `com.codeproject.examples.Class1` would be in a directory *com\codeproject\examples\Class1.java*. When you compile it with "javac", you type the path to the Java source file. When you load and execute the class with "java", you use the package and class name syntax. In this example, however, I didn't specify a package to make it easy. So, to run your application, perform the following steps:
+If you've specified a package (similar to a namespace in .NET), you should've created a directory structure to match it, such that `com.codeproject.examples.Class1` would be in a directory _com\codeproject\examples\Class1.java_. When you compile it with "javac", you type the path to the Java source file. When you load and execute the class with "java", you use the package and class name syntax. In this example, however, I didn't specify a package to make it easy. So, to run your application, perform the following steps:
 
-1. Copy *JNITest.dll* from the JNITest project's Release directory to the COMTest project directory.
+1. Copy _JNITest.dll_ from the JNITest project's Release directory to the COMTest project directory.
 2. Open a command prompt (cmd.exe or command.com, depending on your operating system).
 3. Change directory to your COMTest project directory.
 4. Run the following command:
@@ -426,7 +427,7 @@ If you've specified a package (similar to a namespace in .NET), you should've cr
 java -Djava.library.path="%PATH%;." JavaTest
 ```
 
-The -D command-line parameter defines (or redefines) a Java environment variable. In this case, we include the current directory in the PATH environment variable, because the current directory contains our *JNITest.dll*. Because we used `System.loadLibrary()` in our Java app, Java will attempt to load the referenced library from the PATH (as Windows does for executables). If JNITest.dll was in our PATH, you would not need to include the -D command-line parameter. If you don't want to include the library in your PATH and know that it will be in a particular location at all times, you can use `System.load()`, which takes a path to a library. With the high maintainence required for the latter, I recommend the former approach.
+The -D command-line parameter defines (or redefines) a Java environment variable. In this case, we include the current directory in the PATH environment variable, because the current directory contains our _JNITest.dll_. Because we used `System.loadLibrary()` in our Java app, Java will attempt to load the referenced library from the PATH (as Windows does for executables). If JNITest.dll was in our PATH, you would not need to include the -D command-line parameter. If you don't want to include the library in your PATH and know that it will be in a particular location at all times, you can use `System.load()`, which takes a path to a library. With the high maintainence required for the latter, I recommend the former approach.
 
 You should see a Java window popup and shortly thereafter your .NET User Control. Fill-in your name and click the button.
 

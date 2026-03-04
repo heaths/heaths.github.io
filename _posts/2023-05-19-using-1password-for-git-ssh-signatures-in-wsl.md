@@ -5,9 +5,9 @@ date: 2023-05-19 17:02 +0000
 excerpt_separator: <!--more-->
 category: tips
 tags:
-- git
-- ssh
-- wsl
+  - git
+  - ssh
+  - wsl
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2atatr2r"
 ---
 
@@ -53,7 +53,7 @@ mkdir ~/.1password
 touch ~/.1password/agent && chmod +x ~/.1password/agent
 ```
 
-Open *~/.1password/agent* and paste the following content:
+Open _~/.1password/agent_ and paste the following content:
 
 ```bash
 #!/usr/bin/bash
@@ -72,13 +72,13 @@ fi
 
 ## 4. Run script on login
 
-To run the script when you log in interactively, edit your appropriate profile e.g., *.bashrc* for bash:
+To run the script when you log in interactively, edit your appropriate profile e.g., _.bashrc_ for bash:
 
 ```bash
 . ~/.1password/agent
 ```
 
-You can restart your login session or just source *~/.1password/agent* yourself.
+You can restart your login session or just source _~/.1password/agent_ yourself.
 
 ## 5. Test
 

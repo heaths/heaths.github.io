@@ -3,12 +3,13 @@ title: Custom String formatting in .NET
 date: 2004-04-28
 origin: https://www.codeproject.com/Articles/6533/Custom-String-Formatting-in-NET
 summary: >-
-    Discusses the implementation of custom format providers for existing types
-    and custom formatting for user-defined types.
+  Discusses the implementation of custom format providers for existing types
+  and custom formatting for user-defined types.
 categories: CodeProject
 tags:
-- csharp
+  - csharp
 ---
+
 ## Introduction
 
 Formatting string output is difficult to avoid in many applications, even with modern graphical user interfaces. It's inevitable that at some point you'll need to format data in a way that's easy to understand. Practically every runtime has its set of string formatting procedures and the .NET Framework is no exception. Understanding how the culture-aware and extensible string formatting works in the .NET Framework, though, can help you create better ways of formatting data.
@@ -139,14 +140,14 @@ public object GetFormat(Type formatType)
 public string Format(string format, object arg, IFormatProvider formatProvider)
 {
   if (arg == null) throw new ArgumentNullException("arg");
- 
+
   if (format != null && arg is string)
   {
     string s = format.Trim().ToLower();
     if (s.StartsWith("m"))
       return FormatMorseCode(arg as string, format);
   }
- 
+
   if (arg is IFormattable)
     return ((IFormattable)arg).ToString(format, formatProvider);
   else return arg.ToString();
@@ -184,17 +185,17 @@ public override string ToString()
   return ToString("g", null); // Always support "g" as default format.
 
 }
- 
+
 public string ToString(string format)
 {
   return ToString(format, null);
 }
- 
+
 public string ToString(IFormatProvider formatProvider)
 {
   return ToString(null, formatProvider);
 }
- 
+
 public string ToString(string format, IFormatProvider formatProvider)
 {
   if (format == null) format = "g"; // Set default format, which is always "g".

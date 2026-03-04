@@ -95,12 +95,17 @@ img.align-right {
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     &[id] {
         display: flex;
         align-items: baseline;
 
-        >a[href^="#"] {
+        > a[href^="#"] {
             order: 1;
 
             &::after {
@@ -112,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
 
-        &:hover>a[href^="#"]::after {
+        &:hover > a[href^="#"]::after {
             visibility: visible;
             text-decoration-color: $link-base-color;
         }

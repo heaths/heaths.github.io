@@ -4,7 +4,7 @@ date: 2021-08-30 19:40:00 -07:00
 excerpt_separator: <!--more-->
 category: tips
 tags:
-- git
+  - git
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2awkp527"
 ---
 

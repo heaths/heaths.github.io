@@ -4,8 +4,8 @@ date: 2020-05-12 22:45:00 -07:00
 excerpt_separator: <!--more-->
 category: setup
 tags:
-- setup
-- wix
+  - setup
+  - wix
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2banlt2y"
 ---
 

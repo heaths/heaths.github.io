@@ -38,8 +38,8 @@ summary: >
   A one or two sentence description of the post.
 category: tips
 tags:
-- git
-- tip
+  - git
+  - tip
 ---
 
 Post content goes here.
