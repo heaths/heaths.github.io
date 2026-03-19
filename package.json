@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "sequoia": "sequoia"
+  },
+  "devDependencies": {
+    "sequoia-cli": "^0.5.1"
+  }
+}
