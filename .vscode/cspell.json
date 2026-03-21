@@ -1,3 +1,12 @@
 {
-  "words": ["autorun", "distro", "rustlang", "strava", "toolset"]
+  "words": [
+    "autorun",
+    "distro",
+    "execdir",
+    "HKCU",
+    "rustlang",
+    "strava",
+    "toolset",
+    "VHDX"
+  ]
 }

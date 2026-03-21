@@ -60,6 +60,7 @@ Before committing, verify that every post in `_posts/` has a `summary` field in 
 | `new-post`       | `.github/skills/new-post/SKILL.md`       | Create a new blog post with the correct filename format, frontmatter, and required fields.   |
 | `check-spelling` | `.github/skills/check-spelling/SKILL.md` | Check and fix spelling in project source files using cSpell. Config: `.vscode/cspell.json`.  |
 | `format`         | `.github/skills/format/SKILL.md`         | Format changed files with Prettier (`npm i && npm run format`). Run after all other changes. |
+| `lint`           | `.github/skills/lint/SKILL.md`           | Lint project files for common issues. Run on new or changed files before committing.         |
 
 ## Building
 

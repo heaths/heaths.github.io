@@ -5,7 +5,7 @@ description: Check and fix spelling in project source files using cSpell
 
 ## Installation
 
-If `cspell` is in an ancestor `package.json` `devDependencies`, run `npm install` from that directory, then use `npx cspell`. Otherwise run `npx -y cspell` without installing permanently.
+Run `npm i` from the repository root to install dependencies. Run tools using `npx`.
 
 ## Configuration
 
