@@ -1,129 +1,164 @@
 {
   "posts": {
     "_posts/2026-02-20-publishing-to-the-atmosphere.md": {
-      "contentHash": "f91da984ceb885866c93658db2daff237213cb13787c88afe06d644266710f9e",
+      "contentHash": "702e98cc1942c3f0efab1892a0c1a561c639e5b873a42d113cdb80a4e47976e5",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2akmjf2n",
-      "lastPublished": "2026-02-21T04:00:00.000Z"
+      "lastPublished": "2026-03-21T07:28:42.735Z",
+      "slug": "2026-02-20-publishing-to-the-atmosphere"
     },
     "_posts/2025-05-10-cross-compiling-x64-on-aarch64.md": {
-      "contentHash": "6f2fbc5cde32fc10e972313808396615d994201b3200c1051905ba27557282e0",
+      "contentHash": "ae9b0b378a9a2a0e1319770b704fdc7b3fc6eccfb133d5a7999f7e88b0b2c905",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2apavz2r",
-      "lastPublished": "2025-05-11T01:39:18.000Z"
+      "lastPublished": "2026-03-21T07:28:42.777Z",
+      "slug": "2025-05-10-cross-compiling-x64-on-aarch64"
     },
     "_posts/2025-02-28-cleaning-up-rust.md": {
-      "contentHash": "72a9846b990ce1c29011ced040e920d07eca8098b4c522ab0775e42bfde9582d",
+      "contentHash": "963b0c3c7a5e4df233dcba5fb151a39376b39dc3d42aee4dc36cf9966f714109",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aqe4f2n",
-      "lastPublished": "2025-03-01T05:10:00.000Z"
+      "lastPublished": "2026-03-21T07:28:42.830Z",
+      "slug": "2025-02-28-cleaning-up-rust"
     },
     "_posts/2024-12-19-12-months-over-7000m.md": {
-      "contentHash": "a29d6a0fcc0765478c6c6f461037c97b4990d3eff9d2df50e865b75c186e879d",
+      "contentHash": "b48aded6b45ba9518256637e74ed3a2006b82569497d9f454b753a743322363d",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2argi32b",
-      "lastPublished": "2024-12-20T01:00:00.000Z"
+      "lastPublished": "2026-03-21T07:28:42.882Z",
+      "slug": "2024-12-19-12-months-over-7000m"
     },
     "_posts/2024-08-02-helix-support-for-typespec.md": {
-      "contentHash": "c3b9419025b5c91e24516af81dbdf1ff54959cadbd0c0d2291e9875311bd962e",
+      "contentHash": "8652e8475e2fe2da8fd2214e4499985f6e82330c28cf9c9aba31f9d768b0108c",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2as5lp2u",
-      "lastPublished": "2024-08-02T23:19:04.000Z"
+      "lastPublished": "2026-03-21T07:28:42.923Z",
+      "slug": "2024-08-02-helix-support-for-typespec"
     },
     "_posts/2023-05-19-using-1password-for-git-ssh-signatures-in-wsl.md": {
-      "contentHash": "029982bb3a1f9cbff6282eb6efb621368effaa98b72a291a958d1731ccd761e6",
+      "contentHash": "061d13d0871159fcec35a0f8fb87e7914ad0700ad9f03360b631fb510379f162",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2atatr2r",
-      "lastPublished": "2023-05-19T17:02:00.000Z"
+      "lastPublished": "2026-03-21T07:28:42.975Z",
+      "slug": "2023-05-19-using-1password-for-git-ssh-signatures-in-wsl"
     },
     "_posts/2023-01-01-oh-my-posh.md": {
-      "contentHash": "49805c57d05d7b127d3a9bb3fa1954ca03fc58589e7fa7ae3b9870fbce49d251",
+      "contentHash": "6918c21101f213346fb37f3f257e33d40c2c31f85e15a869b4b6dc73ee1f50bd",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aucxg2x",
-      "lastPublished": "2023-01-02T03:14:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.030Z",
+      "slug": "2023-01-01-oh-my-posh"
     },
     "_posts/2022-11-07-on-mastodon.md": {
-      "contentHash": "d8e7a61220b12c908456cb3fe8f680cd3658abd9fc252f8bafb418897e87448d",
+      "contentHash": "1ce11c9fb122b17ab7a76314bab84357b503978c906decf12221552ca5b20665",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2ave2z2b",
-      "lastPublished": "2022-11-08T03:52:24.000Z"
+      "lastPublished": "2026-03-21T07:28:43.068Z",
+      "slug": "2022-11-07-on-mastodon"
     },
     "_posts/2021-08-30-git-sync-any-branch.md": {
-      "contentHash": "c54d74934265caf3ac8433b93abafaf61166d0aba3b9f7c9d417f4881a8cce7f",
+      "contentHash": "adadbb9e2230355ee99540d7fe15527d3c68eb59c024ff2cebc3aebdb38e2990",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2awkp527",
-      "lastPublished": "2021-08-31T02:40:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.203Z",
+      "slug": "2021-08-30-git-sync-any-branch"
     },
     "_posts/2021-08-24-gh-table-formatting.md": {
-      "contentHash": "a878b71ac6fc300a78b7a57e767817a51cf94335c856aa8d9d79532717114a91",
+      "contentHash": "1a845a54c97e812a3533bc95646be5b2c6a05315d71e3855abe9ca8338ae000d",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2axkhw2x",
-      "lastPublished": "2021-08-24T18:00:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.255Z",
+      "slug": "2021-08-24-gh-table-formatting"
     },
     "_posts/2021-05-19-gh-alias-set-from-stdin.md": {
-      "contentHash": "7c4a8786e6ae555f3a89cfde9909424f6244d611dd679f1ca369636e6dfea369",
+      "contentHash": "0574ba3f847ae0515f67070a38cb60356d8abc008a00528bbe48eca1dbdb8e04",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2ayput2b",
-      "lastPublished": "2021-05-19T23:15:30.000Z"
+      "lastPublished": "2026-03-21T07:28:43.292Z",
+      "slug": "2021-05-19-gh-alias-set-from-stdin"
     },
     "_posts/2021-04-21-gh-user.md": {
-      "contentHash": "74283f0a6de7627098937de12b602d34fc7d56275a1a34966301ea9f153d1bb1",
+      "contentHash": "c6a64047afbe94e268cb1ede97c5b69c24055a13476fcb75c0147a9935221d79",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2azh4x2w",
-      "lastPublished": "2021-04-22T01:57:43.000Z"
+      "lastPublished": "2026-03-21T07:28:43.328Z",
+      "slug": "2021-04-21-gh-user"
     },
     "_posts/2021-04-16-configure-multiple-clocks.md": {
-      "contentHash": "a119887b00b5cabf6d160747251ea16963d18c267f27c7fc4425c234cb365c9c",
+      "contentHash": "177c99e882249fbea8de218ea28a8ee5550d6e91d6024a53cee3d70f087ec667",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b2q3z2r",
-      "lastPublished": "2021-04-16T16:35:25.000Z"
+      "lastPublished": "2026-03-21T07:28:43.369Z",
+      "slug": "2021-04-16-configure-multiple-clocks"
     },
     "_posts/2021-04-08-debugging-tests-in-linux-containers-with-visual-studio.md": {
-      "contentHash": "f80d1a25146fa2399915814249b7203f0310bfec8fda077f2e346dee139f3f7d",
+      "contentHash": "697cee1dfc3bee31d75137f0e6a3a4fb5c0f8e06082e8be094aad113b1fe2275",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b3oe62t",
-      "lastPublished": "2021-04-09T02:00:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.408Z",
+      "slug": "2021-04-08-debugging-tests-in-linux-containers-with-visual-studio"
     },
     "_posts/2020-09-24-getting-back-to-good-state-in-git.md": {
-      "contentHash": "42e5d2ce72d38e0a0cd3bff2c52e5422935ff4d4382bda95bfbd9c937dc52641",
+      "contentHash": "29207e64a299203839d9155332a34a1a070e2af23dd7a14df67971cdb8a15bfa",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b4qig2x",
-      "lastPublished": "2020-09-24T15:00:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.465Z",
+      "slug": "2020-09-24-getting-back-to-good-state-in-git"
     },
     "_posts/2020-07-30-azure-cli-in-bash.md": {
-      "contentHash": "4cf420f4bca8d2cd02876e441137b686f30e6403f5f4e24d5b3ed4d4608c0fa6",
+      "contentHash": "1272895dd605874211767b740a0e30f407abfc5a23b4c6ecfd0526e5af7ea7bc",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b5q6v27",
-      "lastPublished": "2020-07-30T01:00:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.505Z",
+      "slug": "2020-07-30-azure-cli-in-bash"
     },
     "_posts/2020-05-29-git-sync.md": {
-      "contentHash": "cbde169b825885b031ba74b27e79fe67762c48524cd6ea79cacadfc3104c8722",
+      "contentHash": "f2188ea530a78100ba37189f16d1eaa8287e858236f290863b48e22c5d38e83a",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b6ntt2p",
-      "lastPublished": "2020-05-29T23:30:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.552Z",
+      "slug": "2020-05-29-git-sync"
     },
     "_posts/2020-05-23-fixing-time-drift-in-docker-on-wsl2.md": {
-      "contentHash": "1899a5623fba2f0a0531f6e0a647a888ec2ec28a8fc8dd1696337492c2d379cd",
+      "contentHash": "4dc506a837b9df9ac88b113064321857225c922f2fde4c7469dc23b8b93c9209",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b7mdt22",
-      "lastPublished": "2020-05-23T17:00:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.603Z",
+      "slug": "2020-05-23-fixing-time-drift-in-docker-on-wsl2"
     },
     "_posts/2020-05-12-simple-wix-project.md": {
-      "contentHash": "d2f09e56ee7bb965a5d62dc990690c398906fe4e31fabd53532e73a9eaf8ff1d",
+      "contentHash": "52b1d019f5f6349c815374733108d890795ea5a4d092a58a087beb9beeb225e0",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2banlt2y",
-      "lastPublished": "2020-05-13T05:45:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.640Z",
+      "slug": "2020-05-12-simple-wix-project"
     },
     "_posts/2020-05-07-get-azure-search-keys-in-arm-templates.md": {
-      "contentHash": "d246e035b0b5e230bdc7a1faddb9740d25e91aea32f9429646e460465bbc8faa",
+      "contentHash": "0dc262b94d15ab71603b993b3f2ef99c84b092ed6854eccc5f07b5b133c3ceef",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bbhw322",
-      "lastPublished": "2020-05-08T04:00:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.687Z",
+      "slug": "2020-05-07-get-azure-search-keys-in-arm-templates"
     },
     "_posts/2020-05-06-powerline-in-vim.md": {
-      "contentHash": "d897cb0010a4e660d6dacf436f66d701420b2ba46bcfa8b60f2dc1e3faa2e393",
+      "contentHash": "dcbdc8c8743a301c7fc1841307ffdc9fd0f82c302c86ad1e86ef9046563ff01c",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bchkn27",
-      "lastPublished": "2020-05-06T07:30:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.730Z",
+      "slug": "2020-05-06-powerline-in-vim"
     },
     "_posts/2020-02-04-trace-azure-sdk-for-net.md": {
-      "contentHash": "d7031b270fc4120bd56a56b1dd38ce0fd295a2d0f0df7f5ab38a8abbc21dd179",
+      "contentHash": "6194ab3c3c7c7b371c611de9d9d6c7efffb80a02e77afdba8a27cdb9d8d545d2",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bdfew2x",
-      "lastPublished": "2020-02-04T11:18:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.777Z",
+      "slug": "2020-02-04-trace-azure-sdk-for-net"
     },
     "_posts/2019-11-10-rebasing-commits-on-one-topic-branch-onto-another-branch.md": {
-      "contentHash": "225bd2675a8b6d2674edbaee964556100f79f771cd20e58b7035d365625be773",
+      "contentHash": "e68fb28c81b1c057b9f8c93a423448fc84a4e8489e070412748c2ec2d8be8ca1",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bef3f27",
-      "lastPublished": "2019-11-11T00:33:00.000Z"
+      "lastPublished": "2026-03-21T07:28:43.828Z",
+      "slug": "2019-11-10-rebasing-commits-on-one-topic-branch-onto-another-branch"
     },
     "_posts/2019-11-10-welcome-to-my-blog.md": {
-      "contentHash": "0bc3a9b6bbd18b392755c7896a29680884d12122f06942b7fcc71d2dc21f740a",
+      "contentHash": "eb41ff923a5c464c297f38c6315d1ee1d9329848c63a3e15c9396b35b652be30",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bfbyd22",
-      "lastPublished": "2019-11-10T16:23:56.000Z"
+      "lastPublished": "2026-03-21T07:28:43.875Z",
+      "slug": "2019-11-10-welcome-to-my-blog"
     },
     "_posts/2022-06-18-reduce-fetch-and-checkout-times-in-git.md": {
-      "contentHash": "1f1afdb560f083d7603edd7e92fee1dd2d81e625e5153ced9fbb9678c76caea9",
+      "contentHash": "934e3ed4f8f043c3fdc94ecc59aa5938f0a5ecba58dc87d2d440b3870ae3c567",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr3dkfi322",
-      "lastPublished": "2022-06-18T07:20:31.000Z"
+      "lastPublished": "2026-03-21T07:28:43.121Z",
+      "slug": "2022-06-18-reduce-fetch-and-checkout-times-in-git"
+    },
+    "_posts/2026-03-20-cleaning-up-rust-made-easier.md": {
+      "contentHash": "2132f6d710ed8988d12a9ba0de67e715ea20d5bffc20c6f42e1e4675700b144c",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mhkj26txqp2b",
+      "lastPublished": "2026-03-21T07:28:42.684Z",
+      "slug": "2026-03-20-cleaning-up-rust-made-easier",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mhkj26uvil2t",
+        "cid": "bafyreicgiokwsfcimryyr26sqo65jul7arpsvg7zt6lb72rgoatpwxsldq"
+      }
     }
   }
 }
