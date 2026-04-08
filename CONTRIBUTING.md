@@ -16,20 +16,20 @@ npm run sequoia auth
 npx sequoia auth
 ```
 
-After building the site, inject the required link tags into the built HTML:
-
-```sh
-npm run sequoia inject
-# or
-npx sequoia inject
-```
-
-Finally, publish content to ATProto:
+After building the site, publish content to ATProto:
 
 ```sh
 npm run sequoia publish
 # or
 npx sequoia publish
+```
+
+Finally, inject the required link tags into the built HTML:
+
+```sh
+npm run sequoia inject
+# or
+npx sequoia inject
 ```
 
 For full publishing documentation, see <https://sequoia.pub/publishing>.

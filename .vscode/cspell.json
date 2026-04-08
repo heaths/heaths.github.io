@@ -4,6 +4,8 @@
     "distro",
     "execdir",
     "HKCU",
+    "kwargs",
+    "pythonistas",
     "rustlang",
     "strava",
     "toolset",

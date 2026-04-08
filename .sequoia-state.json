@@ -159,6 +159,16 @@
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mhkj26uvil2t",
         "cid": "bafyreicgiokwsfcimryyr26sqo65jul7arpsvg7zt6lb72rgoatpwxsldq"
       }
+    },
+    "_posts/2026-04-07-making-the-key-version-required-for-key-vault-cryptography-apis.md": {
+      "contentHash": "5d489e86cc802e46a405dd85478d662a7c3edecd1df99715601bf7d634444e31",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mixnsl7nfe25",
+      "lastPublished": "2026-04-08T06:23:44.168Z",
+      "slug": "2026-04-07-making-the-key-version-required-for-key-vault-cryptography-apis",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mixnslatkn25",
+        "cid": "bafyreihfetvkhci4a3vsqgkistez2frshw5bckq5ggeyzas4o2dphfmz7q"
+      }
     }
   }
 }

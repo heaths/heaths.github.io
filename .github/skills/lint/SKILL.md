@@ -13,5 +13,5 @@ Lint new or changed files for common issues.
 
 In Markdown files, code fences must use `powershell` instead of `pwsh`.
 
-- Find: `` ```pwsh ``
-- Replace with: `` ```powershell ``
+- Find: ` ```pwsh `
+- Replace with: ` ```powershell `
