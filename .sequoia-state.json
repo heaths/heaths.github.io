@@ -174,7 +174,11 @@
       "contentHash": "4d099dfd2bc925d68ab665fec499aa06caecc59da05112ceab89e9e34dba8ccb",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjqwgevm2i2d",
       "lastPublished": "2026-04-18T07:34:31.864Z",
-      "slug": "2026-04-18-we-all-make-mistakes"
+      "slug": "2026-04-18-we-all-make-mistakes",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjqxekz7dk2q",
+        "cid": "bafyreigvfv3mcujecqz5a2cs7hhj5jih4byihmedlf5iqdaef65ggauuj4"
+      }
     }
   }
 }
