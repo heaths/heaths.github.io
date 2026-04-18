@@ -9,6 +9,7 @@ tags:
   - azure
   - mentoring
   - story
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjqwgevm2i2d"
 ---
 
 After 15 years in Visual Studio and having shipped a few versions of the new setup engine I architected as a senior engineer at Microsoft, it was time for a change.

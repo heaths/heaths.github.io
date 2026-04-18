@@ -169,6 +169,12 @@
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mixnslatkn25",
         "cid": "bafyreihfetvkhci4a3vsqgkistez2frshw5bckq5ggeyzas4o2dphfmz7q"
       }
+    },
+    "_posts/2026-04-18-we-all-make-mistakes.md": {
+      "contentHash": "4d099dfd2bc925d68ab665fec499aa06caecc59da05112ceab89e9e34dba8ccb",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjqwgevm2i2d",
+      "lastPublished": "2026-04-18T07:34:31.864Z",
+      "slug": "2026-04-18-we-all-make-mistakes"
     }
   }
 }
