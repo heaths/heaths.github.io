@@ -1,19 +1,159 @@
+// Dark and light structural override mixins.
+// Used by the prefers-color-scheme media query and by the forced html[data-theme] blocks.
+@mixin dark-theme-structural {
+    a:hover { color: color-mix(in srgb, var(--accent-color) 80%, black); }
+
+    body { background-color: $kraken-deep-sea; color: $kraken-ice; }
+
+    blockquote { color: $kraken-ice; border-left-color: $kraken-shadow; }
+
+    pre,
+    code { background-color: $kraken-boundless; border-color: $kraken-shadow; }
+
+    table {
+        border-color: $kraken-shadow;
+
+        th { background-color: $kraken-shadow; border-color: $kraken-shadow; color: $kraken-ice; }
+
+        td { border-color: $kraken-shadow; }
+
+        tr:nth-child(even) { background-color: $kraken-boundless; }
+    }
+
+    @media screen and (max-width: 600px) {
+        .site-nav {
+            background-color: $kraken-deep-sea;
+            border-color: $kraken-shadow;
+        }
+    }
+
+    .site-header { background-color: $kraken-boundless; }
+
+    .site-footer { border-top-color: $kraken-shadow; }
+
+    .footer-col-wrapper { color: $kraken-ice; }
+
+    .footnotes { color: $kraken-shadow; }
+
+    svg#keybase path { stroke: $kraken-ice !important; }
+}
+
+@mixin light-theme-structural {
+    a:hover { color: color-mix(in srgb, var(--accent-color) 80%, black); }
+
+    body { background-color: #fdfdfd; color: #111111; }
+
+    blockquote { color: $kraken-shadow; border-left-color: $grey-color-light; }
+
+    pre,
+    code { background-color: #eef; border-color: $grey-color-light; }
+
+    table {
+        border-color: $grey-color-light;
+
+        th { background-color: $grey-color-light; border-color: $grey-color-light; color: #111111; }
+
+        td { border-color: $grey-color-light; }
+
+        tr:nth-child(even) { background-color: $grey-color-light; }
+    }
+
+    @media screen and (max-width: 600px) {
+        .site-nav {
+            background-color: #fdfdfd;
+            border-color: $grey-color-light;
+        }
+    }
+
+    .site-header { background-color: $kraken-deep-sea; }
+
+    .site-footer { border-top-color: $grey-color-light; }
+
+    .footer-col-wrapper { color: $kraken-shadow; }
+
+    .footnotes { color: $kraken-shadow; }
+
+    svg#keybase path { stroke: $kraken-shadow !important; }
+}
+
 :root {
     --accent-color: #{$kraken-shadow};
     --secondary-color: #{$kraken-shadow};
+    --nav-fg: #{$kraken-ice};
+    color-scheme: light dark;
     --border-radius: 8px;
     --button-gap: 0.5rem;
 
+    --sequoia-fg-color: #111111;
+    --sequoia-bg-color: #fdfdfd;
+    --sequoia-border-color: #{$grey-color-light};
     --sequoia-accent-color: var(--accent-color);
     --sequoia-secondary-color: var(--secondary-color);
     --sequoia-border-radius: var(--border-radius);
 }
 
+// Default (light) header background — must appear before media queries so dark preference can override.
+.site-header {
+    background-color: $kraken-deep-sea;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .page-link {
+        color: var(--nav-fg);
+    }
+
+    .site-title {
+        color: var(--nav-fg);
+    }
+}
+
+// Make the hamburger icon respect --nav-fg so it matches the toggle button and adapts to dark mode.
+.site-nav .menu-icon > svg {
+    fill: var(--nav-fg);
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --accent-color: #{$kraken-red-alert};
-        --secondary-color: #{$kraken-ice};
+        --secondary-color: #{$kraken-shadow};
+        color-scheme: dark;
+        --sequoia-fg-color: #{$kraken-ice};
+        --sequoia-bg-color: #{$kraken-deep-sea};
+        --sequoia-border-color: #{$kraken-shadow};
+        --sequoia-secondary-color: #{$kraken-shadow};
     }
+
+    @include dark-theme-structural;
+}
+
+// Forced theme overrides — higher specificity (0,1,1) beats :root (0,1,0).
+html[data-theme="dark"] {
+    --accent-color: #{$kraken-red-alert};
+    --secondary-color: #{$kraken-shadow};
+    color-scheme: dark;
+    --sequoia-fg-color: #{$kraken-ice};
+    --sequoia-bg-color: #{$kraken-deep-sea};
+    --sequoia-border-color: #{$kraken-shadow};
+    --sequoia-secondary-color: #{$kraken-shadow};
+
+    @include dark-theme-structural;
+}
+
+html[data-theme="light"] {
+    --accent-color: #{$kraken-shadow};
+    --secondary-color: #{$kraken-shadow};
+    color-scheme: light;
+    --sequoia-fg-color: #111111;
+    --sequoia-bg-color: #fdfdfd;
+    --sequoia-border-color: #{$grey-color-light};
+
+    @include light-theme-structural;
 }
 
 .subscribe-buttons {
@@ -87,20 +227,87 @@ img.align-right {
     fill: var(--secondary-color);
 }
 
-.site-header {
-    background-color: $blue-color-dark;
-
-    a {
-        text-decoration: none;
+// On mobile, .site-nav becomes an absolutely-positioned popup with a light background.
+// Override --nav-fg so links and the toggle button remain readable on that background.
+@media screen and (max-width: 600px) {
+    .site-nav {
+        --nav-fg: #{$kraken-deep-sea};
+        padding: 0 4px;
     }
 
-    .page-link {
-        color: $kraken-ice;
+    // Explicitly override all child colours so they use --nav-fg from the popup context.
+    .site-nav .page-link { color: var(--nav-fg); }
+    .site-nav label[for="nav-trigger"] { margin-left: 2px; }
+}
+
+// Dark mode mobile popup is dark — restore ice so links stay readable.
+// Placed after the light override so it wins by source order (same specificity).
+@media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
+    .site-nav { --nav-fg: #{$kraken-ice}; }
+}
+
+html[data-theme="dark"] {
+    @media screen and (max-width: 600px) {
+        .site-nav { --nav-fg: #{$kraken-ice}; }
+    }
+}
+
+// Forced light theme must explicitly restore deep sea for mobile even when system prefers dark,
+// because the prefers-color-scheme: dark media query above would otherwise win.
+html[data-theme="light"] {
+    @media screen and (max-width: 600px) {
+        .site-nav { --nav-fg: #{$kraken-deep-sea}; }
+    }
+}
+
+// Desktop: lay out toggle button and nav links side by side.
+@media screen and (min-width: 601px) {
+    .site-nav { display: flex; align-items: center; }
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 4px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: var(--nav-fg);
+    vertical-align: middle;
+
+    svg {
+        display: none;
+        width: 1.25rem;
+        height: 1.25rem;
     }
 
-    .site-title {
-        color: $kraken-ice;
+    .icon-system { display: block; }
+
+    &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+        border-radius: 2px;
     }
+
+    @media screen and (max-width: 600px) {
+        float: right;
+        margin-right: 2px;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        justify-content: center;
+    }
+}
+
+html[data-theme="light"] .theme-toggle {
+    .icon-system { display: none; }
+    .icon-light { display: block; }
+}
+
+html[data-theme="dark"] .theme-toggle {
+    .icon-system { display: none; }
+    .icon-dark { display: block; }
 }
 
 h1,
@@ -177,64 +384,4 @@ svg#keybase path {
 
 .footer-col-3 {
     display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    a:hover {
-        color: color-mix(in srgb, var(--accent-color) 80%, white);
-    }
-
-    body {
-        background-color: $kraken-deep-sea;
-        color: $kraken-ice;
-    }
-
-    blockquote {
-        color: $kraken-ice;
-        border-left-color: $kraken-shadow;
-    }
-
-    pre,
-    code {
-        background-color: $kraken-boundless;
-        border-color: $kraken-shadow;
-    }
-
-    table {
-        border-color: $kraken-shadow;
-
-        th {
-            background-color: $kraken-shadow;
-            border-color: $kraken-shadow;
-            color: $kraken-ice;
-        }
-
-        td {
-            border-color: $kraken-shadow;
-        }
-
-        tr:nth-child(even) {
-            background-color: $kraken-boundless;
-        }
-    }
-
-    .site-header {
-        background-color: $kraken-boundless;
-    }
-
-    .site-footer {
-        border-top-color: $kraken-shadow;
-    }
-
-    .footer-col-wrapper {
-        color: $kraken-ice;
-    }
-
-    .footnotes {
-        color: $kraken-ice;
-    }
-
-    svg#keybase path {
-        stroke: $kraken-ice !important;
-    }
 }
