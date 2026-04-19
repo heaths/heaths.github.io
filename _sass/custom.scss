@@ -341,6 +341,17 @@ h6 {
 
 .post-header {
     margin-bottom: 15px !important;
+
+    .post-meta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 600px) {
+        .post-meta-sep { display: none; }
+        .post-author { display: block; }
+    }
 }
 
 .post-list {

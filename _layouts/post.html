@@ -11,9 +11,7 @@ layout: default
     <h1 class="post-title p-name" itemprop="name headline">
       {{ page.title | escape }}
     </h1>
-    <div
-      style="display: flex; justify-content: space-between; align-items: center"
-    >
+    <div class="post-meta-row">
       <p class="post-meta">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
         -%}
@@ -33,11 +31,12 @@ layout: default
         >
           {{ mdate | date: date_format }}
         </time>
-        {%- endif -%} {%- if page.author -%} • {% for author in page.author %}
+        {%- endif -%}{%- if page.author -%}<span class="post-meta-sep"> • </span><span class="post-author">{% for author in page.author %}
         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
           <span class="p-author h-card" itemprop="name">{{ author }}</span>
         </span>
-        {%- if forloop.last == false %}, {% endif -%} {% endfor %} {%- endif -%}
+        {%- if forloop.last == false %}, {% endif -%} {% endfor %}
+        </span>{%- endif -%}
       </p>
       <div class="subscribe-buttons">
         {% include sequoia_subscribe.html %}
