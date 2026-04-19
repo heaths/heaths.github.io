@@ -34,8 +34,6 @@
     .footer-col-wrapper { color: $kraken-ice; }
 
     .footnotes { color: $kraken-shadow; }
-
-    svg#keybase path { stroke: $kraken-ice !important; }
 }
 
 @mixin light-theme-structural {
@@ -72,8 +70,6 @@
     .footer-col-wrapper { color: $kraken-shadow; }
 
     .footnotes { color: $kraken-shadow; }
-
-    svg#keybase path { stroke: $kraken-shadow !important; }
 }
 
 :root {
@@ -224,7 +220,14 @@ img.align-right {
 
 .grey {
     color: var(--secondary-color);
-    fill: var(--secondary-color);
+}
+
+.svg-icon {
+    fill: var(--accent-color);
+}
+
+svg#keybase path {
+    stroke: var(--accent-color);
 }
 
 // On mobile, .site-nav becomes an absolutely-positioned popup with a light background.
@@ -346,6 +349,8 @@ h6 {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .post-meta { margin: 0; }
     }
 
     @media screen and (max-width: 600px) {
@@ -368,10 +373,6 @@ sequoia-comments::part(container) {
     color: $kraken-shadow;
     font-size: 14px;
     margin-top: 30px;
-}
-
-svg#keybase path {
-    stroke: $kraken-shadow !important;
 }
 
 .footer-col-1 {
