@@ -1,0 +1,94 @@
+// Syntax highlighting using GitHub light and dark themes.
+// Token colors generated from `rougify style github` and `rougify style github.dark`.
+// Imported after @import "minima" in assets/main.scss.
+//
+// - Default / light system: github light token colors (overrides minima defaults by source order)
+// - System dark / forced dark: github.dark token colors
+// - Forced light on dark system: github light restored via html[data-theme="light"],
+//   which has higher specificity (0,1,1) than @media (0,1,0) and wins the cascade.
+//
+// Background colors intentionally match pre, code backgrounds in custom.scss
+// so that code blocks and inline code are consistent.
+
+@mixin light-syntax-highlighting {
+    .highlight,
+    .highlighter-rouge .highlight {
+        color: #24292f;
+        background-color: #eef;
+    }
+
+    .highlight {
+        table td { padding: 5px; }
+        table pre { margin: 0; }
+        .w                               { color: #24292f; background-color: #eef; }
+        .k, .kd, .kn, .kp, .kr, .kt, .kv { color: #cf222e; }
+        .kc                              { color: #0550ae; }
+        .gd                              { color: #82071e; background-color: #ffebe9; }
+        .gi                              { color: #116329; background-color: #dafbe1; }
+        .gr                              { color: #f6f8fa; }
+        .nb, .nc, .no, .nn               { color: #953800; }
+        .sr, .na, .nt                    { color: #116329; }
+        .l, .ld, .m, .mb, .mf, .mh, .mi, .il, .mo, .mx,
+        .sb, .bp, .ne, .nl, .py,
+        .nv, .vc, .vg, .vi, .vm,
+        .o, .ow                          { color: #0550ae; }
+        .gh, .gu                         { color: #0550ae; font-weight: bold; }
+        .s, .sa, .sc, .dl, .sd, .s2, .se, .sh, .sx, .s1, .ss { color: #0a3069; }
+        .nd, .nf, .fm                    { color: #8250df; }
+        .err                             { color: #f6f8fa; background-color: #82071e; }
+        .c, .ch, .cd, .cm, .cp, .cpf, .c1, .cs, .gl, .gt { color: #6e7781; }
+        .ni, .si                         { color: #24292f; }
+        .ge                              { color: #24292f; font-style: italic; }
+        .ges                             { font-weight: bold; font-style: italic; }
+        .gs                              { color: #24292f; font-weight: bold; }
+    }
+}
+
+@mixin dark-syntax-highlighting {
+    .highlight,
+    .highlighter-rouge .highlight {
+        color: #c9d1d9;
+        background-color: $kraken-boundless;
+    }
+
+    .highlight {
+        table td { padding: 5px; }
+        table pre { margin: 0; }
+        .w                               { color: #c9d1d9; background-color: $kraken-boundless; }
+        .k, .kd, .kn, .kp, .kr, .kt, .kv { color: #ff7b72; }
+        .kc                              { color: #79c0ff; }
+        .gd                              { color: #ffdcd7; background-color: #67060c; }
+        .gi                              { color: #aff5b4; background-color: #033a16; }
+        .gr                              { color: #f0f6fc; }
+        .nb, .nc, .no, .nn               { color: #ffa657; }
+        .sr, .na, .nt                    { color: #7ee787; }
+        .l, .ld, .m, .mb, .mf, .mh, .mi, .il, .mo, .mx,
+        .sb, .bp, .ne, .nl, .py,
+        .nv, .vc, .vg, .vi, .vm,
+        .o, .ow                          { color: #79c0ff; }
+        .gh, .gu                         { color: #1f6feb; font-weight: bold; }
+        .s, .sa, .sc, .dl, .sd, .s2, .se, .sh, .sx, .s1, .ss { color: #a5d6ff; }
+        .nd, .nf, .fm                    { color: #d2a8ff; }
+        .err                             { color: #f0f6fc; background-color: #8e1519; }
+        .c, .ch, .cd, .cm, .cp, .cpf, .c1, .cs, .gl, .gt { color: #8b949e; }
+        .ni, .si                         { color: #c9d1d9; }
+        .ge                              { color: #c9d1d9; font-style: italic; }
+        .ges                             { font-weight: bold; font-style: italic; }
+        .gs                              { color: #c9d1d9; font-weight: bold; }
+    }
+}
+
+// Apply light theme as default, overriding minima's older defaults by source order.
+@include light-syntax-highlighting;
+
+@media (prefers-color-scheme: dark) {
+    @include dark-syntax-highlighting;
+}
+
+html[data-theme="dark"] {
+    @include dark-syntax-highlighting;
+}
+
+html[data-theme="light"] {
+    @include light-syntax-highlighting;
+}
