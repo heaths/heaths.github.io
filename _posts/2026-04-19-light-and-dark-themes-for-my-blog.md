@@ -10,6 +10,7 @@ tags:
   - blog
   - copilot
   - css
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjvwnyj4cb2t"
 ---
 
 ![A blog page shown in both light and dark themes side by side, using the Seattle Kraken color palette]({{ "/assets/images/kraken-theme.jpg" | relative_url }})

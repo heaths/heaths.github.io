@@ -179,6 +179,16 @@
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjqxekz7dk2q",
         "cid": "bafyreigvfv3mcujecqz5a2cs7hhj5jih4byihmedlf5iqdaef65ggauuj4"
       }
+    },
+    "_posts/2026-04-19-light-and-dark-themes-for-my-blog.md": {
+      "contentHash": "58126fc9a17cced97b8a59046b0ddf33f230ce9766704fdd95785615074f5666",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjvwnyj4cb2t",
+      "lastPublished": "2026-04-20T07:22:06.169Z",
+      "slug": "2026-04-19-light-and-dark-themes-for-my-blog",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjvwnykcec2m",
+        "cid": "bafyreidb6eycham6v5ajd2n3mjq3bckcyglsrgt7phzlwhhhw73vg7emmq"
+      }
     }
   }
 }
