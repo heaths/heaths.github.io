@@ -51,6 +51,8 @@ tags:
 
 ### Pre-commit check
 
+Do not commit changes unless the user explicitly says to commit. Stage changes freely, but always wait for explicit approval before creating a commit.
+
 Before committing, verify that every post in `_posts/` has a `summary` field in its frontmatter. If a post is missing one, generate a summary of one or two sentences based on the post content and add it to the frontmatter before the `category` field.
 
 ## Skills
