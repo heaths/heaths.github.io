@@ -1,23 +1,47 @@
 // Dark and light structural override mixins.
 // Used by the prefers-color-scheme media query and by the forced html[data-theme] blocks.
 @mixin dark-theme-structural {
-    a:hover { color: color-mix(in srgb, var(--accent-color) 80%, black); }
+    a {
+        code {
+            text-shadow: 0 0 4px $kraken-deep-sea;
+        }
+    }
+    a:hover {
+        color: color-mix(in srgb, var(--accent-color) 80%, black);
+    }
 
-    body { background-color: $kraken-deep-sea; color: $kraken-ice; }
+    body {
+        background-color: $kraken-deep-sea;
+        color: $kraken-ice;
+    }
 
-    blockquote { color: $kraken-ice; border-left-color: $kraken-shadow; }
+    blockquote {
+        color: $kraken-ice;
+        border-left-color: $kraken-shadow;
+    }
 
     pre,
-    code { background-color: $kraken-boundless; border-color: $kraken-shadow; }
+    code {
+        background-color: $kraken-boundless;
+        border-color: $kraken-shadow;
+    }
 
     table {
         border-color: $kraken-shadow;
 
-        th { background-color: $kraken-shadow; border-color: $kraken-shadow; color: $kraken-ice; }
+        th {
+            background-color: $kraken-shadow;
+            border-color: $kraken-shadow;
+            color: $kraken-ice;
+        }
 
-        td { border-color: $kraken-shadow; }
+        td {
+            border-color: $kraken-shadow;
+        }
 
-        tr:nth-child(even) { background-color: $kraken-boundless; }
+        tr:nth-child(even) {
+            background-color: $kraken-boundless;
+        }
     }
 
     @media screen and (max-width: 600px) {
@@ -27,33 +51,65 @@
         }
     }
 
-    .site-header { background-color: $kraken-boundless; }
+    .site-header {
+        background-color: $kraken-boundless;
+    }
 
-    .site-footer { border-top-color: $kraken-shadow; }
+    .site-footer {
+        border-top-color: $kraken-shadow;
+    }
 
-    .footer-col-wrapper { color: $kraken-ice; }
+    .footer-col-wrapper {
+        color: $kraken-ice;
+    }
 
-    .footnotes { color: $kraken-shadow; }
+    .footnotes {
+        color: $kraken-shadow;
+    }
 }
 
 @mixin light-theme-structural {
-    a:hover { color: color-mix(in srgb, var(--accent-color) 80%, black); }
+    a {
+        code {
+            text-shadow: unset;
+        }
+    }
+    a:hover {
+        color: color-mix(in srgb, var(--accent-color) 80%, black);
+    }
 
-    body { background-color: #fdfdfd; color: #111111; }
+    body {
+        background-color: #fdfdfd;
+        color: #111111;
+    }
 
-    blockquote { color: $kraken-shadow; border-left-color: $grey-color-light; }
+    blockquote {
+        color: $kraken-shadow;
+        border-left-color: $grey-color-light;
+    }
 
     pre,
-    code { background-color: #eef; border-color: $grey-color-light; }
+    code {
+        background-color: #eef;
+        border-color: $grey-color-light;
+    }
 
     table {
         border-color: $grey-color-light;
 
-        th { background-color: $grey-color-light; border-color: $grey-color-light; color: #111111; }
+        th {
+            background-color: $grey-color-light;
+            border-color: $grey-color-light;
+            color: #111111;
+        }
 
-        td { border-color: $grey-color-light; }
+        td {
+            border-color: $grey-color-light;
+        }
 
-        tr:nth-child(even) { background-color: $grey-color-light; }
+        tr:nth-child(even) {
+            background-color: $grey-color-light;
+        }
     }
 
     @media screen and (max-width: 600px) {
@@ -63,13 +119,21 @@
         }
     }
 
-    .site-header { background-color: $kraken-deep-sea; }
+    .site-header {
+        background-color: $kraken-deep-sea;
+    }
 
-    .site-footer { border-top-color: $grey-color-light; }
+    .site-footer {
+        border-top-color: $grey-color-light;
+    }
 
-    .footer-col-wrapper { color: $kraken-shadow; }
+    .footer-col-wrapper {
+        color: $kraken-shadow;
+    }
 
-    .footnotes { color: $kraken-shadow; }
+    .footnotes {
+        color: $kraken-shadow;
+    }
 }
 
 :root {
@@ -239,19 +303,27 @@ svg#keybase path {
     }
 
     // Explicitly override all child colours so they use --nav-fg from the popup context.
-    .site-nav .page-link { color: var(--nav-fg); }
-    .site-nav label[for="nav-trigger"] { margin-left: 2px; }
+    .site-nav .page-link {
+        color: var(--nav-fg);
+    }
+    .site-nav label[for="nav-trigger"] {
+        margin-left: 2px;
+    }
 }
 
 // Dark mode mobile popup is dark — restore ice so links stay readable.
 // Placed after the light override so it wins by source order (same specificity).
 @media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
-    .site-nav { --nav-fg: #{$kraken-ice}; }
+    .site-nav {
+        --nav-fg: #{$kraken-ice};
+    }
 }
 
 html[data-theme="dark"] {
     @media screen and (max-width: 600px) {
-        .site-nav { --nav-fg: #{$kraken-ice}; }
+        .site-nav {
+            --nav-fg: #{$kraken-ice};
+        }
     }
 }
 
@@ -259,13 +331,18 @@ html[data-theme="dark"] {
 // because the prefers-color-scheme: dark media query above would otherwise win.
 html[data-theme="light"] {
     @media screen and (max-width: 600px) {
-        .site-nav { --nav-fg: #{$kraken-deep-sea}; }
+        .site-nav {
+            --nav-fg: #{$kraken-deep-sea};
+        }
     }
 }
 
 // Desktop: lay out toggle button and nav links side by side.
 @media screen and (min-width: 601px) {
-    .site-nav { display: flex; align-items: center; }
+    .site-nav {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .theme-toggle {
@@ -285,7 +362,9 @@ html[data-theme="light"] {
         height: 1.25rem;
     }
 
-    .icon-system { display: block; }
+    .icon-system {
+        display: block;
+    }
 
     &:focus-visible {
         outline: 2px solid currentColor;
@@ -304,13 +383,21 @@ html[data-theme="light"] {
 }
 
 html[data-theme="light"] .theme-toggle {
-    .icon-system { display: none; }
-    .icon-light { display: block; }
+    .icon-system {
+        display: none;
+    }
+    .icon-light {
+        display: block;
+    }
 }
 
 html[data-theme="dark"] .theme-toggle {
-    .icon-system { display: none; }
-    .icon-dark { display: block; }
+    .icon-system {
+        display: none;
+    }
+    .icon-dark {
+        display: block;
+    }
 }
 
 h1,
@@ -350,12 +437,18 @@ h6 {
         justify-content: space-between;
         align-items: center;
 
-        .post-meta { margin: 0; }
+        .post-meta {
+            margin: 0;
+        }
     }
 
     @media screen and (max-width: 600px) {
-        .post-meta-sep { display: none; }
-        .post-author { display: block; }
+        .post-meta-sep {
+            display: none;
+        }
+        .post-author {
+            display: block;
+        }
     }
 }
 
