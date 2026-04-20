@@ -80,7 +80,7 @@
 
     body {
         background-color: #fdfdfd;
-        color: #111111;
+        color: $kraken-deep-sea;
     }
 
     blockquote {
@@ -100,7 +100,7 @@
         th {
             background-color: $grey-color-light;
             border-color: $grey-color-light;
-            color: #111111;
+            color: $kraken-deep-sea;
         }
 
         td {
@@ -144,7 +144,7 @@
     --border-radius: 8px;
     --button-gap: 0.5rem;
 
-    --sequoia-fg-color: #111111;
+    --sequoia-fg-color: #{$kraken-deep-sea};
     --sequoia-bg-color: #fdfdfd;
     --sequoia-border-color: #{$grey-color-light};
     --sequoia-accent-color: var(--accent-color);
@@ -209,7 +209,7 @@ html[data-theme="light"] {
     --accent-color: #{$kraken-shadow};
     --secondary-color: #{$kraken-shadow};
     color-scheme: light;
-    --sequoia-fg-color: #111111;
+    --sequoia-fg-color: $kraken-deep-sea;
     --sequoia-bg-color: #fdfdfd;
     --sequoia-border-color: #{$grey-color-light};
 
