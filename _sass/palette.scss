@@ -1,21 +1,21 @@
 @use "sass:color";
 
 // Seattle Kraken color palette
-$kraken-deep-sea:  #001628;
+$kraken-deep-sea: #001628;
 $kraken-boundless: #355464;
-$kraken-shadow:    #4b647b;
-$kraken-ice:       #99d9d9;
+$kraken-shadow: #4b647b;
+$kraken-ice: #99d9d9;
 $kraken-red-alert: #c8102e;
 
 // Minima 2.5.2 SCSS variable overrides (compiled to static CSS for base styles)
 // $grey-color mapped to Shadow Blue — readable on white body/footer backgrounds.
 // Header overrides in custom.scss use $kraken-ice directly for deep-sea contrast.
-$grey-color:       $kraken-shadow;
-$blue-color:       $kraken-boundless;
-$blue-color-dark:  $kraken-deep-sea;
+$grey-color: $kraken-shadow;
+$blue-color: $kraken-boundless;
+$blue-color-dark: $kraken-deep-sea;
 
-$brand-color:      $kraken-shadow;
-$link-base-color:  $kraken-shadow;
+$brand-color: $kraken-shadow;
+$link-base-color: $kraken-shadow;
 $link-hover-color: color.adjust($kraken-shadow, $lightness: -15%);
 
 $content-width: 80vw;

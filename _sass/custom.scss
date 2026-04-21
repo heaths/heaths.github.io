@@ -1,199 +1,185 @@
 // Dark and light structural override mixins.
 // Used by the prefers-color-scheme media query and by the forced html[data-theme] blocks.
 @mixin dark-theme-structural {
-    a {
-        code {
-            text-shadow: 0 0 4px $kraken-deep-sea;
-        }
-    }
-    a:hover {
-        color: color-mix(in srgb, var(--accent-color) 80%, black);
-    }
-
-    body {
-        background-color: $kraken-deep-sea;
-        color: $kraken-ice;
-    }
-
-    blockquote {
-        color: $kraken-ice;
-        border-left-color: $kraken-shadow;
-    }
-
-    pre,
+  a {
     code {
-        background-color: $kraken-boundless;
-        border-color: $kraken-shadow;
+      text-shadow: 0 0 4px $kraken-deep-sea;
+    }
+  }
+  a:hover {
+    color: color-mix(in srgb, var(--accent-color) 80%, black);
+  }
+
+  body {
+    background-color: $kraken-deep-sea;
+    color: $kraken-ice;
+  }
+
+  blockquote {
+    color: $kraken-ice;
+    border-left-color: $kraken-shadow;
+  }
+
+  pre,
+  code {
+    background-color: $kraken-boundless;
+    border-color: $kraken-shadow;
+  }
+
+  table {
+    border-color: $kraken-shadow;
+
+    th {
+      background-color: $kraken-shadow;
+      border-color: $kraken-shadow;
+      color: $kraken-ice;
     }
 
-    table {
-        border-color: $kraken-shadow;
-
-        th {
-            background-color: $kraken-shadow;
-            border-color: $kraken-shadow;
-            color: $kraken-ice;
-        }
-
-        td {
-            border-color: $kraken-shadow;
-        }
-
-        tr:nth-child(even) {
-            background-color: $kraken-boundless;
-        }
+    td {
+      border-color: $kraken-shadow;
     }
 
-    @media screen and (max-width: 600px) {
-        .site-nav {
-            background-color: $kraken-deep-sea;
-            border-color: $kraken-shadow;
-        }
+    tr:nth-child(even) {
+      background-color: $kraken-boundless;
     }
+  }
 
-    .site-header {
-        background-color: $kraken-boundless;
+  @media screen and (max-width: 600px) {
+    .site-nav {
+      background-color: $kraken-deep-sea;
+      border-color: $kraken-shadow;
     }
+  }
 
-    .site-footer {
-        border-top-color: $kraken-shadow;
-    }
+  .site-header {
+    background-color: $kraken-boundless;
+  }
 
-    .footer-col-wrapper {
-        color: $kraken-ice;
-    }
+  .site-footer {
+    border-top-color: $kraken-shadow;
+  }
 
-    .footnotes {
-        color: $kraken-shadow;
-    }
+  .footer-col-wrapper {
+    color: $kraken-ice;
+  }
+
+  .footnotes {
+    color: $kraken-shadow;
+  }
 }
 
 @mixin light-theme-structural {
-    a {
-        code {
-            text-shadow: unset;
-        }
-    }
-    a:hover {
-        color: color-mix(in srgb, var(--accent-color) 80%, black);
-    }
-
-    body {
-        background-color: #fdfdfd;
-        color: $kraken-deep-sea;
-    }
-
-    blockquote {
-        color: $kraken-shadow;
-        border-left-color: $grey-color-light;
-    }
-
-    pre,
+  a {
     code {
-        background-color: #eef;
-        border-color: $grey-color-light;
+      text-shadow: unset;
+    }
+  }
+  a:hover {
+    color: color-mix(in srgb, var(--accent-color) 80%, black);
+  }
+
+  body {
+    background-color: #fdfdfd;
+    color: $kraken-deep-sea;
+  }
+
+  blockquote {
+    color: $kraken-shadow;
+    border-left-color: $grey-color-light;
+  }
+
+  pre,
+  code {
+    background-color: #eef;
+    border-color: $grey-color-light;
+  }
+
+  table {
+    border-color: $grey-color-light;
+
+    th {
+      background-color: $grey-color-light;
+      border-color: $grey-color-light;
+      color: $kraken-deep-sea;
     }
 
-    table {
-        border-color: $grey-color-light;
-
-        th {
-            background-color: $grey-color-light;
-            border-color: $grey-color-light;
-            color: $kraken-deep-sea;
-        }
-
-        td {
-            border-color: $grey-color-light;
-        }
-
-        tr:nth-child(even) {
-            background-color: $grey-color-light;
-        }
+    td {
+      border-color: $grey-color-light;
     }
 
-    @media screen and (max-width: 600px) {
-        .site-nav {
-            background-color: #fdfdfd;
-            border-color: $grey-color-light;
-        }
+    tr:nth-child(even) {
+      background-color: $grey-color-light;
     }
+  }
 
-    .site-header {
-        background-color: $kraken-deep-sea;
+  @media screen and (max-width: 600px) {
+    .site-nav {
+      background-color: #fdfdfd;
+      border-color: $grey-color-light;
     }
+  }
 
-    .site-footer {
-        border-top-color: $grey-color-light;
-    }
+  .site-header {
+    background-color: $kraken-deep-sea;
+  }
 
-    .footer-col-wrapper {
-        color: $kraken-shadow;
-    }
+  .site-footer {
+    border-top-color: $grey-color-light;
+  }
 
-    .footnotes {
-        color: $kraken-shadow;
-    }
+  .footer-col-wrapper {
+    color: $kraken-shadow;
+  }
+
+  .footnotes {
+    color: $kraken-shadow;
+  }
 }
 
 :root {
-    --accent-color: #{$kraken-shadow};
-    --secondary-color: #{$kraken-shadow};
-    --nav-fg: #{$kraken-ice};
-    color-scheme: light dark;
-    --border-radius: 8px;
-    --button-gap: 0.5rem;
+  --accent-color: #{$kraken-shadow};
+  --secondary-color: #{$kraken-shadow};
+  --nav-fg: #{$kraken-ice};
+  color-scheme: light dark;
+  --border-radius: 8px;
+  --button-gap: 0.5rem;
 
-    --sequoia-fg-color: #{$kraken-deep-sea};
-    --sequoia-bg-color: #fdfdfd;
-    --sequoia-border-color: #{$grey-color-light};
-    --sequoia-accent-color: var(--accent-color);
-    --sequoia-secondary-color: var(--secondary-color);
-    --sequoia-border-radius: var(--border-radius);
+  --sequoia-fg-color: #{$kraken-deep-sea};
+  --sequoia-bg-color: #fdfdfd;
+  --sequoia-border-color: #{$grey-color-light};
+  --sequoia-accent-color: var(--accent-color);
+  --sequoia-secondary-color: var(--secondary-color);
+  --sequoia-border-radius: var(--border-radius);
 }
 
 // Default (light) header background — must appear before media queries so dark preference can override.
 .site-header {
-    background-color: $kraken-deep-sea;
+  background-color: $kraken-deep-sea;
 
-    a {
-        text-decoration: none;
+  a {
+    text-decoration: none;
 
-        &:hover {
-            text-decoration: none;
-        }
+    &:hover {
+      text-decoration: none;
     }
+  }
 
-    .page-link {
-        color: var(--nav-fg);
-    }
+  .page-link {
+    color: var(--nav-fg);
+  }
 
-    .site-title {
-        color: var(--nav-fg);
-    }
+  .site-title {
+    color: var(--nav-fg);
+  }
 }
 
 // Make the hamburger icon respect --nav-fg so it matches the toggle button and adapts to dark mode.
 .site-nav .menu-icon > svg {
-    fill: var(--nav-fg);
+  fill: var(--nav-fg);
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --accent-color: #{$kraken-red-alert};
-        --secondary-color: #{$kraken-shadow};
-        color-scheme: dark;
-        --sequoia-fg-color: #{$kraken-ice};
-        --sequoia-bg-color: #{$kraken-deep-sea};
-        --sequoia-border-color: #{$kraken-shadow};
-        --sequoia-secondary-color: #{$kraken-shadow};
-    }
-
-    @include dark-theme-structural;
-}
-
-// Forced theme overrides — higher specificity (0,1,1) beats :root (0,1,0).
-html[data-theme="dark"] {
+  :root {
     --accent-color: #{$kraken-red-alert};
     --secondary-color: #{$kraken-shadow};
     color-scheme: dark;
@@ -201,215 +187,229 @@ html[data-theme="dark"] {
     --sequoia-bg-color: #{$kraken-deep-sea};
     --sequoia-border-color: #{$kraken-shadow};
     --sequoia-secondary-color: #{$kraken-shadow};
+  }
 
-    @include dark-theme-structural;
+  @include dark-theme-structural;
+}
 
-    body {
-        transition:
-            all 0.35s ease,
-            background-color 0s;
-    }
+// Forced theme overrides — higher specificity (0,1,1) beats :root (0,1,0).
+html[data-theme="dark"] {
+  --accent-color: #{$kraken-red-alert};
+  --secondary-color: #{$kraken-shadow};
+  color-scheme: dark;
+  --sequoia-fg-color: #{$kraken-ice};
+  --sequoia-bg-color: #{$kraken-deep-sea};
+  --sequoia-border-color: #{$kraken-shadow};
+  --sequoia-secondary-color: #{$kraken-shadow};
+
+  @include dark-theme-structural;
+
+  body {
+    transition:
+      all 0.35s ease,
+      background-color 0s;
+  }
 }
 
 html[data-theme="light"] {
-    --accent-color: #{$kraken-shadow};
-    --secondary-color: #{$kraken-shadow};
-    color-scheme: light;
-    --sequoia-fg-color: $kraken-deep-sea;
-    --sequoia-bg-color: #fdfdfd;
-    --sequoia-border-color: #{$grey-color-light};
+  --accent-color: #{$kraken-shadow};
+  --secondary-color: #{$kraken-shadow};
+  color-scheme: light;
+  --sequoia-fg-color: $kraken-deep-sea;
+  --sequoia-bg-color: #fdfdfd;
+  --sequoia-border-color: #{$grey-color-light};
 
-    @include light-theme-structural;
+  @include light-theme-structural;
 
-    body {
-        transition:
-            all 0.35s ease,
-            background-color 0s;
-    }
+  body {
+    transition:
+      all 0.35s ease,
+      background-color 0s;
+  }
 }
 
 .subscribe-buttons {
-    display: flex;
-    gap: var(--button-gap);
-    align-items: center;
-    margin-left: var(--button-gap);
+  display: flex;
+  gap: var(--button-gap);
+  align-items: center;
+  margin-left: var(--button-gap);
 
-    @media screen and (max-width: 600px) {
-        flex-wrap: wrap;
-    }
+  @media screen and (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 }
 
 .accent-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 20px;
-    min-height: 20px;
-    padding: 0.5rem;
-    aspect-ratio: 1;
-    background: var(--accent-color);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0.5rem;
+  aspect-ratio: 1;
+  background: var(--accent-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background: color-mix(in srgb, var(--accent-color) 85%, black);
     text-decoration: none;
-    transition: background-color 0.15s ease;
+  }
 
-    &:hover {
-        background: color-mix(in srgb, var(--accent-color) 85%, black);
-        text-decoration: none;
-    }
-
-    img {
-        width: 1.25rem;
-        height: 1.25rem;
-        display: block;
-    }
+  img {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+  }
 }
 
 a {
+  color: var(--accent-color);
+  text-decoration: none;
+
+  &:hover {
+    color: color-mix(in srgb, var(--accent-color) 80%, black);
+    text-decoration: underline;
+  }
+
+  &:visited {
     color: var(--accent-color);
-    text-decoration: none;
-
-    &:hover {
-        color: color-mix(in srgb, var(--accent-color) 80%, black);
-        text-decoration: underline;
-    }
-
-    &:visited {
-        color: var(--accent-color);
-    }
+  }
 }
 
 .imgrid {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    img {
-        width: 16rem;
-    }
+  img {
+    width: 16rem;
+  }
 }
 
 img.align-right {
-    float: right;
-    margin: 0px 0px 10px 10px;
+  float: right;
+  margin: 0px 0px 10px 10px;
 }
 
 .grey {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .svg-icon {
-    fill: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 svg#keybase path {
-    stroke: var(--accent-color);
+  stroke: var(--accent-color);
 }
 
 // On mobile, .site-nav becomes an absolutely-positioned popup with a light background.
 // Override --nav-fg so links and the toggle button remain readable on that background.
 @media screen and (max-width: 600px) {
-    .site-nav {
-        --nav-fg: #{$kraken-deep-sea};
-        padding: 0 4px;
-    }
+  .site-nav {
+    --nav-fg: #{$kraken-deep-sea};
+    padding: 0 4px;
+  }
 
-    // Explicitly override all child colours so they use --nav-fg from the popup context.
-    .site-nav .page-link {
-        color: var(--nav-fg);
-    }
-    .site-nav label[for="nav-trigger"] {
-        margin-left: 2px;
-    }
+  // Explicitly override all child colours so they use --nav-fg from the popup context.
+  .site-nav .page-link {
+    color: var(--nav-fg);
+  }
+  .site-nav label[for="nav-trigger"] {
+    margin-left: 2px;
+  }
 }
 
 // Dark mode mobile popup is dark — restore ice so links stay readable.
 // Placed after the light override so it wins by source order (same specificity).
 @media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
-    .site-nav {
-        --nav-fg: #{$kraken-ice};
-    }
+  .site-nav {
+    --nav-fg: #{$kraken-ice};
+  }
 }
 
 html[data-theme="dark"] {
-    @media screen and (max-width: 600px) {
-        .site-nav {
-            --nav-fg: #{$kraken-ice};
-        }
+  @media screen and (max-width: 600px) {
+    .site-nav {
+      --nav-fg: #{$kraken-ice};
     }
+  }
 }
 
 // Forced light theme must explicitly restore deep sea for mobile even when system prefers dark,
 // because the prefers-color-scheme: dark media query above would otherwise win.
 html[data-theme="light"] {
-    @media screen and (max-width: 600px) {
-        .site-nav {
-            --nav-fg: #{$kraken-deep-sea};
-        }
+  @media screen and (max-width: 600px) {
+    .site-nav {
+      --nav-fg: #{$kraken-deep-sea};
     }
+  }
 }
 
 // Desktop: lay out toggle button and nav links side by side.
 @media screen and (min-width: 601px) {
-    .site-nav {
-        display: flex;
-        align-items: center;
-    }
+  .site-nav {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .theme-toggle {
-    display: inline-flex;
-    align-items: center;
-    background: none;
-    border: none;
-    padding: 4px;
-    margin-right: 20px;
-    cursor: pointer;
-    color: var(--nav-fg);
-    vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 4px;
+  margin-right: 20px;
+  cursor: pointer;
+  color: var(--nav-fg);
+  vertical-align: middle;
 
-    svg {
-        display: none;
-        width: 1.25rem;
-        height: 1.25rem;
-    }
+  svg {
+    display: none;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 
-    .icon-system {
-        display: block;
-    }
+  .icon-system {
+    display: block;
+  }
 
-    &:focus-visible {
-        outline: 2px solid currentColor;
-        outline-offset: 2px;
-        border-radius: 2px;
-    }
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 
-    @media screen and (max-width: 600px) {
-        float: right;
-        margin-right: 2px;
-        width: 36px;
-        height: 36px;
-        padding: 0;
-        justify-content: center;
-    }
+  @media screen and (max-width: 600px) {
+    float: right;
+    margin-right: 2px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+  }
 }
 
 html[data-theme="light"] .theme-toggle {
-    .icon-system {
-        display: none;
-    }
-    .icon-light {
-        display: block;
-    }
+  .icon-system {
+    display: none;
+  }
+  .icon-light {
+    display: block;
+  }
 }
 
 html[data-theme="dark"] .theme-toggle {
-    .icon-system {
-        display: none;
-    }
-    .icon-dark {
-        display: block;
-    }
+  .icon-system {
+    display: none;
+  }
+  .icon-dark {
+    display: block;
+  }
 }
 
 h1,
@@ -418,87 +418,87 @@ h3,
 h4,
 h5,
 h6 {
-    &[id] {
-        display: flex;
-        align-items: baseline;
+  &[id] {
+    display: flex;
+    align-items: baseline;
 
-        > a[href^="#"] {
-            order: 1;
+    > a[href^="#"] {
+      order: 1;
 
-            &::after {
-                content: "#";
-                visibility: hidden;
-                margin-left: 0.25em;
-                color: var(--accent-color);
-                cursor: pointer;
-            }
-        }
-
-        &:hover > a[href^="#"]::after {
-            visibility: visible;
-            text-decoration-color: var(--accent-color);
-        }
+      &::after {
+        content: "#";
+        visibility: hidden;
+        margin-left: 0.25em;
+        color: var(--accent-color);
+        cursor: pointer;
+      }
     }
+
+    &:hover > a[href^="#"]::after {
+      visibility: visible;
+      text-decoration-color: var(--accent-color);
+    }
+  }
 }
 
 .post-header {
-    margin-bottom: 15px !important;
+  margin-bottom: 15px !important;
 
-    .post-meta-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .post-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .post-meta {
-            margin: 0;
-        }
+    .post-meta {
+      margin: 0;
     }
+  }
 
-    @media screen and (max-width: 600px) {
-        .post-meta-sep {
-            display: none;
-        }
-        .post-author {
-            display: block;
-        }
+  @media screen and (max-width: 600px) {
+    .post-meta-sep {
+      display: none;
     }
+    .post-author {
+      display: block;
+    }
+  }
 }
 
 .post-list {
-    a.post-link {
-        text-decoration: none;
-    }
+  a.post-link {
+    text-decoration: none;
+  }
 }
 
 sequoia-comments::part(container) {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .footnotes {
-    color: $kraken-shadow;
-    font-size: 14px;
-    margin-top: 30px;
+  color: $kraken-shadow;
+  font-size: 14px;
+  margin-top: 30px;
 }
 
 .footer-col-1 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width: calc(20% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+  width: calc(20% - (#{$spacing-unit} / 2));
 
-    .social-media-list {
-        inline-size: max-content;
-    }
+  .social-media-list {
+    inline-size: max-content;
+  }
 }
 
 .tag-content {
-    color: var(--secondary-color);
-    font-style: italic;
+  color: var(--secondary-color);
+  font-style: italic;
 }
 
 .footer-col-2 {
-    width: -webkit-calc(80% - (#{$spacing-unit} / 2));
-    width: calc(80% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(80% - (#{$spacing-unit} / 2));
+  width: calc(80% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
-    display: none;
+  display: none;
 }

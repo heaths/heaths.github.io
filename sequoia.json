@@ -17,6 +17,6 @@
     "enabled": true
   },
   "ui": {
-    "components": "scripts/"
+    "components": "assets/scripts/"
   }
 }

@@ -31,12 +31,16 @@ layout: default
         >
           {{ mdate | date: date_format }}
         </time>
-        {%- endif -%}{%- if page.author -%}<span class="post-meta-sep"> • </span><span class="post-author">{% for author in page.author %}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span class="p-author h-card" itemprop="name">{{ author }}</span>
+        {%- endif -%}{%- if page.author -%}
+        <span class="post-meta-sep">•</span>
+        <span class="post-author">
+          {% for author in page.author %}
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">{{ author }}</span>
+          </span>
+          {%- if forloop.last == false %}, {% endif -%} {% endfor %}
         </span>
-        {%- if forloop.last == false %}, {% endif -%} {% endfor %}
-        </span>{%- endif -%}
+        {%- endif -%}
       </p>
       <div class="subscribe-buttons">
         {% include sequoia_subscribe.html %}

@@ -1,5 +1,7 @@
 .DS_Store
 .jekyll-metadata
 .sass-cache
+.sequoia-state.json
 _site
+assets/scripts/sequoia-*.js
 node_modules
