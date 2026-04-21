@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tangled.org/stevedylan.dev/sequoia/raw/main/sequoia.schema.json",
   "siteUrl": "https://heaths.dev",
   "contentDir": "./_posts/",
   "imagesDir": "./assets/images/",
@@ -9,7 +10,8 @@
   "pdsUrl": "https://ganoderma.us-west.host.bsky.network",
   "frontmatter": {
     "description": "summary",
-    "publishDate": "date"
+    "publishDate": "date",
+    "coverImage": "image"
   },
   "bluesky": {
     "enabled": true
