@@ -79,7 +79,7 @@
   }
 
   body {
-    background-color: #fdfdfd;
+    background-color: $light-bg-color;
     color: $kraken-deep-sea;
   }
 
@@ -114,7 +114,7 @@
 
   @media screen and (max-width: 600px) {
     .site-nav {
-      background-color: #fdfdfd;
+      background-color: $light-bg-color;
       border-color: $grey-color-light;
     }
   }
@@ -138,18 +138,15 @@
 
 :root {
   --accent-color: #{$kraken-shadow};
-  --secondary-color: #{$kraken-shadow};
   --nav-fg: #{$kraken-ice};
   color-scheme: light dark;
-  --border-radius: 8px;
-  --button-gap: 0.5rem;
 
   --sequoia-fg-color: #{$kraken-deep-sea};
-  --sequoia-bg-color: #fdfdfd;
+  --sequoia-bg-color: #{$light-bg-color};
   --sequoia-border-color: #{$grey-color-light};
   --sequoia-accent-color: var(--accent-color);
-  --sequoia-secondary-color: var(--secondary-color);
-  --sequoia-border-radius: var(--border-radius);
+  --sequoia-secondary-color: #{$kraken-shadow};
+  --sequoia-border-radius: #{$border-radius};
 }
 
 // Default (light) header background — must appear before media queries so dark preference can override.
@@ -181,7 +178,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-color: #{$kraken-red-alert};
-    --secondary-color: #{$kraken-shadow};
     color-scheme: dark;
     --sequoia-fg-color: #{$kraken-ice};
     --sequoia-bg-color: #{$kraken-deep-sea};
@@ -195,7 +191,6 @@
 // Forced theme overrides — higher specificity (0,1,1) beats :root (0,1,0).
 html[data-theme="dark"] {
   --accent-color: #{$kraken-red-alert};
-  --secondary-color: #{$kraken-shadow};
   color-scheme: dark;
   --sequoia-fg-color: #{$kraken-ice};
   --sequoia-bg-color: #{$kraken-deep-sea};
@@ -207,10 +202,9 @@ html[data-theme="dark"] {
 
 html[data-theme="light"] {
   --accent-color: #{$kraken-shadow};
-  --secondary-color: #{$kraken-shadow};
   color-scheme: light;
-  --sequoia-fg-color: $kraken-deep-sea;
-  --sequoia-bg-color: #fdfdfd;
+  --sequoia-fg-color: #{$kraken-deep-sea};
+  --sequoia-bg-color: #{$light-bg-color};
   --sequoia-border-color: #{$grey-color-light};
 
   @include light-theme-structural;
@@ -218,9 +212,9 @@ html[data-theme="light"] {
 
 .subscribe-buttons {
   display: flex;
-  gap: var(--button-gap);
+  gap: $button-gap;
   align-items: center;
-  margin-left: var(--button-gap);
+  margin-left: $button-gap;
 
   @media screen and (max-width: 600px) {
     flex-wrap: wrap;
@@ -237,7 +231,7 @@ html[data-theme="light"] {
   aspect-ratio: 1;
   background: var(--accent-color);
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: $border-radius;
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.15s ease;
@@ -283,7 +277,7 @@ img.align-right {
 }
 
 .grey {
-  color: var(--secondary-color);
+  color: $kraken-shadow;
 }
 
 .svg-icon {
@@ -488,7 +482,7 @@ sequoia-comments::part(container) {
 }
 
 .tag-content {
-  color: var(--secondary-color);
+  color: $kraken-shadow;
   font-style: italic;
 }
 

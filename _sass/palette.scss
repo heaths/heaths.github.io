@@ -7,6 +7,11 @@ $kraken-shadow: #4b647b;
 $kraken-ice: #99d9d9;
 $kraken-red-alert: #c8102e;
 
+// Static layout/design constants (compiled to literals — no runtime overhead)
+$light-bg-color: #fdfdfd;
+$border-radius: 8px;
+$button-gap: 0.5rem;
+
 // Minima 2.5.2 SCSS variable overrides (compiled to static CSS for base styles)
 // $grey-color mapped to Shadow Blue — readable on white body/footer backgrounds.
 // Header overrides in custom.scss use $kraken-ice directly for deep-sea contrast.
@@ -15,7 +20,6 @@ $blue-color: $kraken-boundless;
 $blue-color-dark: $kraken-deep-sea;
 
 $brand-color: $kraken-shadow;
-$link-base-color: $kraken-shadow;
 $link-hover-color: color.adjust($kraken-shadow, $lightness: -15%);
 
 $content-width: 80vw;
