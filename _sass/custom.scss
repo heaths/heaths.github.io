@@ -203,6 +203,12 @@ html[data-theme="dark"] {
     --sequoia-secondary-color: #{$kraken-shadow};
 
     @include dark-theme-structural;
+
+    body {
+        transition:
+            all 0.35s ease,
+            background-color 0s;
+    }
 }
 
 html[data-theme="light"] {
@@ -214,6 +220,12 @@ html[data-theme="light"] {
     --sequoia-border-color: #{$grey-color-light};
 
     @include light-theme-structural;
+
+    body {
+        transition:
+            all 0.35s ease,
+            background-color 0s;
+    }
 }
 
 .subscribe-buttons {
