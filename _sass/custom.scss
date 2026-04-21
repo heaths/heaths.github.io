@@ -372,36 +372,62 @@ html[data-theme="light"] {
   }
 }
 
+@mixin light-theme-icon {
+  .icon-light {
+    display: block;
+  }
+  .icon-dark {
+    display: none;
+  }
+
+  &:hover {
+    .icon-light {
+      display: none;
+    }
+    .icon-dark {
+      display: block;
+    }
+  }
+}
+
+@mixin dark-theme-icon {
+  .icon-light {
+    display: block;
+  }
+  .icon-dark {
+    display: none;
+  }
+
+  &:hover {
+    .icon-light {
+      display: none;
+    }
+    .icon-dark {
+      display: block;
+    }
+  }
+}
+
 // Default: show icon matching system preference.
 @media (prefers-color-scheme: light) {
-  .theme-toggle .icon-light {
-    display: block;
+  .theme-toggle {
+    @include light-theme-icon;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .theme-toggle .icon-dark {
-    display: block;
+  .theme-toggle {
+    @include dark-theme-icon;
   }
 }
 
 // Forced overrides win by specificity (0,2,0) over media query (0,1,0).
 html[data-theme="light"] .theme-toggle {
-  .icon-light {
-    display: block;
-  }
-  .icon-dark {
-    display: none;
-  }
+  @include light-theme-icon;
 }
 
 html[data-theme="dark"] .theme-toggle {
-  .icon-dark {
-    display: block;
-  }
-  .icon-light {
-    display: none;
-  }
+  @include dark-theme-icon;
 }
 
 h1,

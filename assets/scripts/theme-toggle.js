@@ -4,8 +4,8 @@
     dark: "Color theme: dark. Click to switch to light.",
   };
   var TITLES = {
-    light: "Light theme",
-    dark: "Dark theme",
+    light: "Click to switch to dark theme",
+    dark: "Click to switch to light theme",
   };
 
   function systemPreference() {
