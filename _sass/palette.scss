@@ -9,8 +9,11 @@ $kraken-red-alert: #c8102e;
 
 // Static layout/design constants (compiled to literals — no runtime overhead)
 $light-bg-color: #fdfdfd;
+$light-code-bg: #eef;
 $border-radius: 8px;
 $button-gap: 0.5rem;
+$icon-size: 1.25rem;
+$mobile-breakpoint: 600px;
 
 // Minima 2.5.2 SCSS variable overrides (compiled to static CSS for base styles)
 // $grey-color mapped to Shadow Blue — readable on white body/footer backgrounds.

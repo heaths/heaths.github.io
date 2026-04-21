@@ -35,6 +35,8 @@ collections:
   archive:
     output: true
 
+paginate: 10
+
 header_pages:
   - archive.md
   - about.md

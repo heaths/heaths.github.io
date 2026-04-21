@@ -44,7 +44,7 @@
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile-breakpoint) {
     .site-nav {
       background-color: $kraken-deep-sea;
       border-color: $kraken-shadow;
@@ -90,7 +90,7 @@
 
   pre,
   code {
-    background-color: #eef;
+    background-color: $light-code-bg;
     border-color: $grey-color-light;
   }
 
@@ -112,7 +112,7 @@
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile-breakpoint) {
     .site-nav {
       background-color: $light-bg-color;
       border-color: $grey-color-light;
@@ -216,7 +216,7 @@ html[data-theme="light"] {
   align-items: center;
   margin-left: $button-gap;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile-breakpoint) {
     flex-wrap: wrap;
   }
 }
@@ -242,8 +242,8 @@ html[data-theme="light"] {
   }
 
   img {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: $icon-size;
+    height: $icon-size;
     display: block;
   }
 }
@@ -290,7 +290,7 @@ svg#keybase path {
 
 // On mobile, .site-nav becomes an absolutely-positioned popup with a light background.
 // Override --nav-fg so links and the toggle button remain readable on that background.
-@media screen and (max-width: 600px) {
+@media screen and (max-width: $mobile-breakpoint) {
   .site-nav {
     --nav-fg: #{$kraken-deep-sea};
     padding: 0 4px;
@@ -307,14 +307,14 @@ svg#keybase path {
 
 // Dark mode mobile popup is dark — restore ice so links stay readable.
 // Placed after the light override so it wins by source order (same specificity).
-@media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
+@media screen and (max-width: $mobile-breakpoint) and (prefers-color-scheme: dark) {
   .site-nav {
     --nav-fg: #{$kraken-ice};
   }
 }
 
 html[data-theme="dark"] {
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile-breakpoint) {
     .site-nav {
       --nav-fg: #{$kraken-ice};
     }
@@ -324,7 +324,7 @@ html[data-theme="dark"] {
 // Forced light theme must explicitly restore deep sea for mobile even when system prefers dark,
 // because the prefers-color-scheme: dark media query above would otherwise win.
 html[data-theme="light"] {
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile-breakpoint) {
     .site-nav {
       --nav-fg: #{$kraken-deep-sea};
     }
@@ -332,7 +332,7 @@ html[data-theme="light"] {
 }
 
 // Desktop: lay out toggle button and nav links side by side.
-@media screen and (min-width: 601px) {
+@media screen and (min-width: #{$mobile-breakpoint + 1px}) {
   .site-nav {
     display: flex;
     align-items: center;
@@ -352,8 +352,8 @@ html[data-theme="light"] {
 
   svg {
     display: none;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: $icon-size;
+    height: $icon-size;
   }
 
   &:focus-visible {
@@ -362,7 +362,7 @@ html[data-theme="light"] {
     border-radius: 2px;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile-breakpoint) {
     float: right;
     margin-right: 2px;
     width: 36px;
@@ -446,7 +446,7 @@ h6 {
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $mobile-breakpoint) {
     .post-meta-sep {
       display: none;
     }
@@ -463,13 +463,13 @@ h6 {
 }
 
 sequoia-comments::part(container) {
-  margin-top: 30px;
+  margin-top: $spacing-unit;
 }
 
 .footnotes {
   color: $kraken-shadow;
   font-size: 14px;
-  margin-top: 30px;
+  margin-top: $spacing-unit;
 }
 
 .footer-col-1 {
@@ -493,4 +493,61 @@ sequoia-comments::part(container) {
 
 .footer-col-3 {
   display: none;
+}
+
+$pagination-item-width: 1.5rem;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $button-gap;
+  margin: $spacing-unit 0;
+  font-size: 0.95rem;
+}
+
+.pagination-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  text-decoration: none;
+  min-width: $pagination-item-width;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    height: 0.85em;
+    width: auto;
+  }
+}
+
+.pagination-current {
+  font-style: normal;
+  font-weight: bold;
+  min-width: $pagination-item-width;
+  text-align: center;
+}
+
+.pagination-disabled {
+  color: $kraken-shadow;
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pagination-ellipsis,
+.pagination-total {
+  color: $kraken-shadow;
+}
+
+.pagination-last-group {
+  display: inline-flex;
+  align-items: baseline;
 }

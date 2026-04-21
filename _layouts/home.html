@@ -5,7 +5,7 @@ layout: default
 <div class="home">
   {%- if page.title -%}
   <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
+  {%- endif -%} {{ content }} {%- if paginator.total_posts > 0 -%}
   <div
     style="display: flex; justify-content: space-between; align-items: center"
   >
@@ -22,7 +22,7 @@ layout: default
     </div>
   </div>
   <ul class="post-list">
-    {%- for post in site.posts -%}
+    {%- for post in paginator.posts -%}
     <li>
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
       -%}
@@ -37,6 +37,108 @@ layout: default
     </li>
     {%- endfor -%}
   </ul>
+
+  {%- if paginator.total_pages > 1 -%} {%- assign window_start = paginator.page
+  | minus: 2 -%} {%- if window_start < 1 -%} {%- assign window_start = 1 -%} {%-
+  endif -%} {%- assign window_end = window_start | plus: 4 -%} {%- if window_end
+  > paginator.total_pages -%} {%- assign window_end = paginator.total_pages -%}
+  {%- assign window_start = window_end | minus: 4 -%} {%- if window_start < 1
+  -%} {%- assign window_start = 1 -%} {%- endif -%} {%- endif -%}
+  <nav class="pagination" aria-label="Posts pagination">
+    {%- if paginator.previous_page -%}
+    <a
+      class="pagination-link"
+      href="{{ '/' | relative_url }}"
+      aria-label="First page"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 16"
+        aria-hidden="true"
+      >
+        <line x1="3" y1="2" x2="3" y2="14" />
+        <polyline points="15,3 10,8 15,13" />
+      </svg>
+    </a>
+    <a
+      class="pagination-link"
+      href="{{ paginator.previous_page_path | relative_url }}"
+      aria-label="Previous page"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        aria-hidden="true"
+      >
+        <polyline points="10,3 5,8 10,13" />
+      </svg>
+    </a>
+    {%- endif -%} {%- if window_start > 1 -%}
+    <span class="pagination-ellipsis">&hellip;</span>
+    {%- endif -%} {%- for p in (window_start..window_end) -%} {%- assign
+    show_total = false -%} {%- if p == window_end and window_end <
+    paginator.total_pages -%} {%- assign show_total = true -%} {%- endif -%} {%-
+    if p == paginator.page -%}
+    <span class="pagination-last-group">
+      <em class="pagination-current" aria-current="page">{{ p }}</em>
+      {%- if show_total -%}
+      <span class="pagination-total">of {{ paginator.total_pages }}</span>
+      {%- endif -%}
+    </span>
+    {%- elsif p == 1 -%}
+    <span class="pagination-last-group">
+      <a class="pagination-link" href="{{ '/' | relative_url }}">{{ p }}</a>
+      {%- if show_total -%}
+      <span class="pagination-total">of {{ paginator.total_pages }}</span>
+      {%- endif -%}
+    </span>
+    {%- else -%}
+    <span class="pagination-last-group">
+      <a
+        class="pagination-link"
+        href="{{ site.paginate_path | relative_url | replace: ':num', p }}"
+      >
+        {{ p }}
+      </a>
+      {%- if show_total -%}
+      <span class="pagination-total">of {{ paginator.total_pages }}</span>
+      {%- endif -%}
+    </span>
+    {%- endif -%} {%- endfor -%} {%- if window_end < paginator.total_pages -%}
+    <span class="pagination-ellipsis">&hellip;</span>
+    {%- endif -%} {%- if paginator.next_page -%}
+    <a
+      class="pagination-link"
+      href="{{ paginator.next_page_path | relative_url }}"
+      aria-label="Next page"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        aria-hidden="true"
+      >
+        <polyline points="6,3 11,8 6,13" />
+      </svg>
+    </a>
+    {%- assign last_page_path = site.paginate_path | replace: ':num',
+    paginator.total_pages -%}
+    <a
+      class="pagination-link"
+      href="{{ last_page_path | relative_url }}"
+      aria-label="Last page"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 16"
+        aria-hidden="true"
+      >
+        <polyline points="5,3 10,8 5,13" />
+        <line x1="17" y1="2" x2="17" y2="14" />
+      </svg>
+    </a>
+    {%- endif -%}
+  </nav>
+  {%- endif -%}
 
   <p class="rss-subscribe">
     subscribe
