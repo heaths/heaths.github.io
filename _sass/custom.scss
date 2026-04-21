@@ -203,12 +203,6 @@ html[data-theme="dark"] {
   --sequoia-secondary-color: #{$kraken-shadow};
 
   @include dark-theme-structural;
-
-  body {
-    transition:
-      all 0.35s ease,
-      background-color 0s;
-  }
 }
 
 html[data-theme="light"] {
@@ -220,12 +214,6 @@ html[data-theme="light"] {
   --sequoia-border-color: #{$grey-color-light};
 
   @include light-theme-structural;
-
-  body {
-    transition:
-      all 0.35s ease,
-      background-color 0s;
-  }
 }
 
 .subscribe-buttons {
@@ -280,7 +268,7 @@ a {
   }
 }
 
-.imgrid {
+.image-grid {
   display: flex;
   flex-wrap: wrap;
 
@@ -314,7 +302,7 @@ svg#keybase path {
     padding: 0 4px;
   }
 
-  // Explicitly override all child colours so they use --nav-fg from the popup context.
+  // Explicitly override all child colors so they use --nav-fg from the popup context.
   .site-nav .page-link {
     color: var(--nav-fg);
   }
@@ -374,10 +362,6 @@ html[data-theme="light"] {
     height: 1.25rem;
   }
 
-  .icon-system {
-    display: block;
-  }
-
   &:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
@@ -394,21 +378,35 @@ html[data-theme="light"] {
   }
 }
 
-html[data-theme="light"] .theme-toggle {
-  .icon-system {
-    display: none;
-  }
-  .icon-light {
+// Default: show icon matching system preference.
+@media (prefers-color-scheme: light) {
+  .theme-toggle .icon-light {
     display: block;
   }
 }
 
-html[data-theme="dark"] .theme-toggle {
-  .icon-system {
-    display: none;
+@media (prefers-color-scheme: dark) {
+  .theme-toggle .icon-dark {
+    display: block;
+  }
+}
+
+// Forced overrides win by specificity (0,2,0) over media query (0,1,0).
+html[data-theme="light"] .theme-toggle {
+  .icon-light {
+    display: block;
   }
   .icon-dark {
+    display: none;
+  }
+}
+
+html[data-theme="dark"] .theme-toggle {
+  .icon-dark {
     display: block;
+  }
+  .icon-light {
+    display: none;
   }
 }
 

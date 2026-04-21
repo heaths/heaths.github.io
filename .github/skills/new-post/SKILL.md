@@ -3,7 +3,7 @@ name: new-post
 description: >
   Create a new blog post. Use this skill whenever the user asks to write, create,
   draft, or add a new blog post. This skill ensures the correct filename format,
-  frontmatter structure, and required fields are present.
+  front matter structure, and required fields are present.
 ---
 
 Create a new blog post in `_posts/`.
@@ -12,13 +12,13 @@ Create a new blog post in `_posts/`.
 
 1. Ask the user for missing required info: **title**, **category** (e.g., `tips`, `azure`, `general`), and **tags**.
 2. Create `_posts/YYYY-MM-DD-title-slug.md` using the current date. Slug is the title lowercased, spaces to hyphens, special characters removed.
-3. Add YAML frontmatter in this field order:
+3. Add YAML front matter in this field order:
    - `title`
    - `date`: current date/time in RFC 3339 with local timezone offset.
    - `summary`: placeholder `>` block, or generate one if the user provided content.
    - `category`
    - `tags`: YAML list.
-4. Include user-provided body content after the frontmatter.
+4. Include user-provided body content after the front matter.
 
 ## Example
 

@@ -25,11 +25,11 @@ This is a [Jekyll](https://jekyllrb.com) site using the [minima](https://github.
 
 Posts go in `_posts/` with filenames like `YYYY-MM-DD-title-slug.md`.
 
-When the user asks to write, create, draft, or add a new blog post, use the skill defined in `.github/skills/new-post/SKILL.md`. This skill ensures the correct filename format, frontmatter structure, and required fields are present.
+When the user asks to write, create, draft, or add a new blog post, use the skill defined in `.github/skills/new-post/SKILL.md`. This skill ensures the correct filename format, front matter structure, and required fields are present.
 
-### Frontmatter
+### Front matter
 
-Every post must have YAML frontmatter. Example:
+Every post must have YAML front matter. Example:
 
 ```yaml
 ---
@@ -48,12 +48,13 @@ tags:
 - **`summary`** — A short description (one or two sentences) of the post. This should be a YAML literal or folded string. Required for all posts.
 - **`excerpt_separator`** — Set to `<!--more-->` only on posts that use that marker in their content body. Do not set globally.
 - **`category`** and **`tags`** — Used for organization and rendered on post pages.
+- **`atUri`** — AT Protocol URI linking the post to a Bluesky record. Never modify this field.
 
 ### Pre-commit check
 
 Do not commit changes unless the user explicitly says to commit. Stage changes freely, but always wait for explicit approval before creating a commit.
 
-Before committing, verify that every post in `_posts/` has a `summary` field in its frontmatter. If a post is missing one, generate a summary of one or two sentences based on the post content and add it to the frontmatter before the `category` field.
+Before committing, verify that every post in `_posts/` has a `summary` field in its front matter. If a post is missing one, generate a summary of one or two sentences based on the post content and add it to the front matter before the `category` field.
 
 ## Skills
 
@@ -65,7 +66,7 @@ After completing all requested changes, always run these skills in order on modi
 
 | Skill            | Path                                     | Description                                                                                 |
 | ---------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `new-post`       | `.github/skills/new-post/SKILL.md`       | Create a new blog post with the correct filename format, frontmatter, and required fields.  |
+| `new-post`       | `.github/skills/new-post/SKILL.md`       | Create a new blog post with the correct filename format, front matter, and required fields. |
 | `check-spelling` | `.github/skills/check-spelling/SKILL.md` | Check and fix spelling in project source files using cSpell. Config: `.vscode/cspell.json`. |
 | `format`         | `.github/skills/format/SKILL.md`         | Format changed files with Prettier. Run after all other changes are complete.               |
 | `lint`           | `.github/skills/lint/SKILL.md`           | Lint project files for common issues. Run on new or changed files before committing.        |

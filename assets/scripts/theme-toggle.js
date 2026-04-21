@@ -1,40 +1,41 @@
 (function () {
-  var THEMES = ["system", "light", "dark"];
   var LABELS = {
-    system: "Color theme: system. Click to switch to light.",
     light: "Color theme: light. Click to switch to dark.",
-    dark: "Color theme: dark. Click to switch to system.",
+    dark: "Color theme: dark. Click to switch to light.",
   };
   var TITLES = {
-    system: "System theme",
     light: "Light theme",
     dark: "Dark theme",
   };
 
-  function safeGet() {
+  function systemPreference() {
     try {
-      var val = localStorage.getItem("theme");
-      return THEMES.indexOf(val) > 0 ? val : "system";
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
     } catch (_) {
-      return "system";
+      return "light";
     }
   }
 
-  function safeSet(theme) {
+  function effectiveTheme() {
     try {
-      if (theme === "system") {
-        localStorage.removeItem("theme");
-      } else {
-        localStorage.setItem("theme", theme);
-      }
+      var stored = localStorage.getItem("theme");
+      if (stored === "light" || stored === "dark") return stored;
     } catch (_) {}
+    return systemPreference();
   }
 
   function applyTheme(theme) {
-    safeSet(theme);
-    if (theme === "system") {
+    if (theme === systemPreference()) {
+      try {
+        localStorage.removeItem("theme");
+      } catch (_) {}
       document.documentElement.removeAttribute("data-theme");
     } else {
+      try {
+        localStorage.setItem("theme", theme);
+      } catch (_) {}
       document.documentElement.setAttribute("data-theme", theme);
     }
     updateButton(theme);
@@ -43,21 +44,20 @@
   function updateButton(theme) {
     var btn = document.getElementById("theme-toggle");
     if (btn) {
-      btn.setAttribute("aria-label", LABELS[theme] || LABELS.system);
-      btn.setAttribute("title", TITLES[theme] || TITLES.system);
+      btn.setAttribute("aria-label", LABELS[theme] || LABELS.light);
+      btn.setAttribute("title", TITLES[theme] || TITLES.light);
     }
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    var current = safeGet();
+    var current = effectiveTheme();
     updateButton(current);
 
     var btn = document.getElementById("theme-toggle");
     if (!btn) return;
 
     btn.addEventListener("click", function () {
-      var idx = THEMES.indexOf(safeGet());
-      applyTheme(THEMES[(idx + 1) % THEMES.length]);
+      applyTheme(effectiveTheme() === "dark" ? "light" : "dark");
     });
   });
 })();
