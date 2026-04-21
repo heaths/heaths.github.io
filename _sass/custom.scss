@@ -460,6 +460,17 @@ h6 {
   a.post-link {
     text-decoration: none;
   }
+
+  // Cannot add class to post.excerpt so this will have to do.
+  .post p:last-of-type a {
+    text-decoration: underline;
+  }
+}
+
+.post-content {
+  a {
+    text-decoration: underline;
+  }
 }
 
 sequoia-comments::part(container) {

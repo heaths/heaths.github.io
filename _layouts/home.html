@@ -23,7 +23,7 @@ layout: default
   </div>
   <ul class="post-list">
     {%- for post in paginator.posts -%}
-    <li>
+    <li class="post">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
       -%}
       <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -32,8 +32,9 @@ layout: default
           {{ post.title | escape }}
         </a>
       </h3>
-      {%- if site.show_excerpts -%} {%- if post.summary -%} {{ post.summary |
-      escape }} {%- else -%} {{ post.excerpt }} {%- endif -%} {%- endif -%}
+      {%- if site.show_excerpts -%} {%- if post.summary -%}
+      <p>{{ post.summary | escape }}</p>
+      {%- else -%} {{ post.excerpt }} {%- endif -%} {%- endif -%}
     </li>
     {%- endfor -%}
   </ul>
