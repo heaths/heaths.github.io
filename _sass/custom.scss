@@ -380,12 +380,14 @@ html[data-theme="light"] {
     display: none;
   }
 
-  &:hover {
-    .icon-light {
-      display: none;
-    }
-    .icon-dark {
-      display: block;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .icon-light {
+        display: none;
+      }
+      .icon-dark {
+        display: block;
+      }
     }
   }
 }
@@ -398,12 +400,14 @@ html[data-theme="light"] {
     display: block;
   }
 
-  &:hover {
-    .icon-light {
-      display: block;
-    }
-    .icon-dark {
-      display: none;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .icon-light {
+        display: block;
+      }
+      .icon-dark {
+        display: none;
+      }
     }
   }
 }
