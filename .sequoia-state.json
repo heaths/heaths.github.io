@@ -19,9 +19,9 @@
       "slug": "2025-02-28-cleaning-up-rust"
     },
     "_posts/2024-12-19-12-months-over-7000m.md": {
-      "contentHash": "b48aded6b45ba9518256637e74ed3a2006b82569497d9f454b753a743322363d",
+      "contentHash": "bbf6529c4681b6762963d3a3e6fbf803643b7b4a915eabd5fb668a1dab5d41a1",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2argi32b",
-      "lastPublished": "2026-03-21T07:28:42.882Z",
+      "lastPublished": "2026-05-01T10:01:38.117Z",
       "slug": "2024-12-19-12-months-over-7000m"
     },
     "_posts/2024-08-02-helix-support-for-typespec.md": {
@@ -171,9 +171,9 @@
       }
     },
     "_posts/2026-04-18-we-all-make-mistakes.md": {
-      "contentHash": "4d099dfd2bc925d68ab665fec499aa06caecc59da05112ceab89e9e34dba8ccb",
+      "contentHash": "656c0516487f60746ffeac3bc8d90e6a2292877badffe971e3c38dc728e187d9",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjqwgevm2i2d",
-      "lastPublished": "2026-04-18T07:34:31.864Z",
+      "lastPublished": "2026-05-01T10:01:38.077Z",
       "slug": "2026-04-18-we-all-make-mistakes",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjqxekz7dk2q",
@@ -188,6 +188,16 @@
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjvwnykcec2m",
         "cid": "bafyreidb6eycham6v5ajd2n3mjq3bckcyglsrgt7phzlwhhhw73vg7emmq"
+      }
+    },
+    "_posts/2026-04-30-improving-the-azure-sdk-developer-experience-with-mcp.md": {
+      "contentHash": "cd57d5f217ef5327d5029cbd56dec6403ee9645cdc9574f1ca26f376e2952b6a",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkruperrgt2t",
+      "lastPublished": "2026-05-01T10:01:38.045Z",
+      "slug": "2026-04-30-improving-the-azure-sdk-developer-experience-with-mcp",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkrupf57sa2s",
+        "cid": "bafyreifyavxo3bexk3nrjrgfqoqdmmscoax7ceqvxcxdf4aaaxfhsflqsy"
       }
     }
   }
