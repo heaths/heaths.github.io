@@ -392,18 +392,18 @@ html[data-theme="light"] {
 
 @mixin dark-theme-icon {
   .icon-light {
-    display: block;
+    display: none;
   }
   .icon-dark {
-    display: none;
+    display: block;
   }
 
   &:hover {
     .icon-light {
-      display: none;
+      display: block;
     }
     .icon-dark {
-      display: block;
+      display: none;
     }
   }
 }
