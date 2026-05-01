@@ -588,3 +588,18 @@ $pagination-item-width: 1.5rem;
   display: inline-flex;
   align-items: baseline;
 }
+
+.youtube-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; // height = width * 9/16
+  margin: $spacing-unit 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
