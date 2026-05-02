@@ -71,8 +71,6 @@ minima:
       - username: heaths
         instance: fosstodon.org
     linkedin: heaths
-    instagram: mrhestew
-    keybase: heaths
 
 sass:
   quiet_deps: true
