@@ -1,28 +1,29 @@
 @use "sass:color";
 
-// Seattle Kraken color palette
-$kraken-deep-sea: #001628;
-$kraken-boundless: #355464;
-$kraken-shadow: #4b647b;
-$kraken-ice: #99d9d9;
-$kraken-red-alert: #c8102e;
+// Blue Hour color palette
+$bluehour-charcoal: #2e2e2e; // dark surface — light header/nav bg; dark page bg
+$bluehour-deep: #2c4268; // mid surface — dark header bg, table stripes
+$bluehour-slate: #537eac; // border/muted — borders, separators, muted text
+$bluehour-mist: #b8d4f0; // foreground — dark body text, nav links on dark bg
+$bluehour-azure: #80b0f0; // accent — dark mode links, buttons, icons
+$bluehour-ink: #3a5480; // code bg — dark mode code block/inline background
 
 // Static layout/design constants (compiled to literals — no runtime overhead)
 $light-bg-color: #fdfdfd;
-$light-code-bg: #eef;
+$light-code-bg: #edf3fa;
 $border-radius: 8px;
 $button-gap: 0.5rem;
 $icon-size: 1.25rem;
 $mobile-breakpoint: 600px;
 
 // Minima 2.5.2 SCSS variable overrides (compiled to static CSS for base styles)
-// $grey-color mapped to Shadow Blue — readable on white body/footer backgrounds.
-// Header overrides in custom.scss use $kraken-ice directly for deep-sea contrast.
-$grey-color: $kraken-shadow;
-$blue-color: $kraken-boundless;
-$blue-color-dark: $kraken-deep-sea;
+// $grey-color mapped to Slate — readable on white body/footer backgrounds.
+// Header overrides in custom.scss use $bluehour-mist directly for charcoal contrast.
+$grey-color: $bluehour-slate;
+$blue-color: $bluehour-deep;
+$blue-color-dark: $bluehour-charcoal;
 
-$brand-color: $kraken-shadow;
-$link-hover-color: color.adjust($kraken-shadow, $lightness: -15%);
+$brand-color: $bluehour-slate;
+$link-hover-color: color.adjust($bluehour-slate, $lightness: -15%);
 
 $content-width: 80vw;

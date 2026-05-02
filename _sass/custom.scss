@@ -3,7 +3,7 @@
 @mixin dark-theme-structural {
   a {
     code {
-      text-shadow: 0 0 4px $kraken-deep-sea;
+      text-shadow: 0 0 4px $bluehour-charcoal;
     }
   }
   a:hover {
@@ -11,60 +11,60 @@
   }
 
   body {
-    background-color: $kraken-deep-sea;
-    color: $kraken-ice;
+    background-color: $bluehour-charcoal;
+    color: $bluehour-mist;
   }
 
   blockquote {
-    color: $kraken-ice;
-    border-left-color: $kraken-shadow;
+    color: $bluehour-mist;
+    border-left-color: $bluehour-slate;
   }
 
   pre,
   code {
-    background-color: $kraken-boundless;
-    border-color: $kraken-shadow;
+    background-color: $bluehour-ink;
+    border-color: $bluehour-slate;
   }
 
   table {
-    border-color: $kraken-shadow;
+    border-color: $bluehour-slate;
 
     th {
-      background-color: $kraken-shadow;
-      border-color: $kraken-shadow;
-      color: $kraken-ice;
+      background-color: $bluehour-slate;
+      border-color: $bluehour-slate;
+      color: $bluehour-mist;
     }
 
     td {
-      border-color: $kraken-shadow;
+      border-color: $bluehour-slate;
     }
 
     tr:nth-child(even) {
-      background-color: $kraken-boundless;
+      background-color: $bluehour-deep;
     }
   }
 
   @media screen and (max-width: $mobile-breakpoint) {
     .site-nav {
-      background-color: $kraken-deep-sea;
-      border-color: $kraken-shadow;
+      background-color: $bluehour-charcoal;
+      border-color: $bluehour-slate;
     }
   }
 
   .site-header {
-    background-color: $kraken-boundless;
+    background-color: $bluehour-deep;
   }
 
   .site-footer {
-    border-top-color: $kraken-shadow;
+    border-top-color: $bluehour-slate;
   }
 
   .footer-col-wrapper {
-    color: $kraken-ice;
+    color: $bluehour-mist;
   }
 
   .footnotes {
-    color: $kraken-shadow;
+    color: $bluehour-slate;
   }
 }
 
@@ -80,11 +80,11 @@
 
   body {
     background-color: $light-bg-color;
-    color: $kraken-deep-sea;
+    color: $bluehour-charcoal;
   }
 
   blockquote {
-    color: $kraken-shadow;
+    color: $bluehour-slate;
     border-left-color: $grey-color-light;
   }
 
@@ -100,7 +100,7 @@
     th {
       background-color: $grey-color-light;
       border-color: $grey-color-light;
-      color: $kraken-deep-sea;
+      color: $bluehour-charcoal;
     }
 
     td {
@@ -120,7 +120,7 @@
   }
 
   .site-header {
-    background-color: $kraken-deep-sea;
+    background-color: $bluehour-charcoal;
   }
 
   .site-footer {
@@ -128,30 +128,30 @@
   }
 
   .footer-col-wrapper {
-    color: $kraken-shadow;
+    color: $bluehour-slate;
   }
 
   .footnotes {
-    color: $kraken-shadow;
+    color: $bluehour-slate;
   }
 }
 
 :root {
-  --accent-color: #{$kraken-shadow};
-  --nav-fg: #{$kraken-ice};
+  --accent-color: #{$bluehour-slate};
+  --nav-fg: #{$bluehour-mist};
   color-scheme: light dark;
 
-  --sequoia-fg-color: #{$kraken-deep-sea};
+  --sequoia-fg-color: #{$bluehour-charcoal};
   --sequoia-bg-color: #{$light-bg-color};
   --sequoia-border-color: #{$grey-color-light};
   --sequoia-accent-color: var(--accent-color);
-  --sequoia-secondary-color: #{$kraken-shadow};
+  --sequoia-secondary-color: #{$bluehour-slate};
   --sequoia-border-radius: #{$border-radius};
 }
 
 // Default (light) header background — must appear before media queries so dark preference can override.
 .site-header {
-  background-color: $kraken-deep-sea;
+  background-color: $bluehour-charcoal;
 
   a {
     text-decoration: none;
@@ -177,12 +177,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent-color: #{$kraken-red-alert};
+    --accent-color: #{$bluehour-azure};
     color-scheme: dark;
-    --sequoia-fg-color: #{$kraken-ice};
-    --sequoia-bg-color: #{$kraken-deep-sea};
-    --sequoia-border-color: #{$kraken-shadow};
-    --sequoia-secondary-color: #{$kraken-shadow};
+    --sequoia-fg-color: #{$bluehour-mist};
+    --sequoia-bg-color: #{$bluehour-charcoal};
+    --sequoia-border-color: #{$bluehour-slate};
+    --sequoia-secondary-color: #{$bluehour-slate};
   }
 
   @include dark-theme-structural;
@@ -190,20 +190,20 @@
 
 // Forced theme overrides — higher specificity (0,1,1) beats :root (0,1,0).
 html[data-theme="dark"] {
-  --accent-color: #{$kraken-red-alert};
+  --accent-color: #{$bluehour-azure};
   color-scheme: dark;
-  --sequoia-fg-color: #{$kraken-ice};
-  --sequoia-bg-color: #{$kraken-deep-sea};
-  --sequoia-border-color: #{$kraken-shadow};
-  --sequoia-secondary-color: #{$kraken-shadow};
+  --sequoia-fg-color: #{$bluehour-mist};
+  --sequoia-bg-color: #{$bluehour-charcoal};
+  --sequoia-border-color: #{$bluehour-slate};
+  --sequoia-secondary-color: #{$bluehour-slate};
 
   @include dark-theme-structural;
 }
 
 html[data-theme="light"] {
-  --accent-color: #{$kraken-shadow};
+  --accent-color: #{$bluehour-slate};
   color-scheme: light;
-  --sequoia-fg-color: #{$kraken-deep-sea};
+  --sequoia-fg-color: #{$bluehour-charcoal};
   --sequoia-bg-color: #{$light-bg-color};
   --sequoia-border-color: #{$grey-color-light};
 
@@ -237,7 +237,7 @@ html[data-theme="light"] {
   transition: background-color 0.15s ease;
 
   &:hover {
-    background: color-mix(in srgb, var(--accent-color) 85%, black);
+    background: color-mix(in srgb, var(--accent-color) 80%, black);
     text-decoration: none;
   }
 
@@ -248,17 +248,25 @@ html[data-theme="light"] {
   }
 }
 
+@mixin link-hover {
+  color: color-mix(in srgb, var(--accent-color) 80%, black);
+  text-decoration: underline;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;
 
   &:hover {
-    color: color-mix(in srgb, var(--accent-color) 80%, black);
-    text-decoration: underline;
+    @include link-hover;
   }
 
   &:visited {
     color: var(--accent-color);
+
+    &:hover {
+      @include link-hover;
+    }
   }
 }
 
@@ -277,7 +285,7 @@ img.align-right {
 }
 
 .grey {
-  color: $kraken-shadow;
+  color: $bluehour-slate;
 }
 
 .svg-icon {
@@ -292,7 +300,7 @@ svg#keybase path {
 // Override --nav-fg so links and the toggle button remain readable on that background.
 @media screen and (max-width: $mobile-breakpoint) {
   .site-nav {
-    --nav-fg: #{$kraken-deep-sea};
+    --nav-fg: #{$bluehour-charcoal};
     padding: 0 4px;
   }
 
@@ -309,14 +317,14 @@ svg#keybase path {
 // Placed after the light override so it wins by source order (same specificity).
 @media screen and (max-width: $mobile-breakpoint) and (prefers-color-scheme: dark) {
   .site-nav {
-    --nav-fg: #{$kraken-ice};
+    --nav-fg: #{$bluehour-mist};
   }
 }
 
 html[data-theme="dark"] {
   @media screen and (max-width: $mobile-breakpoint) {
     .site-nav {
-      --nav-fg: #{$kraken-ice};
+      --nav-fg: #{$bluehour-mist};
     }
   }
 }
@@ -326,7 +334,7 @@ html[data-theme="dark"] {
 html[data-theme="light"] {
   @media screen and (max-width: $mobile-breakpoint) {
     .site-nav {
-      --nav-fg: #{$kraken-deep-sea};
+      --nav-fg: #{$bluehour-charcoal};
     }
   }
 }
@@ -508,7 +516,7 @@ sequoia-comments::part(container) {
 }
 
 .footnotes {
-  color: $kraken-shadow;
+  color: $bluehour-slate;
   font-size: 14px;
   margin-top: $spacing-unit;
 }
@@ -523,7 +531,7 @@ sequoia-comments::part(container) {
 }
 
 .tag-content {
-  color: $kraken-shadow;
+  color: $bluehour-slate;
   font-style: italic;
 }
 
@@ -578,14 +586,14 @@ $pagination-item-width: 1.5rem;
 }
 
 .pagination-disabled {
-  color: $kraken-shadow;
+  color: $bluehour-slate;
   opacity: 0.4;
   cursor: default;
 }
 
 .pagination-ellipsis,
 .pagination-total {
-  color: $kraken-shadow;
+  color: $bluehour-slate;
 }
 
 .pagination-last-group {
