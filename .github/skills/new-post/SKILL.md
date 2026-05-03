@@ -10,15 +10,15 @@ Create a new blog post in `_posts/`.
 
 ## Steps
 
-1. Ask the user for missing required info: **title**, **category** (e.g., `tips`, `azure`, `general`), and **tags**.
-2. Create `_posts/YYYY-MM-DD-title-slug.md` using the current date. Slug is the title lowercased, spaces to hyphens, special characters removed.
-3. Add YAML front matter in this field order:
-   - `title`
-   - `date`: current date/time in RFC 3339 with local timezone offset.
-   - `summary`: placeholder `>` block, or generate one if the user provided content.
-   - `category`
-   - `tags`: YAML list.
-4. Include user-provided body content after the front matter.
+1. Ask for missing required info: **title**, **category**, and **tags**.
+   - Known categories are in `_config.yml` under `categories`: `atproto`, `azure`,
+     `general`, `rust`, `setup`, `sport`, `tips`, `troubleshooting`.
+   - If no category was given, suggest the best match from the list based on content.
+   - If the category isn't in the list, confirm with the user. If adding a new one,
+     insert it alphabetically into `categories` in `_config.yml` first.
+2. Create `_posts/YYYY-MM-DD-title-slug.md` (today's date; slug: lowercase, hyphens, no special chars).
+3. Front matter fields in order: `title`, `date` (RFC 3339 with timezone), `summary` (`>` block), `category`, `tags` (list).
+4. Append user-provided body content after the front matter.
 
 ## Example
 

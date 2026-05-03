@@ -41,6 +41,17 @@ header_pages:
   - archive.md
   - about.md
 
+# Known post categories. Update this list when a new category is added.
+categories:
+  - atproto
+  - azure
+  - general
+  - rust
+  - setup
+  - sport
+  - tips
+  - troubleshooting
+
 # Content settings
 defaults:
   - scope:
