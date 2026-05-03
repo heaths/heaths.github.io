@@ -19,9 +19,9 @@
       "slug": "2025-02-28-cleaning-up-rust"
     },
     "_posts/2024-12-19-12-months-over-7000m.md": {
-      "contentHash": "bbf6529c4681b6762963d3a3e6fbf803643b7b4a915eabd5fb668a1dab5d41a1",
+      "contentHash": "a1cf1e36fa136c6a5b221320da59cbb4e90f297964b25d6a0e4db98533e25260",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2argi32b",
-      "lastPublished": "2026-05-01T10:01:38.117Z",
+      "lastPublished": "2026-05-03T07:35:36.090Z",
       "slug": "2024-12-19-12-months-over-7000m"
     },
     "_posts/2024-08-02-helix-support-for-typespec.md": {
@@ -198,6 +198,16 @@
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkrupf57sa2s",
         "cid": "bafyreifyavxo3bexk3nrjrgfqoqdmmscoax7ceqvxcxdf4aaaxfhsflqsy"
+      }
+    },
+    "_posts/2026-05-03-cooler-theme-palette.md": {
+      "contentHash": "d030bf7aa9774563bb0c68a823b0c02f07ece47e1227ebef1cc7dbf70f8e662a",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkwni3gioi2x",
+      "lastPublished": "2026-05-03T07:35:36.046Z",
+      "slug": "2026-05-03-cooler-theme-palette",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkwni3ww7u2m",
+        "cid": "bafyreiasfewqpgdxqxme3jj5xotq3hvtpqiz6imm3gv2hnskp47z6jmp4i"
       }
     }
   }
