@@ -91,11 +91,6 @@ sass:
 sequoia:
   publication_url: at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.publication/3meddhkrg5z2p
 
-google_analytics: UA-151993669-1
-webmaster_verifications:
-  google: UA-151993669-1
-  bing: DABE2342040BC3F3EDFC08253262FA39
-
 include:
   - .well-known
 
