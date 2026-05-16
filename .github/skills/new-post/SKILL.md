@@ -19,6 +19,7 @@ Create a new blog post in `_posts/`.
 2. Create `_posts/YYYY-MM-DD-title-slug.md` (today's date; slug: lowercase, hyphens, no special chars).
 3. Front matter fields in order: `title`, `date` (RFC 3339 with timezone), `summary` (`>` block), `category`, `tags` (list).
 4. Append user-provided body content after the front matter.
+5. Do **not** run `lint` or `format` on new posts — they are not necessary.
 
 ## Example
 
