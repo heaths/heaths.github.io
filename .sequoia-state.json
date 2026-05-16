@@ -209,6 +209,16 @@
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkwni3ww7u2m",
         "cid": "bafyreiasfewqpgdxqxme3jj5xotq3hvtpqiz6imm3gv2hnskp47z6jmp4i"
       }
+    },
+    "_posts/2026-05-15-initial-stable-release-of-azure-sdk-for-rust.md": {
+      "contentHash": "5436d48c4596fd2dcd6ceba83664434e0ea93067f22e0e4cfb9e8985b96c3f34",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mlx6vipoaw2x",
+      "lastPublished": "2026-05-16T06:12:31.338Z",
+      "slug": "2026-05-15-initial-stable-release-of-azure-sdk-for-rust",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mlx6vj5v2b2q",
+        "cid": "bafyreibs4mg4e6t7hvuvqomx5dnjwu4od2iczomebkhzwndqbbuql3yj5e"
+      }
     }
   }
 }
