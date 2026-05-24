@@ -14,7 +14,7 @@ atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mmlhgo33nj
 [Bluesky](https://bsky.app) is [adding support for enhanced links](https://github.com/bluesky-social/atproto/discussions/4978) for [Standard.site](https://standard.site) publications.
 
 [Sequoia](https://sequoia.dev) already embeds `site.standard.document` images into optional Bluesky posts,
-but once [#64](https://tangled.org/stevedylan.dev/sequoia/pulls/64) is merged and a new version is released, Sequoia will embedd `associatedRefs` for both the document and publication.
+but once [#64](https://tangled.org/stevedylan.dev/sequoia/pulls/64) is merged and a new version is released, Sequoia will embed `associatedRefs` for both the document and publication.
 
 ## Custom layout
 
