@@ -1,0 +1,17 @@
+version: "3"
+# Setup: Run `ngrok config check` to get the default config with api key.
+# Start: Run `ngrok --config .ngrok/sequoia.yml,{default-config-path} start web api`
+endpoints:
+  # Start: Run `bundle exec jekyll serve`
+  # Open: Open binding to :4000 in browser
+  - name: web
+    url: https://
+    upstream:
+      url: 4000
+  # Configure: Copy binding to :8787 to {sequoia-src}/docs/wrangler.toml for `CLIENT_URL`
+  # Build: Run `cd docs && bun run dev`
+  # Start: Run `bun run dev:api`
+  - name: api
+    url: https://
+    upstream:
+      url: 8787
