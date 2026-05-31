@@ -59,6 +59,7 @@ defaults:
       type: posts
     values:
       author: Heath Stewart
+      category: general
       layout: post
   - scope:
       path: ""
