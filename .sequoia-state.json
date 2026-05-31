@@ -229,6 +229,16 @@
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mmlhgo45ny2x",
         "cid": "bafyreihabltqwvgjtpw3why623z526nd5lnanu3zk7luenrpnhlhgd3riu"
       }
+    },
+    "_posts/2026-05-30-introducing-the-sequoia-recommend-button.md": {
+      "contentHash": "0ed1b2cc355f6e8f6be39b5469e544f8e3aa72a6c7f8d3e082dd23a7fac09cfc",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mn4upg7a4z2h",
+      "lastPublished": "2026-05-31T05:51:20.345Z",
+      "slug": "2026-05-30-introducing-the-sequoia-recommend-button",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mn4upgujo62n",
+        "cid": "bafyreiaucud6jqjjwghe2dov3orlq4x3s352vvs5g6gwlpqcjov4cin3pm"
+      }
     }
   },
   "publication": {
