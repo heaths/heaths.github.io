@@ -16,8 +16,9 @@ Create a new blog post in `_posts/`.
    - If no category was given, suggest the best match from the list based on content.
    - If the category isn't in the list, confirm with the user. If adding a new one,
      insert it alphabetically into `categories` in `_config.yml` first.
+   - Always include the category as a tag. If the user already provided it, do not duplicate it.
 2. Create `_posts/YYYY-MM-DD-title-slug.md` (today's date; slug: lowercase, hyphens, no special chars).
-3. Front matter fields in order: `title`, `date` (RFC 3339 with timezone), `summary` (`>` block), `category`, `tags` (list).
+3. Front matter fields in order: `title`, `date` (RFC 3339 with timezone), `summary` (`>` block), `image` (if specified), `category`, `tags` (list).
 4. Append user-provided body content after the front matter.
 5. Do **not** run `lint` or `format` on new posts — they are not necessary.
 
@@ -29,10 +30,11 @@ title: My Post Title
 date: 2025-01-15T10:00:00-08:00
 summary: >
   A one or two sentence description of the post.
+image: /assets/images/cover-image.jpg
 category: tips
 tags:
   - git
-  - tip
+  - tips
 ---
 
 Post content goes here.
