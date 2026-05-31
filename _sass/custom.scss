@@ -534,6 +534,12 @@ sequoia-comments::part(container) {
   }
 }
 
+.post-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .tag-content {
   color: $bluehour-slate;
   font-style: italic;

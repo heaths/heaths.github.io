@@ -2,9 +2,9 @@
   button-type="bluesky"
   {%
   if
-  site.sequoia.callback_url
+  site.sequoia.callback
   -%}
-  callback-uri="{{ site.sequoia.callback_url }}"
+  callback-uri="{{ site.sequoia.callback }}/subscribe"
   {%-
   endif
   %}

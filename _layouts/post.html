@@ -57,15 +57,28 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">{{ content }}</div>
 
-  {%- if page.tags -%} {%- assign stags = page.tags | sort -%}
-  <div class="tag-content">
-    Tags:
-    <span class="keywords" itemprop="keywords">
-      {%- for tag in stags -%} {{ tag }} {%- if forloop.last == false %}, {%
-      endif -%} {%- endfor -%}
-    </span>
+  <div class="post-footer">
+    {%- if page.tags -%} {%- assign stags = page.tags | sort -%}
+    <div class="tag-content">
+      Tags:
+      <span class="keywords" itemprop="keywords">
+        {%- for tag in stags -%} {{ tag }} {%- if forloop.last == false %}, {%
+        endif -%} {%- endfor -%}
+      </span>
+    </div>
+    {%- endif -%}
+    <sequoia-recommend
+      button-type="heart"
+      {%
+      if
+      site.sequoia.callback
+      -%}
+      callback-uri="{{ site.sequoia.callback }}/recommend"
+      {%-
+      endif
+      %}
+    ></sequoia-recommend>
   </div>
-  {%- endif -%}
 
   <sequoia-comments hide="auto"></sequoia-comments>
   <script
