@@ -33,7 +33,7 @@ Now for the easier part: find the VHDX for your distro and shrink it all from wi
 $path = (Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss `
   | Where-Object { $_.GetValue("DistributionName") -eq 'Ubuntu-24.04' } `
   ).GetValue("BasePath") + "\ext4.vhdx"
-Optimize-VHDX -Path $path
+Optimize-VHD -Path $path
 ```
 
 It may take a while, but after it completes you can log back into your distro. Seems WSL changed it so you don't have to run `resize2fs` anymore - Ubuntu 24.04, at least, automatically picked up that more space was available.

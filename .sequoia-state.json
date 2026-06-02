@@ -151,14 +151,10 @@
       "slug": "2022-06-18-reduce-fetch-and-checkout-times-in-git"
     },
     "_posts/2026-03-20-cleaning-up-rust-made-easier.md": {
-      "contentHash": "2132f6d710ed8988d12a9ba0de67e715ea20d5bffc20c6f42e1e4675700b144c",
+      "contentHash": "74d8027ba8ad26bc961052164971506fade719dc7a1a8fe203d698bcccd53dfc",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mhkj26txqp2b",
-      "lastPublished": "2026-03-21T06:14:00.000Z",
-      "slug": "2026-03-20-cleaning-up-rust-made-easier",
-      "bskyPostRef": {
-        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mhkj26uvil2t",
-        "cid": "bafyreicgiokwsfcimryyr26sqo65jul7arpsvg7zt6lb72rgoatpwxsldq"
-      }
+      "lastPublished": "2026-06-02T02:37:25.733Z",
+      "slug": "2026-03-20-cleaning-up-rust-made-easier"
     },
     "_posts/2026-04-07-making-the-key-version-required-for-key-vault-cryptography-apis.md": {
       "contentHash": "5d489e86cc802e46a405dd85478d662a7c3edecd1df99715601bf7d634444e31",
