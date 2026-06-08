@@ -177,9 +177,9 @@
       }
     },
     "_posts/2026-04-19-light-and-dark-themes-for-my-blog.md": {
-      "contentHash": "58126fc9a17cced97b8a59046b0ddf33f230ce9766704fdd95785615074f5666",
+      "contentHash": "3dea62ce41379a41c7508ef18b5709bced4413da84ca9b0fc5fba30923913acb",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjvwnyj4cb2t",
-      "lastPublished": "2026-04-20T06:48:45.000Z",
+      "lastPublished": "2026-06-08T06:26:56.212Z",
       "slug": "2026-04-19-light-and-dark-themes-for-my-blog",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjvwnykcec2m",
@@ -187,9 +187,9 @@
       }
     },
     "_posts/2026-04-30-improving-the-azure-sdk-developer-experience-with-mcp.md": {
-      "contentHash": "cd57d5f217ef5327d5029cbd56dec6403ee9645cdc9574f1ca26f376e2952b6a",
+      "contentHash": "515ff42a670c261e5c336ca12ffad212cf1be5b7b85bd32249ccf4592af57e93",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkruperrgt2t",
-      "lastPublished": "2026-05-01T06:03:39.000Z",
+      "lastPublished": "2026-06-08T06:26:55.852Z",
       "slug": "2026-04-30-improving-the-azure-sdk-developer-experience-with-mcp",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkrupf57sa2s",
@@ -197,9 +197,9 @@
       }
     },
     "_posts/2026-05-03-cooler-theme-palette.md": {
-      "contentHash": "d030bf7aa9774563bb0c68a823b0c02f07ece47e1227ebef1cc7dbf70f8e662a",
+      "contentHash": "2dffdec0386b4a6beb4b328dcac4c265e086c5ce1dd354c2a8af5d655ccabc33",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkwni3gioi2x",
-      "lastPublished": "2026-05-03T07:02:30.000Z",
+      "lastPublished": "2026-06-08T06:26:55.585Z",
       "slug": "2026-05-03-cooler-theme-palette",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkwni3ww7u2m",
@@ -207,9 +207,9 @@
       }
     },
     "_posts/2026-05-15-initial-stable-release-of-azure-sdk-for-rust.md": {
-      "contentHash": "5436d48c4596fd2dcd6ceba83664434e0ea93067f22e0e4cfb9e8985b96c3f34",
+      "contentHash": "fbdd53eef7592cc32052b3de5fb7aa59f615334b9eadad41b83e830414f39811",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mlx6vipoaw2x",
-      "lastPublished": "2026-05-16T03:12:12.000Z",
+      "lastPublished": "2026-06-08T06:26:55.285Z",
       "slug": "2026-05-15-initial-stable-release-of-azure-sdk-for-rust",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mlx6vj5v2b2q",
@@ -227,13 +227,23 @@
       }
     },
     "_posts/2026-05-30-introducing-the-sequoia-recommend-button.md": {
-      "contentHash": "0ed1b2cc355f6e8f6be39b5469e544f8e3aa72a6c7f8d3e082dd23a7fac09cfc",
+      "contentHash": "cc83aae60617fd1f1146bd60a351f833443d7257048328f755027a0f07ca2d20",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mn4upg7a4z2h",
-      "lastPublished": "2026-05-31T05:51:20.345Z",
+      "lastPublished": "2026-06-08T06:26:54.871Z",
       "slug": "2026-05-30-introducing-the-sequoia-recommend-button",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mn4upgujo62n",
         "cid": "bafyreiaucud6jqjjwghe2dov3orlq4x3s352vvs5g6gwlpqcjov4cin3pm"
+      }
+    },
+    "_posts/2026-06-07-cargo-scripts-are-also-manifests.md": {
+      "contentHash": "69d7b57ba0976e942c25c9e8189b1072e8dc242777c9bebf5ede6bd55569c825",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mnr2gfxy372r",
+      "lastPublished": "2026-06-08T06:26:54.555Z",
+      "slug": "2026-06-07-cargo-scripts-are-also-manifests",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mnr2gfymfz2k",
+        "cid": "bafyreiaopasq4gg2kb2kknbhk4euscec3sjrfzgbjqy2f4ed4shblhcbk4"
       }
     }
   },
