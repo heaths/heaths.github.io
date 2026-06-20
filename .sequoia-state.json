@@ -245,6 +245,16 @@
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mnr2gfymfz2k",
         "cid": "bafyreiaopasq4gg2kb2kknbhk4euscec3sjrfzgbjqy2f4ed4shblhcbk4"
       }
+    },
+    "_posts/2026-06-19-apropos-of-power-tools.md": {
+      "contentHash": "52d88e56d583e9039a33ac744ef76876969751348c6bf000cca9b7f6aa61f2a4",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mop7huti2e2n",
+      "lastPublished": "2026-06-20T06:17:05.288Z",
+      "slug": "2026-06-19-apropos-of-power-tools",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mop7hvikhe2b",
+        "cid": "bafyreigrsewwoobroz636ux3agvckg4pnhgjlmb6zftbsvyxn5k6kfugsu"
+      }
     }
   },
   "publication": {
