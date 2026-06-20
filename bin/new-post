@@ -1,0 +1,333 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+# cspell:ignore fediverse fosstodon getlocal optparse rstrip strftime
+
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
+
+require 'bundler/setup'
+require 'jekyll'
+require 'date'
+require 'optparse'
+require 'pathname'
+require 'psych'
+require 'time'
+
+class NewPost
+  DEFAULT_CATEGORY = 'general'
+  CONFIG_PATH = Pathname(__dir__).join('..', '_config.yml').expand_path
+  POSTS_PATH = Pathname(__dir__).join('..', '_posts').expand_path
+
+  def initialize(argv, stdin: $stdin, stdout: $stdout, stderr: $stderr)
+    @argv = argv.dup
+    @stdin = stdin
+    @stdout = stdout
+    @stderr = stderr
+    @options = {
+      tags: [],
+    }
+    @config_text = nil
+    @categories = []
+    @date = nil
+    @notes = []
+  end
+
+  def run
+    parse_options
+    load_config
+    collect_inputs
+    ensure_category_is_known
+    post_path = write_post
+
+    @notes.each { |note| @stdout.puts note }
+    @stdout.puts "Created #{relative_path(post_path)}"
+  rescue Interrupt
+    @stderr.puts "\nCancelled."
+    exit 130
+  rescue OptionParser::ParseError, RuntimeError => e
+    @stderr.puts e.message
+    exit 1
+  end
+
+  private
+
+  def parse_options
+    parser = OptionParser.new do |opts|
+      opts.banner = 'Usage: bin/new-post [options]'
+
+      opts.on('-t', '--title TITLE', 'Post title') do |value|
+        @options[:title] = value
+      end
+
+      opts.on('-d', '--date RFC3339', 'Post date/time (defaults to now)') do |value|
+        @options[:date] = value
+      end
+
+      opts.on('-s', '--summary SUMMARY', 'Post summary') do |value|
+        @options[:summary] = value
+      end
+
+      opts.on('-i', '--image PATH', 'Post image path') do |value|
+        @options[:image] = value
+      end
+
+      opts.on('-c', '--category CATEGORY', 'Post category') do |value|
+        @options[:category] = value
+      end
+
+      opts.on('--tag TAG', 'Add a tag (repeatable)') do |value|
+        @options[:tags] << value
+      end
+
+      opts.on('--tags TAGS', 'Comma-separated tags') do |value|
+        @options[:tags].concat(split_tags(value))
+      end
+
+      opts.on('-b', '--body BODY', 'Post body content') do |value|
+        @options[:body] = value
+      end
+
+      opts.on('--body-file PATH', 'Read post body content from a file') do |value|
+        @options[:body_file] = value
+      end
+
+      opts.on('--force-category', 'Add a new category to _config.yml without prompting') do
+        @options[:force_category] = true
+      end
+
+      opts.on('-h', '--help', 'Show this help') do
+        @stdout.puts opts
+        exit
+      end
+    end
+
+    parser.parse!(@argv)
+
+    return unless @options[:body] && @options[:body_file]
+
+    raise OptionParser::ParseError, 'Use either --body or --body-file, not both.'
+  end
+
+  def load_config
+    @config_text = CONFIG_PATH.read
+    config = Psych.safe_load(@config_text, permitted_classes: [Date, Time], aliases: true) || {}
+    @categories = Array(config['categories']).map(&:to_s)
+  end
+
+  def collect_inputs
+    @options[:title] = prompt_required('Title', @options[:title])
+    @date = parse_time(@options[:date] || Time.now.iso8601)
+    @options[:summary] = prompt_required('Summary', @options[:summary])
+    @options[:image] = normalize_optional(prompt('Image path (optional)', @options[:image]))
+    @options[:category] = prompt_required(
+      "Category (#{@categories.join(', ')})",
+      normalize_optional(@options[:category]) || suggested_category
+    )
+    @options[:tags] = normalized_tags(prompt('Tags (comma-separated)', @options[:tags].join(', ')))
+    @options[:body] = resolved_body
+  end
+
+  def ensure_category_is_known
+    category = @options[:category]
+    return if @categories.include?(category)
+
+    unless @options[:force_category] || confirm?("Add '#{category}' to categories in _config.yml?", true)
+      raise "Category '#{category}' is not listed in _config.yml."
+    end
+
+    updated_categories = (@categories + [category]).uniq.sort
+    replace_categories(updated_categories)
+    @categories = updated_categories
+    @notes << "Updated _config.yml categories with '#{category}'."
+  end
+
+  def write_post
+    file_name = format('%<date>s-%<slug>s.md', date: @date.strftime('%F'), slug: Jekyll::Utils.slugify(@options[:title]))
+    post_path = POSTS_PATH.join(file_name)
+
+    raise "Post already exists: #{relative_path(post_path)}" if post_path.exist?
+
+    post_path.write(render_post)
+    post_path
+  end
+
+  def render_post
+    lines = [
+      '---',
+      "title: #{yaml_scalar(@options[:title])}",
+      "date: #{yaml_scalar(@date.iso8601)}",
+      'summary: >',
+      *folded_lines(@options[:summary]).map { |line| "  #{line}" },
+    ]
+
+    lines << "image: #{yaml_scalar(@options[:image])}" if @options[:image]
+    lines << "category: #{yaml_scalar(@options[:category])}"
+    lines << 'tags:'
+    normalized_tags.each do |tag|
+      lines << "  - #{yaml_scalar(tag)}"
+    end
+    lines << '---'
+    lines << ''
+
+    body = @options[:body].to_s.rstrip
+    lines << body unless body.empty?
+
+    "#{lines.join("\n")}\n"
+  end
+
+  def replace_categories(categories)
+    lines = @config_text.lines(chomp: true)
+    categories_index = lines.index('categories:')
+    raise "Couldn't find categories in #{CONFIG_PATH}" unless categories_index
+
+    block_end = categories_index + 1
+    while block_end < lines.length && lines[block_end].start_with?('  - ')
+      block_end += 1
+    end
+
+    replacement = categories.map { |category| "  - #{category}" }
+    new_lines = lines[0..categories_index] + replacement + lines[block_end..].to_a
+    CONFIG_PATH.write("#{new_lines.join("\n")}\n")
+    @config_text = CONFIG_PATH.read
+  end
+
+  def resolved_body
+    return @options[:body] if @options.key?(:body)
+    return Pathname(@options[:body_file]).read if @options[:body_file]
+    return '' unless @stdin.tty?
+
+    @stdout.puts 'Enter the post body. Finish with Ctrl-D when done.'
+    @stdin.read
+  end
+
+  def suggested_category
+    content = [
+      @options[:title],
+      @options[:summary],
+      @options[:tags].join(' '),
+    ].compact.join(' ').downcase
+
+    scores = {
+      'atproto' => %w[atproto bluesky mastodon fediverse].count { |word| content.include?(word) },
+      'azure' => %w[azure entra bicep arm keyvault key-vault].count { |word| content.include?(word) },
+      'rust' => %w[rust cargo crate crates clippy].count { |word| content.include?(word) },
+      'setup' => %w[setup install configure configuration bootstrap].count { |word| content.include?(word) },
+      'sport' => %w[climb climbing backpacking hiking mountaineering skiing running].count { |word| content.include?(word) },
+      'tips' => %w[tip tips shortcut workflow productivity].count { |word| content.include?(word) },
+      'troubleshooting' => %w[debug debugging troubleshoot troubleshooting error fix issue].count { |word| content.include?(word) },
+    }
+
+    best = scores.max_by { |_, score| score }
+    return DEFAULT_CATEGORY unless best && best.last.positive?
+
+    best.first
+  end
+
+  def normalized_tags(value = @options[:tags])
+    tags = Array(value).flat_map { |tag| split_tags(tag) }
+    tags << @options[:category] if category_tag?
+    tags.map(&:strip).reject(&:empty?).uniq
+  end
+
+  def category_tag?
+    @options[:category] && @options[:category] != DEFAULT_CATEGORY
+  end
+
+  def split_tags(value)
+    value.to_s.split(',').map(&:strip).reject(&:empty?)
+  end
+
+  def prompt(label, default = nil)
+    return default unless @stdin.tty?
+
+    message = if default && !default.to_s.empty?
+                "#{label} [#{default}]: "
+              else
+                "#{label}: "
+              end
+
+    @stdout.print(message)
+    input = @stdin.gets
+    raise "Missing input for #{label}." unless input
+
+    value = input.strip
+    return default if value.empty?
+
+    value
+  end
+
+  def prompt_required(label, default = nil)
+    loop do
+      value = normalize_optional(prompt(label, default))
+      return value if value
+
+      raise "Missing required value for #{label}." unless @stdin.tty?
+    end
+  end
+
+  def confirm?(message, default)
+    return false unless @stdin.tty?
+
+    suffix = default ? ' [Y/n]: ' : ' [y/N]: '
+    @stdout.print("#{message}#{suffix}")
+    input = @stdin.gets
+    raise "Missing input for #{message}" unless input
+
+    answer = input.strip.downcase
+    return default if answer.empty?
+
+    %w[y yes].include?(answer)
+  end
+
+  def parse_time(value)
+    Time.parse(value.to_s).getlocal
+  rescue ArgumentError
+    raise "Invalid date/time: #{value.inspect}"
+  end
+
+  def normalize_optional(value)
+    text = value.to_s.strip
+    return nil if text.empty?
+
+    text
+  end
+
+  def folded_lines(value)
+    wrap_text(value.to_s.strip, 78)
+  end
+
+  def wrap_text(text, width)
+    return [''] if text.empty?
+
+    words = text.split(/\s+/)
+    lines = []
+    current = +''
+
+    words.each do |word|
+      candidate = current.empty? ? word : "#{current} #{word}"
+      if current.empty? || candidate.length <= width
+        current = candidate
+      else
+        lines << current
+        current = word
+      end
+    end
+
+    lines << current unless current.empty?
+    lines
+  end
+
+  def yaml_scalar(value)
+    Psych.safe_dump(value, line_width: -1)
+      .sub(/\A---[ \t]*\n?/, '')
+      .sub(/\n\.\.\.\n?\z/, '')
+      .strip
+  end
+
+  def relative_path(path)
+    path.relative_path_from(Pathname(Dir.pwd)).to_s
+  rescue ArgumentError
+    path.to_s
+  end
+end
+
+NewPost.new(ARGV).run
