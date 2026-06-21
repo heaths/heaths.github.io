@@ -1,6 +1,6 @@
 ---
 title: Cargo scripts are also manifests
-date: '2026-06-07T22:35:02-07:00'
+date: "2026-06-07T22:35:02-07:00"
 summary: |
   Cargo scripts are single-file packages written in Rust. They are also valid Cargo manifests for built-in and popular commands like clippy.
 category: rust

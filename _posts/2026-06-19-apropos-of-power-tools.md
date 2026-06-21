@@ -1,6 +1,6 @@
 ---
 title: Apropos of power tools
-date: '2026-06-19T21:00:13-07:00'
+date: "2026-06-19T21:00:13-07:00"
 image: /assets/images/og-mantel.jpg
 summary: |
   Power tools are often more efficient than hand tools, but don't necessarily replace them. In the hands of skillful craftspeople, both are useful in building.

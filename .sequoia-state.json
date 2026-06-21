@@ -217,9 +217,9 @@
       }
     },
     "_posts/2026-05-24-support-for-enhanced-links-in-sequoia.md": {
-      "contentHash": "69daedc580d02034ff77f6b16f3e6ba054f403044eb9003c2da8d6497ed489a1",
+      "contentHash": "f1a9b19de815040edbf68d0f1acd3fd6de38fb62a4332fcb7f76186cb38bbde4",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mmlhgo33nj25",
-      "lastPublished": "2026-05-24T07:08:57.000Z",
+      "lastPublished": "2026-06-21T00:33:12.767Z",
       "slug": "2026-05-24-support-for-enhanced-links-in-sequoia",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mmlhgo45ny2x",
@@ -237,9 +237,9 @@
       }
     },
     "_posts/2026-06-07-cargo-scripts-are-also-manifests.md": {
-      "contentHash": "69d7b57ba0976e942c25c9e8189b1072e8dc242777c9bebf5ede6bd55569c825",
+      "contentHash": "c6e478e017a3b940e5e1eaa8c3d4025c59e73bdacfe9558191395ba37b16c5c9",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mnr2gfxy372r",
-      "lastPublished": "2026-06-08T05:35:02.000Z",
+      "lastPublished": "2026-06-21T00:33:12.715Z",
       "slug": "2026-06-07-cargo-scripts-are-also-manifests",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mnr2gfymfz2k",
@@ -247,9 +247,9 @@
       }
     },
     "_posts/2026-06-19-apropos-of-power-tools.md": {
-      "contentHash": "52d88e56d583e9039a33ac744ef76876969751348c6bf000cca9b7f6aa61f2a4",
+      "contentHash": "73e9049bcd77da10c61b7d96b88ddcdaafa7356010b3ae8032438d449fe8f08a",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mop7huti2e2n",
-      "lastPublished": "2026-06-20T06:17:05.288Z",
+      "lastPublished": "2026-06-21T00:33:12.680Z",
       "slug": "2026-06-19-apropos-of-power-tools",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mop7hvikhe2b",

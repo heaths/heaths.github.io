@@ -36,10 +36,7 @@ Then in `_includes/head.html` I added:
   {%- if page.atUri %}
   <link rel="site.standard.document" href="{{ page.atUri }}" />
   {%- endif %}
-  <link
-    rel="site.standard.publication"
-    href="{{ site.sequoia.publication_url }}"
-  />
+  <link rel="site.standard.publication" href="{{ site.sequoia.publication_url }}" />
 </head>
 {% endraw %}
 ```
