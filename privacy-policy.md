@@ -27,6 +27,8 @@ Because these cookies are only used to provide functionality you explicitly requ
 
 The interactive subscribe and recommend/like features depend on the third-party service [Sequoia](https://sequoia.pub). If you use those features, Sequoia may process related account or session information needed to complete the action you selected.
 
+If you use the search box in the site header, your query will be sent to [DuckDuckGo](https://duckduckgo.com) and results will be shown on DuckDuckGo's website under [DuckDuckGo's own privacy policy](https://duckduckgo.com/privacy).
+
 ## Your privacy choices
 
 If you prefer not to have these cookies used, do not use the subscribe or recommend/like features. You can also clear cookies for the relevant third-party services in your browser at any time.

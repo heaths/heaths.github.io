@@ -174,6 +174,10 @@
   }
 }
 
+.site-nav {
+  --header-nav-gap: 12px;
+}
+
 // Make the hamburger icon respect --nav-fg so it matches the toggle button and adapts to dark mode.
 .site-nav .menu-icon > svg {
   fill: var(--nav-fg);
@@ -303,8 +307,15 @@ svg#keybase path {
 // On mobile, .site-nav becomes an absolutely-positioned popup with a light background.
 // Override --nav-fg so links and the toggle button remain readable on that background.
 @media screen and (max-width: $mobile-breakpoint) {
+  .wrapper {
+    max-width: calc(#{$content-width} - 16px);
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
   .site-nav {
     --nav-fg: #{$bluehour-charcoal};
+    --header-nav-gap: 0px;
     padding: 0 4px;
   }
 
@@ -313,7 +324,7 @@ svg#keybase path {
     color: var(--nav-fg);
   }
   .site-nav label[for="nav-trigger"] {
-    margin-left: 2px;
+    margin-left: var(--header-nav-gap);
   }
 }
 
@@ -348,39 +359,167 @@ html[data-theme="light"] {
   .site-nav {
     display: flex;
     align-items: center;
+    gap: var(--header-nav-gap);
+    min-height: 54px;
   }
 }
 
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--header-nav-gap);
+  align-self: center;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--header-nav-gap);
+  align-self: center;
+}
+
+.site-nav .page-link:not(:last-child) {
+  margin-right: 0;
+}
+
+.trigger .page-link {
+  margin: 0;
+}
+
+.header-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--nav-fg);
+  z-index: 1;
+}
+
+.header-search-form {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+}
+
+.header-search-input {
+  width: 0;
+  min-width: 0;
+  padding: 0 0 0 calc(#{$icon-size} + 1rem);
+  border: 0 solid currentColor;
+  border-radius: $border-radius;
+  background: transparent;
+  color: var(--nav-fg);
+  opacity: 0;
+  pointer-events: none;
+  line-height: 1.5;
+  appearance: none;
+  transition:
+    width 0.15s ease,
+    padding 0.15s ease,
+    border-width 0.15s ease,
+    opacity 0.15s ease;
+
+  &::placeholder {
+    color: currentColor;
+    opacity: 0.75;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.header-search.is-open .header-search-input {
+  width: min(16rem, 35vw);
+  padding: 0.35rem 0.6rem 0.35rem calc(#{$icon-size} + 1rem);
+  border-width: 1px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-toggle,
 .theme-toggle {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   padding: 4px;
-  margin-right: 20px;
   cursor: pointer;
   color: var(--nav-fg);
   vertical-align: middle;
-
-  svg {
-    display: none;
-    width: $icon-size;
-    height: $icon-size;
-  }
 
   &:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
     border-radius: 2px;
   }
+}
 
-  @media screen and (max-width: $mobile-breakpoint) {
+.search-toggle {
+  position: absolute;
+  top: 50%;
+  left: 0.35rem;
+  z-index: 2;
+  width: calc(#{$icon-size} + 0.35rem);
+  height: calc(#{$icon-size} + 0.35rem);
+  padding: 0;
+  transform: translateY(-50%);
+
+  svg {
+    display: block;
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
+
+.theme-toggle {
+  svg {
+    display: none;
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .header-actions {
     float: right;
-    margin-right: 2px;
+    height: 36px;
+    gap: 0;
+  }
+
+  .trigger {
+    display: block;
+    gap: 0;
+  }
+
+  .header-search {
+    width: 36px;
+    min-width: 36px;
+  }
+
+  .header-search.is-open {
+    width: auto;
+    min-width: 0;
+  }
+
+  .header-search-form {
+    min-height: 36px;
+  }
+
+  .header-search.is-open .header-search-input {
+    width: min(12rem, calc(100vw - 11rem));
+  }
+
+  .search-toggle,
+  .theme-toggle {
     width: 36px;
     height: 36px;
     padding: 0;
-    justify-content: center;
+  }
+
+  .search-toggle {
+    left: 0;
   }
 }
 
