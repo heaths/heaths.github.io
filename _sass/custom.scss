@@ -27,6 +27,7 @@
   }
 
   table {
+    color: inherit;
     border-color: $bluehour-slate;
 
     th {
@@ -37,6 +38,7 @@
 
     td {
       border-color: $bluehour-slate;
+      color: inherit;
     }
 
     tr:nth-child(even) {
@@ -95,6 +97,7 @@
   }
 
   table {
+    color: inherit;
     border-color: $grey-color-light;
 
     th {
@@ -105,6 +108,7 @@
 
     td {
       border-color: $grey-color-light;
+      color: inherit;
     }
 
     tr:nth-child(even) {
@@ -548,6 +552,12 @@ sequoia-comments::part(container) {
 .footer-col-2 {
   width: -webkit-calc(80% - (#{$spacing-unit} / 2));
   width: calc(80% - (#{$spacing-unit} / 2));
+}
+
+.footer-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .footer-col-3 {
