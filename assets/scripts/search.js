@@ -18,7 +18,17 @@
     return "https://duckduckgo.com/?q=" + encodeURIComponent(terms);
   }
 
+  function isMacOS() {
+    var platform =
+      (navigator.userAgentData && navigator.userAgentData.platform) ||
+      navigator.platform ||
+      "";
+
+    return /mac/i.test(platform);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    var macOS = isMacOS();
     var root = document.getElementById("header-search");
     var form = document.getElementById("header-search-form");
     var input = document.getElementById("header-search-input");
@@ -27,6 +37,13 @@
     if (!root || !form || !input || !toggle) {
       return;
     }
+
+    var shortcutLabel = macOS ? "\u2318K" : "Ctrl+K";
+    toggle.setAttribute(
+      "aria-label",
+      "Search on DuckDuckGo. Press " + shortcutLabel + " to open.",
+    );
+    toggle.title = "Search on DuckDuckGo (" + shortcutLabel + ")";
 
     function isOpen() {
       return root.classList.contains("is-open");
@@ -76,12 +93,14 @@
     });
 
     document.addEventListener("keydown", function (event) {
+      var isShortcut = event.ctrlKey || (macOS && event.metaKey);
+
       if (
         event.defaultPrevented ||
-        event.key !== "/" ||
-        event.ctrlKey ||
-        event.metaKey ||
         event.altKey ||
+        !isShortcut ||
+        event.key.toLowerCase() !== "k" ||
+        (event.ctrlKey && event.metaKey) ||
         isEditableTarget(event.target)
       ) {
         return;
