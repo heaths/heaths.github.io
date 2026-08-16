@@ -5,7 +5,8 @@ description: Check and fix spelling in project source files using cSpell
 
 ## Installation
 
-Run `npm i` from the repository root to install dependencies. Run tools using `npx`.
+Run `npm i` from the repository root to install dependencies. Run tools using
+`npm run`.
 
 ## Configuration
 
@@ -13,7 +14,8 @@ Config file: `.vscode/cspell.json`. Always pass `--config .vscode/cspell.json`.
 
 ## Check spelling
 
-Run `npx cspell lint [options] [globs...]` to check file globs or `.` for the full tree.
+Run `npm run cspell -- [globs...]` to check file globs or `.` for the full
+tree.
 
 ## Fix spelling
 

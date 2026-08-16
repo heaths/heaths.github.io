@@ -9,8 +9,9 @@ After all changes in response to a prompt are complete, format modified files.
 
 ## Installation
 
-Run `npm i` from the repository root to install dependencies. Run tools using `npx`.
+Run `npm i` from the repository root to install dependencies. Run tools using
+`npm run`.
 
 ## Steps
 
-1. Run `npx prettier --write .` to format all files.
+1. Run `npm run format` to format the full repository.
