@@ -177,9 +177,9 @@
       }
     },
     "_posts/2026-04-19-light-and-dark-themes-for-my-blog.md": {
-      "contentHash": "3dea62ce41379a41c7508ef18b5709bced4413da84ca9b0fc5fba30923913acb",
+      "contentHash": "58126fc9a17cced97b8a59046b0ddf33f230ce9766704fdd95785615074f5666",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjvwnyj4cb2t",
-      "lastPublished": "2026-04-20T06:48:45.000Z",
+      "lastPublished": "2026-08-16T08:32:32.130Z",
       "slug": "2026-04-19-light-and-dark-themes-for-my-blog",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjvwnykcec2m",
@@ -187,9 +187,9 @@
       }
     },
     "_posts/2026-04-30-improving-the-azure-sdk-developer-experience-with-mcp.md": {
-      "contentHash": "515ff42a670c261e5c336ca12ffad212cf1be5b7b85bd32249ccf4592af57e93",
+      "contentHash": "cd57d5f217ef5327d5029cbd56dec6403ee9645cdc9574f1ca26f376e2952b6a",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkruperrgt2t",
-      "lastPublished": "2026-05-01T06:03:39.000Z",
+      "lastPublished": "2026-08-16T08:32:29.375Z",
       "slug": "2026-04-30-improving-the-azure-sdk-developer-experience-with-mcp",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkrupf57sa2s",
@@ -197,9 +197,9 @@
       }
     },
     "_posts/2026-05-03-cooler-theme-palette.md": {
-      "contentHash": "2dffdec0386b4a6beb4b328dcac4c265e086c5ce1dd354c2a8af5d655ccabc33",
+      "contentHash": "d030bf7aa9774563bb0c68a823b0c02f07ece47e1227ebef1cc7dbf70f8e662a",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkwni3gioi2x",
-      "lastPublished": "2026-05-03T07:02:30.000Z",
+      "lastPublished": "2026-08-16T08:32:25.957Z",
       "slug": "2026-05-03-cooler-theme-palette",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkwni3ww7u2m",
@@ -207,9 +207,9 @@
       }
     },
     "_posts/2026-05-15-initial-stable-release-of-azure-sdk-for-rust.md": {
-      "contentHash": "fbdd53eef7592cc32052b3de5fb7aa59f615334b9eadad41b83e830414f39811",
+      "contentHash": "5436d48c4596fd2dcd6ceba83664434e0ea93067f22e0e4cfb9e8985b96c3f34",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mlx6vipoaw2x",
-      "lastPublished": "2026-05-16T03:12:12.000Z",
+      "lastPublished": "2026-08-16T08:32:22.418Z",
       "slug": "2026-05-15-initial-stable-release-of-azure-sdk-for-rust",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mlx6vj5v2b2q",
@@ -227,9 +227,9 @@
       }
     },
     "_posts/2026-05-30-introducing-the-sequoia-recommend-button.md": {
-      "contentHash": "cc83aae60617fd1f1146bd60a351f833443d7257048328f755027a0f07ca2d20",
+      "contentHash": "0ed1b2cc355f6e8f6be39b5469e544f8e3aa72a6c7f8d3e082dd23a7fac09cfc",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mn4upg7a4z2h",
-      "lastPublished": "2026-05-31T05:19:15.000Z",
+      "lastPublished": "2026-08-16T08:32:19.553Z",
       "slug": "2026-05-30-introducing-the-sequoia-recommend-button",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mn4upgujo62n",
@@ -247,13 +247,23 @@
       }
     },
     "_posts/2026-06-19-apropos-of-power-tools.md": {
-      "contentHash": "73e9049bcd77da10c61b7d96b88ddcdaafa7356010b3ae8032438d449fe8f08a",
+      "contentHash": "a6da7e489ecc890cb4ff931d0d1435f8b9fe0026fe5f51d5bace10d03a1d0560",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mop7huti2e2n",
-      "lastPublished": "2026-06-21T00:33:12.680Z",
+      "lastPublished": "2026-08-16T08:32:16.994Z",
       "slug": "2026-06-19-apropos-of-power-tools",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mop7hvikhe2b",
         "cid": "bafyreigrsewwoobroz636ux3agvckg4pnhgjlmb6zftbsvyxn5k6kfugsu"
+      }
+    },
+    "_posts/2026-08-16-i-m-a-masochist-on-zwift.md": {
+      "contentHash": "16f88f60091510f0cf50321a6d934145e9aa27ccd72bf66ffb92af2bbb8e04b1",
+      "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mt6rlvukj62c",
+      "lastPublished": "2026-08-16T08:32:11.982Z",
+      "slug": "2026-08-16-i-m-a-masochist-on-zwift",
+      "bskyPostRef": {
+        "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mt6rlwzdbg2c",
+        "cid": "bafyreicm42uz2fdgxxuamdxye7vqcqajcgilvp42ls6xrub4f3k2rvanuu"
       }
     }
   },

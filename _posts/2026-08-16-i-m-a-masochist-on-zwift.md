@@ -12,6 +12,7 @@ tags:
   - climb
   - sport
 # cspell:ignore alpe d'huez
+atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mt6rlvukj62c"
 ---
 
 I've loved cycling since I was a kid. I biked all over town--to and from school, mom or dad's workplaces, friends' houses--but it wasn't until my cardiologist said I had to change my diet and lose some weight that I really got serious about it. In addition to cutting out saturated fats and added sugar, I started cycling over a hundred miles on average a month and lost 60lbs in ~6 months and have kept it off. Since we live in a hilly area and I've always enjoyed climbing mountains anyway, I also started [bike climbing](2024-12-19-12-months-over-7000m.md).

@@ -5,7 +5,7 @@
     "cspell": "^10.0.1",
     "prettier": "^3.8.3",
     "prettier-plugin-toml": "^2.0.6",
-    "sequoia-cli": "^0.5.1"
+    "sequoia-cli": "^0.5.7"
   },
   "scripts": {
     "cspell": "cspell --config .vscode/cspell.json lint",
