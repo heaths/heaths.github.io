@@ -2,11 +2,13 @@
   "private": true,
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.10.0",
+    "cspell": "^10.0.1",
     "prettier": "^3.8.3",
     "prettier-plugin-toml": "^2.0.6",
     "sequoia-cli": "^0.5.1"
   },
   "scripts": {
+    "cspell": "cspell --config .vscode/cspell.json lint",
     "format": "prettier --write .",
     "prettier": "prettier",
     "sequoia": "sequoia"
