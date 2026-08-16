@@ -93,7 +93,7 @@ GEM
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
-    jekyll-seo-tag (2.8.0)
+    jekyll-seo-tag (2.9.0)
       jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
@@ -244,7 +244,7 @@ CHECKSUMS
   jekyll-redirect-from (0.16.0) sha256=6635cae569ef9b0f90ffb71ec014ba977177fafb44d32a2b0526288d4d9be6db
   jekyll-relative-links (0.8.0) sha256=128421fbe8d81b5c1319bd88ca8f6d60a070ed68dc31b78b7cc62c0455514163
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
-  jekyll-seo-tag (2.8.0) sha256=3f2ed1916d56f14ebfa38e24acde9b7c946df70cb183af2cb5f0598f21ae6818
+  jekyll-seo-tag (2.9.0) sha256=0260015a8e1df9bf195cdfb0c675b7b2883fd8cbf12556e1c1cbe36a831c6852
   jekyll-sitemap (1.4.0) sha256=0de08c5debc185ea5a8f980e1025c7cd3f8e0c35c8b6ef592f15c46235cf4218
   jekyll-watch (2.2.1) sha256=bc44ed43f5e0a552836245a54dbff3ea7421ecc2856707e8a1ee203a8387a7e1
   json (2.21.2) sha256=1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a
