@@ -11,6 +11,9 @@ tags:
   - achievement
   - climb
   - sport
+slug: im-a-masochist-on-zwift
+redirect_from:
+  - /sport/2026/08/16/i-m-a-masochist-on-zwift.html
 # cspell:ignore alpe d'huez
 atUri: "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mt6rlvukj62c"
 ---
