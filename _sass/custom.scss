@@ -304,15 +304,15 @@ svg#keybase path {
   stroke: var(--accent-color);
 }
 
+.wrapper {
+  max-width: calc(#{$content-width});
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 // On mobile, .site-nav becomes an absolutely-positioned popup with a light background.
 // Override --nav-fg so links and the toggle button remain readable on that background.
 @media screen and (max-width: $mobile-breakpoint) {
-  .wrapper {
-    max-width: calc(#{$content-width} - 16px);
-    padding-right: 8px;
-    padding-left: 8px;
-  }
-
   .site-nav {
     --nav-fg: #{$bluehour-charcoal};
     --header-nav-gap: 0px;
