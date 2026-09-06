@@ -29,12 +29,13 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     var macOS = isMacOS();
+    var overlay = document.getElementById("search-popup-overlay");
     var root = document.getElementById("header-search");
     var form = document.getElementById("header-search-form");
     var input = document.getElementById("header-search-input");
     var toggle = document.getElementById("search-toggle");
 
-    if (!root || !form || !input || !toggle) {
+    if (!overlay || !root || !form || !input || !toggle) {
       return;
     }
 
@@ -50,6 +51,7 @@
     }
 
     function openSearch() {
+      overlay.classList.add("active");
       root.classList.add("is-open");
       toggle.setAttribute("aria-expanded", "true");
       input.focus();
@@ -57,6 +59,7 @@
     }
 
     function closeSearch(focusToggle) {
+      overlay.classList.remove("active");
       root.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
 
