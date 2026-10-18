@@ -1,10 +1,9 @@
 ---
-name: migrate
-description: Migrate a Jekyll site to Hugo while preserving its published URLs, theme, customizations, and integrations.
+name: jekyll-to-hugo
+description: "Migrate a Jekyll site to Hugo while preserving its published URLs, theme, customizations, and integrations."
+disable-model-invocation: true
 argument-hint: Jekyll source directory (defaults to the current repository)
-agent: agent
 ---
-
 Migrate the Jekyll site in the migration source directory to Hugo. Implement the migration, not just a plan. Use the current repository as the source unless another directory is provided. Investigate the actual site rather than assuming it resembles a particular previous migration.
 
 ## Requirements and boundaries
