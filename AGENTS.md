@@ -55,20 +55,26 @@ Do not stage or commit changes unless the user explicitly says to.
 
 Before committing, verify that every post in `content/posts/` (except the section's `_index.md`) has a `summary` field in its front matter. If a post is missing one, generate a summary of one or two sentences based on the post content and add it to the front matter before the `category` field.
 
+Complete any required summary additions before the final quality pass below. Reuse successful checks from the session when the relevant files have not changed; a request to commit is not a reason to rerun them.
+
 ## Skills
 
-After completing all requested changes, always run these skills in order on modified files before staging or committing:
+Reserve spelling, Markdown lint, and Prettier for one final quality pass, only when all other work is done: implementation, content, documentation, and applicable functional verification. Do not run them during exploration or after each intermediate edit.
+
+At the end, run these skills in order on modified files that still need checking, honoring user-specified exclusions:
 
 1. **`check-spelling`** — Check and fix spelling in modified source files.
-2. **`lint`** — Check modified files for common issues (e.g., code fence language names).
-3. **`format`** — Format modified files with Prettier. Always run last, after all other changes are done.
+2. **`lint`** — Check modified files for common issues (e.g., code fence language names), including Markdown lint when applicable.
+3. **`format`** — Format modified files with Prettier. Always run last.
+
+Use the session's known results instead of repeating successful checks on unchanged files, including before staging or committing. Do not restart the entire pass because one check needs a fix: recheck only affected files with the relevant tool, then continue. If a final-pass change requires functional verification, run only the affected verification; do not repeat unrelated quality checks.
 
 | Skill            | Path                                     | Description                                                                                 |
 | ---------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------- |
 | `new-post`       | `.github/skills/new-post/SKILL.md`       | Create a new blog post with the correct filename format, front matter, and required fields. |
 | `check-spelling` | `.github/skills/check-spelling/SKILL.md` | Check and fix spelling in project source files using cSpell. Config: `.vscode/cspell.json`. |
 | `format`         | `.github/skills/format/SKILL.md`         | Format changed files with Prettier. Run after all other changes are complete.               |
-| `lint`           | `.github/skills/lint/SKILL.md`           | Lint project files for common issues. Run on new or changed files before committing.        |
+| `lint`           | `.github/skills/lint/SKILL.md`           | Lint modified files during the final quality pass, before formatting.                       |
 
 ## Building
 

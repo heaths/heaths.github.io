@@ -32,7 +32,7 @@ workflow consistent with the repository.
    repository's expected order, including an explicit `url` for Hugo and Sequoia,
    and appends the body content. Run `npm install` first if dependencies are missing.
 5. Do **not** manually create the post file unless the script cannot be used.
-6. Run the repository's spelling, lint, and formatting skills on the new post.
+6. Finish all requested content, metadata, documentation, and applicable functional verification before running the repository's final quality pass: spelling, lint, then formatting. Do not run these after intermediate edits or rerun successful checks before committing if the relevant files have not changed.
 
 ## Example
 

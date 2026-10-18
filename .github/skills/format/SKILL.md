@@ -5,7 +5,9 @@ description: >
   are complete.
 ---
 
-After all changes in response to a prompt are complete, format modified files.
+Run only at the very end of the task, after implementation, content, documentation, applicable functional verification, spelling, and lint are complete. Format modified files as the last step of the final quality pass in `AGENTS.md`, not after intermediate edits.
+
+Reuse successful formatting results from the session when the relevant files have not changed. Do not rerun Prettier merely because the user requests staging or committing. If a file changes afterward, format only that file; do not restart the entire quality pass.
 
 ## Installation
 

@@ -114,7 +114,7 @@ Check Bluesky announcement behavior before advising a forced publication. Warn t
 
 Determine eligibility from the migration source repository before introducing tooling. A corresponding repository skill or support file qualifies: for example, a spelling skill/configuration/script, a Markdown lint skill/configuration/dependency, or a Prettier skill/configuration/script. A globally available tool alone is not a reason to introduce it.
 
-For eligible checks only, follow existing instructions and run them in this order:
+Plan these checks now, but do not execute them until all migration edits, documentation, and functional verification in section 7 are complete. Reserve them for one final quality pass, not intermediate checkpoints. For eligible checks only, follow existing instructions and run them in this order:
 
 1. Spell-check changed source files. Preserve valid technical identifiers with existing scoped dictionary conventions. Ask before changing historical prose or code typos unless already authorized.
 2. Run existing general lint checks and, if available, Markdown lint on changed Markdown.
@@ -123,6 +123,8 @@ For eligible checks only, follow existing instructions and run them in this orde
 Do not add spelling dictionaries, Markdown lint configurations, or Prettier dependencies solely to enable a check that was absent from the source site. If an existing eligible skill requires temporary tooling, follow that skill without adding unrelated permanent dependencies.
 
 Include newly created and moved files, not just tracked modifications. Avoid scanning generated output, opaque machine state, lockfiles, or unchanged vendored sources as prose. Use existing package managers and commands; install or restore dependencies only when needed.
+
+Reuse successful results already known from the session when the relevant files have not changed. Do not rerun spelling, Markdown lint, or Prettier just because the user requests staging or committing. If a final-pass fix changes a file, repeat only the affected check on that file, not the entire pass.
 
 Check formatter output as well as its exit status. Go-template formatters may fail on dynamic HTML tag names or introduce whitespace inside conditional attribute values. Use equivalent, safely escaped template expressions rather than broadly disabling formatting or accepting broken metadata.
 
@@ -141,7 +143,7 @@ Compare generated output against the production baseline:
 
 Use focused regression checks based on the discovered site rather than hard-coded counts, aliases, theme names, or domain names from another repository. Preserve intended code text and make prose changes only when authorized.
 
-Smoke-test local serving when feasible, using an available port. Verify representative pages and compiled CSS return successful responses, then stop the specific temporary server. Do not leave a background process running unless requested. Finish with a production build so local-server settings do not remain in the final output.
+Smoke-test local serving when feasible, using an available port. Verify representative pages and compiled CSS return successful responses, then stop the specific temporary server. Do not leave a background process running unless requested. Finish functional verification with a production build so local-server settings do not remain in the final output, then run the final quality pass described in section 6. If a quality fix requires functional verification again, rerun only the affected verification without repeating unrelated quality checks.
 
 Keep reproducible, directly relevant checks in the repository when appropriate; keep temporary baseline artifacts outside tracked source and clean up only known temporary files. Inspect the final diff, confirm no unrelated changes were lost, and leave everything unstaged and uncommitted unless instructed otherwise.
 
