@@ -1,0 +1,32 @@
+{{ with .Site.Params.sequoia.publication_url }}
+  <sequoia-subscribe
+    button-type="bluesky"
+    {{ with $.Site.Params.sequoia.callback }}
+      callback-uri="{{ printf "%s/subscribe" . | safeURL }}"
+    {{ end }}
+    publication-uri="{{ . | safeURL }}"
+  ></sequoia-subscribe>
+  <script>
+    (function () {
+      var el = document.currentScript.previousElementSibling;
+      var mq = window.matchMedia("(max-width: 600px)");
+      function update() {
+        if (mq.matches) {
+          el.setAttribute("label", "Subscribe");
+        } else {
+          el.removeAttribute("label");
+        }
+      }
+      update();
+      if (mq.addEventListener) {
+        mq.addEventListener("change", update);
+      } else {
+        mq.addListener(update);
+      }
+    })();
+  </script>
+  <script
+    type="module"
+    src="{{ "assets/scripts/sequoia-subscribe.js" | relURL }}"
+  ></script>
+{{ end }}

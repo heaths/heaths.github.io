@@ -16,7 +16,7 @@ formatter = { command = "npm", args = [
   "--",
   "prettier",
   "--parser",
-  "html",
+  "go-template",
 ] }
 auto-format = true
 

@@ -5,7 +5,7 @@ description: Check and fix spelling in project source files using cSpell
 
 ## Installation
 
-Run `npm i` from the repository root to install dependencies. Run tools using
+If dependencies are missing, run `npm ci` from the repository root. Run tools using
 `npm run`.
 
 ## Configuration

@@ -1,333 +1,235 @@
-#!/usr/bin/env ruby
-# frozen_string_literal: true
-# cspell:ignore fediverse fosstodon getlocal optparse rstrip strftime
+#!/usr/bin/env node
+const fs = require("node:fs");
+const path = require("node:path");
+const { parseArgs } = require("node:util");
+const { createInterface } = require("node:readline/promises");
+const YAML = require("yaml");
 
-ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
+function slugify(title) {
+  return title
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/['\u2019]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
 
-require 'bundler/setup'
-require 'jekyll'
-require 'date'
-require 'optparse'
-require 'pathname'
-require 'psych'
-require 'time'
+function localDate(date = new Date()) {
+  const offset = -date.getTimezoneOffset();
+  const pad = (value) => String(value).padStart(2, "0");
+  return (
+    `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}` +
+    `T${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}` +
+    `${offset < 0 ? "-" : "+"}${pad(Math.floor(Math.abs(offset) / 60))}:${pad(Math.abs(offset) % 60)}`
+  );
+}
 
-class NewPost
-  DEFAULT_CATEGORY = 'general'
-  CONFIG_PATH = Pathname(__dir__).join('..', '_config.yml').expand_path
-  POSTS_PATH = Pathname(__dir__).join('..', '_posts').expand_path
+function validateDate(value) {
+  if (
+    !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})$/.test(value) ||
+    Number.isNaN(Date.parse(value)) ||
+    Number(value.slice(11, 13)) > 23 ||
+    Number(value.slice(8, 10)) >
+      new Date(
+        Date.UTC(Number(value.slice(0, 4)), Number(value.slice(5, 7)), 0),
+      ).getUTCDate()
+  ) {
+    throw new Error(`Invalid RFC3339 date/time: ${value}`);
+  }
+  return value;
+}
 
-  def initialize(argv, stdin: $stdin, stdout: $stdout, stderr: $stderr)
-    @argv = argv.dup
-    @stdin = stdin
-    @stdout = stdout
-    @stderr = stderr
-    @options = {
-      tags: [],
+function suggestCategory(text) {
+  const keywords = {
+    atproto: ["atproto", "bluesky", "mastodon", "fediverse"],
+    azure: ["azure", "entra", "bicep", "arm", "keyvault", "key-vault"],
+    rust: ["rust", "cargo", "crate", "crates", "clippy"],
+    setup: ["setup", "install", "configure", "configuration", "bootstrap"],
+    sport: [
+      "climb",
+      "climbing",
+      "backpacking",
+      "hiking",
+      "mountaineering",
+      "skiing",
+      "running",
+    ],
+    tips: ["tip", "tips", "shortcut", "workflow", "productivity"],
+    troubleshooting: [
+      "debug",
+      "debugging",
+      "troubleshoot",
+      "troubleshooting",
+      "error",
+      "fix",
+      "issue",
+    ],
+  };
+  let category = "general";
+  let score = 0;
+  for (const [name, words] of Object.entries(keywords)) {
+    const matches = words.filter((word) =>
+      text.toLowerCase().includes(word),
+    ).length;
+    if (matches > score) {
+      category = name;
+      score = matches;
     }
-    @config_text = nil
-    @categories = []
-    @date = nil
-    @notes = []
-  end
+  }
+  return category;
+}
 
-  def run
-    parse_options
-    load_config
-    collect_inputs
-    ensure_category_is_known
-    post_path = write_post
-
-    @notes.each { |note| @stdout.puts note }
-    @stdout.puts "Created #{relative_path(post_path)}"
-  rescue Interrupt
-    @stderr.puts "\nCancelled."
-    exit 130
-  rescue OptionParser::ParseError, RuntimeError => e
-    @stderr.puts e.message
-    exit 1
-  end
-
-  private
-
-  def parse_options
-    parser = OptionParser.new do |opts|
-      opts.banner = 'Usage: bin/new-post [options]'
-
-      opts.on('-t', '--title TITLE', 'Post title') do |value|
-        @options[:title] = value
-      end
-
-      opts.on('-d', '--date RFC3339', 'Post date/time (defaults to now)') do |value|
-        @options[:date] = value
-      end
-
-      opts.on('-s', '--summary SUMMARY', 'Post summary') do |value|
-        @options[:summary] = value
-      end
-
-      opts.on('-i', '--image PATH', 'Post image path') do |value|
-        @options[:image] = value
-      end
-
-      opts.on('-c', '--category CATEGORY', 'Post category') do |value|
-        @options[:category] = value
-      end
-
-      opts.on('--tag TAG', 'Add a tag (repeatable)') do |value|
-        @options[:tags] << value
-      end
-
-      opts.on('--tags TAGS', 'Comma-separated tags') do |value|
-        @options[:tags].concat(split_tags(value))
-      end
-
-      opts.on('-b', '--body BODY', 'Post body content') do |value|
-        @options[:body] = value
-      end
-
-      opts.on('--body-file PATH', 'Read post body content from a file') do |value|
-        @options[:body_file] = value
-      end
-
-      opts.on('--force-category', 'Add a new category to _config.yml without prompting') do
-        @options[:force_category] = true
-      end
-
-      opts.on('-h', '--help', 'Show this help') do
-        @stdout.puts opts
-        exit
-      end
-    end
-
-    parser.parse!(@argv)
-
-    return unless @options[:body] && @options[:body_file]
-
-    raise OptionParser::ParseError, 'Use either --body or --body-file, not both.'
-  end
-
-  def load_config
-    @config_text = CONFIG_PATH.read
-    config = Psych.safe_load(@config_text, permitted_classes: [Date, Time], aliases: true) || {}
-    @categories = Array(config['categories']).map(&:to_s)
-  end
-
-  def collect_inputs
-    @options[:title] = prompt_required('Title', @options[:title])
-    @date = parse_time(@options[:date] || Time.now.iso8601)
-    @options[:summary] = prompt_required('Summary', @options[:summary])
-    @options[:image] = normalize_optional(prompt('Image path (optional)', @options[:image]))
-    @options[:category] = prompt_required(
-      "Category (#{@categories.join(', ')})",
-      normalize_optional(@options[:category]) || suggested_category
-    )
-    @options[:tags] = normalized_tags(prompt('Tags (comma-separated)', @options[:tags].join(', ')))
-    @options[:body] = resolved_body
-  end
-
-  def ensure_category_is_known
-    category = @options[:category]
-    return if @categories.include?(category)
-
-    unless @options[:force_category] || confirm?("Add '#{category}' to categories in _config.yml?", true)
-      raise "Category '#{category}' is not listed in _config.yml."
-    end
-
-    updated_categories = (@categories + [category]).uniq.sort
-    replace_categories(updated_categories)
-    @categories = updated_categories
-    @notes << "Updated _config.yml categories with '#{category}'."
-  end
-
-  def write_post
-    file_name = format('%<date>s-%<slug>s.md', date: @date.strftime('%F'), slug: Jekyll::Utils.slugify(@options[:title]))
-    post_path = POSTS_PATH.join(file_name)
-
-    raise "Post already exists: #{relative_path(post_path)}" if post_path.exist?
-
-    post_path.write(render_post)
-    post_path
-  end
-
-  def render_post
-    lines = [
-      '---',
-      "title: #{yaml_scalar(@options[:title])}",
-      "date: #{yaml_scalar(@date.iso8601)}",
-      'summary: >',
-      *folded_lines(@options[:summary]).map { |line| "  #{line}" },
-    ]
-
-    lines << "image: #{yaml_scalar(@options[:image])}" if @options[:image]
-    lines << "category: #{yaml_scalar(@options[:category])}"
-    lines << 'tags:'
-    normalized_tags.each do |tag|
-      lines << "  - #{yaml_scalar(tag)}"
-    end
-    lines << '---'
-    lines << ''
-
-    body = @options[:body].to_s.rstrip
-    lines << body unless body.empty?
-
-    "#{lines.join("\n")}\n"
-  end
-
-  def replace_categories(categories)
-    lines = @config_text.lines(chomp: true)
-    categories_index = lines.index('categories:')
-    raise "Couldn't find categories in #{CONFIG_PATH}" unless categories_index
-
-    block_end = categories_index + 1
-    while block_end < lines.length && lines[block_end].start_with?('  - ')
-      block_end += 1
-    end
-
-    replacement = categories.map { |category| "  - #{category}" }
-    new_lines = lines[0..categories_index] + replacement + lines[block_end..].to_a
-    CONFIG_PATH.write("#{new_lines.join("\n")}\n")
-    @config_text = CONFIG_PATH.read
-  end
-
-  def resolved_body
-    return @options[:body] if @options.key?(:body)
-    return Pathname(@options[:body_file]).read if @options[:body_file]
-    return '' unless @stdin.tty?
-
-    @stdout.puts 'Enter the post body. Finish with Ctrl-D when done.'
-    @stdin.read
-  end
-
-  def suggested_category
-    content = [
-      @options[:title],
-      @options[:summary],
-      @options[:tags].join(' '),
-    ].compact.join(' ').downcase
-
-    scores = {
-      'atproto' => %w[atproto bluesky mastodon fediverse].count { |word| content.include?(word) },
-      'azure' => %w[azure entra bicep arm keyvault key-vault].count { |word| content.include?(word) },
-      'rust' => %w[rust cargo crate crates clippy].count { |word| content.include?(word) },
-      'setup' => %w[setup install configure configuration bootstrap].count { |word| content.include?(word) },
-      'sport' => %w[climb climbing backpacking hiking mountaineering skiing running].count { |word| content.include?(word) },
-      'tips' => %w[tip tips shortcut workflow productivity].count { |word| content.include?(word) },
-      'troubleshooting' => %w[debug debugging troubleshoot troubleshooting error fix issue].count { |word| content.include?(word) },
+async function run(
+  args,
+  {
+    root = path.resolve(__dirname, ".."),
+    input = process.stdin,
+    output = process.stdout,
+  } = {},
+) {
+  const { values } = parseArgs({
+    args,
+    options: {
+      title: { type: "string", short: "t" },
+      date: { type: "string", short: "d" },
+      summary: { type: "string", short: "s" },
+      image: { type: "string", short: "i" },
+      category: { type: "string", short: "c" },
+      tag: { type: "string", multiple: true, default: [] },
+      tags: { type: "string" },
+      body: { type: "string", short: "b" },
+      "body-file": { type: "string" },
+      "force-category": { type: "boolean" },
+      help: { type: "boolean", short: "h" },
+    },
+  });
+  if (values.help) {
+    output.write(
+      "Usage: bin/new-post [options]\n" +
+        "  -t, --title TITLE       Post title (required)\n" +
+        "  -d, --date RFC3339      Date/time (defaults to now)\n" +
+        "  -s, --summary SUMMARY   Post summary (required)\n" +
+        "  -i, --image PATH        Optional cover image\n" +
+        "  -c, --category NAME     Category (suggested if omitted)\n" +
+        "      --tag TAG          Repeatable tag\n" +
+        "      --tags TAGS        Comma-separated tags\n" +
+        "  -b, --body BODY         Body content\n" +
+        "      --body-file PATH   Read body from a file\n" +
+        "      --force-category   Add a category without prompting\n",
+    );
+    return;
+  }
+  if (values.body !== undefined && values["body-file"]) {
+    throw new Error("Use either --body or --body-file, not both.");
+  }
+  const configPath = path.join(root, "hugo.yaml");
+  const config = YAML.parseDocument(fs.readFileSync(configPath, "utf8"));
+  if (config.errors.length) throw config.errors[0];
+  const categories = config.getIn(["params", "categories"])?.toJSON();
+  if (!Array.isArray(categories))
+    throw new Error("Missing params.categories in hugo.yaml.");
+  const terminal = input.isTTY ? createInterface({ input, output }) : null;
+  async function prompt(label, value, required = false) {
+    if (terminal) {
+      const answer = await terminal.question(
+        `${label}${value ? ` [${value}]` : ""}: `,
+      );
+      value = answer.trim() || value;
     }
+    value = value?.trim();
+    if (required && !value)
+      throw new Error(`Missing required value for ${label}.`);
+    return value;
+  }
+  try {
+    const title = await prompt("Title", values.title, true);
+    const date = validateDate(values.date || localDate());
+    const summary = await prompt("Summary", values.summary, true);
+    const image = await prompt("Image path (optional)", values.image);
+    const category = await prompt(
+      `Category (${categories.join(", ")})`,
+      values.category ||
+        suggestCategory([title, summary, values.tags, ...values.tag].join(" ")),
+      true,
+    );
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(category))
+      throw new Error(`Invalid category: ${category}`);
+    const tagInput = await prompt(
+      "Tags (comma-separated)",
+      [...values.tag, values.tags].filter(Boolean).join(","),
+    );
+    const tags = [
+      ...new Set([
+        ...(tagInput || "")
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean),
+        ...(category === "general" ? [] : [category]),
+      ]),
+    ];
+    const slug = slugify(title);
+    if (!slug) throw new Error("The title must contain letters or numbers.");
+    const file = path.join(
+      root,
+      "content",
+      "posts",
+      `${date.slice(0, 10)}-${slug}.md`,
+    );
+    if (fs.existsSync(file))
+      throw new Error(`Post already exists: ${path.relative(root, file)}`);
+    if (!categories.includes(category)) {
+      let confirmed = values["force-category"];
+      if (!confirmed && terminal) {
+        confirmed = /^(y|yes)?$/i.test(
+          await terminal.question(
+            `Add '${category}' to params.categories in hugo.yaml? [Y/n]: `,
+          ),
+        );
+      }
+      if (!confirmed)
+        throw new Error(`Category '${category}' is not listed in hugo.yaml.`);
+    }
+    let body = values.body ?? "";
+    if (values["body-file"])
+      body = fs.readFileSync(values["body-file"], "utf8");
+    else if (terminal && values.body === undefined) {
+      output.write("Enter the post body. Finish with Ctrl-D when done.\n");
+      const lines = [];
+      for await (const line of terminal) lines.push(line);
+      body = lines.join("\n");
+    }
+    if (!categories.includes(category)) {
+      config.setIn(["params", "categories"], [...categories, category].sort());
+      fs.writeFileSync(configPath, config.toString());
+      output.write(`Updated hugo.yaml categories with '${category}'.\n`);
+    }
+    const metadata = new YAML.Document({
+      title,
+      date,
+      summary,
+      ...(image ? { image } : {}),
+      category,
+      tags,
+      url: `/${category}/${date.slice(0, 10).replaceAll("-", "/")}/${slug}.html`,
+    });
+    metadata.get("summary", true).type = YAML.Scalar.BLOCK_FOLDED;
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(
+      file,
+      `---\n${metadata.toString()}---\n\n${body.trimEnd()}\n`,
+      { flag: "wx" },
+    );
+    output.write(`Created ${path.relative(root, file)}\n`);
+  } finally {
+    terminal?.close();
+  }
+}
 
-    best = scores.max_by { |_, score| score }
-    return DEFAULT_CATEGORY unless best && best.last.positive?
-
-    best.first
-  end
-
-  def normalized_tags(value = @options[:tags])
-    tags = Array(value).flat_map { |tag| split_tags(tag) }
-    tags << @options[:category] if category_tag?
-    tags.map(&:strip).reject(&:empty?).uniq
-  end
-
-  def category_tag?
-    @options[:category] && @options[:category] != DEFAULT_CATEGORY
-  end
-
-  def split_tags(value)
-    value.to_s.split(',').map(&:strip).reject(&:empty?)
-  end
-
-  def prompt(label, default = nil)
-    return default unless @stdin.tty?
-
-    message = if default && !default.to_s.empty?
-                "#{label} [#{default}]: "
-              else
-                "#{label}: "
-              end
-
-    @stdout.print(message)
-    input = @stdin.gets
-    raise "Missing input for #{label}." unless input
-
-    value = input.strip
-    return default if value.empty?
-
-    value
-  end
-
-  def prompt_required(label, default = nil)
-    loop do
-      value = normalize_optional(prompt(label, default))
-      return value if value
-
-      raise "Missing required value for #{label}." unless @stdin.tty?
-    end
-  end
-
-  def confirm?(message, default)
-    return false unless @stdin.tty?
-
-    suffix = default ? ' [Y/n]: ' : ' [y/N]: '
-    @stdout.print("#{message}#{suffix}")
-    input = @stdin.gets
-    raise "Missing input for #{message}" unless input
-
-    answer = input.strip.downcase
-    return default if answer.empty?
-
-    %w[y yes].include?(answer)
-  end
-
-  def parse_time(value)
-    Time.parse(value.to_s).getlocal
-  rescue ArgumentError
-    raise "Invalid date/time: #{value.inspect}"
-  end
-
-  def normalize_optional(value)
-    text = value.to_s.strip
-    return nil if text.empty?
-
-    text
-  end
-
-  def folded_lines(value)
-    wrap_text(value.to_s.strip, 78)
-  end
-
-  def wrap_text(text, width)
-    return [''] if text.empty?
-
-    words = text.split(/\s+/)
-    lines = []
-    current = +''
-
-    words.each do |word|
-      candidate = current.empty? ? word : "#{current} #{word}"
-      if current.empty? || candidate.length <= width
-        current = candidate
-      else
-        lines << current
-        current = word
-      end
-    end
-
-    lines << current unless current.empty?
-    lines
-  end
-
-  def yaml_scalar(value)
-    Psych.safe_dump(value, line_width: -1)
-      .sub(/\A---[ \t]*\n?/, '')
-      .sub(/\n\.\.\.\n?\z/, '')
-      .strip
-  end
-
-  def relative_path(path)
-    path.relative_path_from(Pathname(Dir.pwd)).to_s
-  rescue ArgumentError
-    path.to_s
-  end
-end
-
-NewPost.new(ARGV).run
+module.exports = { run, slugify, validateDate };
+if (require.main === module) {
+  run(process.argv.slice(2)).catch((error) => {
+    console.error(error.message);
+    process.exitCode = 1;
+  });
+}

@@ -6,7 +6,7 @@ description: >
   front matter structure, and required fields are present.
 ---
 
-Create a new blog post in `_posts/` by using `bin/new-post` instead of writing the
+Create a new blog post in `content/posts/` by using `bin/new-post` instead of writing the
 file manually. Prefer delegating to the script to reduce token usage and keep the
 workflow consistent with the repository.
 
@@ -21,17 +21,18 @@ workflow consistent with the repository.
    - Required values are effectively **title**, **summary**, **category**, and
      **tags**.
    - `--date` is optional and defaults to the current date-time when omitted.
-   - Known categories are in `_config.yml` under `categories`: `atproto`, `azure`,
+   - Known categories are in `hugo.yaml` under `params.categories`: `atproto`, `azure`,
      `general`, `rust`, `setup`, `sport`, `tips`, `troubleshooting`.
    - The script suggests a category when one is not provided, confirms new
-     categories, updates `_config.yml` alphabetically when needed, and includes
+     categories, updates `hugo.yaml` alphabetically when needed, and includes
      the category as a tag except for `general`.
 3. For short content, prefer `--body`. For longer drafted content already available
    in a file, prefer `--body-file`.
-4. The script creates `_posts/YYYY-MM-DD-title-slug.md`, writes front matter in the
-   repository's expected order, and appends the body content.
+4. The Node.js script creates `content/posts/YYYY-MM-DD-title-slug.md`, writes front matter in the
+   repository's expected order, including an explicit `url` for Hugo and Sequoia,
+   and appends the body content. Run `npm install` first if dependencies are missing.
 5. Do **not** manually create the post file unless the script cannot be used.
-6. Do **not** run `lint` or `format` on new posts — they are not necessary.
+6. Run the repository's spelling, lint, and formatting skills on the new post.
 
 ## Example
 

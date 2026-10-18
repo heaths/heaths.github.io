@@ -1,0 +1,109 @@
+baseURL: https://heaths.dev/
+title: Heath Stewart's Blog
+locale: en-US
+theme: minima
+timeZone: America/Los_Angeles
+enableRobotsTXT: true
+disableKinds:
+  - taxonomy
+  - term
+pagination:
+  pagerSize: 10
+taxonomies:
+  category: category
+  tag: tags
+outputs:
+  home:
+    - HTML
+    - RSS
+  section:
+    - HTML
+mediaTypes:
+  application/atom+xml:
+    suffixes:
+      - xml
+outputFormats:
+  RSS:
+    mediaType: application/atom+xml
+    baseName: feed
+params:
+  author: Heath Stewart
+  email: heaths@heaths.dev
+  tagline: Technical help and personal events
+  description: >-
+    Technical posts about my decades-long experience with installation, current news
+    and information about my current role in Azure, and tips and tricks I've
+    picked up along the way. Occasionally about my backpacking and mountaineering
+    adventures with friends and family.
+  show_excerpts: true
+  categories:
+    - atproto
+    - azure
+    - general
+    - rust
+    - setup
+    - sport
+    - tips
+    - troubleshooting
+  minima:
+    social_links:
+      - name: github
+        username: heaths
+      - name: bluesky
+        username: heaths.dev
+      - name: mastodon
+        username: heaths
+        instance: fosstodon.org
+      - name: linkedin
+        username: heaths
+  sequoia:
+    publication_url: at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.publication/3meddhkrg5z2p
+menus:
+  main:
+    - name: Archive
+      pageRef: /archive
+      weight: 10
+    - name: About
+      pageRef: /about
+      weight: 20
+module:
+  mounts:
+    - source: content
+      target: content
+    - source: static
+      target: static
+    - source: CNAME
+      target: static/CNAME
+    - source: assets
+      target: static/assets
+      files:
+        - "! .DS_Store"
+        - "! **/.DS_Store"
+    - source: .well-known
+      target: static/.well-known
+      files:
+        - "! .gitkeep"
+        - "! **/.gitkeep"
+frontmatter:
+  lastmod:
+    - lastmod
+    - date
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      autoIDType: blackfriday
+    extensions:
+      footnote:
+        backlinkHTML: "&#x21a9;"
+      typographer:
+        disable: false
+  highlight:
+    noClasses: false
+    guessSyntax: false
+cascade:
+  - params:
+      author: Heath Stewart
+    target:
+      path: /posts/**

@@ -1,0 +1,8 @@
+{{ if not (.Get "src") }}
+  {{ errorf "image requires src: %s" .Position }}
+{{ end }}
+<img
+  src="{{ .Get "src" | relURL }}"
+  alt="{{ .Get "alt" }}"
+  {{ with .Get "class" }}class="{{ . }}"{{ end }}
+/>

@@ -2,32 +2,218 @@
   "words": [
     "atproto",
     "autorun",
+    "azuresdk",
+    "backlink",
+    "blackfriday",
     "bluehour",
-    "endraw",
-    "rougify",
     "bluth",
-    "eventhubs",
-    "francesco",
-    "keybase",
-    "keybase",
-    "distro",
-    "execdir",
-    "hkcu",
-    "kwargs",
-    "mentees",
-    "pythonistas",
-    "reqwest",
-    "rouvy",
-    "rustlang",
-    "rustaceans",
-    "seahawks",
     "clippy",
+    "dartsass",
+    "distro",
+    "endraw",
+    "errorf",
+    "eventhubs",
+    "execdir",
+    "extensionless",
+    "fediverse",
+    "fosstodon",
+    "francesco",
+    "frontmatter",
+    "goldmark",
+    "headshot",
+    "hkcu",
+    "jsonify",
+    "keybase",
+    "kwargs",
+    "lastmod",
+    "legos",
+    "licenselink",
+    "mentees",
+    "mercurial",
+    "plainify",
+    "powerline",
+    "pythonistas",
+    "relref",
+    "reqwest",
+    "rougify",
+    "rouvy",
+    "rustaceans",
+    "rustlang",
+    "seahawks",
     "strava",
     "toolset",
+    "typespec",
     "typestate",
-    "viewports",
+    "urlquery",
     "vhdx",
+    "viewports",
+    "worktree",
+    "worktrees",
     "zwift"
   ],
-  "ignoreRegExpList": ["at://[^\\s\"']+"]
+  "ignoreRegExpList": ["at://[^\\s\"']+"],
+  "overrides": [
+    {
+      "filename": ".prettierrc",
+      "words": ["gotmpl"]
+    },
+    {
+      "filename": ".ngrok/sequoia.yml",
+      "words": ["ngrok"]
+    },
+    {
+      "filename": "bin/check-site.py",
+      "words": ["charrefs", "zgotmpl"]
+    },
+    {
+      "filename": "bin/new-post",
+      "words": ["NFKD"]
+    },
+    {
+      "filename": "bin/new-post.test.mjs",
+      "words": ["r\u00e9sum\u00e9"]
+    },
+    {
+      "filename": "content/archive/custom-string-formatting-in-net.md",
+      "words": ["codeproject", "ctype", "fmtinfo"]
+    },
+    {
+      "filename": "content/archive/embedding-net-controls-in-java.md",
+      "words": [
+        "atlbase",
+        "atlwin",
+        "beginthread",
+        "bject",
+        "clsid",
+        "codeproject",
+        "dispinterface",
+        "djava",
+        "endthread",
+        "gacutil",
+        "guidgen",
+        "guids",
+        "hresult",
+        "icomtest",
+        "javac",
+        "javah",
+        "jawt",
+        "jboolean",
+        "jint",
+        "jnicall",
+        "jniexport",
+        "jobject",
+        "methodname",
+        "ngen",
+        "odel",
+        "omponent",
+        "regasm",
+        "stdafx",
+        "typelib",
+        "typelibs",
+        "vtable"
+      ]
+    },
+    {
+      "filename": "content/posts/2019-11-10-welcome-to-my-blog.md",
+      "words": ["vsconfig", "xcopy"]
+    },
+    {
+      "filename": "content/posts/2020-02-04-trace-azure-sdk-for-net.md",
+      "words": ["nettrace"]
+    },
+    {
+      "filename": "content/posts/2020-05-06-powerline-in-vim.md",
+      "words": ["getusersitepackages", "isdir", "laststatus"]
+    },
+    {
+      "filename": "content/posts/2020-05-12-simple-wix-project.md",
+      "words": ["hklm", "installfolder"]
+    },
+    {
+      "filename": "content/posts/2020-05-23-fixing-time-drift-in-docker-on-wsl2.md",
+      "words": ["errno", "hwclock"]
+    },
+    {
+      "filename": "content/posts/2020-07-30-azure-cli-in-bash.md",
+      "words": ["convertfrom", "myvault"]
+    },
+    {
+      "filename": "content/posts/2020-09-24-getting-back-to-good-state-in-git.md",
+      "words": ["oneline", "realise", "reflog"]
+    },
+    {
+      "filename": "content/posts/2021-04-08-debugging-tests-in-linux-containers-with-visual-studio.md",
+      "words": ["debuggee", "dpkg", "testhost", "vstest"]
+    },
+    {
+      "filename": "content/posts/2021-04-21-gh-user.md",
+      "words": ["userprofile"]
+    },
+    {
+      "filename": "content/posts/2021-05-19-gh-alias-set-from-stdin.md",
+      "words": ["herestring", "herestrings"]
+    },
+    {
+      "filename": "content/posts/2021-08-24-gh-table-formatting.md",
+      "words": ["autocolor", "prcomments", "tablerender", "tablerow"]
+    },
+    {
+      "filename": "content/posts/2022-06-18-reduce-fetch-and-checkout-times-in-git.md",
+      "words": ["cognitivelanguage", "refspecs"]
+    },
+    {
+      "filename": "content/posts/2023-05-19-using-1password-for-git-ssh-signatures-in-wsl.md",
+      "words": [
+        "allowedsignersfile",
+        "auxww",
+        "jstarks",
+        "nofork",
+        "npiperelay",
+        "piperelay",
+        "setsid",
+        "socat"
+      ]
+    },
+    {
+      "filename": "content/posts/2024-08-02-helix-support-for-typespec.md",
+      "words": ["asciicast", "tspconfig"]
+    },
+    {
+      "filename": "content/posts/2025-02-28-cleaning-up-rust.md",
+      "words": ["devtmpfs"]
+    },
+    {
+      "filename": "content/posts/2025-05-10-cross-compiling-x64-on-aarch64.md",
+      "words": ["dpkg", "keyrings", "rustup"]
+    },
+    {
+      "filename": "content/posts/2026-02-20-publishing-to-the-atmosphere.md",
+      "words": ["threddyrex"]
+    },
+    {
+      "filename": "data/authors.yml",
+      "words": ["mrhestew"]
+    },
+    {
+      "filename": "themes/minima/layouts/_partials/social.html",
+      "words": ["dribbble", "microdotblog"]
+    },
+    {
+      "filename": "themes/minima/static/assets/minima-social-icons.svg",
+      "words": [
+        "dribbble",
+        "evenodd",
+        "linecap",
+        "linejoin",
+        "microdotblog",
+        "miterlimit",
+        "stackoverflow",
+        "xlink"
+      ]
+    },
+    {
+      "filename": "zellij.kdl",
+      "words": ["borderless"]
+    }
+  ]
 }

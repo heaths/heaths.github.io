@@ -1,0 +1,41 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ .Site.Language.Lang }}">
+  <generator uri="https://gohugo.io/">Hugo</generator>
+  <link
+    href="{{ "feed.xml" | absURL }}"
+    rel="self"
+    type="application/atom+xml"
+  />
+  <link href="{{ .Site.BaseURL }}" rel="alternate" type="text/html" />
+  <updated>{{ now.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+  <id>{{ "feed.xml" | absURL }}</id>
+  <title type="html">{{ .Site.Title }}</title>
+  <subtitle>{{ .Site.Params.description }}</subtitle>
+  <author
+    ><name>{{ .Site.Params.author }}</name
+    ><email>{{ .Site.Params.email }}</email></author
+  >
+  {{ range first 10 (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+    <entry>
+      <title type="html">{{ .Title }}</title>
+      <link
+        href="{{ .Permalink }}"
+        rel="alternate"
+        type="text/html"
+        title="{{ .Title }}"
+      />
+      <published>{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</published>
+      <updated>{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+      <id>{{ .Permalink | strings.TrimSuffix ".html" }}</id>
+      <content type="html" xml:base="{{ .Permalink }}"
+        >{{ .Content | htmlEscape | safeHTML }}</content
+      >
+      <author
+        ><name>{{ .Params.author | default .Site.Params.author }}</name></author
+      >
+      {{ with .Params.category }}<category term="{{ . }}" />{{ end }}
+      {{ range .Params.tags }}<category term="{{ . }}" />{{ end }}
+      <summary type="html">{{ .Summary | htmlEscape | safeHTML }}</summary>
+    </entry>
+  {{ end }}
+</feed>

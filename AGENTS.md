@@ -1,29 +1,27 @@
 # Agent Instructions
 
-This repository is a personal blog and technical website built with [Jekyll](https://jekyllrb.com) and the [minima](https://github.com/jekyll/minima) theme. It contains posts about software engineering, Azure, developer tools, and outdoor adventures, published at [heaths.dev](https://heaths.dev).
+This repository is a personal blog and technical website built with [Hugo](https://gohugo.io) and the local `minima` theme, ported from Jekyll Minima 2.5.2 with site customizations. It contains posts about software engineering, Azure, developer tools, and outdoor adventures, published at [heaths.dev](https://heaths.dev).
 
 ## Directory structure
 
-This is a [Jekyll](https://jekyllrb.com) site using the [minima](https://github.com/jekyll/minima) theme.
-
-| Path          | Description                                                              |
-| ------------- | ------------------------------------------------------------------------ |
-| `_posts/`     | Blog posts in Markdown. This is where most content is authored.          |
-| `_archive/`   | Archived articles (custom collection, output enabled).                   |
-| `_layouts/`   | HTML layouts that wrap page content (`post.html`, `article.html`, etc.). |
-| `_includes/`  | Reusable HTML partials (header, footer, social icons).                   |
-| `_sass/`      | Sass partials for site styling (`palette.scss`, `custom.scss`).          |
-| `_data/`      | Data files (e.g., `authors.yml`) accessible via `site.data`.             |
-| `assets/`     | Static assets: stylesheets, images, and scripts.                         |
-| `_config.yml` | Site-wide Jekyll configuration.                                          |
-| `Gemfile`     | Ruby dependencies (Jekyll, plugins, theme).                              |
-| `index.md`    | Home page content rendered with the `home` layout.                       |
-| `about.md`    | About page.                                                              |
-| `archive.md`  | Archive listing page.                                                    |
+| Path                         | Description                                                                   |
+| ---------------------------- | ----------------------------------------------------------------------------- |
+| `content/posts/`             | Blog posts in Markdown.                                                       |
+| `content/archive/`           | Archived articles; `_index.md` is the archive listing.                        |
+| `content/`                   | Home page, About, and Privacy Policy.                                         |
+| `themes/minima/layouts/`     | Hugo Go templates, `_partials/`, `_markup/` render hooks, and `_shortcodes/`. |
+| `themes/minima/assets/sass/` | Minima defaults and custom Sass, compiled to `/assets/main.css`.              |
+| `themes/minima/static/`      | Theme scripts and social icons.                                               |
+| `data/`                      | Data files (e.g., `authors.yml`) accessible via `hugo.Data`.                  |
+| `assets/`                    | Images and Sequoia scripts mounted at `/assets/`.                             |
+| `.well-known/`               | AT Protocol publication verification files; preserve public URLs.             |
+| `hugo.yaml`                  | Site configuration, metadata, menus, and mount settings.                      |
+| `bin/new-post`               | Node.js post helper used by the new-post skill.                               |
+| `public/`                    | Generated Hugo output (ignored by git).                                       |
 
 ## Writing posts
 
-Posts go in `_posts/` with filenames like `YYYY-MM-DD-title-slug.md`.
+Posts go in `content/posts/` with filenames like `YYYY-MM-DD-title-slug.md`.
 
 When the user asks to write, create, draft, or add a new blog post, use the skill defined in `.github/skills/new-post/SKILL.md`. This skill ensures the correct filename format, front matter structure, and required fields are present.
 
@@ -42,19 +40,20 @@ category: tips
 tags:
   - git
   - tip
+url: /tips/2025/01/15/my-post-title.html
 ---
 ```
 
 - **`summary`** — A short description (one or two sentences) of the post. This should be a YAML literal or folded string. Required for all posts.
-- **`excerpt_separator`** — Set to `<!--more-->` only on posts that use that marker in their content body. Do not set globally.
+- **`url`** — Explicit published path, also used by Sequoia. Preserve existing values. Hugo recognizes `<!--more-->` without Jekyll's `excerpt_separator` field.
 - **`category`** and **`tags`** — Used for organization and rendered on post pages.
 - **`atUri`** — AT Protocol URI linking the post to a Bluesky record. Never modify this field.
 
 ### Pre-commit check
 
-Do not commit changes unless the user explicitly says to commit. Stage changes freely, but always wait for explicit approval before creating a commit.
+Do not stage or commit changes unless the user explicitly says to.
 
-Before committing, verify that every post in `_posts/` has a `summary` field in its front matter. If a post is missing one, generate a summary of one or two sentences based on the post content and add it to the front matter before the `category` field.
+Before committing, verify that every post in `content/posts/` (except the section's `_index.md`) has a `summary` field in its front matter. If a post is missing one, generate a summary of one or two sentences based on the post content and add it to the front matter before the `category` field.
 
 ## Skills
 
@@ -74,17 +73,19 @@ After completing all requested changes, always run these skills in order on modi
 ## Building
 
 ```sh
-bundle exec jekyll build
+hugo
 ```
 
-For production (enables minification and analytics):
+For production (enables minification):
 
 ```sh
-JEKYLL_ENV=production bundle exec jekyll build
+npm run build
 ```
 
 For local development with live reload:
 
 ```sh
-bundle exec jekyll serve
+npm run dev
 ```
+
+Hugo requires Dart Sass on `PATH`. Use `npm test` for post-helper and generated-site checks.

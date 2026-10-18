@@ -1,13 +1,17 @@
 {
   "private": true,
   "devDependencies": {
-    "@shopify/prettier-plugin-liquid": "^1.11.0",
     "cspell": "^10.0.1",
     "prettier": "^3.9.6",
+    "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-toml": "^2.0.6",
-    "sequoia-cli": "^0.5.7"
+    "sequoia-cli": "^0.5.7",
+    "yaml": "^2.9.0"
   },
   "scripts": {
+    "build": "hugo --minify --printPathWarnings --panicOnWarning --cleanDestinationDir",
+    "dev": "hugo server --port 4000",
+    "test": "node --test bin/*.test.mjs && npm run build && python3 bin/check-site.py",
     "cspell": "cspell --config .vscode/cspell.json lint",
     "format": "prettier --write .",
     "prettier": "prettier",
