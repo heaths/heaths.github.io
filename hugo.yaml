@@ -4,6 +4,9 @@ locale: en-US
 theme: minima
 timeZone: America/Los_Angeles
 enableRobotsTXT: true
+caches:
+  images:
+    dir: :cacheDir/images
 disableKinds:
   - taxonomy
   - term

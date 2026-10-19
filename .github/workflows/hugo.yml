@@ -48,10 +48,28 @@ jobs:
           echo "${{ runner.temp }}/dart-sass" >> "$GITHUB_PATH"
       - name: Install support tooling
         run: npm ci
+      - name: Restore Hugo cache
+        id: hugo-cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ${{ runner.temp }}/.cache/hugo
+            resources/_gen
+          key: hugo-${{ runner.os }}-${{ env.HUGO_VERSION }}-${{ env.DART_SASS_VERSION }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            hugo-${{ runner.os }}-${{ env.HUGO_VERSION }}-${{ env.DART_SASS_VERSION }}-
       - name: Build and check with Hugo
         run: npm test
         env:
           HUGO_BASEURL: "${{ steps.pages.outputs.base_url }}/"
+          HUGO_CACHEDIR: "${{ runner.temp }}/.cache/hugo"
+      - name: Save Hugo cache
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ${{ runner.temp }}/.cache/hugo
+            resources/_gen
+          key: ${{ steps.hugo-cache.outputs.cache-primary-key }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
