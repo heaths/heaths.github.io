@@ -1,0 +1,25 @@
+{{- /* Enforce post conventions; drafts only warn so they can be previewed. */ -}}
+{{- $problems := slice -}}
+{{- $summary := .Params.summary | default "" | strings.TrimSpace -}}
+{{- if or (not $summary) (strings.Contains $summary "TODO") -}}
+  {{- $problems = $problems | append "summary is missing or still contains TODO" -}}
+{{- end -}}
+{{- with .Params.category -}}
+  {{- if not (in site.Params.categories .) -}}
+    {{- $problems = $problems | append (printf "category %q is not listed in params.categories in hugo.yaml" .) -}}
+  {{- end -}}
+{{- else -}}
+  {{- $problems = $problems | append "category is missing" -}}
+{{- end -}}
+{{- with .Params.image -}}
+  {{- if not ($.Resources.Get (path.Base .)) -}}
+    {{- $problems = $problems | append (printf "image %q is not a file in the post bundle" .) -}}
+  {{- end -}}
+{{- end -}}
+{{- range $problems -}}
+  {{- if $.Draft -}}
+    {{- warnf "%s: %s" $.File.Path . -}}
+  {{- else -}}
+    {{- errorf "%s: %s" $.File.Path . -}}
+  {{- end -}}
+{{- end -}}

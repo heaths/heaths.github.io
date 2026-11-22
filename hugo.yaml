@@ -12,6 +12,9 @@ disableKinds:
   - term
 pagination:
   pagerSize: 10
+permalinks:
+  page:
+    posts: /posts/:contentbasename/
 taxonomies:
   category: category
   tag: tags
@@ -43,6 +46,7 @@ params:
     - atproto
     - azure
     - general
+    - history
     - rust
     - setup
     - sport

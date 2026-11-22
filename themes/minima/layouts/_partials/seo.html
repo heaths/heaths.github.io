@@ -37,6 +37,7 @@
 {{ end }}
 {{ with .Params.image }}
   {{ $image := . | strings.TrimPrefix "/" | absURL }}
+  {{ with $.Resources.Get (path.Base .) }}{{ $image = .Permalink }}{{ end }}
   {{ $schema = merge $schema (dict "image" $image) }}
   <meta property="og:image" content="{{ $image }}" />
   <meta name="twitter:image" content="{{ $image }}" />

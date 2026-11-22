@@ -1,12 +1,12 @@
 {
-  "name": "Jekyll",
+  "name": "Hugo",
   "build": {
     "dockerfile": "Dockerfile"
   },
   "forwardPorts": [4000],
-  "remoteUser": "jekyll",
+  "remoteUser": "node",
   "workspaceFolder": "/workspaces/heaths.github.io",
-  "postCreateCommand": "bundle install",
+  "postCreateCommand": "npm ci",
   "customizations": {
     "vscode": {
       "extensions": [

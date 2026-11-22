@@ -1,11 +1,10 @@
 .DS_Store
-.jekyll-metadata
-.sass-cache
 .sequoia-state.json
-_site
 public
 resources
 .hugo_build.lock
 themes/minima/LICENSE.txt
 assets/scripts/sequoia-*.js
 node_modules
+# Go templates in YAML front matter
+archetypes

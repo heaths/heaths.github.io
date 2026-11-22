@@ -4,7 +4,6 @@ globs:
 ignores:
   - node_modules/**
   - public/**
-  - _site/**
   - resources/**
 config:
   MD013: false

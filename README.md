@@ -21,11 +21,11 @@ Hugo also runs directly with `hugo --minify` or `hugo server --port 4000`. Ruby 
 
 ## Content and theme
 
-Posts live in `content/posts/`; archived articles and their listing live in `content/archive/`. Create posts with `bin/new-post` (see the `new-post` skill). Existing content has explicit `url` front matter to preserve published `.html` URLs independently of titles and filenames. The post helper sets this field for new posts, and Sequoia uses the same field. Never modify existing `atUri` values.
+Posts are page bundles in `content/posts/<slug>/index.md`, with their images alongside, and are published at `/posts/<slug>/`. Archived articles and their listing live in `content/archive/`. Create posts with `hugo new content posts/<slug>/index.md`, which uses `archetypes/posts.md`. Builds fail on non-draft posts that lack a summary, use a category missing from `params.categories`, or name an `image` that isn't in the bundle. Posts migrated from Jekyll list their original date-based `.html` URLs in `aliases`, which Hugo publishes as redirect pages. The first alias also keeps Atom entry IDs stable. Never modify existing `atUri` values.
 
-Site metadata and menus are in `hugo.yaml`; author data is in `data/authors.yml`. The combined Minima theme is in `themes/minima/`. Hugo compiles its SCSS with Dart Sass to `/assets/main.css`; images and Sequoia scripts stay under `assets/` and are mounted at the same public URLs. `.well-known/` is mounted unchanged. Static mounts deliberately avoid publishing repository tools and configuration.
+Site metadata and menus are in `hugo.yaml`; author data is in `data/authors.yml`. The combined Minima theme is in `themes/minima/`. Hugo compiles its SCSS with Dart Sass to `/assets/main.css`; shared images and Sequoia scripts stay under `assets/` and are mounted at the same public URLs. `.well-known/` is mounted unchanged. Static mounts deliberately avoid publishing repository tools and configuration.
 
-The home page uses Hugo pagination (10 posts per page) at `/page/2/`, with the previous navigation controls and sliding page-number window. Posts, ordinary pages, archive articles, redirects, `/feed.xml` (Atom), and `/sitemap.xml` retain their published paths. Taxonomy listing pages are disabled, as on the original site.
+The home page uses Hugo pagination (10 posts per page) at `/page/2/`, with the previous navigation controls and sliding page-number window. Ordinary pages, archive articles, `/feed.xml` (Atom), and `/sitemap.xml` retain their published paths, and old post URLs redirect to the new ones. Taxonomy listing pages are disabled, as on the original site.
 
 ## Checks
 
@@ -33,6 +33,6 @@ The home page uses Hugo pagination (10 posts per page) at `/page/2/`, with the p
 npm test
 ```
 
-This checks the post helper, builds the site, and checks published URLs, redirects, feed entries, internal links, AT Protocol discovery, and static assets. During migration, `python3 bin/check-site.py --baseline /path/to/jekyll-output` additionally compares the original post/page paths and Atom IDs.
+This builds the site, including front matter validation, then runs `node:test` checks (`bin/check-site.test.mjs`) on published URLs, redirects, feed entries, internal links, AT Protocol discovery, and static assets.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for AT Protocol publishing.

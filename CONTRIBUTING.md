@@ -8,9 +8,11 @@ Before publishing, make sure you have the required tools installed:
 npm i
 ```
 
-Use `bin/new-post` to create content in `content/posts/`. It writes an explicit
-`url` front matter field used by both Hugo and Sequoia; retain it when changing
-post titles. Keep existing `atUri` fields unchanged.
+Use `hugo new content posts/<slug>/index.md` to create a page bundle in
+`content/posts/<slug>/`; remove `draft: true` when it's ready to publish. The bundle
+directory name determines the published path, `/posts/<slug>/`, for both Hugo and
+Sequoia (`pathTemplate` in `sequoia.json`). If you rename a published bundle, add
+its old path to `aliases`. Keep existing `atUri` fields and aliases unchanged.
 
 Build the production site with Hugo before publishing:
 
