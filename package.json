@@ -3,6 +3,7 @@
   "devDependencies": {
     "cspell": "^10.0.1",
     "htmlparser2": "^12.0.0",
+    "markdownlint-cli2": "^0.24.2",
     "prettier": "^3.9.6",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-toml": "^2.0.6",
@@ -13,6 +14,7 @@
     "dev": "hugo server --port 4000",
     "test": "npm run build && node --test bin/*.test.mjs",
     "cspell": "cspell --config .vscode/cspell.json lint",
+    "lint": "markdownlint-cli2",
     "format": "prettier --write .",
     "prettier": "prettier",
     "sequoia": "sequoia"
