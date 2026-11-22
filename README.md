@@ -4,7 +4,7 @@ Built with [Hugo](https://gohugo.io/) and a local `minima` theme ported from Min
 
 ## Development
 
-Install Hugo 0.168.0 or later, [Dart Sass](https://gohugo.io/functions/css/sass/#dart-sass) (the standalone `sass` executable on `PATH`), and Node.js 24 or later.
+Install Hugo 0.170.0 or later, [Dart Sass](https://gohugo.io/functions/css/sass/#dart-sass) (the standalone `sass` executable on `PATH`), and Node.js 24 or later.
 
 ```sh
 npm ci

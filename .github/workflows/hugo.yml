@@ -1,24 +1,26 @@
 name: Deploy Hugo site to Pages
 
 env:
-  HUGO_VERSION: 0.168.0
+  HUGO_VERSION: 0.170.0
   DART_SASS_VERSION: 1.102.0
-  TZ: America/Los_Angeles
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  pages: read
 
+# Deployments queue without cancellation; pull request builds only cancel themselves.
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
@@ -33,6 +35,7 @@ jobs:
           cache: npm
       - name: Setup Pages
         id: pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - name: Install Hugo and Dart Sass
         working-directory: ${{ runner.temp }}
@@ -61,7 +64,7 @@ jobs:
       - name: Build and check with Hugo
         run: npm test
         env:
-          HUGO_BASEURL: "${{ steps.pages.outputs.base_url }}/"
+          HUGO_BASEURL: "${{ steps.pages.outputs.base_url || 'https://heaths.dev' }}/"
           HUGO_CACHEDIR: "${{ runner.temp }}/.cache/hugo"
       - name: Save Hugo cache
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -71,12 +74,17 @@ jobs:
             resources/_gen
           key: ${{ steps.hugo-cache.outputs.cache-primary-key }}
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: ./public
           include-hidden-files: true
 
   deploy:
+    if: github.event_name != 'pull_request'
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

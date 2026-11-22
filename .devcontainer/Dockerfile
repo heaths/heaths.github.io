@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/devcontainers/javascript-node:24-bookworm
 
 LABEL maintainer="Heath Stewart (https://github.com/heaths)"
 
-ARG HUGO_VERSION=0.168.0
+ARG HUGO_VERSION=0.170.0
 ARG DART_SASS_VERSION=1.102.0
 ARG TARGETARCH
 
