@@ -1,165 +1,165 @@
 {
   "posts": {
     "content/posts/publishing-to-the-atmosphere/index.md": {
-      "contentHash": "702e98cc1942c3f0efab1892a0c1a561c639e5b873a42d113cdb80a4e47976e5",
+      "contentHash": "2fdd1058a0e76067474459ae1915f28a83bca79025be1cf162517318d85b8ff8",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2akmjf2n",
-      "lastPublished": "2026-02-21T04:00:00.000Z",
+      "lastPublished": "2026-11-23T08:58:26.464Z",
       "slug": "publishing-to-the-atmosphere"
     },
     "content/posts/cross-compiling-x64-on-aarch64/index.md": {
-      "contentHash": "ae9b0b378a9a2a0e1319770b704fdc7b3fc6eccfb133d5a7999f7e88b0b2c905",
+      "contentHash": "90336bdf8c051764002feca82b21867489780dbc1ed15dfaf059f46a6950aff4",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2apavz2r",
-      "lastPublished": "2025-05-11T01:39:18.000Z",
+      "lastPublished": "2026-11-23T08:58:26.504Z",
       "slug": "cross-compiling-x64-on-aarch64"
     },
     "content/posts/cleaning-up-rust/index.md": {
-      "contentHash": "963b0c3c7a5e4df233dcba5fb151a39376b39dc3d42aee4dc36cf9966f714109",
+      "contentHash": "933f90661299de518d5a9668fe36dc1259e296e07dc78018b73b2638d9e7f7d0",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aqe4f2n",
-      "lastPublished": "2025-03-01T05:10:00.000Z",
+      "lastPublished": "2026-11-23T08:58:26.542Z",
       "slug": "cleaning-up-rust"
     },
     "content/posts/12-months-over-7000m/index.md": {
-      "contentHash": "a1cf1e36fa136c6a5b221320da59cbb4e90f297964b25d6a0e4db98533e25260",
+      "contentHash": "d3f18095ada1b9666156230e8bff48d534220e1bba1b3bc274b0b277d022ae7d",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2argi32b",
-      "lastPublished": "2024-12-20T01:00:00.000Z",
+      "lastPublished": "2026-11-23T08:58:26.581Z",
       "slug": "12-months-over-7000m"
     },
     "content/posts/helix-support-for-typespec/index.md": {
-      "contentHash": "8652e8475e2fe2da8fd2214e4499985f6e82330c28cf9c9aba31f9d768b0108c",
+      "contentHash": "ee4fc98f77c98bd6a957fa09311f834d9a3bc7959ad5c230313243ab1baaef6b",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2as5lp2u",
-      "lastPublished": "2024-08-02T23:19:04.000Z",
+      "lastPublished": "2026-11-23T08:58:26.622Z",
       "slug": "helix-support-for-typespec"
     },
     "content/posts/using-1password-for-git-ssh-signatures-in-wsl/index.md": {
-      "contentHash": "061d13d0871159fcec35a0f8fb87e7914ad0700ad9f03360b631fb510379f162",
+      "contentHash": "6f87695b5fb198746cd7baf13304b3fb9e2215b5749609ce3f1fde57aedb60c9",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2atatr2r",
-      "lastPublished": "2023-05-19T17:02:00.000Z",
+      "lastPublished": "2026-11-23T08:58:26.658Z",
       "slug": "using-1password-for-git-ssh-signatures-in-wsl"
     },
     "content/posts/oh-my-posh/index.md": {
-      "contentHash": "6918c21101f213346fb37f3f257e33d40c2c31f85e15a869b4b6dc73ee1f50bd",
+      "contentHash": "948c400242cf3fadfa5346fab2a64cf417418da7b53bdca85dc2231e1489a68b",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aucxg2x",
-      "lastPublished": "2023-01-02T03:14:00.000Z",
+      "lastPublished": "2026-11-23T08:58:26.697Z",
       "slug": "oh-my-posh"
     },
     "content/posts/on-mastodon/index.md": {
-      "contentHash": "1ce11c9fb122b17ab7a76314bab84357b503978c906decf12221552ca5b20665",
+      "contentHash": "e70b51a4cdd0a9aa6b349ae979fbb7f1d38d98b2ce303bfdeb92fd36200e3284",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2ave2z2b",
-      "lastPublished": "2022-11-08T03:52:24.000Z",
+      "lastPublished": "2026-11-23T08:58:26.737Z",
       "slug": "on-mastodon"
     },
     "content/posts/git-sync-any-branch/index.md": {
-      "contentHash": "adadbb9e2230355ee99540d7fe15527d3c68eb59c024ff2cebc3aebdb38e2990",
+      "contentHash": "c747b2105666ea578da3cc24108f55e07edb09c80c60c4abc542cad58bf8fe57",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2awkp527",
-      "lastPublished": "2021-08-31T02:40:00.000Z",
+      "lastPublished": "2026-11-23T08:58:26.818Z",
       "slug": "git-sync-any-branch"
     },
     "content/posts/gh-table-formatting/index.md": {
-      "contentHash": "1a845a54c97e812a3533bc95646be5b2c6a05315d71e3855abe9ca8338ae000d",
+      "contentHash": "dd24f252cad6ef2bec9fd1033b427104ec3178611bff6d52da2a5e4e2bb6010f",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2axkhw2x",
-      "lastPublished": "2021-08-24T18:00:00.000Z",
+      "lastPublished": "2026-11-23T08:58:26.870Z",
       "slug": "gh-table-formatting"
     },
     "content/posts/gh-alias-set-from-stdin/index.md": {
-      "contentHash": "0574ba3f847ae0515f67070a38cb60356d8abc008a00528bbe48eca1dbdb8e04",
+      "contentHash": "9f9639d0799b5e87f9c3f8aac24beb4eb6f81862ae6b0e5ccbb1bc48a2e8032c",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2ayput2b",
-      "lastPublished": "2021-05-19T23:15:30.000Z",
+      "lastPublished": "2026-11-23T08:58:26.909Z",
       "slug": "gh-alias-set-from-stdin"
     },
     "content/posts/gh-user/index.md": {
-      "contentHash": "c6a64047afbe94e268cb1ede97c5b69c24055a13476fcb75c0147a9935221d79",
+      "contentHash": "cd75dc9b54ac43265b76a5764551caccbaa19f33ca1ef37fb234b2de8c319f07",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2azh4x2w",
-      "lastPublished": "2021-04-22T01:57:43.000Z",
+      "lastPublished": "2026-11-23T08:58:26.947Z",
       "slug": "gh-user"
     },
     "content/posts/configure-multiple-clocks/index.md": {
-      "contentHash": "177c99e882249fbea8de218ea28a8ee5550d6e91d6024a53cee3d70f087ec667",
+      "contentHash": "702e82076b1ca23a9e8cc243c9d87d4fdf15e560712315173fb213b71c66276f",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b2q3z2r",
-      "lastPublished": "2021-04-16T16:35:25.000Z",
+      "lastPublished": "2026-11-23T08:58:26.990Z",
       "slug": "configure-multiple-clocks"
     },
     "content/posts/debugging-tests-in-linux-containers-with-visual-studio/index.md": {
-      "contentHash": "697cee1dfc3bee31d75137f0e6a3a4fb5c0f8e06082e8be094aad113b1fe2275",
+      "contentHash": "46fd4ffa54171c0ae1bbcdb4f57ce372f229e117857dcfd9c7e85ce24793b5cf",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b3oe62t",
-      "lastPublished": "2021-04-09T02:00:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.030Z",
       "slug": "debugging-tests-in-linux-containers-with-visual-studio"
     },
     "content/posts/getting-back-to-good-state-in-git/index.md": {
-      "contentHash": "29207e64a299203839d9155332a34a1a070e2af23dd7a14df67971cdb8a15bfa",
+      "contentHash": "c6912089787db31b1bdf9435ffaa2a98b154c0ed320f743bde5318661fc174dc",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b4qig2x",
-      "lastPublished": "2020-09-24T15:00:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.121Z",
       "slug": "getting-back-to-good-state-in-git"
     },
     "content/posts/azure-cli-in-bash/index.md": {
-      "contentHash": "1272895dd605874211767b740a0e30f407abfc5a23b4c6ecfd0526e5af7ea7bc",
+      "contentHash": "15a39ec84de214789ba437007339199f0b8f0965a7c4efc1a54753ab63cb2bc0",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b5q6v27",
-      "lastPublished": "2020-07-30T01:00:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.160Z",
       "slug": "azure-cli-in-bash"
     },
     "content/posts/git-sync/index.md": {
-      "contentHash": "f2188ea530a78100ba37189f16d1eaa8287e858236f290863b48e22c5d38e83a",
+      "contentHash": "27b3d63b019c22ac1be310412f17b5839571c330550486db004afe234078a622",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b6ntt2p",
-      "lastPublished": "2020-05-29T23:30:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.197Z",
       "slug": "git-sync"
     },
     "content/posts/fixing-time-drift-in-docker-on-wsl2/index.md": {
-      "contentHash": "4dc506a837b9df9ac88b113064321857225c922f2fde4c7469dc23b8b93c9209",
+      "contentHash": "3abfe75d526890463111be070a4d2f7f42282b670e81419ec900c9b60a02b7a0",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b7mdt22",
-      "lastPublished": "2020-05-23T17:00:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.233Z",
       "slug": "fixing-time-drift-in-docker-on-wsl2"
     },
     "content/posts/simple-wix-project/index.md": {
-      "contentHash": "52b1d019f5f6349c815374733108d890795ea5a4d092a58a087beb9beeb225e0",
+      "contentHash": "4efe7efd545db692bb0ce27a6ee83ece13f50bad3a7214e12af14653303b0fee",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2banlt2y",
-      "lastPublished": "2020-05-13T05:45:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.274Z",
       "slug": "simple-wix-project"
     },
     "content/posts/get-azure-search-keys-in-arm-templates/index.md": {
-      "contentHash": "0dc262b94d15ab71603b993b3f2ef99c84b092ed6854eccc5f07b5b133c3ceef",
+      "contentHash": "d23491207c917ae4055bb1cbed2d0f960e97cbc73973d6e4322359a215e867bd",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bbhw322",
-      "lastPublished": "2020-05-08T04:00:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.314Z",
       "slug": "get-azure-search-keys-in-arm-templates"
     },
     "content/posts/powerline-in-vim/index.md": {
-      "contentHash": "dcbdc8c8743a301c7fc1841307ffdc9fd0f82c302c86ad1e86ef9046563ff01c",
+      "contentHash": "6b7232b0a5b3e5c2667913f844079271f30b9fd6eec89c92d24e2ed3f270809c",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bchkn27",
-      "lastPublished": "2020-05-06T07:30:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.354Z",
       "slug": "powerline-in-vim"
     },
     "content/posts/trace-azure-sdk-for-net/index.md": {
-      "contentHash": "6194ab3c3c7c7b371c611de9d9d6c7efffb80a02e77afdba8a27cdb9d8d545d2",
+      "contentHash": "969ef0ce7d5f1e3fabf91fa420cbb5d2ee48618d1c7294f9e46ff412d849fc45",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bdfew2x",
-      "lastPublished": "2020-02-04T11:18:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.392Z",
       "slug": "trace-azure-sdk-for-net"
     },
     "content/posts/rebasing-commits-on-one-topic-branch-onto-another-branch/index.md": {
-      "contentHash": "e68fb28c81b1c057b9f8c93a423448fc84a4e8489e070412748c2ec2d8be8ca1",
+      "contentHash": "878a2e091da245bf2e3e146f66404c2eec57b6a113e37fde693f03419d2fc799",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bef3f27",
-      "lastPublished": "2019-11-11T00:33:00.000Z",
+      "lastPublished": "2026-11-23T08:58:27.433Z",
       "slug": "rebasing-commits-on-one-topic-branch-onto-another-branch"
     },
     "content/posts/welcome-to-my-blog/index.md": {
-      "contentHash": "eb41ff923a5c464c297f38c6315d1ee1d9329848c63a3e15c9396b35b652be30",
+      "contentHash": "45cd2c1dd24ea85a22e732d20ede2135408991f9c444eec3907c75e557e706c6",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2bfbyd22",
-      "lastPublished": "2019-11-10T16:23:56.000Z",
+      "lastPublished": "2026-11-23T08:58:27.471Z",
       "slug": "welcome-to-my-blog"
     },
     "content/posts/reduce-fetch-and-checkout-times-in-git/index.md": {
-      "contentHash": "934e3ed4f8f043c3fdc94ecc59aa5938f0a5ecba58dc87d2d440b3870ae3c567",
+      "contentHash": "9e3470c4116fefaef2b216c71c37dbad413ea6e9f562cfa12acf98ab615ac3e7",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr3dkfi322",
-      "lastPublished": "2022-06-18T07:20:31.000Z",
+      "lastPublished": "2026-11-23T08:58:26.782Z",
       "slug": "reduce-fetch-and-checkout-times-in-git"
     },
     "content/posts/cleaning-up-rust-made-easier/index.md": {
-      "contentHash": "74d8027ba8ad26bc961052164971506fade719dc7a1a8fe203d698bcccd53dfc",
+      "contentHash": "e05f76a9c73f8cd116c45ccf7bfa86b275caf25d3e1b271876191bd701b01007",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mhkj26txqp2b",
-      "lastPublished": "2026-03-21T06:14:00.000Z",
+      "lastPublished": "2026-11-23T08:58:26.432Z",
       "slug": "cleaning-up-rust-made-easier"
     },
     "content/posts/making-the-key-version-required-for-key-vault-cryptography-apis/index.md": {
-      "contentHash": "5d489e86cc802e46a405dd85478d662a7c3edecd1df99715601bf7d634444e31",
+      "contentHash": "cce5c1cfd241e52b6ef3d602a81de4ad93010a5e06df1453f65d626eaa4f9304",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mixnsl7nfe25",
-      "lastPublished": "2026-04-08T05:32:00.000Z",
+      "lastPublished": "2026-11-23T08:58:26.398Z",
       "slug": "making-the-key-version-required-for-key-vault-cryptography-apis",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mixnslatkn25",
@@ -167,9 +167,9 @@
       }
     },
     "content/posts/we-all-make-mistakes/index.md": {
-      "contentHash": "656c0516487f60746ffeac3bc8d90e6a2292877badffe971e3c38dc728e187d9",
+      "contentHash": "8c46d46e3ad3ed1d0a3e72564a7d8b1d8745bc01b19613d34f837eab33767cfa",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjqwgevm2i2d",
-      "lastPublished": "2026-04-18T07:24:41.000Z",
+      "lastPublished": "2026-11-23T08:58:26.364Z",
       "slug": "we-all-make-mistakes",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjqxekz7dk2q",
@@ -177,9 +177,9 @@
       }
     },
     "content/posts/light-and-dark-themes-for-my-blog/index.md": {
-      "contentHash": "3dea62ce41379a41c7508ef18b5709bced4413da84ca9b0fc5fba30923913acb",
+      "contentHash": "6fbd52dbbfe56632c4e23d5acbf6bd82e4f20d60ae285be3503de4156cce9061",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjvwnyj4cb2t",
-      "lastPublished": "2026-11-10T04:20:09.035Z",
+      "lastPublished": "2026-11-23T08:58:26.322Z",
       "slug": "light-and-dark-themes-for-my-blog",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjvwnykcec2m",
@@ -187,9 +187,9 @@
       }
     },
     "content/posts/improving-the-azure-sdk-developer-experience-with-mcp/index.md": {
-      "contentHash": "515ff42a670c261e5c336ca12ffad212cf1be5b7b85bd32249ccf4592af57e93",
+      "contentHash": "8962935c759f5a186884f7b15cf38e356a58de525fab09a2fe28a92cecf1d6d2",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkruperrgt2t",
-      "lastPublished": "2026-11-10T04:20:08.201Z",
+      "lastPublished": "2026-11-23T08:58:26.014Z",
       "slug": "improving-the-azure-sdk-developer-experience-with-mcp",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkrupf57sa2s",
@@ -197,9 +197,9 @@
       }
     },
     "content/posts/cooler-theme-palette/index.md": {
-      "contentHash": "2dffdec0386b4a6beb4b328dcac4c265e086c5ce1dd354c2a8af5d655ccabc33",
+      "contentHash": "115c99f0ca58477d553c1f9c3fb8df64f96857b9e2faf65c39536d5b93081a29",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkwni3gioi2x",
-      "lastPublished": "2026-11-10T04:20:07.482Z",
+      "lastPublished": "2026-11-23T08:58:25.730Z",
       "slug": "cooler-theme-palette",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkwni3ww7u2m",
@@ -207,9 +207,9 @@
       }
     },
     "content/posts/initial-stable-release-of-azure-sdk-for-rust/index.md": {
-      "contentHash": "fbdd53eef7592cc32052b3de5fb7aa59f615334b9eadad41b83e830414f39811",
+      "contentHash": "fdba3c7234580a771490fcd77ff8e2d802bad1589c2ed04bbcf05803826c02c0",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mlx6vipoaw2x",
-      "lastPublished": "2026-11-10T04:20:06.569Z",
+      "lastPublished": "2026-11-23T08:58:25.418Z",
       "slug": "initial-stable-release-of-azure-sdk-for-rust",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mlx6vj5v2b2q",
@@ -217,9 +217,9 @@
       }
     },
     "content/posts/support-for-enhanced-links-in-sequoia/index.md": {
-      "contentHash": "f1a9b19de815040edbf68d0f1acd3fd6de38fb62a4332fcb7f76186cb38bbde4",
+      "contentHash": "bdfae7308ca870d9c8a4478478d97f572ee82aebcbfac13ad3ec94605f48277e",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mmlhgo33nj25",
-      "lastPublished": "2026-06-21T00:33:12.767Z",
+      "lastPublished": "2026-11-23T08:58:25.058Z",
       "slug": "support-for-enhanced-links-in-sequoia",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mmlhgo45ny2x",
@@ -227,9 +227,9 @@
       }
     },
     "content/posts/introducing-the-sequoia-recommend-button/index.md": {
-      "contentHash": "cc83aae60617fd1f1146bd60a351f833443d7257048328f755027a0f07ca2d20",
+      "contentHash": "700b19443919b5865a24126d4f9cbce7ca644112029454fa307e2953e917e20d",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mn4upg7a4z2h",
-      "lastPublished": "2026-11-10T04:20:05.943Z",
+      "lastPublished": "2026-11-23T08:58:25.019Z",
       "slug": "introducing-the-sequoia-recommend-button",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mn4upgujo62n",
@@ -237,9 +237,9 @@
       }
     },
     "content/posts/cargo-scripts-are-also-manifests/index.md": {
-      "contentHash": "c6e478e017a3b940e5e1eaa8c3d4025c59e73bdacfe9558191395ba37b16c5c9",
+      "contentHash": "f499aa8ab54d2a81d8970c43d695c4efa20ee949641ba7e6424ea723a5e0959b",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mnr2gfxy372r",
-      "lastPublished": "2026-06-21T00:33:12.715Z",
+      "lastPublished": "2026-11-23T08:58:24.692Z",
       "slug": "cargo-scripts-are-also-manifests",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mnr2gfymfz2k",
@@ -247,9 +247,9 @@
       }
     },
     "content/posts/apropos-of-power-tools/index.md": {
-      "contentHash": "73e9049bcd77da10c61b7d96b88ddcdaafa7356010b3ae8032438d449fe8f08a",
+      "contentHash": "3b049e7110f667f32c3bc1ef1404191778d134cb8b464c968e42ecdc028741cd",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mop7huti2e2n",
-      "lastPublished": "2026-11-10T04:20:05.244Z",
+      "lastPublished": "2026-11-23T08:58:24.648Z",
       "slug": "apropos-of-power-tools",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mop7hvikhe2b",
@@ -257,9 +257,9 @@
       }
     },
     "content/posts/im-a-masochist-on-zwift/index.md": {
-      "contentHash": "409ed71c9c15f6945812cff7426d63852653e237e74963ae770885018c1fcfff",
+      "contentHash": "72417c9ed9679dd3b7fc98f0a7b293f133628bef43dd3b599d2d0c64c1ee3966",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mt6rlvukj62c",
-      "lastPublished": "2026-11-10T04:20:04.324Z",
+      "lastPublished": "2026-11-23T08:58:24.303Z",
       "slug": "im-a-masochist-on-zwift",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mt6rlwzdbg2c",
@@ -267,9 +267,9 @@
       }
     },
     "content/posts/newspaper-clipping-of-debate-state-champion/index.md": {
-      "contentHash": "612d1e3970b394faa943b25dcee46cc16a553bc79401c5604592d6d989819311",
+      "contentHash": "006f8375c240783ccef984402e181d3132ccb3bfd15243a2f62ec138ec6f9501",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mzwlm7ngw22w",
-      "lastPublished": "2026-11-10T04:20:02.342Z",
+      "lastPublished": "2026-11-23T08:58:23.997Z",
       "slug": "newspaper-clipping-of-debate-state-champion",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mzwlmaqroc2j",
