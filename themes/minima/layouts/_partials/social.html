@@ -1,0 +1,30 @@
+<ul class="social-media-list">
+  {{ range .Site.Params.minima.social_links }}
+    {{ $urls := dict "github" "https://github.com/" "bluesky" "https://bsky.app/profile/" "keybase" "https://keybase.io/" "linkedin" "https://www.linkedin.com/in/" "twitter" "https://twitter.com/" "flickr" "https://www.flickr.com/photos/" "pinterest" "https://www.pinterest.com/" "youtube" "https://www.youtube.com/" "youtube_channel" "https://www.youtube.com/channel/" "instagram" "https://www.instagram.com/" "dribbble" "https://dribbble.com/" "telegram" "https://t.me/" "microdotblog" "https://micro.blog/" }}
+    {{ $url := "" }}
+    {{ if eq .name "mastodon" }}
+      {{ $url = printf "https://%s/@%s" .instance .username }}
+    {{ else if eq .name "rss" }}
+      {{ $url = "feed.xml" | relURL }}
+    {{ else }}
+      {{ $url = printf "%s%s" (index $urls .name) (.username | urlquery) }}
+    {{ end }}
+    {{ if not $url }}
+      {{ errorf "Unsupported minima social link: %s" .name }}
+    {{ end }}
+    <li>
+      <a
+        href="{{ $url }}"
+        title="{{ .username }}"
+        {{ if in (slice "mastodon" "microdotblog") .name }}rel="me"{{ end }}
+      >
+        <svg class="svg-icon grey">
+          <use
+            xlink:href="{{ printf "assets/minima-social-icons.svg#%s" .name | relURL }}"
+          ></use>
+        </svg>
+        {{ .username }}
+      </a>
+    </li>
+  {{ end }}
+</ul>

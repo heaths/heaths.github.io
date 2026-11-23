@@ -1,15 +1,20 @@
 # yaml-language-server: $schema=https://www.schemastore.org/prettierrc.json
 plugins:
-  - "@shopify/prettier-plugin-liquid"
+  - prettier-plugin-go-template
   - prettier-plugin-toml
 overrides:
   - files:
       - "*.html"
     options:
+      parser: go-template
       singleAttributePerLine: false
       htmlWhitespaceSensitivity: ignore
   - files:
       - "*.md"
     options:
-      singleLineLinkTags: true
       printWidth: 240
+  - files:
+      - "*.gotmpl"
+      - "themes/minima/layouts/*.xml"
+    options:
+      parser: go-template

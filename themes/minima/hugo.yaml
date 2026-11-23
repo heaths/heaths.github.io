@@ -1,0 +1,4 @@
+params:
+  show_excerpts: true
+  minima:
+    date_format: Jan 2, 2006

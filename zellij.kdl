@@ -10,8 +10,8 @@ layout {
 	}
 	tab name="Shell" focus=true split_direction="vertical" {
 		pane focus=true size="70%"
-		pane name="Jekyll" size="30%" command="bundle" {
-			args "exec" "jekyll" "serve"
+		pane name="Hugo" size="30%" command="hugo" {
+			args "server" "--port" "4000"
 		}
 	}
 	tab name="Copilot" {

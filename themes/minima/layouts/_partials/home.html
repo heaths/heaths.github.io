@@ -1,0 +1,30 @@
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $paginator := .Paginate $posts.ByDate.Reverse }}
+<div class="home">
+  {{ if $posts }}
+    <div
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <h1 class="page-heading">Posts</h1>
+      {{ partial "subscribe-buttons.html" . }}
+    </div>
+    <ul class="post-list">
+      {{ range $paginator.Pages }}
+        <li class="post">
+          <span class="post-meta">
+            {{ .Date.Format .Site.Params.minima.date_format }}
+          </span>
+          <h2>
+            <a class="post-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          {{ if .Site.Params.show_excerpts }}{{ .Summary }}{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+    {{ partial "pagination.html" $paginator }}
+    <p class="rss-subscribe">
+      subscribe
+      <a href="{{ "feed.xml" | relURL }}">via RSS</a>
+    </p>
+  {{ end }}
+</div>

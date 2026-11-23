@@ -1,0 +1,2 @@
+{{ $anchor := .Anchor | htmlEscape }}
+{{ printf "<h%d id=\"%s\"><a href=\"#%s\" aria-hidden=\"true\"></a>%s</h%d>" .Level $anchor $anchor .Text .Level | safeHTML }}

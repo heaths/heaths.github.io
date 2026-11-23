@@ -1,43 +1,30 @@
-# Use Ruby version from https://pages.github.com/versions/
-FROM ruby:2.7.4-buster
+# Node.js for Prettier, cSpell, and Sequoia; Hugo and Dart Sass match .github/workflows/hugo.yml.
+FROM mcr.microsoft.com/devcontainers/javascript-node:24-bookworm
 
-LABEL maintainer "Heath Stewart (https://github.com/heaths)"
+LABEL maintainer="Heath Stewart (https://github.com/heaths)"
 
-# Set up non-root user similar to jekyll/jekyll image.
-ARG USERNAME=jekyll
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-ARG PORT=4000
+ARG HUGO_VERSION=0.170.0
+ARG DART_SASS_VERSION=1.102.0
+ARG TARGETARCH
 
-EXPOSE $PORT
-
-# Install packages as root.
 USER root
 
-RUN apt-get update \
- && export DEBIAN_FRONTEND=noninteractive \
- && LANG=C LC_ALL=C apt-get -y install --no-install-recommends \
-      sudo \
- #
- # Create non-root user.
- && groupadd --gid $USER_GID $USERNAME \
- && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
- #
- # Add sudo support for the non-root user.
- && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
- && chmod 0440 /etc/sudoers.d/$USERNAME \
- #
- # Clean up.
- && apt-get autoremove -y \
- && apt-get clean - \
- && rm -rf /var/lib/apt/lists/*
+RUN set -eux; \
+    case "${TARGETARCH:-amd64}" in \
+      amd64) hugo_arch=amd64; sass_arch=x64 ;; \
+      arm64) hugo_arch=arm64; sass_arch=arm64 ;; \
+      *) echo "Unsupported architecture: ${TARGETARCH}" >&2; exit 1 ;; \
+    esac; \
+    cd /tmp; \
+    curl -fsSLO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-${hugo_arch}.tar.gz"; \
+    curl -fsSLO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_checksums.txt"; \
+    sha256sum --check --ignore-missing "hugo_${HUGO_VERSION}_checksums.txt"; \
+    tar -C /usr/local/bin -xf "hugo_${HUGO_VERSION}_linux-${hugo_arch}.tar.gz" hugo; \
+    curl -fsSLO "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-${sass_arch}.tar.gz"; \
+    tar -C /opt -xf "dart-sass-${DART_SASS_VERSION}-linux-${sass_arch}.tar.gz"; \
+    ln -s /opt/dart-sass/sass /usr/local/bin/sass; \
+    rm -f /tmp/*.tar.gz /tmp/*.txt; \
+    hugo version; \
+    sass --version
 
-# Run as user and allow gems to install as non-root.
-USER $USERNAME
-SHELL ["/bin/bash", "-c"]
-
-# Speed up subsequent `bundle install`.
-RUN echo 'gem: --no-ri --no-rdoc' > /home/${USERNAME}/.gemrc
-
-# Change the working directory.
-WORKDIR /workspaces/heaths.github.io
+USER node

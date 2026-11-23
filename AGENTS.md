@@ -1,90 +1,41 @@
 # Agent Instructions
 
-This repository is a personal blog and technical website built with [Jekyll](https://jekyllrb.com) and the [minima](https://github.com/jekyll/minima) theme. It contains posts about software engineering, Azure, developer tools, and outdoor adventures, published at [heaths.dev](https://heaths.dev).
+Personal blog at [heaths.dev](https://heaths.dev), built with [Hugo](https://gohugo.io) and the local `themes/minima` theme (ported from Jekyll Minima 2.5.2).
 
-## Directory structure
+| Path                  | Notes                                                                    |
+| --------------------- | ------------------------------------------------------------------------ |
+| `content/posts/`      | Page bundles: `<slug>/index.md` plus the post's images.                  |
+| `archetypes/posts.md` | Front matter template for `hugo new content posts/<slug>/index.md`.      |
+| `assets/`             | Shared images and Sequoia scripts, published at `/assets/`.              |
+| `.well-known/`        | AT Protocol verification files; keep their public URLs and bytes stable. |
 
-This is a [Jekyll](https://jekyllrb.com) site using the [minima](https://github.com/jekyll/minima) theme.
+## Posts
 
-| Path          | Description                                                              |
-| ------------- | ------------------------------------------------------------------------ |
-| `_posts/`     | Blog posts in Markdown. This is where most content is authored.          |
-| `_archive/`   | Archived articles (custom collection, output enabled).                   |
-| `_layouts/`   | HTML layouts that wrap page content (`post.html`, `article.html`, etc.). |
-| `_includes/`  | Reusable HTML partials (header, footer, social icons).                   |
-| `_sass/`      | Sass partials for site styling (`palette.scss`, `custom.scss`).          |
-| `_data/`      | Data files (e.g., `authors.yml`) accessible via `site.data`.             |
-| `assets/`     | Static assets: stylesheets, images, and scripts.                         |
-| `_config.yml` | Site-wide Jekyll configuration.                                          |
-| `Gemfile`     | Ruby dependencies (Jekyll, plugins, theme).                              |
-| `index.md`    | Home page content rendered with the `home` layout.                       |
-| `about.md`    | About page.                                                              |
-| `archive.md`  | Archive listing page.                                                    |
-
-## Writing posts
-
-Posts go in `_posts/` with filenames like `YYYY-MM-DD-title-slug.md`.
-
-When the user asks to write, create, draft, or add a new blog post, use the skill defined in `.github/skills/new-post/SKILL.md`. This skill ensures the correct filename format, front matter structure, and required fields are present.
-
-### Front matter
-
-Every post must have YAML front matter. Example:
+To write a post, use the `new-post` skill. Posts publish at `/posts/<slug>/`. Reference bundle images by filename (`![Alt](cover.webp)` or `{{< image src="cover.webp" alt="Alt" >}}`) and link to other posts as `../other-slug/index.md`. The build fails on posts that break the rules below.
 
 ```yaml
----
 title: My Post Title
 date: 2025-01-15T10:00:00-08:00
 summary: >
-  A one or two sentence description of the post for use on the home page
-  and in feeds.
+  One or two sentences for the home page and feeds.
+image: /posts/my-post-title/cover.jpg
 category: tips
-tags:
-  - git
-  - tip
----
+tags: [git, tips]
 ```
 
-- **`summary`** — A short description (one or two sentences) of the post. This should be a YAML literal or folded string. Required for all posts.
-- **`excerpt_separator`** — Set to `<!--more-->` only on posts that use that marker in their content body. Do not set globally.
-- **`category`** and **`tags`** — Used for organization and rendered on post pages.
-- **`atUri`** — AT Protocol URI linking the post to a Bluesky record. Never modify this field.
+- `summary`: required, as a folded or literal string.
+- `image`: optional; the published path of a bundle file, `/posts/<slug>/<file>`.
+- `aliases`: old URLs that redirect here. Never remove any. Keep the first one first; it's the Atom entry ID. `bin/fixtures/legacy-urls.txt` lists the URLs `npm test` requires.
+- `atUri`: never modify.
 
-### Pre-commit check
+## Commits
 
-Do not commit changes unless the user explicitly says to commit. Stage changes freely, but always wait for explicit approval before creating a commit.
+Don't stage or commit unless asked. Before committing, make sure every `content/posts/*/index.md` has a `summary`. If one is missing, write one or two sentences from the post and add it before `category`. Do that before the final checks.
 
-Before committing, verify that every post in `_posts/` has a `summary` field in its front matter. If a post is missing one, generate a summary of one or two sentences based on the post content and add it to the front matter before the `category` field.
+## Final checks
 
-## Skills
-
-After completing all requested changes, always run these skills in order on modified files before staging or committing:
-
-1. **`check-spelling`** — Check and fix spelling in modified source files.
-2. **`lint`** — Check modified files for common issues (e.g., code fence language names).
-3. **`format`** — Format modified files with Prettier. Always run last, after all other changes are done.
-
-| Skill            | Path                                     | Description                                                                                 |
-| ---------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `new-post`       | `.github/skills/new-post/SKILL.md`       | Create a new blog post with the correct filename format, front matter, and required fields. |
-| `check-spelling` | `.github/skills/check-spelling/SKILL.md` | Check and fix spelling in project source files using cSpell. Config: `.vscode/cspell.json`. |
-| `format`         | `.github/skills/format/SKILL.md`         | Format changed files with Prettier. Run after all other changes are complete.               |
-| `lint`           | `.github/skills/lint/SKILL.md`           | Lint project files for common issues. Run on new or changed files before committing.        |
+Once all other work is done (implementation, content, docs, and functional verification), run the `check-spelling`, `lint`, then `format` skills (in `.claude/skills/`, mirrored at `.github/skills/`). Run them only on modified files and honor user exclusions. Don't run them mid-task or rerun passing checks on unchanged files, including before committing. After a fix, recheck only the affected files with that tool, and rerun only the affected functional verification.
 
 ## Building
 
-```sh
-bundle exec jekyll build
-```
-
-For production (enables minification and analytics):
-
-```sh
-JEKYLL_ENV=production bundle exec jekyll build
-```
-
-For local development with live reload:
-
-```sh
-bundle exec jekyll serve
-```
+Requires Hugo, Dart Sass on `PATH`, and Node.js (`npm ci`). Use `npm run dev` to preview. `npm test` runs the production build plus the `node:test` checks in `bin/check-site.test.mjs`.

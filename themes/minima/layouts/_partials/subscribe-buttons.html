@@ -1,0 +1,10 @@
+<div class="subscribe-buttons">
+  {{ partial "sequoia-subscribe.html" . }}
+  <a
+    class="accent-button"
+    href="{{ "feed.xml" | relURL }}"
+    aria-label="RSS Feed"
+  >
+    <img src="{{ "assets/images/rss.svg" | relURL }}" alt="RSS" />
+  </a>
+</div>

@@ -1,0 +1,14 @@
+{{- $url := .Destination -}}
+{{- $parsed := urls.Parse $url -}}
+{{- if and (not $parsed.IsAbs) (strings.HasSuffix $parsed.Path ".md") -}}
+  {{- with .Page.GetPage $parsed.Path -}}
+    {{- $url = .RelPermalink -}}
+    {{- with $parsed.Fragment }}{{ $url = printf "%s#%s" $url . }}{{ end -}}
+  {{- else -}}
+    {{- errorf "Unresolved Markdown link %q in %s" $url .Page.File.Path -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $url | safeURL }}" {{ with .Title }}title="{{ . }}"{{ end }}>
+  {{ .Text | safeHTML }}
+</a>
+{{- /* Keep adjacent inline text together. */ -}}

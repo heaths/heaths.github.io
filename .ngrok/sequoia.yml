@@ -2,7 +2,7 @@ version: "3"
 # Setup: Run `ngrok config check` to get the default config with api key.
 # Start: Run `ngrok --config .ngrok/sequoia.yml,{default-config-path} start web api`
 endpoints:
-  # Start: Run `bundle exec jekyll serve`
+  # Start: Run `hugo server --port 4000`
   # Open: Open binding to :4000 in browser
   - name: web
     url: https://

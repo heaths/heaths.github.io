@@ -1,0 +1,13 @@
+name = "minima"
+license = "MIT"
+licenselink = "https://github.com/jekyll/minima/blob/v2.5.2/LICENSE.txt"
+description = "Minima 2.5.2 port for Hugo, combined with the heaths.dev customizations."
+min_version = "0.168.0"
+
+[author]
+name = "Heath Stewart"
+
+[original]
+name = "Minima"
+homepage = "https://github.com/jekyll/minima"
+repo = "https://github.com/jekyll/minima"

@@ -16,7 +16,7 @@ updates:
           - minor
           - patch
 
-  - package-ecosystem: bundler
+  - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
@@ -25,7 +25,7 @@ updates:
       default-days: 3
       semver-minor-days: 7
     groups:
-      ruby-dependencies:
+      github-actions:
         patterns:
           - "*"
         applies-to: security-updates

@@ -1,0 +1,15 @@
+{{- $src := .Destination -}}
+{{- $parsed := urls.Parse $src -}}
+{{- if not (or $parsed.IsAbs (strings.HasPrefix $parsed.Path "/")) -}}
+  {{- with .Page.Resources.Get $parsed.Path -}}
+    {{- $src = .RelPermalink -}}
+  {{- else -}}
+    {{- errorf "Unresolved image %q in %s" $src .Page.File.Path -}}
+  {{- end -}}
+{{- end -}}
+<img
+  src="{{ $src | safeURL }}"
+  alt="{{ .PlainText }}"
+  {{ with .Title }}title="{{ . }}"{{ end }}
+/>
+{{- /* Keep adjacent inline text together. */ -}}

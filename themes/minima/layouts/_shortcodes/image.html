@@ -1,0 +1,10 @@
+{{ if not (.Get "src") }}
+  {{ errorf "image requires src: %s" .Position }}
+{{ end }}
+{{ $src := .Get "src" | relURL }}
+{{ with .Page.Resources.Get (.Get "src") }}{{ $src = .RelPermalink }}{{ end }}
+<img
+  src="{{ $src }}"
+  alt="{{ .Get "alt" }}"
+  {{ with .Get "class" }}class="{{ . }}"{{ end }}
+/>

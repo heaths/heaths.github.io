@@ -1,0 +1,217 @@
+{
+  "words": [
+    "atproto",
+    "autorun",
+    "azuresdk",
+    "backlink",
+    "blackfriday",
+    "bluehour",
+    "bluth",
+    "cachedir",
+    "clippy",
+    "contentbasename",
+    "dartsass",
+    "distro",
+    "errorf",
+    "eventhubs",
+    "execdir",
+    "extensionless",
+    "fediverse",
+    "fosstodon",
+    "francesco",
+    "frontmatter",
+    "goldmark",
+    "headshot",
+    "hkcu",
+    "jsonify",
+    "keybase",
+    "kwargs",
+    "lastmod",
+    "legos",
+    "licenselink",
+    "mentees",
+    "mercurial",
+    "plainify",
+    "powerline",
+    "pythonistas",
+    "relref",
+    "reqwest",
+    "rougify",
+    "rouvy",
+    "rustaceans",
+    "rustlang",
+    "seahawks",
+    "strava",
+    "toolset",
+    "typespec",
+    "typestate",
+    "urlquery",
+    "vhdx",
+    "viewports",
+    "warnf",
+    "worktree",
+    "worktrees",
+    "zwift"
+  ],
+  "ignoreRegExpList": ["at://[^\\s\"']+"],
+  "overrides": [
+    {
+      "filename": ".devcontainer/*",
+      "words": ["docsmsft", "esac", "noninteractive"]
+    },
+    {
+      "filename": ".prettierrc",
+      "words": ["gotmpl"]
+    },
+    {
+      "filename": ".ngrok/sequoia.yml",
+      "words": ["ngrok"]
+    },
+    {
+      "filename": "bin/check-site.test.mjs",
+      "words": ["onclosetag", "onopentag", "ontext", "zgotmpl"]
+    },
+    {
+      "filename": "content/archive/custom-string-formatting-in-net.md",
+      "words": ["codeproject", "ctype", "fmtinfo"]
+    },
+    {
+      "filename": "content/archive/embedding-net-controls-in-java.md",
+      "words": [
+        "atlbase",
+        "atlwin",
+        "beginthread",
+        "bject",
+        "clsid",
+        "codeproject",
+        "dispinterface",
+        "djava",
+        "endthread",
+        "gacutil",
+        "guidgen",
+        "guids",
+        "hresult",
+        "icomtest",
+        "javac",
+        "javah",
+        "jawt",
+        "jboolean",
+        "jint",
+        "jnicall",
+        "jniexport",
+        "jobject",
+        "methodname",
+        "ngen",
+        "odel",
+        "omponent",
+        "regasm",
+        "stdafx",
+        "typelib",
+        "typelibs",
+        "vtable"
+      ]
+    },
+    {
+      "filename": "content/posts/welcome-to-my-blog/index.md",
+      "words": ["vsconfig", "xcopy"]
+    },
+    {
+      "filename": "content/posts/trace-azure-sdk-for-net/index.md",
+      "words": ["nettrace"]
+    },
+    {
+      "filename": "content/posts/powerline-in-vim/index.md",
+      "words": ["getusersitepackages", "isdir", "laststatus"]
+    },
+    {
+      "filename": "content/posts/simple-wix-project/index.md",
+      "words": ["hklm", "installfolder"]
+    },
+    {
+      "filename": "content/posts/fixing-time-drift-in-docker-on-wsl2/index.md",
+      "words": ["errno", "hwclock"]
+    },
+    {
+      "filename": "content/posts/azure-cli-in-bash/index.md",
+      "words": ["convertfrom", "myvault"]
+    },
+    {
+      "filename": "content/posts/getting-back-to-good-state-in-git/index.md",
+      "words": ["oneline", "realise", "reflog"]
+    },
+    {
+      "filename": "content/posts/debugging-tests-in-linux-containers-with-visual-studio/index.md",
+      "words": ["debuggee", "dpkg", "testhost", "vstest"]
+    },
+    {
+      "filename": "content/posts/gh-user/index.md",
+      "words": ["userprofile"]
+    },
+    {
+      "filename": "content/posts/gh-alias-set-from-stdin/index.md",
+      "words": ["herestring", "herestrings"]
+    },
+    {
+      "filename": "content/posts/gh-table-formatting/index.md",
+      "words": ["autocolor", "prcomments", "tablerender", "tablerow"]
+    },
+    {
+      "filename": "content/posts/reduce-fetch-and-checkout-times-in-git/index.md",
+      "words": ["cognitivelanguage", "refspecs"]
+    },
+    {
+      "filename": "content/posts/using-1password-for-git-ssh-signatures-in-wsl/index.md",
+      "words": [
+        "allowedsignersfile",
+        "auxww",
+        "jstarks",
+        "nofork",
+        "npiperelay",
+        "piperelay",
+        "setsid",
+        "socat"
+      ]
+    },
+    {
+      "filename": "content/posts/helix-support-for-typespec/index.md",
+      "words": ["asciicast", "tspconfig"]
+    },
+    {
+      "filename": "content/posts/cleaning-up-rust/index.md",
+      "words": ["devtmpfs"]
+    },
+    {
+      "filename": "content/posts/cross-compiling-x64-on-aarch64/index.md",
+      "words": ["dpkg", "keyrings", "rustup"]
+    },
+    {
+      "filename": "content/posts/publishing-to-the-atmosphere/index.md",
+      "words": ["threddyrex"]
+    },
+    {
+      "filename": "data/authors.yml",
+      "words": ["mrhestew"]
+    },
+    {
+      "filename": "themes/minima/layouts/_partials/social.html",
+      "words": ["dribbble", "microdotblog"]
+    },
+    {
+      "filename": "themes/minima/static/assets/minima-social-icons.svg",
+      "words": [
+        "dribbble",
+        "evenodd",
+        "linecap",
+        "linejoin",
+        "microdotblog",
+        "miterlimit",
+        "stackoverflow",
+        "xlink"
+      ]
+    },
+    {
+      "filename": "zellij.kdl",
+      "words": ["borderless"]
+    }
+  ]
+}

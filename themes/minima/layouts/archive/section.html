@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <div class="home">
+    <h1 class="page-heading">{{ .Title }}</h1>
+    {{ .Content }}
+    <h2 class="post-list-heading">Articles</h2>
+    <ul class="post-list">
+      {{ range .RegularPages.ByDate.Reverse }}
+        <li>
+          <span class="post-meta">
+            {{ .Date.Format .Site.Params.minima.date_format }}
+          </span>
+          <h3>
+            <a class="post-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          {{ if .Site.Params.show_excerpts }}{{ .Summary }}{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

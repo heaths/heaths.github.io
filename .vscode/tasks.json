@@ -4,35 +4,36 @@
     {
       "label": "serve",
       "type": "shell",
-      "command": "bundle exec jekyll serve",
+      "command": "npm run dev -- --buildDrafts",
+      "isBackground": true,
       "group": {
         "kind": "build",
         "isDefault": true
-      }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "npm test",
+      "group": "test",
+      "problemMatcher": []
     },
     {
       "label": "post",
       "type": "shell",
-      "command": "bundle exec jekyll post -- ${input:title}",
-      "problemMatcher": {
-        "source": "jekyll-compose",
-        "pattern": {
-          "regexp": "(Error|Warning):\\s+(.*)",
-          "severity": 1,
-          "message": 2
-        }
-      },
+      "command": "hugo new content posts/${input:slug}/index.md",
+      "problemMatcher": [],
       "presentation": {
-        "clear": true,
-        "revealProblems": "onProblem"
+        "clear": true
       }
     }
   ],
   "inputs": [
     {
-      "id": "title",
+      "id": "slug",
       "type": "promptString",
-      "description": "Title for the page"
+      "description": "Post slug (e.g., my-new-post)"
     }
   ]
 }

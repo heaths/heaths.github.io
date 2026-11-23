@@ -1,0 +1,11 @@
+{{ $id := .Get "id" }}
+{{ if not $id }}{{ errorf "youtube requires id: %s" .Position }}{{ end }}
+<div class="youtube-container">
+  <iframe
+    src="https://www.youtube.com/embed/{{ $id }}"
+    title="{{ .Get "title" | default "YouTube Video" }}"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
