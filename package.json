@@ -13,7 +13,7 @@
     "build": "hugo --minify --printPathWarnings --panicOnWarning --cleanDestinationDir",
     "dev": "hugo server --port 4000",
     "test": "npm run build && node --test bin/*.test.mjs",
-    "cspell": "cspell --config .vscode/cspell.json lint",
+    "cspell": "cspell lint",
     "lint": "markdownlint-cli2",
     "format": "prettier --write .",
     "prettier": "prettier",
