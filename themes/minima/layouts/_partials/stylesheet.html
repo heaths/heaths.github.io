@@ -1,0 +1,25 @@
+{{- /*
+  Builds /assets/main.css from css/main.css, plus a dark-theme fallback for
+  visitors without JavaScript. tokens.css (the design system's export) only
+  switches to dark on [data-theme="dark"], which the inline script in head.html
+  sets. Without JavaScript that attribute is missing, so this copies the dark
+  block from tokens.css into a prefers-color-scheme media query. tokens.css
+  stays unchanged, and a new export updates the fallback automatically.
+
+  cspell:ignore Submatch
+  */
+-}}
+{{- $tokens := resources.Get "css/tokens.css" -}}
+{{- $dark := findRESubmatch `\[data-theme="dark"\]\s*\{([^}]*)\}` $tokens.Content 1 -}}
+{{- if not $dark -}}
+  {{- errorf "stylesheet.html: no [data-theme=\"dark\"] block found in %s" $tokens.Name -}}
+{{- end -}}
+{{- $fallback := printf "@media (prefers-color-scheme: dark) {\n  :root:not([data-theme]) {%s}\n}\n" (index (index $dark 0) 1) -}}
+{{- $fallback = $fallback | resources.FromString "css/tokens-no-js.css" -}}
+{{- $main := resources.Get "css/main.css" | css.Build (dict "targetPath" "css/main.build.css" "minify" hugo.IsProduction) -}}
+{{- if hugo.IsProduction -}}
+  {{- $fallback = $fallback | minify -}}
+{{- end -}}
+{{- /* Concat after minifying: minify would rename the bundle to main.min.css. */ -}}
+{{- $css := slice $main $fallback | resources.Concat "assets/main.css" -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />

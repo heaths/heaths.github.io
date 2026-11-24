@@ -8,3 +8,5 @@ assets/scripts/sequoia-*.js
 node_modules
 # Go templates in YAML front matter
 archetypes
+# Design system export; replace it, don't reformat it
+themes/minima/assets/css/tokens.css

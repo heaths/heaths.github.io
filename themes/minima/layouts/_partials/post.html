@@ -61,12 +61,12 @@
   </div>
   <div class="post-footer">
     {{ with .Params.tags }}
-      <div class="tag-content">
-        Tags:
-        <span class="keywords" itemprop="keywords">
-          {{ delimit (sort .) ", " }}
-        </span>
-      </div>
+      <ul class="tags" aria-label="Tags">
+        {{ range sort . }}
+          <li class="badge">{{ . }}</li>
+        {{ end }}
+      </ul>
+      <meta itemprop="keywords" content="{{ delimit (sort .) ", " }}" />
     {{ end }}
     <sequoia-recommend
       button-type="heart"

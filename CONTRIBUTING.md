@@ -3,8 +3,6 @@
 ## Prerequisites
 
 - [Hugo](https://gohugo.io/installation/) 0.170.0 or later.
-- [Dart Sass](https://sass-lang.com/install/), with the standalone `sass` executable on `PATH`.
-  The npm `sass` package won't work; it's the JavaScript build, and Hugo needs Dart Sass.
 - [Node.js](https://nodejs.org/) 24 or later. Then install the remaining tools:
 
   ```sh
@@ -13,10 +11,10 @@
 
 ### Linux and macOS
 
-With [Homebrew](https://brew.sh), install Hugo and Dart Sass:
+With [Homebrew](https://brew.sh), install Hugo:
 
 ```sh
-brew install hugo sass/sass/sass
+brew install hugo
 ```
 
 ## Prepublish

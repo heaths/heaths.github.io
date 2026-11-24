@@ -1,0 +1,937 @@
+/*
+ * Site styles built on the design system's tokens.css, which is copied
+ * unchanged from the design system and can be replaced with a newer export.
+ *
+ * tokens.css switches to dark colors on [data-theme="dark"], so the head
+ * script always sets data-theme on <html> from the saved choice or the system
+ * preference. Without JavaScript, stylesheet.html adds a fallback generated
+ * from tokens.css. Values the design system doesn't define live here and use
+ * light-dark(), which follows color-scheme in every case.
+ */
+:root {
+  color-scheme: light;
+  --primary-hover: light-dark(var(--blue-700), var(--blue-300));
+  --surface-sunken: light-dark(var(--blue-50), #0f1e38);
+  --overlay: light-dark(rgb(15 38 85 / 0.15), rgb(11 23 48 / 0.4));
+  --shadow-color: light-dark(rgb(15 38 85 / 0.2), rgb(0 0 0 / 0.5));
+  --shadow: 0 4px 16px var(--shadow-color);
+
+  --font-mono:
+    ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  --icon-size: 1.25rem;
+  --content-width: 800px;
+  --gutter: var(--space-4);
+
+  --sequoia-fg-color: var(--ink);
+  --sequoia-bg-color: var(--surface);
+  --sequoia-border-color: var(--border);
+  --sequoia-accent-color: var(--primary);
+  --sequoia-secondary-color: var(--ink-muted);
+  --sequoia-border-radius: var(--radius-md);
+  --sequoia-font-family: var(--font-sans);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Without JavaScript, data-theme is missing: follow the system. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+
+@media (width > 800px) {
+  :root {
+    --gutter: var(--space-8);
+  }
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font: var(--text-body);
+  /* Unitless, so text larger or smaller than body inherits a scaled height. */
+  line-height: 1.5;
+  font-kerning: normal;
+  color: var(--ink);
+  background-color: var(--surface);
+  -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
+table,
+.highlight {
+  margin-block-end: var(--space-4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+h1 {
+  font: var(--text-heading-1);
+}
+
+h2 {
+  font: var(--text-heading-2);
+}
+
+h3 {
+  font: var(--text-heading-3);
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+ul,
+ol {
+  margin-inline-start: var(--space-8);
+}
+
+li > :is(ul, ol) {
+  margin-block-end: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font: var(--text-small);
+  color: var(--ink-muted);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  text-underline-offset: 0.15em;
+
+  &:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--accent);
+}
+
+blockquote {
+  padding-inline-start: var(--space-4);
+  border-inline-start: 4px solid var(--border);
+  color: var(--ink-muted);
+  font-size: 1.125rem;
+  font-style: italic;
+
+  > :last-child {
+    margin-block-end: 0;
+  }
+}
+
+pre,
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background-color: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: var(--space-2) 12px;
+  overflow-x: auto;
+
+  > code {
+    padding: 0;
+    font-size: inherit;
+    background: none;
+    border: 0;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: start;
+
+  th,
+  td {
+    padding: var(--space-2) 12px;
+    border: 1px solid var(--border);
+  }
+
+  th {
+    font-weight: 500;
+    background-color: var(--surface-raised);
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--surface-sunken);
+  }
+}
+
+hr {
+  margin-block: var(--space-8);
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Header */
+
+.site-header {
+  position: relative;
+  background-color: var(--surface-raised);
+  border-bottom: 1px solid var(--border);
+
+  > .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    min-height: 64px;
+  }
+}
+
+.site-title {
+  font: var(--text-heading-3);
+  font-size: 1.25rem;
+  color: var(--ink);
+
+  &:hover {
+    color: var(--primary);
+    text-decoration: none;
+  }
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+
+  .nav-trigger,
+  label[for="nav-trigger"] {
+    display: none;
+  }
+
+  .trigger {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .page-link {
+    color: var(--ink);
+    font-weight: 500;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.icon-button,
+.search-toggle,
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: var(--ink);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--primary);
+    background-color: var(--surface-sunken);
+  }
+
+  svg {
+    display: block;
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
+}
+
+/* Show the icon for the current theme, and the other one on hover. */
+.theme-toggle {
+  --show-light: block;
+  --show-dark: none;
+
+  [data-theme="dark"] & {
+    --show-light: none;
+    --show-dark: block;
+  }
+
+  .icon-light {
+    display: var(--show-light);
+  }
+
+  .icon-dark {
+    display: var(--show-dark);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover .icon-light {
+      display: var(--show-dark);
+    }
+
+    &:hover .icon-dark {
+      display: var(--show-light);
+    }
+  }
+}
+
+.header-search {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.header-search-form {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  margin: 0;
+}
+
+.search-toggle {
+  position: absolute;
+  inset-inline-start: 0;
+  z-index: 2;
+}
+
+.header-search-input {
+  width: 36px;
+  height: 36px;
+  padding: 0 0 0 36px;
+  font: var(--text-small);
+  font-size: 15px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  pointer-events: none;
+  /* Hidden, so it's out of the Tab order while closed; hide after fading out. */
+  visibility: hidden;
+  appearance: none;
+  transition:
+    width 0.15s ease,
+    opacity 0.15s ease,
+    visibility 0s linear 0.15s;
+
+  &::placeholder {
+    color: var(--ink-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 0;
+    box-shadow: none;
+  }
+
+  .header-search.is-open & {
+    width: min(16rem, 40vw);
+    padding-inline-end: 12px;
+    background-color: var(--surface);
+    border-color: var(--ink-muted);
+    opacity: 1;
+    pointer-events: auto;
+    /* Show immediately so search.js can focus it. */
+    visibility: visible;
+    transition-delay: 0s;
+  }
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-color: var(--overlay);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    backdrop-filter: blur(4px);
+  }
+}
+
+/* Collapse the menu links behind the hamburger button on small screens. */
+@media (width <= 600px) {
+  .site-nav {
+    gap: var(--space-1);
+
+    /* Visually hidden but focusable, so the menu works from the keyboard. */
+    .nav-trigger {
+      display: block;
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    label[for="nav-trigger"] {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--surface-sunken);
+      }
+    }
+
+    .menu-icon svg {
+      display: block;
+      fill: var(--ink);
+    }
+
+    .nav-trigger:focus-visible + label {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 6px var(--accent);
+    }
+
+    .trigger {
+      position: absolute;
+      inset-block-start: calc(100% - var(--space-2));
+      inset-inline-end: var(--gutter);
+      z-index: 98;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      min-width: 10rem;
+      padding: var(--space-1);
+      background-color: var(--surface-raised);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .nav-trigger:checked ~ .trigger {
+      display: flex;
+    }
+
+    .page-link {
+      padding: var(--space-2) 12px;
+      border-radius: var(--radius-sm);
+
+      &:hover {
+        background-color: var(--surface-sunken);
+        text-decoration: none;
+      }
+    }
+  }
+
+  /* Order: search, theme, menu. */
+  .header-actions {
+    order: -1;
+  }
+
+  .header-search.is-open .header-search-input {
+    width: min(12rem, calc(100vw - 13rem));
+  }
+}
+
+/* Main content */
+
+.page-content {
+  flex: 1;
+  padding-block: var(--space-8);
+}
+
+.page-heading {
+  font: var(--text-heading-1);
+  margin-block-end: var(--space-2);
+}
+
+.post-list-heading {
+  font: var(--text-heading-2);
+  margin-block-start: var(--space-8);
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-block-end: var(--space-4);
+
+  .page-heading {
+    margin: 0;
+  }
+}
+
+.post-list {
+  margin-inline-start: 0;
+  list-style: none;
+
+  > li {
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--border);
+
+    &:first-child {
+      padding-block-start: 0;
+    }
+  }
+
+  h2,
+  h3 {
+    font: var(--text-heading-2);
+    margin-block: var(--space-1) var(--space-2);
+  }
+
+  p {
+    color: var(--ink-muted);
+  }
+
+  > li > :last-child {
+    margin-block-end: 0;
+  }
+}
+
+.post-link {
+  color: var(--ink);
+
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+.post-meta {
+  font: var(--text-small);
+  color: var(--ink-muted);
+}
+
+.rss-subscribe {
+  margin-block-start: var(--space-4);
+  color: var(--ink-muted);
+}
+
+/* Posts */
+
+.post-header {
+  margin-block-end: var(--space-4);
+
+  .page-heading {
+    letter-spacing: -0.01em;
+  }
+}
+
+.post-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+
+  .post-meta {
+    margin: 0;
+  }
+
+  @media (width <= 600px) {
+    .post-meta-sep {
+      display: none;
+    }
+
+    .post-author {
+      display: block;
+    }
+  }
+}
+
+.post-content {
+  /* Contain floated images, like the About page's headshot. */
+  display: flow-root;
+  margin-block-end: var(--space-8);
+
+  h2,
+  h3,
+  h4 {
+    margin-block-start: var(--space-8);
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+}
+
+/* Heading anchors: show "#" after a heading when hovering it. */
+:is(h1, h2, h3, h4, h5, h6)[id] {
+  display: flex;
+  align-items: baseline;
+
+  > a[href^="#"] {
+    order: 1;
+    text-decoration: none;
+
+    &::after {
+      content: "#";
+      margin-inline-start: 0.25em;
+      color: var(--primary);
+      visibility: hidden;
+    }
+  }
+
+  &:hover > a[href^="#"]::after {
+    visibility: visible;
+  }
+}
+
+.post-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+
+  /* Stay on the right even when a post has no tags. */
+  sequoia-recommend {
+    margin-inline-start: auto;
+  }
+}
+
+/* Tags use the design system's neutral ("Draft") badge. */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  list-style: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--space-2);
+  font: 500 12px/1 var(--font-sans);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--blue-900);
+  background-color: var(--blue-100);
+  border-radius: 999px;
+}
+
+.footnotes {
+  margin-block-start: var(--space-8);
+  font: var(--text-small);
+  color: var(--ink-muted);
+}
+
+/*
+ * Sequoia buttons hard-code white text and darken on hover, so restyle their
+ * exposed button part to match the theme's primary button.
+ */
+sequoia-subscribe::part(button),
+sequoia-recommend::part(button),
+sequoia-comments::part(button) {
+  height: 36px;
+  color: var(--on-primary);
+  background-color: var(--primary);
+  font-weight: 500;
+  transition: none;
+}
+
+sequoia-subscribe::part(button):hover,
+sequoia-recommend::part(button):hover,
+sequoia-comments::part(button):hover {
+  background-color: var(--primary-hover);
+}
+
+sequoia-subscribe::part(button):focus-visible,
+sequoia-recommend::part(button):focus-visible,
+sequoia-comments::part(button):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--accent);
+}
+
+sequoia-comments::part(container) {
+  margin-block-start: var(--space-8);
+}
+
+.cover-image {
+  display: block;
+  max-width: 100%;
+  margin: var(--space-4) auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+
+  img {
+    width: 16rem;
+    border-radius: var(--radius-md);
+  }
+}
+
+img.align-right {
+  float: right;
+  margin: 0 0 var(--space-2) var(--space-2);
+
+  /* Leave room for the text beside it on small screens. */
+  @media (width <= 600px) {
+    max-width: 40%;
+  }
+}
+
+.youtube-container {
+  aspect-ratio: 16 / 9;
+  margin-block: var(--space-8);
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-md);
+  }
+}
+
+/* Subscribe buttons */
+
+.subscribe-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: end;
+  gap: var(--space-2);
+}
+
+.accent-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  width: 36px;
+  height: 36px;
+  color: var(--on-primary);
+  background-color: var(--primary);
+  border-radius: var(--radius-md);
+
+  &:hover {
+    color: var(--on-primary);
+    background-color: var(--primary-hover);
+  }
+
+  svg {
+    display: block;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    fill: currentColor;
+  }
+}
+
+/* Pagination */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-block: var(--space-8);
+}
+
+.pagination-link,
+.pagination-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.pagination-link {
+  &:hover {
+    background-color: var(--surface-sunken);
+    text-decoration: none;
+  }
+
+  svg {
+    width: auto;
+    height: 0.85em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.pagination-current {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--on-primary);
+  background-color: var(--primary);
+}
+
+.pagination-ellipsis,
+.pagination-total {
+  color: var(--ink-muted);
+}
+
+.pagination-last-group {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Footer */
+
+.site-footer {
+  padding-block: var(--space-8);
+  font-size: 15px;
+  color: var(--ink-muted);
+  background-color: var(--surface-raised);
+  border-top: 1px solid var(--border);
+}
+
+.footer-heading {
+  font: var(--text-heading-3);
+  color: var(--ink);
+}
+
+.footer-col-wrapper {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-8);
+
+  @media (width <= 600px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.footer-col > :last-child {
+  margin-block-end: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.social-media-list {
+  margin: 0;
+  list-style: none;
+
+  li + li {
+    padding-block-start: var(--space-1);
+  }
+
+  a:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: underline;
+    }
+  }
+}
+
+.svg-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-inline-end: var(--space-1);
+  vertical-align: -2px;
+  fill: currentColor;
+}

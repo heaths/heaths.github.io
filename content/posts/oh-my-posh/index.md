@@ -54,4 +54,4 @@ over time. Who knows: maybe one day I want to restore some old functionality.
 After so many, many years with my custom prompt, it's a little hard to say goodbye,
 but look at this new prompt (which will also continue to change):
 
-![Oh My Posh](oh-my-posh-2023-01-01.png)
+{{< image src="oh-my-posh-2023-01-01.png" alt="Oh My Posh" class="cover-image" >}}

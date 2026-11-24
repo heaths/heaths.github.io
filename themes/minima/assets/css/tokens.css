@@ -1,0 +1,112 @@
+/* Blues Brand — generated from tokens.json */
+:root, [data-theme="light"] {
+  --blue-50: #eef5ff; /* Lightest tint: selected rows, subtle fills. */
+  --blue-100: #d9e8ff; /* Hover fills, info backgrounds. */
+  --blue-200: #b3d0ff; /* Soft borders and tint blocks. */
+  --blue-300: #80b0fb; /* Decorative fills; not for text on light. */
+  --blue-400: #4d8ef2; /* Primary in dark theme; links on dark surfaces. */
+  --blue-500: #2670e3; /* Mid blue: charts, illustrations. */
+  --blue-600: #1a58c2; /* Primary in light theme: buttons, links (6.5:1 on white). */
+  --blue-700: #16459b; /* Pressed primary, headings on light. */
+  --blue-800: #14367a; /* Deep fills, dark raised surfaces. */
+  --blue-900: #0f2655; /* Deepest blue: text on yellow or orange accents. */
+  --yellow-300: #ffe066; /* Soft yellow highlight (text marks, badges). */
+  --yellow-400: #fcd02e; /* Main yellow accent: callouts, focus glow. Pair with blue-900 text. */
+  --yellow-500: #f2b705; /* Hover/pressed yellow accent. */
+  --orange-400: #ff9a3c; /* Soft orange: tags, chart series. */
+  --orange-500: #f57c1f; /* Main orange accent: badges, highlights. Pair with blue-900 text; not for text on white. */
+  --orange-600: #d9620b; /* Hover/pressed orange accent. */
+  --red-50: #fff1f1; /* Error background tint (light theme). */
+  --red-100: #ffdadb; /* Soft error fills, hover on error rows. */
+  --red-400: #f2666b; /* Error color in dark theme (5.8:1 on dark surface). */
+  --red-600: #c62a2f; /* Error color in light theme: text, borders, icons (5.6:1 on white). */
+  --red-700: #a3202a; /* Pressed/hover for destructive actions. */
+  --surface: #f7faff; /* Page background. */
+  --surface-raised: #ffffff; /* Cards, menus, dialogs. */
+  --ink: #0f2655; /* Body text on surface and surface-raised. Dark theme uses the softer blue-white from heaths.dev (11.6:1) instead of near-white. */
+  --ink-muted: #4a5d7e; /* Secondary text on surface. */
+  --border: #c9d8f0; /* Dividers and card outlines (decorative). */
+  --primary: #1a58c2; /* Primary actions, links, selected state. */
+  --on-primary: #ffffff; /* Text and icons on primary. */
+  --accent: #fcd02e; /* Yellow accent: highlights, callouts, focus ring. */
+  --on-accent: #0f2655; /* Text on accent. */
+  --highlight: #f57c1f; /* Orange accent: badges, 'new' markers, emphasis fills. */
+  --on-highlight: #0f2655; /* Text on highlight. */
+  --danger: #c62a2f; /* Errors and destructive actions only: error text, borders, icons. Never decorative. */
+  --on-danger: #ffffff; /* Text and icons on danger. */
+  --danger-surface: #fff1f1; /* Background of error alerts; ink text on it. */
+}
+[data-theme="dark"] {
+  --surface: #0b1730;
+  --surface-raised: #13233f;
+  --ink: #b8d4f0;
+  --ink-muted: #94a8c8;
+  --border: #2a3d61;
+  --primary: #4d8ef2;
+  --on-primary: #0b1730;
+  --accent: #fcd02e;
+  --on-accent: #0f2655;
+  --highlight: #ff9a3c;
+  --on-highlight: #0f2655;
+  --danger: #f2666b;
+  --on-danger: #0b1730;
+  --danger-surface: #3a1420;
+}
+:root {
+  --space-1: 4px; /* Icon gaps. */
+  --space-2: 8px; /* Tight padding. */
+  --space-4: 16px; /* Card padding. */
+  --space-8: 32px; /* Section gaps. */
+  --radius-sm: 4px; /* Inputs, tags. */
+  --radius-md: 8px; /* Buttons, cards. */
+  --radius-lg: 16px; /* Large panels, color blocks. */
+  --font-sans: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --text-display: 400 48px/52px var(--font-sans); /* Hero headlines. */
+  --text-heading-1: 400 32px/40px var(--font-sans); /* Page titles. */
+  --text-heading-2: 400 24px/32px var(--font-sans); /* Section titles. */
+  --text-heading-3: 500 18px/26px var(--font-sans); /* Card titles. */
+  --text-body: 400 16px/24px var(--font-sans); /* Running text. */
+  --text-small: 400 14px/20px var(--font-sans); /* Captions, helper text. */
+}
+.display {
+  font-family: var(--font-sans);
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.heading-1 {
+  font-family: var(--font-sans);
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.heading-2 {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.heading-3 {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.small {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+}

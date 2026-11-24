@@ -25,7 +25,7 @@ Follow the steps below to get started:
    - Type "WSL" and press **Enter**.
    - Check ".NET Core Debugging with WSL 2".
 
-   ![Installing .NET Core Debugging with WSL 2](visualstudio-debugging-containers-setup.png)
+   {{< image src="visualstudio-debugging-containers-setup.png" alt="Installing .NET Core Debugging with WSL 2" class="cover-image" >}}
 
 1. Next you need to create a _Dockerfile_ to install .NET 5.0. While you could start with an [image that contains .NET already](https://hub.docker.com/_/microsoft-dotnet-sdk/), I wanted to build up a fresh image to reduce the possibility of inadvertently changing the target environment. So instead I start off with plain `ubuntu:18.04`:
 
@@ -89,19 +89,19 @@ Follow the steps below to get started:
    - Change the **Connection type** drop-down to "Docker (Linux Container)"
    - If your container is not discovered automatically, click the **Find...** button and wait a second or two. You should see it like in the following screenshot using an automatically generated name.
 
-     ![Find Docker (Linux Container) host](visualstudio-debugging-containers-host.png)
+     {{< image src="visualstudio-debugging-containers-host.png" alt="Find Docker (Linux Container) host" class="cover-image" >}}
 
      Click **OK** to continue.
 
    - Once the host is selected, select the process ID that was printed above:
 
-     ![Select the process ID](visualstudio-debugging-containers.png)
+     {{< image src="visualstudio-debugging-containers.png" alt="Select the process ID" class="cover-image" >}}
 
      Click **Attach** to continue.
 
    - When prompted for the debuggee type, selected "Managed":
 
-     ![Select the Managed debuggee type](visualstudio-debugging-containers-debuggee-type.png)
+     {{< image src="visualstudio-debugging-containers-debuggee-type.png" alt="Select the Managed debuggee type" class="cover-image" >}}
 
      Click **OK** to continue.
 

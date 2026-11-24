@@ -16,7 +16,7 @@ aliases:
 
 New in the [GitHub CLI 2.0](https://github.com/cli/cli/releases/tag/v2.0.0) is the ability to format results from built-in commands or custom API calls. The [pull request](https://github.com/cli/cli/pull/3519) was born from the desire to improve the output of my [`git user`](../gh-user/index.md) command - to use the same table formatting as built-in commands.
 
-![gh user output](gh-user-table-formatting.png)
+{{< image src="gh-user-table-formatting.png" alt="gh user output" class="cover-image" >}}
 
 To create this alias, you can [use another change](../gh-alias-set-from-stdin/index.md) I made to set the alias from stdin:
 

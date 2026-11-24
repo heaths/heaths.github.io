@@ -53,9 +53,4 @@ While I tried to maintain as much legacy as possible, some radical change was ne
 I can't thank enough the people who bootstrapped all this effort: Francesco, Ryan, Cameron, Brian, et. al.
 And for the people who took up the mantle when this was made an official project: Larry, Joel, Rick, Ashley, Anton, Ronnie, Patrick, Brian, et. al.
 
-<div style="text-align: center;">
-<picture>
-<source type="image/webp" srcset="rust-cake.webp"/>
-<img src="rust-cake.jpg" alt="Rust celebration cake"/>
-</picture>
-</div>
+{{< image src="rust-cake.jpg" webp="rust-cake.webp" alt="Rust celebration cake" class="cover-image" >}}

@@ -1,10 +1,31 @@
-{{ if not (.Get "src") }}
-  {{ errorf "image requires src: %s" .Position }}
-{{ end }}
-{{ $src := .Get "src" | relURL }}
-{{ with .Page.Resources.Get (.Get "src") }}{{ $src = .RelPermalink }}{{ end }}
-<img
-  src="{{ $src }}"
-  alt="{{ .Get "alt" }}"
-  {{ with .Get "class" }}class="{{ . }}"{{ end }}
-/>
+{{- if not (.Get "src") -}}
+  {{- errorf "image requires src: %s" .Position -}}
+{{- end -}}
+{{- $src := .Get "src" | relURL -}}
+{{- with .Page.Resources.Get (.Get "src") -}}
+  {{- $src = .RelPermalink -}}
+{{- end -}}
+{{- /* Optional WebP version, served through <picture> with src as the fallback. */ -}}
+{{- $webp := "" -}}
+{{- with .Get "webp" -}}
+  {{- $webp = . | relURL -}}
+  {{- with $.Page.Resources.Get . -}}
+    {{- $webp = .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+{{- if $webp -}}
+  <picture>
+    <source type="image/webp" srcset="{{ $webp }}" />
+    <img
+      src="{{ $src }}"
+      alt="{{ .Get "alt" }}"
+      {{ with .Get "class" }}class="{{ . }}"{{ end }}
+    />
+  </picture>
+{{- else -}}
+  <img
+    src="{{ $src }}"
+    alt="{{ .Get "alt" }}"
+    {{ with .Get "class" }}class="{{ . }}"{{ end }}
+  />
+{{- end -}}
