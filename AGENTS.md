@@ -2,16 +2,19 @@
 
 Personal blog at [heaths.dev](https://heaths.dev), built with [Hugo](https://gohugo.io) and the local `themes/minima` theme (ported from Jekyll Minima 2.5.2).
 
+Keep this file concise and written for agents: rules and facts only, no prose.
+
 | Path                  | Notes                                                                    |
 | --------------------- | ------------------------------------------------------------------------ |
 | `content/posts/`      | Page bundles: `<slug>/index.md` plus the post's images.                  |
 | `archetypes/posts.md` | Front matter template for `hugo new content posts/<slug>/index.md`.      |
 | `assets/`             | Shared images and Sequoia scripts, published at `/assets/`.              |
+| `static/`             | Site-root files: favicons copied unchanged from the design system.       |
 | `.well-known/`        | AT Protocol verification files; keep their public URLs and bytes stable. |
 
 ## Posts
 
-To write a post, use the `new-post` skill. Posts publish at `/posts/<slug>/`. Reference bundle images by filename (`![Alt](cover.webp)` or `{{< image src="cover.webp" alt="Alt" >}}`) and link to other posts as `../other-slug/index.md`. The build fails on posts that break the rules below.
+To write a post, use the `new-post` skill. Posts publish at `/posts/<slug>/`. Reference bundle images by filename and give them the rounded, shadowed style: `{{< image src="cover.jpg" alt="Alt" class="cover-image" >}}`; add `webp="cover.webp"` when a WebP version exists. Use `image-grid` for galleries. Link to other posts as `../other-slug/index.md`. The build fails on posts that break the rules below.
 
 ```yaml
 title: My Post Title
@@ -38,4 +41,4 @@ Once all other work is done (implementation, content, docs, and functional verif
 
 ## Building
 
-Requires Hugo, Dart Sass on `PATH`, and Node.js (`npm ci`). Use `npm run dev` to preview. `npm test` runs the production build plus the `node:test` checks in `bin/check-site.test.mjs`.
+Requires Hugo and Node.js (`npm ci`). Use `npm run dev` to preview. `npm test` runs the production build plus the `node:test` checks in `bin/check-site.test.mjs`.

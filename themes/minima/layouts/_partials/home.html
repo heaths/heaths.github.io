@@ -2,9 +2,7 @@
 {{ $paginator := .Paginate $posts.ByDate.Reverse }}
 <div class="home">
   {{ if $posts }}
-    <div
-      style="display: flex; justify-content: space-between; align-items: center"
-    >
+    <div class="home-header">
       <h1 class="page-heading">Posts</h1>
       {{ partial "subscribe-buttons.html" . }}
     </div>

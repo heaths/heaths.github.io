@@ -26,20 +26,30 @@
     return systemPreference();
   }
 
+  // The stylesheet keys off html[data-theme], so always set it. Only save a
+  // choice that differs from the system preference.
   function applyTheme(theme) {
-    if (theme === systemPreference()) {
-      try {
+    try {
+      if (theme === systemPreference()) {
         localStorage.removeItem("theme");
-      } catch (_) {}
-      document.documentElement.removeAttribute("data-theme");
-    } else {
-      try {
+      } else {
         localStorage.setItem("theme", theme);
-      } catch (_) {}
-      document.documentElement.setAttribute("data-theme", theme);
-    }
+      }
+    } catch (_) {}
+    document.documentElement.setAttribute("data-theme", theme);
     updateButton(theme);
   }
+
+  // Follow system changes unless a choice was saved.
+  try {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", function () {
+        var theme = effectiveTheme();
+        document.documentElement.setAttribute("data-theme", theme);
+        updateButton(theme);
+      });
+  } catch (_) {}
 
   function updateButton(theme) {
     var btn = document.getElementById("theme-toggle");

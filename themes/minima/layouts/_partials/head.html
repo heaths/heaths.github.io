@@ -1,22 +1,27 @@
 <head>
   <script>
-    /* Restore saved theme before CSS renders to prevent a flash. */
+    /* Set the saved or system theme before CSS renders to prevent a flash. */
     (function () {
+      var t;
       try {
-        var t = localStorage.getItem("theme");
-        if (t === "light" || t === "dark")
-          document.documentElement.setAttribute("data-theme", t);
+        t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
       } catch (_) {}
+      document.documentElement.setAttribute("data-theme", t || "light");
     })();
   </script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   {{ partial "seo.html" . }}
-  {{ $options := dict "transpiler" "dartsass" "targetPath" "assets/main.css" "outputStyle" (cond hugo.IsProduction "compressed" "expanded") "silenceDeprecations" (slice "import" "global-builtin" "color-functions" "slash-div") "silenceDependencyDeprecations" true }}
-  {{ with resources.Get "sass/main.scss" | css.Sass $options }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}" />
-  {{ end }}
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="48x48" />
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}" />
+  {{ partialCached "stylesheet.html" . }}
   <script defer src="{{ "assets/scripts/theme-toggle.js" | relURL }}"></script>
   <script defer src="{{ "assets/scripts/search.js" | relURL }}"></script>
   {{ with .Site.Home.OutputFormats.Get "RSS" }}

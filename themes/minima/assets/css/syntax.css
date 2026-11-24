@@ -1,0 +1,124 @@
+/*
+ * Chroma syntax highlighting using GitHub light and dark token colors, which
+ * follow color-scheme through light-dark().
+ * The code background comes from site.css so blocks match inline code.
+ */
+:root {
+  --syntax-text: light-dark(#24292f, #c9d1d9);
+  --syntax-keyword: light-dark(#cf222e, #ff7b72);
+  --syntax-constant: light-dark(#0550ae, #79c0ff);
+  --syntax-type: light-dark(#953800, #ffa657);
+  --syntax-tag: light-dark(#116329, #7ee787);
+  --syntax-string: light-dark(#0a3069, #a5d6ff);
+  --syntax-function: light-dark(#8250df, #d2a8ff);
+  --syntax-comment: light-dark(#6e7781, #8b949e);
+  --syntax-heading: light-dark(#0550ae, #79c0ff);
+  --syntax-deleted: light-dark(#82071e, #ffdcd7);
+  --syntax-deleted-bg: light-dark(#ffebe9, #67060c);
+  --syntax-inserted: light-dark(#116329, #aff5b4);
+  --syntax-inserted-bg: light-dark(#dafbe1, #033a16);
+  --syntax-error: light-dark(#f6f8fa, #f0f6fc);
+  --syntax-error-bg: light-dark(#82071e, #8e1519);
+}
+
+.highlight {
+  color: var(--syntax-text);
+
+  pre {
+    margin: 0;
+  }
+
+  table td {
+    padding: 5px;
+    border: 0;
+  }
+
+  :is(.k, .kd, .kn, .kp, .kr, .kt, .kv) {
+    color: var(--syntax-keyword);
+  }
+
+  :is(.nb, .nc, .no, .nn) {
+    color: var(--syntax-type);
+  }
+
+  :is(.sr, .na, .nt) {
+    color: var(--syntax-tag);
+  }
+
+  :is(
+    .kc,
+    .l,
+    .ld,
+    .m,
+    .mb,
+    .mf,
+    .mh,
+    .mi,
+    .il,
+    .mo,
+    .mx,
+    .sb,
+    .bp,
+    .ne,
+    .nl,
+    .py,
+    .nv,
+    .vc,
+    .vg,
+    .vi,
+    .vm,
+    .o,
+    .ow
+  ) {
+    color: var(--syntax-constant);
+  }
+
+  :is(.s, .sa, .sc, .dl, .sd, .s2, .se, .sh, .sx, .s1, .ss) {
+    color: var(--syntax-string);
+  }
+
+  :is(.nd, .nf, .fm) {
+    color: var(--syntax-function);
+  }
+
+  :is(.c, .ch, .cd, .cm, .cp, .cpf, .c1, .cs, .gl, .gt) {
+    color: var(--syntax-comment);
+  }
+
+  :is(.gh, .gu) {
+    color: var(--syntax-heading);
+    font-weight: bold;
+  }
+
+  .gd {
+    color: var(--syntax-deleted);
+    background-color: var(--syntax-deleted-bg);
+  }
+
+  .gi {
+    color: var(--syntax-inserted);
+    background-color: var(--syntax-inserted-bg);
+  }
+
+  .gr {
+    color: var(--syntax-error);
+  }
+
+  .err {
+    color: var(--syntax-error);
+    background-color: var(--syntax-error-bg);
+  }
+
+  .ge {
+    font-style: italic;
+  }
+
+  .gs {
+    font-weight: bold;
+  }
+
+  .ges {
+    font-weight: bold;
+    font-style: italic;
+  }
+}

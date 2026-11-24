@@ -3,10 +3,7 @@ title: About
 url: /about/
 ---
 
-<picture>
-<source type="image/webp" srcset="/assets/images/headshot.webp" class="align-right" />
-<img src="/assets/images/headshot.jpg" class="align-right" alt="Headshot of Heath Stewart" />
-</picture>
+{{< image src="/assets/images/headshot.jpg" webp="/assets/images/headshot.webp" alt="Headshot of Heath Stewart" class="cover-image align-right" >}}
 I was born in Nebraska but, having been exposed to them on my path to Eagle Scout, longed for the mountains.
 I also started programming at an early age on a Commodore 64 and hence wanted to work for Microsoft.
 Moving to Washington state in the beautiful Pacific Northwest with my wife provided opportunities for both.
@@ -23,7 +20,4 @@ of buddies with whom I've done most of the highest peaks of Washington including
 with little to no experience to entice them outdoors. Snowshoeing and route finding are my favorite, since there are no trails
 on which to stick when there's many feet of snow on the ground; otherwise, please stick to trails and never cut switchbacks!
 
-<picture>
-<source type="image/webp" srcset="/assets/images/rainier-summit.webp" style="width: 100%" />
-<img src="/assets/images/rainier-summit.jpg" style="width: 100%" alt="Summit of Mount Rainier" />
-</picture>
+{{< image src="/assets/images/rainier-summit.jpg" webp="/assets/images/rainier-summit.webp" alt="Summit of Mount Rainier" class="cover-image" >}}

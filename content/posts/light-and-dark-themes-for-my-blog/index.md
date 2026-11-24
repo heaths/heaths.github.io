@@ -14,7 +14,7 @@ aliases:
   - /general/2026/04/20/light-and-dark-themes-for-my-blog.html
 ---
 
-![A blog page shown in both light and dark themes side by side, using the Seattle Kraken color palette](kraken-theme.jpg)
+{{< image src="kraken-theme.jpg" alt="A blog page shown in both light and dark themes side by side, using the Seattle Kraken color palette" class="cover-image" >}}
 
 My posts will always be written by me, a human, sharing tips, personal news, and more.
 And though I started writing web sites before HTML 1.0 was formally standardized, I've never been good at design.

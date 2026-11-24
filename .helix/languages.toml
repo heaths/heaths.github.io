@@ -54,17 +54,6 @@ formatter = { command = "npm", args = [
 auto-format = true
 
 [[language]]
-name = "scss"
-formatter = { command = "npm", args = [
-  "exec",
-  "--",
-  "prettier",
-  "--parser",
-  "scss",
-] }
-auto-format = true
-
-[[language]]
 name = "toml"
 formatter = { command = "npm", args = [
   "exec",
