@@ -12,6 +12,8 @@ Keep this file concise and written for agents: rules and facts only, no prose.
 | `static/`             | Site-root files: favicons copied unchanged from the design system.       |
 | `.well-known/`        | AT Protocol verification files; keep their public URLs and bytes stable. |
 
+Don't edit vendored files unless the repository owner explicitly asks, even to fix CI or review comments: `assets/scripts/sequoia-*.js` (Sequoia) and `themes/minima/assets/css/tokens.css` (design system export).
+
 ## Posts
 
 To write a post, use the `new-post` skill. Posts publish at `/posts/<slug>/`. Reference bundle images by filename and give them the rounded, shadowed style: `{{< image src="cover.jpg" alt="Alt" class="cover-image" >}}`; add `webp="cover.webp"` when a WebP version exists. Use `image-grid` for galleries. Link to other posts as `../other-slug/index.md`. The build fails on posts that break the rules below.
