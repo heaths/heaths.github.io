@@ -25,6 +25,27 @@ directory name determines the published path, `/posts/<slug>/`, for both Hugo an
 Sequoia (`pathTemplate` in `sequoia.json`). If you rename a published bundle, add
 its old path to `aliases`. Keep existing `atUri` fields and aliases unchanged.
 
+## Publish
+
+Open a pull request with the new or changed posts and enable auto-merge. That's it:
+
+1. The `atproto` check fails while any post is unpublished, so the pull request can't
+   merge yet. The run summary lists what will be published.
+2. Once `build` passes and auto-merge is enabled, in either order, the
+   [Publish to ATProto](.github/workflows/sequoia.yml) workflow publishes the posts to
+   your PDS and Bluesky, then pushes a commit with the updated `.sequoia-state.json`
+   and any new `atUri` front matter.
+3. Checks pass on that commit, the pull request merges, and the site deploys.
+
+Readers who follow the Bluesky link before the site deploys get a 404 for a minute
+or two; the Bluesky card itself renders right away. Bluesky posts are only created
+for posts dated within the last 7 days.
+
+To preview without publishing, run the workflow manually on any branch. Leave
+**dry-run** checked.
+
+### Publish manually
+
 Build the production site with Hugo before publishing:
 
 ```sh

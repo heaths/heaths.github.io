@@ -33,6 +33,18 @@ tags: [git, tips]
 - `aliases`: old URLs that redirect here. Never remove any. Keep the first one first; it's the Atom entry ID. `bin/fixtures/legacy-urls.txt` lists the URLs `npm test` requires.
 - `atUri`: never modify.
 
+## ATProto publishing
+
+`.github/workflows/sequoia.yml` runs `sequoia publish` from pull requests, before merge; the site doesn't need to be live because Bluesky renders the card from PDS records.
+
+- Triggers: `pull_request` (`opened`, `synchronize`, `reopened`, `auto_merge_enabled`), `workflow_run` of `hugo.yml` (`Deploy Hugo site to Pages`; only the copy on `main` runs), and `workflow_dispatch` with `dry-run` (default `true`).
+- `resolve`: finds the pull request and runs `sequoia publish --dry-run` with placeholder credentials (dry runs never sign in). Pending detection greps the CLI output for `Nothing to publish` and `Dry run complete`; recheck both strings when upgrading `sequoia-cli`.
+- `atproto`: the required status check in the `Require checks` ruleset; fails while any post is unpublished. It must never be skipped on a run whose checks attach to a pull request head, because a skipped required check passes.
+- `publish`: only when the pull request is open, not from a fork, authored by the repository owner, has auto-merge enabled, and `build` succeeded on its current head (or a manual run with `dry-run` off). Uses environment `atproto`: variable `ATP_IDENTIFIER` and secret `ATP_APP_PASSWORD`. Uploads the diff of `.sequoia-state.json` and `content/posts` as artifact `sequoia-patch`, even after a partial failure.
+- `commit`: applies the patch and pushes to the pull request branch using a GitHub App token (repository variable `BOT_APP_CLIENT_ID`, secret `BOT_APP_PRIVATE_KEY`) so the push triggers checks; `GITHUB_TOKEN` pushes don't. Never force-pushes.
+- Concurrency: runs that can publish are serialized per branch and never cancelled, so PDS records are always committed to state before the next run checks it. Losing a state update would create duplicate records and Bluesky posts.
+- `sequoia publish` writes `atUri` into a new post's front matter, which `themes/minima/layouts/_partials/head.html` renders as the `site.standard.document` link tag. Don't hand-edit `.sequoia-state.json`.
+
 ## Commits
 
 Don't stage or commit unless asked. Before committing, make sure every `content/posts/*/index.md` has a `summary`. If one is missing, write one or two sentences from the post and add it before `category`. Do that before the final checks.
