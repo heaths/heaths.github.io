@@ -1,0 +1,268 @@
+name: Publish to ATProto
+
+# Publishes posts to the PDS and Bluesky with `sequoia publish` from a pull request,
+# then commits the resulting `.sequoia-state.json` and `atUri` front matter back to it.
+#
+# - Every pull request run reports the required `atproto` check, which fails while
+#   any post is unpublished so the pull request can't merge before publishing.
+# - Publishing runs once the pull request has auto-merge enabled and `build` passed
+#   on its current head, whichever happens last.
+# - Run manually against a pull request branch to preview (default) or publish.
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - auto_merge_enabled
+  workflow_run:
+    workflows:
+      - Deploy Hugo site to Pages
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Only preview what would be published
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+# Runs that may publish are serialized per branch and never cancelled, so records
+# created on the PDS are always committed before another run checks the state.
+# Check-only runs get their own group so they never wait on or replace those runs.
+concurrency:
+  group: ${{ (github.event.action == 'auto_merge_enabled' || github.event_name == 'workflow_run' || github.event_name == 'workflow_dispatch') && format('atproto-{0}', github.head_ref || github.event.workflow_run.head_branch || github.ref_name) || format('atproto-check-{0}', github.run_id) }}
+  cancel-in-progress: false
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.event == 'pull_request'
+    outputs:
+      pending: ${{ steps.dry-run.outputs.pending }}
+      publish: ${{ steps.pr.outputs.eligible == 'true' && steps.dry-run.outputs.pending == 'true' }}
+      number: ${{ steps.pr.outputs.number }}
+      branch: ${{ steps.pr.outputs.branch }}
+      sha: ${{ steps.pr.outputs.sha }}
+    steps:
+      - name: Resolve pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          EVENT: ${{ github.event_name }}
+          ACTION: ${{ github.event.action }}
+          OWNER: ${{ github.repository_owner }}
+          PR_NUMBER: ${{ github.event.pull_request.number || github.event.workflow_run.pull_requests[0].number }}
+          BRANCH: ${{ github.event.workflow_run.head_branch || github.ref_name }}
+          DRY_RUN: ${{ inputs.dry-run }}
+        run: |
+          set -euo pipefail
+          number="$PR_NUMBER"
+          if [[ -z "$number" ]]; then
+            number=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          fi
+          if [[ -z "$number" ]]; then
+            echo "::notice::No open pull request for $BRANCH; previewing only."
+            {
+              echo "eligible=false"
+              echo "sha=$GITHUB_SHA"
+            } >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          pr=$(gh pr view "$number" --json state,headRefName,headRefOid,isCrossRepository,author,autoMergeRequest)
+          sha=$(jq -r .headRefOid <<< "$pr")
+          {
+            echo "number=$number"
+            echo "branch=$(jq -r .headRefName <<< "$pr")"
+            echo "sha=$sha"
+          } >> "$GITHUB_OUTPUT"
+
+          reason=""
+          if [[ "$(jq -r .state <<< "$pr")" != "OPEN" ]]; then
+            reason="pull request is not open"
+          elif [[ "$(jq -r .isCrossRepository <<< "$pr")" == "true" ]]; then
+            reason="pull request is from a fork"
+          elif [[ "$(jq -r .author.login <<< "$pr")" != "$OWNER" ]]; then
+            reason="pull request is not authored by $OWNER"
+          elif [[ "$EVENT" == "workflow_dispatch" ]]; then
+            [[ "$DRY_RUN" == "true" ]] && reason="dry run requested"
+          elif [[ "$EVENT" == "pull_request" && "$ACTION" != "auto_merge_enabled" ]]; then
+            reason="checking only"
+          elif [[ "$(jq -r '.autoMergeRequest != null' <<< "$pr")" != "true" ]]; then
+            reason="auto-merge is not enabled"
+          else
+            build=$(gh api "repos/$GH_REPO/commits/$sha/check-runs?check_name=build" \
+              --jq '[.check_runs[] | select(.app.slug == "github-actions")] | sort_by(.started_at) | last | .conclusion // "pending"')
+            [[ "$build" != "success" ]] && reason="build is $build on $sha"
+          fi
+
+          if [[ -n "$reason" ]]; then
+            echo "::notice::Not publishing #$number: $reason."
+            echo "eligible=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "eligible=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ steps.pr.outputs.sha }}
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install support tooling
+        run: npm ci
+      # A dry run never signs in but still requires credentials to be configured.
+      # The output strings below come from the sequoia-cli version in package-lock.json.
+      - name: Preview publishing
+        id: dry-run
+        env:
+          ATP_IDENTIFIER: placeholder.invalid
+          ATP_APP_PASSWORD: placeholder
+          PDS_URL: https://bsky.social
+        run: |
+          set -euo pipefail
+          npx sequoia publish --dry-run 2>&1 | sed -E 's/\x1b\[[0-9;?]*[A-Za-z]//g' | tee "$RUNNER_TEMP/dry-run.txt"
+          if grep -q 'Nothing to publish' "$RUNNER_TEMP/dry-run.txt"; then
+            echo "pending=false" >> "$GITHUB_OUTPUT"
+            echo "All posts are published." >> "$GITHUB_STEP_SUMMARY"
+          elif grep -q 'Dry run complete' "$RUNNER_TEMP/dry-run.txt"; then
+            echo "pending=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "### Posts to publish"
+              echo
+              grep -E '^│ +[+~] ' "$RUNNER_TEMP/dry-run.txt" | sed -E 's/^│ +/- /'
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::Could not parse 'sequoia publish --dry-run' output."
+            exit 1
+          fi
+
+  # Required check. It must run (not skip) on every run whose checks attach to a pull
+  # request's head: a skipped required check counts as passing and would let auto-merge
+  # merge unpublished posts. workflow_run checks attach to main, so it skips there, as
+  # it does for a manual preview of a branch with no pull request.
+  atproto:
+    runs-on: ubuntu-latest
+    needs: resolve
+    if: >-
+      always()
+      && github.event_name != 'workflow_run'
+      && !(github.event_name == 'workflow_dispatch' && needs.resolve.result == 'success' && needs.resolve.outputs.number == '')
+    steps:
+      - name: Check published state
+        env:
+          RESULT: ${{ needs.resolve.result }}
+          PENDING: ${{ needs.resolve.outputs.pending }}
+        run: |
+          if [[ "$RESULT" != "success" ]]; then
+            echo "::error::Could not determine whether posts are published (resolve: $RESULT)."
+            exit 1
+          fi
+          if [[ "$PENDING" != "false" ]]; then
+            echo "::error::Posts are not published. Enable auto-merge to publish them once build passes."
+            exit 1
+          fi
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: resolve
+    if: needs.resolve.outputs.publish == 'true'
+    environment:
+      name: atproto
+      url: ${{ github.server_url }}/${{ github.repository }}/pull/${{ needs.resolve.outputs.number }}
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ needs.resolve.outputs.sha }}
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install support tooling
+        run: npm ci
+      - name: Publish
+        run: npx sequoia publish
+        env:
+          ATP_IDENTIFIER: ${{ vars.ATP_IDENTIFIER }}
+          ATP_APP_PASSWORD: ${{ secrets.ATP_APP_PASSWORD }}
+      # Keep whatever was published, even after a partial failure, so the state is
+      # committed and the next run doesn't create duplicate records.
+      - name: Collect changes
+        id: diff
+        if: always()
+        run: |
+          git add -A -- .sequoia-state.json content/posts
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git diff --cached --stat
+            git diff --cached --binary > "$RUNNER_TEMP/sequoia.patch"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Upload changes
+        if: always() && steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: sequoia-patch
+          path: ${{ runner.temp }}/sequoia.patch
+          retention-days: 30
+
+  # Commits with a GitHub App token, not GITHUB_TOKEN, so the push triggers `build`
+  # and `atproto` again on the new head. This job never sees ATProto credentials.
+  commit:
+    runs-on: ubuntu-latest
+    needs:
+      - resolve
+      - publish
+    if: always() && needs.publish.outputs.changed == 'true'
+    steps:
+      - name: Create GitHub App token
+        id: app
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.BOT_APP_CLIENT_ID }}
+          private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
+          permission-contents: write
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ needs.resolve.outputs.sha }}
+          token: ${{ steps.app.outputs.token }}
+      - name: Download changes
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: sequoia-patch
+          path: ${{ runner.temp }}
+      - name: Commit and push
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          APP_SLUG: ${{ steps.app.outputs.app-slug }}
+          BRANCH: ${{ needs.resolve.outputs.branch }}
+          NUMBER: ${{ needs.resolve.outputs.number }}
+        run: |
+          set -euo pipefail
+          user_id=$(gh api "users/${APP_SLUG}[bot]" --jq .id)
+          git config user.name "${APP_SLUG}[bot]"
+          git config user.email "${user_id}+${APP_SLUG}[bot]@users.noreply.github.com"
+          git apply --index "$RUNNER_TEMP/sequoia.patch"
+          git commit -m "Update ATProto publishing state for #${NUMBER}"
+          # Fails rather than overwrites if the branch moved; the patch stays in the run's artifacts.
+          git push origin "HEAD:refs/heads/${BRANCH}"
+          echo "Pushed $(git rev-parse --short HEAD) to \`${BRANCH}\`." >> "$GITHUB_STEP_SUMMARY"
