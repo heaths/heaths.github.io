@@ -1,5 +1,5 @@
 {{- /*
-  Builds /assets/main.css from css/main.css, plus a dark-theme fallback for
+  Builds /assets/main.<hash>.css from css/main.css, plus a dark-theme fallback for
   visitors without JavaScript. tokens.css (the design system's export) only
   switches to dark on [data-theme="dark"], which the inline script in head.html
   sets. Without JavaScript that attribute is missing, so this copies the dark
@@ -21,5 +21,15 @@
   {{- $fallback = $fallback | minify -}}
 {{- end -}}
 {{- /* Concat after minifying: minify would rename the bundle to main.min.css. */ -}}
-{{- $css := slice $main $fallback | resources.Concat "assets/main.css" -}}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{- /*
+  Fingerprint so each change gets a new URL (assets/main.<hash>.css).
+  GitHub Pages lets browsers cache CSS for hours but HTML for minutes, so a
+  fixed URL can pair new HTML with old CSS after a deploy.
+  */
+-}}
+{{- $css := slice $main $fallback | resources.Concat "assets/main.css" | fingerprint -}}
+<link
+  rel="stylesheet"
+  href="{{ $css.RelPermalink }}"
+  integrity="{{ $css.Data.Integrity }}"
+/>
