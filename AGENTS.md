@@ -12,11 +12,27 @@ Keep this file concise and written for agents: rules and facts only, no prose.
 | `static/`             | Site-root files: favicons copied unchanged from the design system.       |
 | `.well-known/`        | AT Protocol verification files; keep their public URLs and bytes stable. |
 
-Don't edit vendored files unless the repository owner explicitly asks, even to fix CI or review comments: `assets/scripts/sequoia-*.js` (Sequoia) and `themes/minima/assets/css/tokens.css` (design system export).
+Don't edit vendored files unless the repository owner explicitly asks, even to fix CI or review comments: `assets/scripts/sequoia-*.js` (Sequoia) and `themes/minima/assets/css/tokens.css` (generated from the design system's `tokens.json`: `npm run tokens -- <tokens.json>`).
 
 ## Posts
 
-To write a post, use the `new-post` skill. Posts publish at `/posts/<slug>/`. Reference bundle images by filename and give them the rounded, shadowed style: `{{< image src="cover.jpg" alt="Alt" class="cover-image" >}}`; add `webp="cover.webp"` when a WebP version exists. Use `image-grid` for galleries. Link to other posts as `../other-slug/index.md`. The build fails on posts that break the rules below.
+To write a post, use the `new-post` skill. Posts publish at `/posts/<slug>/`. Reference bundle images by filename and give them a shadow: `{{< image src="cover.jpg" alt="Alt" class="shadow-md" >}}`; add `webp="cover.webp"` when a WebP version exists. Use `image-grid` for galleries. Link to other posts as `../other-slug/index.md`. The build fails on posts that break the rules below.
+
+### Image shadows
+
+The `image` shortcode always adds `post-image` (block, centered, `radius-md` corners) and appends `class`. Add one `shadow-*` class (tokens in `tokens.css`, classes in `site.css`); don't write `post-image` yourself. Size it to the image as rendered (the content column is 800px; check pixels with `sips -g pixelWidth -g pixelHeight`):
+
+| Image                                                                            | Class       |
+| -------------------------------------------------------------------------------- | ----------- |
+| Rendered width under 320px: headshots, avatars, thumbnails, `align-right` floats | `shadow-sm` |
+| 320px and wider: photos, screenshots, covers in the post body                    | `shadow-md` |
+| Transparent background (PNG/SVG/WebP with see-through edges), logos, badges      | none        |
+| Floating layers only (menus, dialogs, a lightbox); never an image in the body    | `shadow-lg` |
+
+- One class per image. Don't add a border or stack shadows.
+- `hasAlpha: yes` doesn't mean transparent; check the corner pixels.
+- `image-grid` images get no shadow.
+- Captions: add `caption="…"` (Markdown allowed) to the `image` shortcode. It wraps the image in `<figure class="figure">` with a `<figcaption>` (`text-small`, `ink-muted`, centered). Keep the `shadow-*` class on the image, never the figure, so the caption sits outside the shadow.
 
 ```yaml
 title: My Post Title

@@ -17,6 +17,7 @@
     "lint": "markdownlint-cli2",
     "format": "prettier --write .",
     "prettier": "prettier",
-    "sequoia": "sequoia"
+    "sequoia": "sequoia",
+    "tokens": "node bin/build-tokens-css.mjs"
   }
 }

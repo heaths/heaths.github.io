@@ -22,6 +22,6 @@ I've loved cycling since I was a kid. I biked all over town--to and from school,
 
 While I do most climbing outdoors from spring through late fall, supplementing some elevation gain in Zwift is handy especially when I don't need to bike far to gain plenty of elevation gain. Alpe du Zwift--allegedly mapped 1:1 to Alpe d'Huez that is popular in the Tour de France--is one such climb I can do in about an hour from the start of the climb. It gets a little tedious after a while so I took a couple years to get this badge, but finally did this past week.
 
-{{< image src="zwift-masochist.webp" alt="Masochist badge in Zwift" class="cover-image" >}}
+{{< image src="zwift-masochist.webp" alt="Masochist badge in Zwift" class="shadow-md" >}}
 
 I've got nearly all the route badges--all the ones I care to do since cycling 100mi for one route badge on a stationary bike sounds horrible--and am considering switching to Rouvy now. Zwift has a great user base but I'm not really into racing other people--just my own PRs--and now that Zwift bought Rouvy I'm hoping eventually they do something to combine the features or at least make the subscriptions fluid. They've vowed to make no changes for now, but we'll see in a year or two. The idea of "visiting" real locations including Alpe d'Huez seems like something that would keep me interested in indoor cycling especially in the wet--and often cold--winter months when it starts to feel like a grind on what is otherwise 90s-era game graphics.

@@ -23,10 +23,10 @@ To make this easier, I remembered just today that you can configure up to 2 addi
 3. Click the **Add clocks for different time zones** link in the "Date & time" settings.
 4. In the control panel dialog that pops up, configure your clocks as desired:
 
-   {{< image src="clocks-settings.png" alt="Additional clocks: Settings" class="cover-image" >}}
+   {{< image src="clocks-settings.png" alt="Additional clocks: Settings" class="shadow-md" >}}
 
 5. Click **OK**.
 
 Now whenever you left-click on the date/time in your system tray, the top will show your current date/time and any additional clocks you configured:
 
-{{< image src="clocks.png" alt="Additional clocks" class="cover-image" >}}
+{{< image src="clocks.png" alt="Additional clocks" class="shadow-md" >}}

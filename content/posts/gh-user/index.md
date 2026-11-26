@@ -88,4 +88,4 @@ To configure an alias with mixed quotes, I found the easiest way currently is to
 
 Now whenever you run a command like `gh user <name>` you'll see output like the following for matching names or logins:
 
-{{< image src="gh-user-output.png" alt="gh user output" class="cover-image" >}}
+{{< image src="gh-user-output.png" alt="gh user output" class="shadow-md" >}}
