@@ -26,11 +26,11 @@ When I finally started buying my own hand and power tools, that experience - and
 
 All that experience and knowing when to use the right tool for the right job helped me build an oak fireplace mantel one Christmas for my wife.
 
-{{< image src="mantel.webp" alt="Stained oak fireplace mantel with some art and Legos on it" class="cover-image" >}}
+{{< image src="mantel.webp" alt="Stained oak fireplace mantel with some art and Legos on it" class="shadow-md" >}}
 
 Or a step stool for my dog who has a deformity in his front leg causing arthritis.
 
-{{< image src="archer-steps.webp" alt="Stained oak fireplace mantel with some art and Legos on it" class="cover-image" >}}
+{{< image src="archer-steps.webp" alt="Stained oak fireplace mantel with some art and Legos on it" class="shadow-md" >}}
 
 My mom also taught me how to sew. I’ve sewn on patches and fixed many holes in materials by hand, but a sewing machine is invaluable for larger projects like whip stitching the edges of the runner I cut down to size for that step stool.
 

@@ -23,7 +23,7 @@ aliases:
 
 This adds a new button with a heart, star, or thumbs up SVG image that will create a [site.standard.graph.recommend](https://standard.site/docs/lexicons/recommend/) record that can be shared across sites like [leaflet.pub](https://leaflet.pub), [pckt.blog](https://pckt.blog), and more. <!-- cspell:ignore pckt -->
 
-{{< image src="sequoia-recommend.jpg" alt="Screenshot of new Recommend button along with existing Comment button" class="cover-image" >}}
+{{< image src="sequoia-recommend.jpg" alt="Screenshot of new Recommend button along with existing Comment button" class="shadow-md" >}}
 
 The `sequoia-recommend` component is [defined](https://tangled.org/stevedylan.dev/sequoia/pulls/77) in the existing `sequoia-subscribe.js` file because it shares a lot in common with the `sequoia-subscribe` button I [added previously](https://tangled.org/stevedylan.dev/sequoia/pulls/25). I didn't want to change the file name and break compatibility, but did refactor it to avoid duplication despite being in the same file.
 

@@ -37,9 +37,9 @@
       "slug": "using-1password-for-git-ssh-signatures-in-wsl"
     },
     "content/posts/oh-my-posh/index.md": {
-      "contentHash": "0d7564fa3c6b8ff5c5362df66b6a60ecf5bc52fc244fd9aff538710604b80236",
+      "contentHash": "82d5e8a89da86f1ad7640817d94913e2dbf8f06f67b2a8a56f08265dae82cf4e",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aucxg2x",
-      "lastPublished": "2026-11-26T05:44:08.839Z",
+      "lastPublished": "2026-11-26T21:58:22.571Z",
       "slug": "oh-my-posh"
     },
     "content/posts/on-mastodon/index.md": {
@@ -55,9 +55,9 @@
       "slug": "git-sync-any-branch"
     },
     "content/posts/gh-table-formatting/index.md": {
-      "contentHash": "b7ef2225f6b737939b7ac02ef62ff9aa7d83f96ad8f5540a91681ebeaf92d3ad",
+      "contentHash": "35028ddec6b1045c794e75b0f5aedd1950a0f271c8ff85d84a8dd6f02230348e",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2axkhw2x",
-      "lastPublished": "2026-11-26T05:44:08.885Z",
+      "lastPublished": "2026-11-26T21:58:22.768Z",
       "slug": "gh-table-formatting"
     },
     "content/posts/gh-alias-set-from-stdin/index.md": {
@@ -67,21 +67,21 @@
       "slug": "gh-alias-set-from-stdin"
     },
     "content/posts/gh-user/index.md": {
-      "contentHash": "59971181616ce480d2aa339b68abe0687d6d368830d75eac1311edfba5831f7e",
+      "contentHash": "a4007a3493192144846f421133b881004e766b76f14492575fa1522c826d4638",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2azh4x2w",
-      "lastPublished": "2026-11-26T05:44:08.933Z",
+      "lastPublished": "2026-11-26T21:58:22.981Z",
       "slug": "gh-user"
     },
     "content/posts/configure-multiple-clocks/index.md": {
-      "contentHash": "8d261024942cc54a3d134e88925d0d54d92bf8cbfe99c6793e532cc277d70c59",
+      "contentHash": "ad963a30b9d6e9790ab61fad158ea283f299261a4ce6e7d484d553f6abf626c8",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b2q3z2r",
-      "lastPublished": "2026-11-26T05:44:08.974Z",
+      "lastPublished": "2026-11-26T21:58:23.182Z",
       "slug": "configure-multiple-clocks"
     },
     "content/posts/debugging-tests-in-linux-containers-with-visual-studio/index.md": {
-      "contentHash": "8360c57372e2d8ee51983569b85082167e14068b121a559a583ded535d4c33d2",
+      "contentHash": "db17d40e1d2f79cf05d702f80e53c1901d598aad60238f1f7255e716471387f2",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b3oe62t",
-      "lastPublished": "2026-11-26T05:44:09.024Z",
+      "lastPublished": "2026-11-26T21:58:23.374Z",
       "slug": "debugging-tests-in-linux-containers-with-visual-studio"
     },
     "content/posts/getting-back-to-good-state-in-git/index.md": {
@@ -177,9 +177,9 @@
       }
     },
     "content/posts/light-and-dark-themes-for-my-blog/index.md": {
-      "contentHash": "6a4405fa893af4a9cd476530768b686a28a2bb79981bf188d72a4917e66256e6",
+      "contentHash": "59384b74984b9123ba4e5dad3d4a392475bb2489017952d0075e58aac682f556",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjvwnyj4cb2t",
-      "lastPublished": "2026-11-26T05:44:08.786Z",
+      "lastPublished": "2026-11-26T21:58:22.383Z",
       "slug": "light-and-dark-themes-for-my-blog",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjvwnykcec2m",
@@ -197,9 +197,9 @@
       }
     },
     "content/posts/cooler-theme-palette/index.md": {
-      "contentHash": "35947497b08f1f9b0224eb14f44c9aad69794a5e8936cfe034a6e70416142ad5",
+      "contentHash": "83fa49af213d719c2d502bec7baf8ca4ff256f93fa89dd0f487f6d2ac5b80be0",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkwni3gioi2x",
-      "lastPublished": "2026-11-26T05:44:07.946Z",
+      "lastPublished": "2026-11-26T21:58:21.798Z",
       "slug": "cooler-theme-palette",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkwni3ww7u2m",
@@ -207,9 +207,9 @@
       }
     },
     "content/posts/initial-stable-release-of-azure-sdk-for-rust/index.md": {
-      "contentHash": "3a7404b42c398f7c542eddd2c26ded329be74397b53aaa9e8d0e21646453b8f1",
+      "contentHash": "698c9878ca5bd320cd115835d5fb63fc322668838efd8740a4388316f2ad90fa",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mlx6vipoaw2x",
-      "lastPublished": "2026-11-26T05:44:07.031Z",
+      "lastPublished": "2026-11-26T21:58:21.158Z",
       "slug": "initial-stable-release-of-azure-sdk-for-rust",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mlx6vj5v2b2q",
@@ -227,9 +227,9 @@
       }
     },
     "content/posts/introducing-the-sequoia-recommend-button/index.md": {
-      "contentHash": "700b19443919b5865a24126d4f9cbce7ca644112029454fa307e2953e917e20d",
+      "contentHash": "dc9f4c5edc81fbe62a11ca4b98d904ed41f642e2c4810e48df93f96aa6a4c39d",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mn4upg7a4z2h",
-      "lastPublished": "2026-11-23T08:58:25.019Z",
+      "lastPublished": "2026-11-26T21:58:20.532Z",
       "slug": "introducing-the-sequoia-recommend-button",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mn4upgujo62n",
@@ -247,9 +247,9 @@
       }
     },
     "content/posts/apropos-of-power-tools/index.md": {
-      "contentHash": "3b049e7110f667f32c3bc1ef1404191778d134cb8b464c968e42ecdc028741cd",
+      "contentHash": "4566896fa8f6f5cd1aff58fb37089cd5a51f7927ee8828b6735d7beed8d52278",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mop7huti2e2n",
-      "lastPublished": "2026-11-23T08:58:24.648Z",
+      "lastPublished": "2026-11-26T21:58:20.017Z",
       "slug": "apropos-of-power-tools",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mop7hvikhe2b",
@@ -257,9 +257,9 @@
       }
     },
     "content/posts/im-a-masochist-on-zwift/index.md": {
-      "contentHash": "72417c9ed9679dd3b7fc98f0a7b293f133628bef43dd3b599d2d0c64c1ee3966",
+      "contentHash": "c668e592274cd265ab7def44a7f438c2bf5b998fcb90163cca8a514e0af2b7bc",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mt6rlvukj62c",
-      "lastPublished": "2026-11-23T08:58:24.303Z",
+      "lastPublished": "2026-11-26T21:58:19.446Z",
       "slug": "im-a-masochist-on-zwift",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mt6rlwzdbg2c",
@@ -267,9 +267,9 @@
       }
     },
     "content/posts/newspaper-clipping-of-debate-state-champion/index.md": {
-      "contentHash": "006f8375c240783ccef984402e181d3132ccb3bfd15243a2f62ec138ec6f9501",
+      "contentHash": "92fda8a52e73ca3057130d1e56ff612707557e8206ff2a039e3b63e81808c01f",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mzwlm7ngw22w",
-      "lastPublished": "2026-11-23T08:58:23.997Z",
+      "lastPublished": "2026-11-26T21:58:18.219Z",
       "slug": "newspaper-clipping-of-debate-state-champion",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mzwlmaqroc2j",

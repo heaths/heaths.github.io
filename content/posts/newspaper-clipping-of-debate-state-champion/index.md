@@ -25,7 +25,7 @@ It was a fun trip but pretty brutal with some of the large city competitors that
 Everyone was trying to get in a speech just to win points, and as I watched some federal congressional debates,
 I saw that seems to happen there too. That's how I experienced grandstanding, I suppose.
 
-{{< image src="news-national-debate.jpg" alt="Newspaper clipping titled: Squad adds names to national qualifiers list" class="cover-image" >}}
+{{< image src="news-national-debate.jpg" alt="Newspaper clipping titled: Squad adds names to national qualifiers list" class="shadow-md" >}}
 
 <!-- cspell:ignore lura timperley trindle -->
 

@@ -13,19 +13,34 @@
     {{- $webp = .RelPermalink -}}
   {{- end -}}
 {{- end -}}
-{{- if $webp -}}
-  <picture>
-    <source type="image/webp" srcset="{{ $webp }}" />
-    <img
-      src="{{ $src }}"
-      alt="{{ .Get "alt" }}"
-      {{ with .Get "class" }}class="{{ . }}"{{ end }}
-    />
-  </picture>
+{{- /* post-image always applies; class adds to it, e.g. a shadow-* class. */ -}}
+{{- $class := trim (printf "post-image %s" (.Get "class" | default "")) " " -}}
+{{- $ctx := dict "src" $src "webp" $webp "alt" (.Get "alt") "class" $class -}}
+{{- /* Optional caption: wraps the image in <figure class="figure"> so the shadow stays on the image. */ -}}
+{{- with .Get "caption" -}}
+  <figure class="figure">
+    {{- partial "inline/image-img.html" $ctx -}}
+    <figcaption>{{ . | $.Page.RenderString }}</figcaption>
+  </figure>
 {{- else -}}
-  <img
-    src="{{ $src }}"
-    alt="{{ .Get "alt" }}"
-    {{ with .Get "class" }}class="{{ . }}"{{ end }}
-  />
+  {{- partial "inline/image-img.html" $ctx -}}
+{{- end -}}
+
+{{- define "_partials/inline/image-img.html" -}}
+  {{- if .webp -}}
+    <picture>
+      <source type="image/webp" srcset="{{ .webp }}" />
+      <img
+        src="{{ .src }}"
+        alt="{{ .alt }}"
+        {{ with .class }}class="{{ . }}"{{ end }}
+      />
+    </picture>
+  {{- else -}}
+    <img
+      src="{{ .src }}"
+      alt="{{ .alt }}"
+      {{ with .class }}class="{{ . }}"{{ end }}
+    />
+  {{- end -}}
 {{- end -}}

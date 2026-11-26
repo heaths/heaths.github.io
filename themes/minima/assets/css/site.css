@@ -1,6 +1,6 @@
 /*
- * Site styles built on the design system's tokens.css, which is copied
- * unchanged from the design system and can be replaced with a newer export.
+ * Site styles built on tokens.css, which `npm run tokens` generates from the
+ * design system's tokens.json; regenerate it rather than editing it.
  *
  * tokens.css switches to dark colors on [data-theme="dark"], so the head
  * script always sets data-theme on <html> from the saved choice or the system
@@ -13,8 +13,6 @@
   --primary-hover: light-dark(var(--blue-700), var(--blue-300));
   --surface-sunken: light-dark(var(--blue-50), #0f1e38);
   --overlay: light-dark(rgb(15 38 85 / 0.15), rgb(11 23 48 / 0.4));
-  --shadow-color: light-dark(rgb(15 38 85 / 0.2), rgb(0 0 0 / 0.5));
-  --shadow: 0 4px 16px var(--shadow-color);
 
   --font-mono:
     ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
@@ -498,7 +496,7 @@ hr {
       background-color: var(--surface-raised);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-lg);
     }
 
     .nav-trigger:checked ~ .trigger {
@@ -744,12 +742,45 @@ sequoia-comments::part(container) {
   margin-block-start: var(--space-8);
 }
 
-.cover-image {
+/* Every image from the image shortcode; add a shadow-* class per AGENTS.md. */
+.post-image {
   display: block;
   max-width: 100%;
   margin: var(--space-4) auto;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-md);
+}
+
+/*
+ * Elevation from the design system's shadow tokens. Size the shadow to the
+ * image as rendered; see AGENTS.md. Opaque images only: transparent art gets
+ * no shadow.
+ */
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+/* An image with a caption, from the image shortcode's caption parameter. */
+.figure {
+  margin: var(--space-8) 0;
+
+  .post-image {
+    margin-block: 0;
+  }
+
+  figcaption {
+    margin-block-start: 12px;
+    font: var(--text-small);
+    color: var(--ink-muted);
+    text-align: center;
+  }
 }
 
 .image-grid {

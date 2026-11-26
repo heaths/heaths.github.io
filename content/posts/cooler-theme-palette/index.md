@@ -22,4 +22,4 @@ I looked at a couple color palette sites for some color ideas then asked Copilot
 
 I think it turned out pretty good:
 
-{{< image src="blue-hour-cover.jpg" alt="Screenshots of Blue Hour dark and light themes" class="cover-image" >}}
+{{< image src="blue-hour-cover.jpg" alt="Screenshots of Blue Hour dark and light themes" class="shadow-md" >}}
