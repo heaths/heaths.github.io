@@ -37,9 +37,9 @@
       "slug": "using-1password-for-git-ssh-signatures-in-wsl"
     },
     "content/posts/oh-my-posh/index.md": {
-      "contentHash": "948c400242cf3fadfa5346fab2a64cf417418da7b53bdca85dc2231e1489a68b",
+      "contentHash": "0d7564fa3c6b8ff5c5362df66b6a60ecf5bc52fc244fd9aff538710604b80236",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2aucxg2x",
-      "lastPublished": "2026-11-23T08:58:26.697Z",
+      "lastPublished": "2026-11-26T05:44:08.839Z",
       "slug": "oh-my-posh"
     },
     "content/posts/on-mastodon/index.md": {
@@ -55,9 +55,9 @@
       "slug": "git-sync-any-branch"
     },
     "content/posts/gh-table-formatting/index.md": {
-      "contentHash": "dd24f252cad6ef2bec9fd1033b427104ec3178611bff6d52da2a5e4e2bb6010f",
+      "contentHash": "b7ef2225f6b737939b7ac02ef62ff9aa7d83f96ad8f5540a91681ebeaf92d3ad",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2axkhw2x",
-      "lastPublished": "2026-11-23T08:58:26.870Z",
+      "lastPublished": "2026-11-26T05:44:08.885Z",
       "slug": "gh-table-formatting"
     },
     "content/posts/gh-alias-set-from-stdin/index.md": {
@@ -67,21 +67,21 @@
       "slug": "gh-alias-set-from-stdin"
     },
     "content/posts/gh-user/index.md": {
-      "contentHash": "cd75dc9b54ac43265b76a5764551caccbaa19f33ca1ef37fb234b2de8c319f07",
+      "contentHash": "59971181616ce480d2aa339b68abe0687d6d368830d75eac1311edfba5831f7e",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2azh4x2w",
-      "lastPublished": "2026-11-23T08:58:26.947Z",
+      "lastPublished": "2026-11-26T05:44:08.933Z",
       "slug": "gh-user"
     },
     "content/posts/configure-multiple-clocks/index.md": {
-      "contentHash": "702e82076b1ca23a9e8cc243c9d87d4fdf15e560712315173fb213b71c66276f",
+      "contentHash": "8d261024942cc54a3d134e88925d0d54d92bf8cbfe99c6793e532cc277d70c59",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b2q3z2r",
-      "lastPublished": "2026-11-23T08:58:26.990Z",
+      "lastPublished": "2026-11-26T05:44:08.974Z",
       "slug": "configure-multiple-clocks"
     },
     "content/posts/debugging-tests-in-linux-containers-with-visual-studio/index.md": {
-      "contentHash": "46fd4ffa54171c0ae1bbcdb4f57ce372f229e117857dcfd9c7e85ce24793b5cf",
+      "contentHash": "8360c57372e2d8ee51983569b85082167e14068b121a559a583ded535d4c33d2",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mfdr2b3oe62t",
-      "lastPublished": "2026-11-23T08:58:27.030Z",
+      "lastPublished": "2026-11-26T05:44:09.024Z",
       "slug": "debugging-tests-in-linux-containers-with-visual-studio"
     },
     "content/posts/getting-back-to-good-state-in-git/index.md": {
@@ -177,9 +177,9 @@
       }
     },
     "content/posts/light-and-dark-themes-for-my-blog/index.md": {
-      "contentHash": "6fbd52dbbfe56632c4e23d5acbf6bd82e4f20d60ae285be3503de4156cce9061",
+      "contentHash": "6a4405fa893af4a9cd476530768b686a28a2bb79981bf188d72a4917e66256e6",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mjvwnyj4cb2t",
-      "lastPublished": "2026-11-23T08:58:26.322Z",
+      "lastPublished": "2026-11-26T05:44:08.786Z",
       "slug": "light-and-dark-themes-for-my-blog",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mjvwnykcec2m",
@@ -197,9 +197,9 @@
       }
     },
     "content/posts/cooler-theme-palette/index.md": {
-      "contentHash": "115c99f0ca58477d553c1f9c3fb8df64f96857b9e2faf65c39536d5b93081a29",
+      "contentHash": "35947497b08f1f9b0224eb14f44c9aad69794a5e8936cfe034a6e70416142ad5",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mkwni3gioi2x",
-      "lastPublished": "2026-11-23T08:58:25.730Z",
+      "lastPublished": "2026-11-26T05:44:07.946Z",
       "slug": "cooler-theme-palette",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mkwni3ww7u2m",
@@ -207,9 +207,9 @@
       }
     },
     "content/posts/initial-stable-release-of-azure-sdk-for-rust/index.md": {
-      "contentHash": "fdba3c7234580a771490fcd77ff8e2d802bad1589c2ed04bbcf05803826c02c0",
+      "contentHash": "3a7404b42c398f7c542eddd2c26ded329be74397b53aaa9e8d0e21646453b8f1",
       "atUri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/site.standard.document/3mlx6vipoaw2x",
-      "lastPublished": "2026-11-23T08:58:25.418Z",
+      "lastPublished": "2026-11-26T05:44:07.031Z",
       "slug": "initial-stable-release-of-azure-sdk-for-rust",
       "bskyPostRef": {
         "uri": "at://did:plc:tg3tb5wukiml4xmxml6qm637/app.bsky.feed.post/3mlx6vj5v2b2q",
